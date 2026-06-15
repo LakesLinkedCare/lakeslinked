@@ -606,7 +606,7 @@ footer{background:var(--navy);padding:22px 32px;}
     </div>
     <div class="brand-text">
       <div class="brand-name">Lakes Linked Care</div>
-      <div class="brand-sub">Soshnikov, MD PhD &middot; Public Health Division &middot; a regional university</div>
+      <div class="brand-sub">Soshnikov, MD PhD</div>
     </div>
   </div>
   <div class="header-right">
@@ -647,7 +647,7 @@ footer{background:var(--navy);padding:22px 32px;}
       <div class="byline-block">
         <div class="author">Sergey Soshnikov, MD PhD</div>
         <div class="affil">
-          Public Health Division &middot; a regional university<br>
+          Lakes Linked<br>
           Mount Pleasant, Michigan &middot; 2026
         </div>
       </div>
@@ -700,7 +700,7 @@ footer{background:var(--navy);padding:22px 32px;}
     <div class="sh-line"></div>
     <span class="section-meta" id="mi-counter">3 of 83 counties analyzed</span>
   </div>
-  <p style="font-size:12.5px;color:var(--text-secondary);max-width:760px;margin:-2px 0 10px;">Click a completed county (blue) to open its dashboard. Grey counties aren't analyzed yet &mdash; available on request.</p>
+  <p style="font-size:12.5px;color:var(--text-secondary);max-width:760px;margin:-2px 0 10px;">Click a completed county (blue) to open its dashboard. Grey counties aren't analyzed yet.</p>
   <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--text-secondary);margin-bottom:9px;align-items:center;">
     <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#1a56db;vertical-align:-2px;margin-right:5px;"></span>Analyzed (click)</span>
     <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#bfdbfe;vertical-align:-2px;margin-right:5px;"></span>In pipeline</span>
@@ -708,7 +708,7 @@ footer{background:var(--navy);padding:22px 32px;}
   </div>
   <div id="mi-map" style="height:300px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
   <p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="https://lakeslinkedcare.github.io/lakeslinked/michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map &rarr;</a></p>
-  <p style="font-size:11px;color:var(--muted);margin-top:5px;">Request a county not yet analyzed: <a href="mailto:contact@lakeslinked.com" style="color:var(--muted);font-weight:500;">contact@lakeslinked.com</a></p>
+  <p style="font-size:11px;color:var(--muted);margin-top:5px;">Contact: <a href="mailto:contact@lakeslinked.com" style="color:var(--muted);font-weight:500;">contact@lakeslinked.com</a></p>
   <script>
   (function(){
     if (typeof L === 'undefined') return;
@@ -734,7 +734,7 @@ footer{background:var(--navy);padding:22px 32px;}
             let tip;
             if (done) tip = '<strong>'+done.name+' County</strong><br>'+done.dalys+' DALYs/yr · pop '+done.pop+'<br>Click to open →';
             else if (pipe) tip = '<strong>'+nm+' County</strong><br>In pipeline ('+pipe.split('·')[1].trim()+')';
-            else tip = '<strong>'+nm+' County</strong><br>Not yet analyzed · available on request';
+            else tip = '<strong>'+nm+' County</strong><br>Not yet analyzed';
             lyr.bindTooltip(tip, { sticky:true });
             lyr.on('mouseover', ()=>lyr.setStyle({ weight:2.5, color:'#0f1f3d' }));
             lyr.on('mouseout',  ()=>lyr.setStyle(styleFor(fips)));
@@ -906,7 +906,7 @@ footer{background:var(--navy);padding:22px 32px;}
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <span>Lakes Linked Care &middot; Dr. Sergey Soshnikov, MD PhD &middot; Public Health Division &middot; a regional university &middot; 2026</span>
+      <span>Lakes Linked Care &middot; Dr. Sergey Soshnikov, MD PhD &middot; 2026</span>
       <span><a href="mailto:contact@lakeslinked.com">contact@lakeslinked.com</a> &middot; Mount Pleasant, Michigan</span>
     </div>
     <div class="footer-sources">
