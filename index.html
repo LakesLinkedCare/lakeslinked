@@ -7,7 +7,7 @@
 <meta name="description" content="Educational disease burden analysis for rural Michigan counties — identifying top health conditions, quantifying economic impact, and supporting grant applications and health planning. Dr. Sergey Soshnikov, MD PhD.">
 <meta property="og:title" content="Michigan Rural Health Burden Analysis | Lakes Linked Care">
 <meta property="og:description" content="3 counties complete · ~37,960 DALYs/yr · 3 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy.">
-<meta property="og:url" content="https://lakeslinkedcare.github.io/lakeslinked/index.html">
+<meta property="og:url" content="https://lakeslinked.com/index.html">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -622,13 +622,13 @@ footer{background:var(--navy);padding:22px 32px;}
   <div class="nav-strip-inner">
     <span class="nav-label">Counties</span>
     <div class="nav-group">
-      <a href="https://lakeslinkedcare.github.io/lakeslinked/isabella.html">
+      <a href="https://lakeslinkedcare.github.io/isabella_county/isabella.html">
         <span class="nav-dot" style="background:var(--blue);"></span>Isabella
       </a>
-      <a href="https://lakeslinkedcare.github.io/lakeslinked/clare.html">
+      <a href="https://lakeslinkedcare.github.io/isabella_county/clare.html">
         <span class="nav-dot" style="background:var(--red);"></span>Clare
       </a>
-      <a href="https://lakeslinkedcare.github.io/lakeslinked/midland.html">
+      <a href="https://lakeslinkedcare.github.io/isabella_county/midland.html">
         <span class="nav-dot" style="background:var(--green);"></span>Midland
       </a>
     </div>
@@ -707,15 +707,15 @@ footer{background:var(--navy);padding:22px 32px;}
     <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#e2e8f0;border:1px solid #cbd5e1;vertical-align:-2px;margin-right:5px;"></span>Not yet analyzed</span>
   </div>
   <div id="mi-map" style="height:300px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
-  <p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="https://lakeslinkedcare.github.io/lakeslinked/michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map &rarr;</a></p>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map &rarr;</a></p>
   <p style="font-size:11px;color:var(--muted);margin-top:5px;">Contact: <a href="mailto:contact@lakeslinked.com" style="color:var(--muted);font-weight:500;">contact@lakeslinked.com</a></p>
   <script>
   (function(){
     if (typeof L === 'undefined') return;
     const DONE = {
-      '26073': { name:'Isabella', url:'https://lakeslinkedcare.github.io/lakeslinked/isabella.html', dalys:'15,430', pop:'64,565' },
-      '26035': { name:'Clare',    url:'https://lakeslinkedcare.github.io/lakeslinked/clare.html',    dalys:'8,198',  pop:'30,013' },
-      '26111': { name:'Midland',  url:'https://lakeslinkedcare.github.io/lakeslinked/midland.html',  dalys:'14,335', pop:'82,884' },
+      '26073': { name:'Isabella', url:'https://lakeslinkedcare.github.io/isabella_county/isabella.html', dalys:'15,430', pop:'64,565' },
+      '26035': { name:'Clare',    url:'https://lakeslinkedcare.github.io/isabella_county/clare.html',    dalys:'8,198',  pop:'30,013' },
+      '26111': { name:'Midland',  url:'https://lakeslinkedcare.github.io/isabella_county/midland.html',  dalys:'14,335', pop:'82,884' },
     };
     const PIPELINE = { '26057':'Gratiot · Q3 2026', '26107':'Mecosta · Q4 2026', '26161':'Washtenaw · Q4 2026' };
     function styleFor(fips){
@@ -753,7 +753,7 @@ footer{background:var(--navy);padding:22px 32px;}
     <span class="section-meta">3 counties &middot; full DALY framework</span>
   </div>
   <div class="county-grid">
-    <div class="county-card" onclick="window.location='https://lakeslinkedcare.github.io/lakeslinked/isabella.html'" style="--accent:var(--blue);cursor:pointer">
+    <div class="county-card" onclick="window.location='https://lakeslinkedcare.github.io/isabella_county/isabella.html'" style="--accent:var(--blue);cursor:pointer">
       <div class="county-card-top"></div>
       <div class="cc-head">
         <div>
@@ -766,17 +766,17 @@ footer{background:var(--navy);padding:22px 32px;}
         <div class="cc-desc">Pop 64,565 &middot; 15,430 DALYs/yr &middot; Cancer #1</div>
       </div>
       <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="https://lakeslinkedcare.github.io/lakeslinked/isabella.html">View Dashboard</a>
+        <a class="primary" href="https://lakeslinkedcare.github.io/isabella_county/isabella.html">View Dashboard</a>
         <div class="cc-secondary-links">
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/isabella_methods.html">Methods</a><span class="sep">&middot;</span>
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/isabella_roi.html">Economic</a><span class="sep">&middot;</span>
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/isabella_interventions.html">Interventions</a><span class="sep">&middot;</span>
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/isabella_trends.html">Trends</a>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/isabella_methods.html">Methods</a><span class="sep">&middot;</span>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/isabella_roi.html">Economic</a><span class="sep">&middot;</span>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/isabella_interventions.html">Interventions</a><span class="sep">&middot;</span>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/isabella_trends.html">Trends</a>
         </div>
       </div>
     </div>
 
-    <div class="county-card" onclick="window.location='https://lakeslinkedcare.github.io/lakeslinked/clare.html'" style="--accent:#1e40af;cursor:pointer">
+    <div class="county-card" onclick="window.location='https://lakeslinkedcare.github.io/isabella_county/clare.html'" style="--accent:#1e40af;cursor:pointer">
       <div class="county-card-top"></div>
       <div class="cc-head">
         <div>
@@ -789,16 +789,16 @@ footer{background:var(--navy);padding:22px 32px;}
         <div class="cc-desc">Pop 30,013 &middot; 8,198 DALYs/yr &middot; Opioids #1</div>
       </div>
       <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="https://lakeslinkedcare.github.io/lakeslinked/clare.html">View Dashboard</a>
+        <a class="primary" href="https://lakeslinkedcare.github.io/isabella_county/clare.html">View Dashboard</a>
         <div class="cc-secondary-links">
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/clare_methods.html">Methods</a><span class="sep">&middot;</span>
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/clare_roi.html">Economic</a><span class="sep">&middot;</span>
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/clare_ai_solutions.html">Interventions</a>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/clare_methods.html">Methods</a><span class="sep">&middot;</span>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/clare_roi.html">Economic</a><span class="sep">&middot;</span>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/clare_ai_solutions.html">Interventions</a>
         </div>
       </div>
     </div>
 
-    <div class="county-card" onclick="window.location='https://lakeslinkedcare.github.io/lakeslinked/midland.html'" style="--accent:#3b82f6;cursor:pointer">
+    <div class="county-card" onclick="window.location='https://lakeslinkedcare.github.io/isabella_county/midland.html'" style="--accent:#3b82f6;cursor:pointer">
       <div class="county-card-top"></div>
       <div class="cc-head">
         <div>
@@ -811,10 +811,10 @@ footer{background:var(--navy);padding:22px 32px;}
         <div class="cc-desc">Pop 82,884 &middot; 14,335 DALYs/yr &middot; Cancer #1</div>
       </div>
       <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="https://lakeslinkedcare.github.io/lakeslinked/midland.html">View Dashboard</a>
+        <a class="primary" href="https://lakeslinkedcare.github.io/isabella_county/midland.html">View Dashboard</a>
         <div class="cc-secondary-links">
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/midland_methods.html">Methods</a><span class="sep">&middot;</span>
-          <a href="https://lakeslinkedcare.github.io/lakeslinked/midland_roi.html">Economic</a>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/midland_methods.html">Methods</a><span class="sep">&middot;</span>
+          <a href="https://lakeslinkedcare.github.io/isabella_county/midland_roi.html">Economic</a>
         </div>
       </div>
     </div>
