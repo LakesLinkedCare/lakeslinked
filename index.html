@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michigan Rural Health Burden Analysis | Lakes Linked Care</title>
-<meta name="description" content="Educational disease burden analysis for rural Michigan counties — identifying top health conditions, quantifying economic impact, and supporting grant applications and health planning. Dr. Sergey Soshnikov, MD PhD.">
-<meta property="og:title" content="Michigan Rural Health Burden Analysis | Lakes Linked Care">
-<meta property="og:description" content="3 counties complete · ~37,960 DALYs/yr · 3 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy.">
+<title>County Health-Burden Dashboards | Lakes Linked</title>
+<meta name="description" content="Sergey Soshnikov, MD PhD — a public-health researcher building interactive, county-level disease-burden (DALY) dashboards for rural Michigan, with economic-impact models and methods, built on open CDC and US Census data.">
+<meta property="og:title" content="County Health-Burden Dashboards | Lakes Linked">
+<meta property="og:description" content="A public-health researcher building interactive, county-level disease-burden (DALY) dashboards for rural Michigan — analysis, economic-impact models, and methods on open data.">
 <meta property="og:url" content="https://lakeslinked.com/index.html">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,84 +121,6 @@ header{
   font-size:10.5px;color:rgba(255,255,255,.28);
   font-style:italic;white-space:nowrap;
 }
-
-/* ── HERO ── */
-.hero{
-  background:var(--navy);
-  padding:48px 32px 52px;
-  position:relative;
-  overflow:hidden;
-}
-.hero::after{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 80% 40%,rgba(13,148,136,.12) 0%,transparent 55%),
-             radial-gradient(ellipse at 10% 80%,rgba(26,86,219,.1) 0%,transparent 50%);
-  pointer-events:none;
-}
-.hero-inner{
-  max-width:860px;margin:0 auto;position:relative;z-index:1;
-}
-.hero-content{}
-.project-kicker{
-  font-size:10px;font-weight:700;text-transform:uppercase;
-  letter-spacing:.1em;color:rgba(255,255,255,.4);
-  margin-bottom:16px;display:flex;align-items:center;gap:8px;
-}
-.project-kicker::after{
-  content:'';flex:1;height:1px;background:rgba(255,255,255,.1);max-width:80px;
-}
-.hero h1{
-  font-family:var(--font-serif);
-  font-size:34px;font-weight:700;
-  color:#fff;
-  letter-spacing:-.02em;line-height:1.2;
-  margin-bottom:20px;
-}
-.hero h1 em{
-  font-style:italic;
-  color:rgba(255,255,255,.75);
-}
-.byline-block{
-  border-left:2px solid rgba(255,255,255,.15);
-  padding-left:16px;
-  margin-bottom:22px;
-}
-.byline-block .author{
-  font-size:14px;font-weight:600;color:rgba(255,255,255,.85);
-  margin-bottom:4px;
-}
-.byline-block .affil{
-  font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;
-}
-.hero-abstract{
-  color:rgba(255,255,255,.55);
-  font-size:13.5px;
-  line-height:1.7;
-  max-width:560px;
-  margin-bottom:28px;
-  font-family:var(--font-sans);
-}
-.hero-stats{display:flex;gap:24px;flex-wrap:wrap;}
-.hs{
-  padding:14px 18px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:10px;
-  min-width:120px;
-}
-.hs .n{
-  font-size:24px;font-weight:700;color:#fff;
-  letter-spacing:-.03em;line-height:1;margin-bottom:4px;
-}
-.hs .l{
-  font-size:10px;color:rgba(255,255,255,.45);
-  font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-}
-.hs-sub{
-  font-size:10px;color:rgba(255,255,255,.3);
-  margin-top:4px;line-height:1.4;font-style:italic;
-}
-
 
 /* ── DATA SOURCE STATUS TAGS ── */
 .ds-status{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap;}
@@ -578,7 +500,6 @@ footer{background:var(--navy);padding:22px 32px;}
   header{padding:0 18px;}
   .brand-sub{display:none;}
   .nav-strip-inner{padding:0 18px;}
-  .hero{padding:32px 18px 36px;}
   .about-strip-inner{padding:18px;}
   .about-icon{display:none;}
   .main{padding:32px 18px;}
@@ -587,9 +508,6 @@ footer{background:var(--navy);padding:22px 32px;}
   .cta-strip-inner{padding:18px;}
   footer{padding:18px;}
   .footer-top{flex-direction:column;gap:6px;}
-  .hs{min-width:100px;}
-  .hero h1{font-size:26px;}
-  .hero-stats{gap:10px;}
 }
 </style>
 </head>
@@ -605,7 +523,7 @@ footer{background:var(--navy);padding:22px 32px;}
       </svg>
     </div>
     <div class="brand-text">
-      <div class="brand-name">Lakes Linked Care</div>
+      <div class="brand-name">Lakes Linked</div>
       <div class="brand-sub">Soshnikov, MD PhD</div>
     </div>
   </div>
@@ -637,56 +555,18 @@ footer{background:var(--navy);padding:22px 32px;}
   </div>
 </div>
 
-<!-- ══ HERO ══ -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="project-kicker">Educational Research Project &middot; Public Health</div>
-      <h1>Disease Burden in <em>Rural Michigan</em></h1>
-
-      <div class="byline-block">
-        <div class="author">Sergey Soshnikov, MD PhD</div>
-        <div class="affil">
-          Lakes Linked<br>
-          Mount Pleasant, Michigan &middot; 2026
-        </div>
-      </div>
-
-      <p class="hero-abstract">Disability-adjusted life year (DALY) burden analysis for rural Michigan counties — built for county health planning, CHNA reports, and grant applications (SAMHSA, HRSA, MDHHS). Open CDC and US Census data sources; disability weights adapted from IHME GBD 2021 and WHO reference standards.</p>
-
-      <div class="hero-stats">
-        <div class="hs">
-          <div class="n">3</div>
-          <div class="l">Counties analyzed</div>
-          <div class="hs-sub">Isabella &middot; Clare &middot; Midland</div>
-        </div>
-        <div class="hs">
-          <div class="n">~37,960</div>
-          <div class="l">Combined DALYs/yr</div>
-          <div class="hs-sub">Primary estimates &middot; frontier LE 89.1 yrs</div>
-        </div>
-        <div class="hs">
-          <div class="n">3</div>
-          <div class="l">In pipeline</div>
-          <div class="hs-sub">Gratiot &middot; Mecosta &middot; Washtenaw</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div><!-- end .hero -->
-
-<!-- ══ ABOUT STRIP ══ -->
+<!-- ══ INTRO ══ -->
 <div class="about-strip">
   <div class="about-strip-inner">
     <div class="about-icon">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        <circle cx="11" cy="8" r="4"/><path d="M4 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/>
       </svg>
     </div>
     <div class="about-text">
-      <strong>About this project</strong>
-      <p>This series quantifies disease burden for rural Michigan counties using disability-adjusted life years (DALYs) — a metric that combines premature mortality and years lived with disability into a single, actionable measure. Data sources: CDC PLACES 2023, CDC WONDER 2020–22 mortality files, and US Census Bureau ACS estimates. Disability weights adapted from IHME GBD 2021. Analyses are designed for county health needs assessments, grant applications, and public health planning — not as formal GBD estimates or peer-reviewed epidemiological studies.</p>
+      <strong>Public-Health Research</strong>
+      <h1 style="font-family:var(--font-serif);font-size:21px;font-weight:600;color:var(--text);letter-spacing:-.01em;line-height:1.25;margin:2px 0 8px;">County health-burden dashboards for rural Michigan</h1>
+      <p>I'm Sergey Soshnikov, MD PhD — a public-health researcher building interactive, county-level disease-burden dashboards. Each completed county below opens a full DALY analysis with an economic-impact model and methods, all built on open CDC and US Census data. New counties are added over time.</p>
     </div>
   </div>
 </div>
@@ -708,7 +588,7 @@ footer{background:var(--navy);padding:22px 32px;}
   </div>
   <div id="mi-map" style="height:300px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
   <p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map &rarr;</a></p>
-  <p style="font-size:11px;color:var(--muted);margin-top:5px;">Contact: <a href="mailto:contact@lakeslinked.com" style="color:var(--muted);font-weight:500;">contact@lakeslinked.com</a></p>
+  <p style="font-size:11px;color:var(--muted);margin-top:5px;">Contact: <a href="mailto:contact@lakeslinked.com?subject=Inquiry%20%E2%80%94%20Lakes%20Linked%20county%20health%20dashboards&body=Hello%20Dr.%20Soshnikov%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20your%20county%20health-burden%20dashboards.%0D%0A%0D%0AWhat%20I%27m%20interested%20in%20%28keep%20what%20applies%2C%20delete%20the%20rest%29%3A%0D%0A%20%20-%20DALY%20%2F%20health-burden%20analysis%20for%20a%20specific%20county%3A%20____________%0D%0A%20%20-%20Economic-impact%20%28ROI%29%20model%20for%20a%20county%0D%0A%20%20-%20Methodology%20or%20data%20questions%0D%0A%20%20-%20Collaboration%20or%20research%20partnership%0D%0A%20%20-%20Consulting%20%2F%20commissioned%20analysis%0D%0A%20%20-%20Other%3A%20____________%0D%0A%0D%0AA%20bit%20about%20me%3A%0D%0A%20%20-%20Name%3A%20%0D%0A%20%20-%20Organization%20%2F%20role%3A%20%0D%0A%20%20-%20County%20or%20region%20of%20interest%3A%20%0D%0A%20%20-%20Timeline%3A%20%0D%0A%0D%0AThank%20you%2C%0D%0A" style="color:var(--muted);font-weight:500;">contact@lakeslinked.com</a></p>
   <script>
   (function(){
     if (typeof L === 'undefined') return;
@@ -906,8 +786,8 @@ footer{background:var(--navy);padding:22px 32px;}
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <span>Lakes Linked Care &middot; Dr. Sergey Soshnikov, MD PhD &middot; 2026</span>
-      <span><a href="mailto:contact@lakeslinked.com">contact@lakeslinked.com</a> &middot; Mount Pleasant, Michigan</span>
+      <span>Lakes Linked &middot; Dr. Sergey Soshnikov, MD PhD &middot; 2026</span>
+      <span><a href="mailto:contact@lakeslinked.com?subject=Inquiry%20%E2%80%94%20Lakes%20Linked%20county%20health%20dashboards&body=Hello%20Dr.%20Soshnikov%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20your%20county%20health-burden%20dashboards.%0D%0A%0D%0AWhat%20I%27m%20interested%20in%20%28keep%20what%20applies%2C%20delete%20the%20rest%29%3A%0D%0A%20%20-%20DALY%20%2F%20health-burden%20analysis%20for%20a%20specific%20county%3A%20____________%0D%0A%20%20-%20Economic-impact%20%28ROI%29%20model%20for%20a%20county%0D%0A%20%20-%20Methodology%20or%20data%20questions%0D%0A%20%20-%20Collaboration%20or%20research%20partnership%0D%0A%20%20-%20Consulting%20%2F%20commissioned%20analysis%0D%0A%20%20-%20Other%3A%20____________%0D%0A%0D%0AA%20bit%20about%20me%3A%0D%0A%20%20-%20Name%3A%20%0D%0A%20%20-%20Organization%20%2F%20role%3A%20%0D%0A%20%20-%20County%20or%20region%20of%20interest%3A%20%0D%0A%20%20-%20Timeline%3A%20%0D%0A%0D%0AThank%20you%2C%0D%0A">contact@lakeslinked.com</a> &middot; Mount Pleasant, Michigan</span>
     </div>
     <div class="footer-sources">
       <span class="footer-sources-label">Data sources</span>
