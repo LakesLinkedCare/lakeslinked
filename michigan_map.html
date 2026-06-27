@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michigan County Health Atlas — Coverage | Lakes Linked Care</title>
-<meta name="description" content="Coverage map of Lakes Linked Care county health burden analyses across Michigan's 83 counties.">
-<meta property="og:title" content="Michigan County Health Atlas — Coverage | Lakes Linked Care">
+<title>Michigan County Health Atlas — Coverage | Lakes Linked</title>
+<meta name="description" content="Coverage map of Lakes Linked county health burden analyses across Michigan's 83 counties.">
+<meta property="og:title" content="Michigan County Health Atlas — Coverage | Lakes Linked">
 <meta property="og:url" content="https://lakeslinked.com/michigan_map.html">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
@@ -49,13 +49,14 @@ footer{border-top:1px solid var(--border);padding:18px 24px;font-size:11.5px;col
 <body>
 
 <nav class="sitenav">
-  <a class="brand" href="index.html">Lakes Linked Care</a>
+  <a class="brand" href="index.html">Lakes Linked</a>
   <div class="links">
     <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
     <div class="county-group">
-      <a class="navlink" href="https://lakeslinkedcare.github.io/isabella_county/isabella.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</a>
-      <a class="navlink" href="https://lakeslinkedcare.github.io/isabella_county/clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
-      <a class="navlink" href="https://lakeslinkedcare.github.io/isabella_county/midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
+      <a class="navlink" href="isabella.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</a>
+      <a class="navlink" href="clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
+      <a class="navlink" href="midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
+      <a class="navlink" href="gratiot.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</a>
     </div>
     <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
     <a class="navlink active" href="michigan_map.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Map</a>
@@ -67,7 +68,7 @@ footer{border-top:1px solid var(--border);padding:18px 24px;font-size:11.5px;col
   <div class="head">
     <span class="county-chip"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>State of Michigan · 83 counties</span>
     <h1>Michigan County Health Atlas — coverage</h1>
-    <p class="sub"><span class="counter" id="counter">3 of 83 counties analyzed</span> · Click a completed county to open its burden dashboard. Counties not yet analyzed are shown in grey and are available on request.</p>
+    <p class="sub"><span class="counter" id="counter">4 of 83 counties analyzed</span> · Click a completed county to open its burden dashboard. Counties not yet analyzed are shown in grey and are available on request.</p>
     <div class="legend">
       <span><span class="sw" style="background:#1a56db"></span>Analyzed (click to open)</span>
       <span><span class="sw" style="background:#bfdbfe"></span>In pipeline</span>
@@ -82,17 +83,17 @@ footer{border-top:1px solid var(--border);padding:18px 24px;font-size:11.5px;col
   <p class="note">Boundaries: US Census cartographic counties (loaded at runtime). For production, a Michigan-only boundary file would be hosted in-repo. Burden figures link to each county's interactive dashboard.</p>
 </div>
 
-<footer>Lakes Linked Care · Michigan rural health burden analysis · Sergey Soshnikov, MD PhD · 2026</footer>
+<footer>Lakes Linked · Michigan rural health burden analysis · Sergey Soshnikov, MD PhD · 2026</footer>
 
 <script>
 // ── County status registries (keyed by 5-digit FIPS) ──────────────────────────
 const DONE = {
-  '26073': { name:'Isabella', url:'https://lakeslinkedcare.github.io/isabella_county/isabella.html', dalys:'15,430', pop:'64,565' },
-  '26035': { name:'Clare',    url:'https://lakeslinkedcare.github.io/isabella_county/clare.html',    dalys:'8,198',  pop:'30,013' },
-  '26111': { name:'Midland',  url:'https://lakeslinkedcare.github.io/isabella_county/midland.html',  dalys:'14,335', pop:'82,884' },
+  '26073': { name:'Isabella', url:'isabella.html', dalys:'15,140', pop:'64,565' },
+  '26035': { name:'Clare',    url:'clare.html',    dalys:'8,198',  pop:'30,013' },
+  '26111': { name:'Midland',  url:'midland.html',  dalys:'14,335', pop:'82,884' },
+  '26057': { name:'Gratiot',  url:'gratiot.html',  dalys:'7,533',  pop:'41,368' },
 };
 const PIPELINE = {
-  '26057': 'Gratiot · Q3 2026',
   '26107': 'Mecosta · Q4 2026',
   '26161': 'Washtenaw · Q4 2026',
 };

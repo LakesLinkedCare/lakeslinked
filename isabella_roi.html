@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Technology ROI - Isabella County</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --navy:#0f1f3d;--blue:#1a56db;--teal:#0d9488;--red:#dc2626;
+  --amber:#d97706;--purple:#7c3aed;--green:#059669;--slate:#64748b;
+  --bg:#f8fafc;--surface:#fff;--border:#e2e8f0;--muted:#64748b;
+  --radius:10px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#0f172a;line-height:1.5;}
+
+/* NAV */
+.sitenav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
+.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;}
+.sitenav .links{display:flex;gap:4px;}
+.sitenav a.navlink{color:rgba(255,255,255,.7);font-size:12.5px;padding:6px 12px;border-radius:6px;text-decoration:none;transition:all .15s;}
+.sitenav a.navlink:hover,.sitenav a.navlink.active{background:rgba(255,255,255,.12);color:#fff;}
+.nico{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;margin-right:5px;flex-shrink:0;}
+.county-group{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:3px;}
+.county-group .navlink{border-radius:5px;}
+
+/* HERO */
+.hero{background:linear-gradient(130deg,var(--navy) 0%,#1e3a5f 60%,#0d6c5a 100%);padding:36px 28px 30px;}
+.hero-inner{max-width:1100px;margin:auto;}
+.hero h1{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:4px;}
+.hero .sub{color:rgba(255,255,255,.6);font-size:13px;margin-bottom:20px;}
+.hero-stats{display:flex;flex-wrap:wrap;gap:20px;}
+.hs .num{font-size:30px;font-weight:800;color:#fff;letter-spacing:-.02em;}
+.hs .lbl{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+.hs .cmp{font-size:12px;color:#34d399;margin-top:3px;}
+.hdiv{width:1px;background:rgba(255,255,255,.12);align-self:stretch;}
+
+/* CONTROLS */
+.ctrl-bar{background:#fff;border-bottom:1px solid var(--border);padding:14px 28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;}
+.ctrl-bar label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:4px;}
+.ctrl-bar select{background:var(--bg);border:1.5px solid var(--border);border-radius:6px;padding:5px 10px;font-size:12px;font-weight:600;cursor:pointer;color:#374151;}
+.ctrl-note{font-size:11.5px;color:var(--muted);flex:1;min-width:200px;}
+
+/* LAYOUT */
+.page{max-width:1100px;margin:0 auto;padding:24px 20px 60px;}
+.card{background:var(--surface);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+.card h3{font-size:14px;font-weight:700;margin-bottom:3px;}
+.card .sub{font-size:11.5px;color:var(--muted);margin-bottom:14px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+@media(max-width:820px){.g2{grid-template-columns:1fr;}}
+
+/* SUMMARY STRIP */
+.summary-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px;}
+.scard{background:var(--surface);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border-top:3px solid var(--accent,var(--green));}
+.scard .num{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:-.02em;}
+.scard .lbl{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.4;}
+.scard .delta{font-size:11px;margin-top:4px;color:var(--green);font-weight:700;}
+
+/* INTERVENTION CARDS */
+.int-grid{display:grid;gap:16px;margin-bottom:24px;}
+.int-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+.int-head{display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);}
+.int-icon{font-size:22px;}
+.int-title h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.int-title p{font-size:11.5px;color:var(--muted);}
+.int-roi-badge{background:var(--accent-bg,#f0fdf4);border:1.5px solid var(--accent,var(--green));border-radius:8px;padding:6px 12px;text-align:center;}
+.int-roi-badge .roi-num{font-size:20px;font-weight:800;color:var(--accent,var(--green));}
+.int-roi-badge .roi-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+.int-body{padding:14px 18px;}
+.int-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+@media(max-width:700px){.int-metrics{grid-template-columns:1fr 1fr;}}
+.metric{background:var(--bg);border-radius:6px;padding:10px 12px;}
+.metric .mv{font-size:16px;font-weight:800;color:#0f172a;letter-spacing:-.01em;}
+.metric .ml{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.3;}
+.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.slider-row label{font-size:12px;color:var(--muted);white-space:nowrap;min-width:140px;}
+.slider-row input[type=range]{flex:1;accent-color:var(--navy);}
+.slider-row .sval{font-size:12px;font-weight:700;min-width:40px;text-align:right;}
+.source-note{font-size:11px;color:#94a3b8;line-height:1.5;margin-top:8px;border-top:1px solid var(--border);padding-top:8px;}
+.source-note a{color:var(--blue);}
+
+/* TABLE */
+.roi-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+.roi-table thead th{background:var(--navy);color:rgba(255,255,255,.9);padding:9px 11px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.03em;}
+.roi-table tbody tr{border-bottom:1px solid var(--border);}
+.roi-table tbody tr:hover{background:var(--bg);}
+.roi-table tbody tr.total{background:#f0f4f8;font-weight:700;border-top:2px solid var(--navy);}
+.roi-table td{padding:9px 11px;vertical-align:middle;}
+.roi-bar-wrap{background:#e2e8f0;border-radius:4px;height:8px;width:100%;overflow:hidden;}
+.roi-bar{height:100%;border-radius:4px;background:var(--green);transition:width .4s;}
+
+/* METHODOLOGY NOTE */
+.meth-box{background:#f0f7ff;border:1px solid #bfdbfe;border-left:4px solid var(--blue);border-radius:0 6px 6px 0;padding:14px 18px;font-size:12.5px;color:#1e3a5f;line-height:1.7;margin-bottom:24px;}
+.meth-box strong{font-weight:700;}
+
+footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="sitenav">
+  <a class="brand" href="index.html">Lakes Linked</a>
+  <div class="links">
+    <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
+    <div class="county-group">
+      <a class="navlink" href="isabella.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</a>
+      <a class="navlink" href="clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
+      <a class="navlink" href="midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
+      <a class="navlink" href="gratiot.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</a>
+    </div>
+    <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+    <a class="navlink" href="index.html"><svg class="nico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Portal</a>
+    <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+    <a class="navlink active" href="isabella_roi.html"><svg class="nico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"/></svg>Economic Impact</a>
+    <a class="navlink" href="isabella_interventions.html"><svg class="nico" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M7.8 8.4 10.4 15.4M16.2 8.4 13.6 15.4M8 7h8"/></svg>Interventions</a>
+    <a class="navlink" href="isabella_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Methods</a>
+  </div>
+</nav>
+<div style="max-width:1100px;margin:14px auto 0;padding:10px 16px;background:#f0f7ff;border:1px solid #bfdbfe;border-left:4px solid #1a56db;border-radius:0 8px 8px 0;font-size:12.5px;color:#1e3a5f;line-height:1.6;"><strong>Scope note:</strong> The AI &amp; digital-health interventions shown here are illustrative <strong>“low-hanging fruit”</strong> — a small, high-feasibility/high-impact sample chosen to demonstrate planning-grade ROI. They are not an exhaustive or prescriptive list; many other interventions may apply.</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Return on Investment - AI & Digital Health Interventions</h1>
+    <p class="sub">Evidence-based ROI estimates for Isabella County, Michigan · Based on peer-reviewed meta-analyses · Soshnikov · 2026</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="num" id="h-roi">2.58</div><div class="lbl">Portfolio ROI ($ per $1)</div><div class="cmp" id="h-net">Net benefit ~$9.6M/year</div></div>
+      <div class="hdiv"></div>
+      <div class="hs"><div class="num" id="h-inv">$6.1M</div><div class="lbl">Total investment/year</div><div class="cmp">All 6 interventions at default reach</div></div>
+      <div class="hdiv"></div>
+      <div class="hs"><div class="num" id="h-sav">$15.7M</div><div class="lbl">Total estimated savings/year</div><div class="cmp">Human-capital value of DALYs averted</div></div>
+      <div class="hdiv"></div>
+      <div class="hs"><div class="num">15,140</div><div class="lbl">DALYs/year current burden</div><div class="cmp">→ <a href="isabella.html" style="color:#34d399">See full burden dashboard</a></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Controls -->
+<div class="ctrl-bar">
+  <div>
+    <label>Perspective</label>
+    <select id="perspective" onchange="updateAll()">
+      <option value="healthcare">Healthcare system (direct medical costs)</option>
+      <option value="societal" selected>Societal (full economic burden)</option>
+      <option value="medicaid">Medicaid/payer only</option>
+    </select>
+  </div>
+  <div>
+    <label>Time horizon</label>
+    <select id="horizon" onchange="updateAll()">
+      <option value="1">1 year</option>
+      <option value="5" selected>5 years</option>
+      <option value="10">10 years</option>
+      <option value="20">20 years</option>
+    </select>
+  </div>
+  <p class="ctrl-note" id="ctrl-note">Societal perspective includes healthcare costs, lost productivity, and criminal justice savings. Adjust reach sliders on each intervention below.</p>
+</div>
+
+<div class="page">
+
+  <!-- Summary strip -->
+  <div class="summary-strip">
+    <div class="scard" style="--accent:var(--green)">
+      <div class="num" id="s-roi">$2.58</div>
+      <div class="lbl">Return per $1 invested (portfolio)</div>
+      <div class="delta">▲ Net benefit per year</div>
+    </div>
+    <div class="scard" style="--accent:var(--blue)">
+      <div class="num" id="s-inv">$6.1M</div>
+      <div class="lbl">Total annual investment required</div>
+      <div class="delta">All 6 programs combined</div>
+    </div>
+    <div class="scard" style="--accent:var(--teal)">
+      <div class="num" id="s-sav">$15.7M</div>
+      <div class="lbl">Estimated annual savings</div>
+      <div class="delta">5-yr net benefit: <span id="s-5yr">$48M</span></div>
+    </div>
+    <div class="scard" style="--accent:var(--purple)">
+      <div class="num" id="s-daly">~254</div>
+      <div class="lbl">Estimated DALYs averted/year</div>
+      <div class="delta">~1.7% of primary 15,140 burden</div>
+    </div>
+  </div>
+
+  <!-- Methodology note -->
+  <div class="meth-box">
+    <strong>Methodology (June 2026 v5.0 update).</strong> ROI ratios are recalculated from Cochrane and peer-reviewed meta-analyses (Reilly 2024 for MH; Perry 2025 for MAT; Whittaker 2019 for tobacco; Agarwal 2025 for BP; Freeman 2021 for cancer screening; Jiang 2026 for diabetes). Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Estimates apply to Isabella County population subgroups derived from CDC PLACES 2024; SUD and CVD prevalence are derived, and several mortality inputs are rural-adjusted proxies. MH and cancer screening ROI are below 2:1, reflecting limitations of cited evidence. All figures ±30–50% uncertainty - directional planning estimates only, not audited projections. Use sliders to model different reach scenarios.
+    <br><strong>Population base:</strong> 64,565 total / ~52,297 adults · Primary burden: 15,140 DALYs (frontier LE + MH remission-adj; 95% UI 14,032–16,206) · Planning sensitivity (MI LE 78.6 yrs): 10,288 DALYs · Monte Carlo n=10,000 · <a href="isabella_methods.html">Full methods →</a>
+  </div>
+
+  <!-- Charts -->
+  <div class="g2" style="margin-bottom:18px;">
+    <div class="card">
+      <h3>Investment vs. Savings by Intervention</h3>
+      <p class="sub">$ millions/year at current reach settings</p>
+      <canvas id="barChart" height="250"></canvas>
+    </div>
+    <div class="card">
+      <h3>ROI Ratio by Intervention</h3>
+      <p class="sub">$ saved per $1 invested · error bars show literature range</p>
+      <canvas id="roiChart" height="250"></canvas>
+    </div>
+  </div>
+
+  <!-- Intervention Cards -->
+  <div class="int-grid" id="int-grid"></div>
+
+  <!-- Summary Table -->
+  <div class="card" style="margin-bottom:24px;">
+    <h3>ROI Summary Table</h3>
+    <p class="sub">All interventions · <span id="tbl-horizon">5-year</span> cumulative · Current reach settings</p>
+    <div style="overflow-x:auto;">
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Intervention</th><th>Target pop.</th><th>Reach</th><th>Patients</th>
+            <th>Investment/yr</th><th>Savings/yr</th><th>ROI ratio</th><th>Net benefit/yr</th><th>Relative impact</th>
+          </tr>
+        </thead>
+        <tbody id="roi-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Grant framing section -->
+  <div class="card" style="margin-bottom:24px;">
+    <h3>💡 Grant Application Framing</h3>
+    <p class="sub">How to use this ROI analysis in funding applications</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" id="grant-grid">
+      <div style="background:var(--bg);border-radius:8px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">NIH / HRSA Significance Section</div>
+        <p style="font-size:12.5px;line-height:1.65;" id="grant-significance">Loading...</p>
+      </div>
+      <div style="background:var(--bg);border-radius:8px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">Board of Health / Commissioner Presentation</div>
+        <p style="font-size:12.5px;line-height:1.65;" id="grant-board">Loading...</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+
+<footer>
+  <span>ROI Analysis · Isabella County · June 2026 · Data: CDC PLACES 2024</span>
+  <span>Sergey Soshnikov, MD PhD · Public Health Researcher · <a href="isabella.html" style="color:inherit">← Back to Dashboard</a></span>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// DATA - Updated 2026 (CDC PLACES 2024 · CDC WONDER 2020-22 · Cochrane meta-analyses)
+// ROI recalculated: DALYs averted = target × 15% reach × meta-analysis effect fraction
+// Savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024)
+// ═══════════════════════════════════════════════════════
+const INTERVENTIONS = {
+  mh: {
+    name: 'Collaborative Care for Mental Health',
+    short: 'Mental Health',
+    icon: '🧠',
+    color: '#7c3aed',
+    accentBg: '#faf5ff',
+    condition: 'Mental health disorders (29.8% lifetime prev.; #4 burden, 1,672 DALYs remission-adj)',
+    mechanism: 'Telepsychiatry + collaborative care in primary care (SMI population - schizophrenia, bipolar)',
+    targetPop: 7792,
+    targetLabel: '~7,792 active MH patients (CDC PLACES × 0.50 remission)',
+    defaultReach: 20,
+    costPerPt: 800,
+    roiRatio: 0.6,
+    roiRange: [0.3, 1.0],
+    roiSource: 'Reilly 2024 (CD009531, PMID 38712709): no significant QoL benefit (SMD 0·03); borderline disability improvement (RR 1·38, low certainty, 1 RCT); SMI population only. ROI estimated from care coordination efficiencies, not clinical outcome improvement.',
+    roiUrl: 'https://pubmed.ncbi.nlm.nih.gov/38712709/',
+    savings_mechanism: 'Care coordination efficiencies; Reilly 2024 found no significant QoL or mental state improvement for SMI; ROI below 1:1',
+    dalys_averted_pct: 0.008,
+    perspective_adj: { healthcare: 0.6, societal: 1.0, medicaid: 0.7 },
+  },
+  sud: {
+    name: 'MAT Telehealth for Opioid Use Disorder',
+    short: 'MAT / SUD',
+    icon: '💊',
+    color: '#d97706',
+    accentBg: '#fff7ed',
+    condition: 'Substance use disorders (#3 burden, 2,836 DALYs · 37 deaths/yr at age 44)',
+    mechanism: 'OAT (buprenorphine) via telehealth primary care; delivery equivalence validated by Perry 2025',
+    targetPop: 3755,
+    targetLabel: '~3,755 SUD patients (CDC PLACES 2024)',
+    defaultReach: 15,
+    costPerPt: 3000,
+    roiRatio: 1.3,
+    roiRange: [0.8, 3.5],
+    roiSource: 'Perry 2025 (CD013672, PMID 40919724): primary care OAT equivalent to specialty care outcomes - validates telehealth delivery channel. Does not compare vs. no treatment; DALYs averted estimated from background OAT efficacy literature.',
+    roiUrl: 'https://pubmed.ncbi.nlm.nih.gov/40919724/',
+    savings_mechanism: 'Averted overdose deaths, reduced ER visits; telehealth delivery validated as equivalent to specialty care by Perry 2025',
+    dalys_averted_pct: 0.062,
+    perspective_adj: { healthcare: 0.3, societal: 1.0, medicaid: 0.45 },
+  },
+  tobacco: {
+    name: 'AI-Guided Tobacco Cessation',
+    short: 'Tobacco Cessation',
+    icon: '🚭',
+    color: '#059669',
+    accentBg: '#f0fdf4',
+    condition: 'COPD, cardiovascular disease, cancer (18.6% adult smoking rate)',
+    mechanism: 'Automated SMS-based cessation support (Whittaker 2019: RR 1·54 vs minimal support)',
+    targetPop: 9727,
+    targetLabel: '~9,727 adult smokers (18.6% × 52,297)',
+    defaultReach: 10,
+    costPerPt: 183,
+    roiRatio: 11.0,
+    roiRange: [6.0, 14.0],
+    roiSource: 'Whittaker 2019 (CD006611, PMID 31638271): RR 1·54 (95% CI 1·19–2·00) automated SMS vs minimal support; moderate certainty; 13 RCTs, 14,133 participants; ~3·2 percentage-point additional quit rate.',
+    roiUrl: 'https://pubmed.ncbi.nlm.nih.gov/31638271/',
+    savings_mechanism: 'Reduced cardiovascular hospitalizations, COPD exacerbations, averted cancer treatment costs; low cost per participant drives high ROI',
+    dalys_averted_pct: 0.033,
+    perspective_adj: { healthcare: 0.8, societal: 1.0, medicaid: 0.9 },
+  },
+  bp: {
+    name: 'Remote BP Monitoring + Telehealth Hypertension Control',
+    short: 'BP Monitoring',
+    icon: '❤️',
+    color: '#1a56db',
+    accentBg: '#eff6ff',
+    condition: 'Ischemic heart disease, stroke (32.1% hypertension · CVD+Stroke 4,336 DALYs)',
+    mechanism: 'Digital BP tracking + clinical decision support + targeted client communication (Agarwal 2025)',
+    targetPop: 16768,
+    targetLabel: '~16,768 hypertensive adults (32.1% × 52,297)',
+    defaultReach: 10,
+    costPerPt: 500,
+    roiRatio: 6.4,
+    roiRange: [3.0, 9.0],
+    roiSource: 'Agarwal 2025 (CD014652): SBP MD −2·80 mmHg (TCC, stroke patients, 1 RCT, n=1,226); CV events OR 0·58 (Tracking+CDSS+TCC, high-risk adults). Most studies showed small or no differences; estimates rest on single RCTs.',
+    roiUrl: 'https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD014652',
+    savings_mechanism: 'Prevented strokes (~$100K/event), reduced cardiovascular event rates (~42% reduction OR 0·58); modest SBP reduction (−2·80 mmHg)',
+    dalys_averted_pct: 0.052,
+    perspective_adj: { healthcare: 0.9, societal: 1.0, medicaid: 0.8 },
+  },
+  cancer: {
+    name: 'AI-Assisted Cancer Screening Support',
+    short: 'Cancer Screening',
+    icon: '🔬',
+    color: '#dc2626',
+    accentBg: '#fef2f2',
+    condition: 'Cancer, all sites (#1 burden, 3,996 DALYs · 130 deaths/yr at age 67)',
+    mechanism: 'AI triage for mammography/lung CT screening - workload reduction, not incremental detection',
+    targetPop: 5000,
+    targetLabel: '5,000 high-risk patients',
+    defaultReach: 30,
+    costPerPt: 200,
+    roiRatio: 1.1,
+    roiRange: [0.7, 1.5],
+    roiSource: 'Freeman 2021 (BMJ n1872, PMID 34470740): 94% of AI systems less accurate than a single radiologist for mammography; triage excludes 45–53% low-risk women but misses 4–10% of cancers. No incremental cancer detection benefit demonstrated. ROI reflects workload efficiency only.',
+    roiUrl: 'https://pubmed.ncbi.nlm.nih.gov/34470740/',
+    savings_mechanism: 'Radiologist workload reduction (45–53% low-risk triage) only; no incremental early detection benefit per Freeman 2021',
+    dalys_averted_pct: 0.012,
+    perspective_adj: { healthcare: 1.0, societal: 1.0, medicaid: 0.7 },
+  },
+  diabetes: {
+    name: 'Remote Diabetes Monitoring',
+    short: 'Diabetes Monitoring',
+    icon: '📱',
+    color: '#0d9488',
+    accentBg: '#f0fdfa',
+    condition: 'Diabetes (11.6% adult prevalence · 607 DALYs/year)',
+    mechanism: 'Remote glucose monitoring + AI coaching; HbA1c reduction per Jiang 2026 (−0·38%)',
+    targetPop: 6066,
+    targetLabel: '~6,066 diabetic adults (11.6% × 52,297)',
+    defaultReach: 10,
+    costPerPt: 922,
+    roiRatio: 7.7,
+    roiRange: [4.0, 12.0],
+    roiSource: 'Jiang 2026 (PMID 41707176): HbA1c MD −0·38% (95% CI −0·49 to −0·27) vs usual care; 58 RCTs, 13,942 participants; high heterogeneity (I²=96%). Effect size revised from earlier −0·5% assumption.',
+    roiUrl: 'https://pubmed.ncbi.nlm.nih.gov/41707176/',
+    savings_mechanism: 'Reduced diabetes complications (cardiovascular, renal, neuropathy), averted hospitalizations from better glycaemic control',
+    dalys_averted_pct: 0.115,
+    perspective_adj: { healthcare: 0.7, societal: 1.0, medicaid: 0.8 },
+  },
+};
+
+const PERSPECTIVE_LABELS = {
+  healthcare: 'Healthcare system costs only (direct medical)',
+  societal: 'Full societal perspective (medical + productivity + criminal justice)',
+  medicaid: 'Medicaid/payer perspective only',
+};
+
+// State
+const state = { reach: {} };
+Object.keys(INTERVENTIONS).forEach(k => state.reach[k] = INTERVENTIONS[k].defaultReach);
+
+// Calculations
+function calc(k) {
+  const d = INTERVENTIONS[k];
+  const persp = document.getElementById('perspective')?.value || 'societal';
+  const adj = d.perspective_adj[persp];
+  const n = Math.round(d.targetPop * state.reach[k] / 100);
+  const investment = n * d.costPerPt;
+  const roi = d.roiRatio * adj;
+  const savings = investment * roi;
+  const net = savings - investment;
+  return { n, investment, roi, savings, net };
+}
+
+function totalCalc() {
+  const keys = Object.keys(INTERVENTIONS);
+  let inv=0, sav=0;
+  keys.forEach(k=>{ const c=calc(k); inv+=c.investment; sav+=c.savings; });
+  return { inv, sav, roi: inv>0 ? sav/inv : 0, net: sav-inv };
+}
+
+function fmtM(v) {
+  if (Math.abs(v)>=1e9) return `$${(v/1e9).toFixed(1)}B`;
+  if (Math.abs(v)>=1e6) return `$${(v/1e6).toFixed(1)}M`;
+  return `$${Math.round(v/1000)}K`;
+}
+
+// Build intervention cards
+function buildCards() {
+  const grid = document.getElementById('int-grid');
+  grid.innerHTML = '';
+  Object.entries(INTERVENTIONS).forEach(([k,d])=>{
+    const c = calc(k);
+    const div = document.createElement('div');
+    div.className = 'int-card';
+    div.id = 'card-'+k;
+    div.innerHTML = `
+      <div class="int-head" style="background:${d.accentBg}">
+        <span class="int-icon">${d.icon}</span>
+        <div class="int-title">
+          <h4>${d.name}</h4>
+          <p>${d.condition} · ${d.mechanism}</p>
+        </div>
+        <div class="int-roi-badge" style="--accent:${d.color};--accent-bg:${d.accentBg}">
+          <div class="roi-num" id="roi-num-${k}">${d.roiRatio.toFixed(1)}:1</div>
+          <div class="roi-lbl">$ per $1</div>
+        </div>
+        <div class="int-roi-badge" style="--accent:var(--navy);--accent-bg:var(--bg)">
+          <div class="roi-num" style="color:var(--navy);font-size:16px;" id="roi-net-${k}">${fmtM(c.net)}</div>
+          <div class="roi-lbl">net/yr</div>
+        </div>
+      </div>
+      <div class="int-body">
+        <div class="int-metrics">
+          <div class="metric"><div class="mv" id="m-n-${k}">${c.n.toLocaleString()}</div><div class="ml">Patients reached</div></div>
+          <div class="metric"><div class="mv" id="m-inv-${k}">${fmtM(c.investment)}</div><div class="ml">Investment/year</div></div>
+          <div class="metric"><div class="mv" id="m-sav-${k}" style="color:var(--green)">${fmtM(c.savings)}</div><div class="ml">Est. savings/year</div></div>
+          <div class="metric"><div class="mv" id="m-net-${k}" style="color:var(--green)">${fmtM(c.net)}</div><div class="ml">Net benefit/year</div></div>
+        </div>
+        <div class="slider-row">
+          <label>Program reach (% of ${d.targetLabel})</label>
+          <input type="range" min="5" max="80" step="5" value="${state.reach[k]}"
+            oninput="setReach('${k}', this.value)">
+          <span class="sval" id="sv-${k}">${state.reach[k]}%</span>
+        </div>
+        <div class="source-note">
+          <strong>Evidence base:</strong> ${d.roiSource} ·
+          <a href="${d.roiUrl}" target="_blank">Source →</a><br>
+          <strong>Savings mechanism:</strong> ${d.savings_mechanism} ·
+          <strong>Range from literature:</strong> ${d.roiRange[0].toFixed(1)}:1 – ${d.roiRange[1].toFixed(1)}:1
+        </div>
+      </div>`;
+    grid.appendChild(div);
+  });
+}
+
+function setReach(k, val) {
+  state.reach[k] = parseInt(val);
+  document.getElementById('sv-'+k).textContent = val+'%';
+  updateMetrics(k);
+  updateSummary();
+  updateCharts();
+  updateTable();
+  updateGrant();
+}
+
+function updateMetrics(k) {
+  const c = calc(k);
+  document.getElementById('m-n-'+k).textContent = c.n.toLocaleString();
+  document.getElementById('m-inv-'+k).textContent = fmtM(c.investment);
+  document.getElementById('m-sav-'+k).textContent = fmtM(c.savings);
+  document.getElementById('m-net-'+k).textContent = fmtM(c.net);
+  document.getElementById('roi-net-'+k).textContent = fmtM(c.net);
+  const persp = document.getElementById('perspective')?.value||'societal';
+  const adj = INTERVENTIONS[k].perspective_adj[persp];
+  const roi = INTERVENTIONS[k].roiRatio * adj;
+  document.getElementById('roi-num-'+k).textContent = roi.toFixed(1)+':1';
+}
+
+function updateSummary() {
+  const t = totalCalc();
+  const horizon = parseInt(document.getElementById('horizon')?.value||5);
+  document.getElementById('s-roi').textContent = '$'+t.roi.toFixed(2);
+  document.getElementById('s-inv').textContent = fmtM(t.inv);
+  document.getElementById('s-sav').textContent = fmtM(t.sav);
+  document.getElementById('s-5yr').textContent = fmtM(t.net * horizon);
+  document.getElementById('h-roi').textContent = t.roi.toFixed(2);
+  document.getElementById('h-inv').textContent = fmtM(t.inv);
+  document.getElementById('h-sav').textContent = fmtM(t.sav);
+  document.getElementById('h-net').textContent = `Net benefit ${fmtM(t.net)}/year`;
+  document.getElementById('tbl-horizon').textContent = horizon+'-year';
+}
+
+function updateTable() {
+  const tbody = document.getElementById('roi-tbody');
+  const horizon = parseInt(document.getElementById('horizon')?.value||5);
+  const maxSav = Math.max(...Object.keys(INTERVENTIONS).map(k=>calc(k).savings));
+  const t = totalCalc();
+  let rows = '';
+  Object.entries(INTERVENTIONS).forEach(([k,d])=>{
+    const c = calc(k);
+    const pct = maxSav>0 ? (c.savings/maxSav)*100 : 0;
+    rows += `<tr>
+      <td><span style="color:${d.color}">●</span> ${d.short}</td>
+      <td>${d.targetLabel}</td>
+      <td>${state.reach[k]}%</td>
+      <td>${c.n.toLocaleString()}</td>
+      <td>${fmtM(c.investment)}</td>
+      <td style="color:var(--green)">${fmtM(c.savings)}</td>
+      <td><strong style="color:${c.roi>5?'var(--green)':c.roi>2?'var(--amber)':'var(--slate)'}">${c.roi.toFixed(2)}:1</strong></td>
+      <td style="color:var(--green);font-weight:600">${fmtM(c.net*horizon)}</td>
+      <td><div class="roi-bar-wrap"><div class="roi-bar" style="width:${pct}%;background:${d.color}"></div></div></td>
+    </tr>`;
+  });
+  rows += `<tr class="total">
+    <td>PORTFOLIO TOTAL</td><td>-</td><td>-</td><td>-</td>
+    <td>${fmtM(t.inv)}</td>
+    <td style="color:var(--green)">${fmtM(t.sav)}</td>
+    <td><strong>${t.roi.toFixed(2)}:1</strong></td>
+    <td style="color:var(--green)">${fmtM(t.net*horizon)} (${horizon}-yr)</td><td>-</td>
+  </tr>`;
+  tbody.innerHTML = rows;
+}
+
+function updateGrant() {
+  const t = totalCalc();
+  const horizon = parseInt(document.getElementById('horizon')?.value||5);
+  document.getElementById('grant-significance').innerHTML =
+    `Isabella County, Michigan faces a primary burden of 15,140 estimated DALYs annually (95% UI 14,032–16,206; frontier LE + MH remission-adj; CDC PLACES 2024, CDC WONDER 2020–22, Monte Carlo n=10,000). Cancer is the leading burden (#1, 3,996 DALYs), followed by CVD (#2, 3,289), SUD (#3, 2,836), and mental health (#4, 1,672 DALYs remission-adj). Mental health access (176,938:1 psychiatrist ratio) remains the dominant structural gap despite the remission adjustment. Evidence strength varies by intervention; current meta-analysis-based ROI ratios range from ${Math.min(...Object.values(INTERVENTIONS).map(d=>d.roiRatio)).toFixed(1)}:1 to ${Math.max(...Object.values(INTERVENTIONS).map(d=>d.roiRatio)).toFixed(0)}:1. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in savings - a ${t.roi.toFixed(1)}:1 return and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Several inputs rely on modeled prevalence or rural-adjusted mortality proxies and should be treated as planning estimates.`;
+  document.getElementById('grant-board').innerHTML =
+    `For every dollar invested in this package of six AI-enhanced health programs, Isabella County would see an estimated <strong>${t.roi.toFixed(1)} dollars in return</strong> under conservative meta-analysis-based assumptions - mainly through tobacco cessation, blood-pressure control, diabetes monitoring, and selected access improvements. The total annual investment of ${fmtM(t.inv)} would generate ${fmtM(t.net)} in annual net benefit and ${fmtM(t.net*horizon)} over ${horizon} years. Mental-health collaborative care and AI cancer screening are retained as access/workflow strategies, but their ROI should be interpreted cautiously because the cited evidence does not support strong incremental-effect claims.`;
+}
+
+// Charts
+let bc, rc;
+function initCharts() {
+  bc = new Chart(document.getElementById('barChart').getContext('2d'),{
+    type:'bar', data:{labels:[],datasets:[
+      {label:'Investment',data:[],backgroundColor:'#94a3b8',borderRadius:3},
+      {label:'Savings',data:[],backgroundColor:'#059669',borderRadius:3}
+    ]},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}}},
+    scales:{x:{ticks:{font:{size:10}}},y:{grid:{color:'#f1f5f9'},ticks:{callback:v=>'$'+v.toLocaleString()+'K',font:{size:11}}}}}
+  });
+  rc = new Chart(document.getElementById('roiChart').getContext('2d'),{
+    type:'bar', data:{labels:[],datasets:[
+      {label:'ROI ratio ($ per $1)',data:[],backgroundColor:[],borderRadius:5}
+    ]},
+    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' $'+c.raw.toFixed(2)+' per $1'}}},
+    scales:{x:{ticks:{font:{size:10}}},y:{grid:{color:'#f1f5f9'},title:{display:true,text:'$ saved per $1 invested',font:{size:11}}}}}
+  });
+  updateCharts();
+}
+function updateCharts() {
+  const keys = Object.keys(INTERVENTIONS);
+  const labels = keys.map(k=>INTERVENTIONS[k].short);
+  const invs = keys.map(k=>Math.round(calc(k).investment/1000));
+  const savs = keys.map(k=>Math.round(calc(k).savings/1000));
+  const rois = keys.map(k=>calc(k).roi);
+  const colors = keys.map(k=>INTERVENTIONS[k].color);
+  bc.data.labels=labels; bc.data.datasets[0].data=invs; bc.data.datasets[1].data=savs; bc.update('none');
+  rc.data.labels=labels; rc.data.datasets[0].data=rois; rc.data.datasets[0].backgroundColor=colors; rc.update('none');
+}
+
+function updateAll() {
+  const persp = document.getElementById('perspective')?.value||'societal';
+  document.getElementById('ctrl-note').textContent = PERSPECTIVE_LABELS[persp] + '. Adjust reach % sliders below.';
+  Object.keys(INTERVENTIONS).forEach(k=>updateMetrics(k));
+  updateSummary(); updateCharts(); updateTable(); updateGrant();
+}
+
+document.addEventListener('DOMContentLoaded',()=>{ buildCards(); initCharts(); updateSummary(); updateTable(); updateGrant(); });
+</script>
+</body>
+</html>
