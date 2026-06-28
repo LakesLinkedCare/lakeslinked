@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Literature · AI for Public Health — 28 Jun 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f2ec;--surface:#fffdf8;--ink:#192322;--ink-soft:#4d5a58;--ink-faint:#8b9794;
+    --line:#e4e0d6;--accent:#2f5fd0;--accent-soft:#eaf0fd;--ok:#0e8f7e;--maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .shell{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+
+  /* series switcher */
+  .series{position:sticky;top:0;z-index:50;background:rgba(244,242,236,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .series .shell{display:flex;align-items:center;gap:14px;height:54px}
+  .series .brand{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:-.01em}
+  .series nav{margin-left:auto;display:flex;gap:6px}
+  .series a{font-size:13px;color:var(--ink-soft);padding:7px 13px;border-radius:100px;border:1px solid transparent;transition:.2s;font-weight:500}
+  .series a:hover{background:var(--surface);border-color:var(--line)}
+  .series a.on{background:var(--accent);color:#fff}
+  .series a .n{font-family:'JetBrains Mono',monospace;opacity:.6;margin-right:5px;font-size:11px}
+  .series a.on .n{opacity:.8}
+
+  /* layout */
+  .grid{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:46px 0 90px}
+  aside{position:sticky;top:78px;align-self:start}
+  .toc-h{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+  .toc a{display:block;font-size:14px;color:var(--ink-soft);padding:7px 0 7px 15px;border-left:2px solid var(--line);transition:.2s}
+  .toc a:hover{color:var(--ink);border-left-color:var(--accent)}
+  .toc a.sub{padding-left:28px;font-size:13px;color:var(--ink-faint)}
+  .aside-card{margin-top:26px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;font-size:12.5px;color:var(--ink-soft)}
+  .aside-card b{color:var(--ink)}
+
+  /* header */
+  header.top{margin-bottom:14px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 18px}
+  .dek{font-size:18px;color:var(--ink-soft);max-width:60ch}
+
+  /* verification statement */
+  .verify{display:flex;gap:14px;align-items:flex-start;margin:26px 0 8px;padding:16px 18px;background:var(--accent-soft);border:1px solid #d4e0fb;border-radius:14px}
+  .verify .ico{font-size:18px;line-height:1.3}
+  .verify p{font-size:13.5px;color:#27406f;line-height:1.55}
+  .verify b{color:#1c346a}
+
+  section{padding-top:54px;scroll-margin-top:76px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(23px,3vw,31px);letter-spacing:-.01em;margin-bottom:8px;display:flex;align-items:baseline;gap:12px}
+  h2 .hn{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);font-weight:500}
+  .lead{color:var(--ink-soft);font-size:15.5px;max-width:66ch;margin-bottom:24px}
+  h3{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-bottom:6px}
+  p.body{font-size:15px;color:var(--ink-soft);max-width:68ch;margin-bottom:14px}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px}
+  .card .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .stat-inline{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--ink);line-height:1}
+
+  /* clickable facts */
+  .f{color:var(--accent);border-bottom:1px solid rgba(47,95,208,.3);transition:.2s;font-weight:500}
+  .f:hover{border-bottom-color:var(--accent);background:var(--accent-soft)}
+
+  /* pmid chips */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+  .chips a{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent);background:var(--accent-soft);border:1px solid #d4e0fb;padding:5px 10px;border-radius:8px;transition:.2s}
+  .chips a:hover{background:var(--accent);color:#fff}
+  .src{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--accent);font-weight:500;margin-top:10px}
+  .src::after{content:"↗";font-size:11px}
+  .src:hover{text-decoration:underline}
+
+  .kv{display:flex;gap:10px;font-size:13.5px;color:var(--ink-soft);padding:7px 0;border-bottom:1px solid var(--line)}
+  .kv:last-child{border-bottom:none}
+  .kv b{color:var(--ink);min-width:120px;font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--ink-faint);font-size:13px}
+  footer code{font-family:'JetBrains Mono',monospace;color:var(--accent)}
+
+  @media(max-width:860px){
+    .grid{grid-template-columns:1fr;gap:0}
+    aside{position:static;margin-bottom:30px}
+    .toc{display:flex;flex-wrap:wrap;gap:4px}
+    .toc a{border-left:none;border:1px solid var(--line);border-radius:100px;padding:6px 12px}
+    .toc a.sub{display:none}
+    .aside-card{display:none}
+    .two{grid-template-columns:1fr}
+    .series nav a:not(.on) .lbl{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="series">
+  <div class="shell">
+    <span class="brand">AI · Public Health Watch</span>
+    <nav>
+      <a class="on" href="01-research-literature.html"><span class="n">01</span><span class="lbl">Research</span></a>
+      <a href="02-clinical-trials.html"><span class="n">02</span><span class="lbl">Trials</span></a>
+      <a href="03-news-digest.html"><span class="n">03</span><span class="lbl">News</span></a>
+    </nav>
+  </div>
+</div>
+
+<div class="shell">
+<div class="grid">
+
+  <aside>
+    <div class="toc-h">On this page</div>
+    <nav class="toc">
+      <a href="#overview">Overview</a>
+      <a href="#pubmed">PubMed signal</a>
+      <a class="sub" href="#pubmed">Broad sweep</a>
+      <a class="sub" href="#pubmed">Agents &amp; LLMs</a>
+      <a href="#preprints">Preprints</a>
+      <a href="#reading">Reading list</a>
+      <a href="#methods">Methods</a>
+    </nav>
+    <div class="aside-card">
+      <b>Edition</b><br>28 June 2026<br><br>
+      <b>Part 1 of 3</b><br>Peer-reviewed &amp; preprint literature. Trials and news are separate files.
+    </div>
+  </aside>
+
+  <main>
+    <header class="top" id="overview">
+      <span class="eyebrow">Daily Digest · Part 01 · Research Literature</span>
+      <h1>What the literature is saying about AI in care</h1>
+      <p class="dek">A daily read of peer-reviewed publications and preprints on artificial intelligence in clinical and public-health settings — distilled to the signal.</p>
+
+      <div class="verify">
+        <span class="ico">✓</span>
+        <p><b>This is an automated digest.</b> Compiled every morning at 08:00 by an AI research assistant working for a Public Health professor, then verified against the primary records. Every figure and identifier below links directly to its source — nothing is asserted without a clickable origin.</p>
+      </div>
+    </header>
+
+    <section id="pubmed">
+      <h2><span class="hn">01</span> The PubMed signal</h2>
+      <p class="lead">Two queries, run fresh and sorted by date, frame how crowded — and how specialised — the field has become.</p>
+
+      <div class="two">
+        <div class="card">
+          <span class="tag">Broad sweep</span>
+          <div class="stat-inline">867,000+</div>
+          <h3 style="margin-top:8px">AI in hospitals &amp; public health</h3>
+          <p class="body" style="margin-bottom:8px">Indexed records for AI + implementation/deployment + hospital/clinical care. The scale is the point: the base literature is effectively saturated.</p>
+          <a class="src" href="https://pubmed.ncbi.nlm.nih.gov/?term=artificial+intelligence+AND+%28implementation+OR+deployment%29+AND+%28hospital+OR+clinical+care%29&sort=date" target="_blank" rel="noopener">Open this query on PubMed</a>
+        </div>
+        <div class="card">
+          <span class="tag">Sharper focus</span>
+          <div class="stat-inline">47</div>
+          <h3 style="margin-top:8px">AI agents &amp; LLMs in the clinic</h3>
+          <p class="body" style="margin-bottom:8px">Recent papers (May–Jun 2026) on clinical deployment of agentic and large-language-model systems — the leading edge of where generative AI meets bedside care.</p>
+          <a class="src" href="https://pubmed.ncbi.nlm.nih.gov/?term=AI+agent+large+language+model+clinical+deployment&sort=date" target="_blank" rel="noopener">Open this query on PubMed</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="preprints">
+      <h2><span class="hn">02</span> On the preprint servers</h2>
+      <p class="lead">Where the field is moving before peer review catches up — medRxiv, bioRxiv, arXiv.</p>
+
+      <div class="card">
+        <span class="tag">medRxiv · year in review</span>
+        <h3>AI in Healthcare: 2025 Year in Review</h3>
+        <p class="body">The field is maturing from exploratory development toward real-world evaluation and deployment. The review spans <a class="f" href="https://www.medrxiv.org/content/10.64898/2026.02.23.26346888v1" target="_blank" rel="noopener">2,966 publications in 2025</a> — up from 1,946 in 2024. Imaging stays the dominant data type (53.9%), then text (38.2%), with audio climbing to 1.2% as multimodal models spread. Leading specialties: imaging, head &amp; neck, surgery, oncology, ophthalmology.</p>
+        <a class="src" href="https://www.medrxiv.org/content/10.64898/2026.02.23.26346888v1" target="_blank" rel="noopener">medRxiv 2026.02.23.26346888</a>
+      </div>
+
+      <div class="card">
+        <span class="tag">editorial</span>
+        <h3>Place-based evidence for clinical AI implementation</h3>
+        <p class="body">A pointed argument: AI tools must be validated in the specific settings where they're deployed — not only in the labs that built them — before their clinical promise can be trusted.</p>
+        <a class="src" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12689907/" target="_blank" rel="noopener">PMC12689907</a>
+      </div>
+    </section>
+
+    <section id="reading">
+      <h2><span class="hn">03</span> Reading list</h2>
+      <p class="lead">Today's deep-dive candidates. Click any identifier to open the abstract on PubMed.</p>
+
+      <div class="card">
+        <span class="tag">Broad query · top records</span>
+        <div class="chips">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42311609/" target="_blank" rel="noopener">42311609</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42311608/" target="_blank" rel="noopener">42311608</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42164476/" target="_blank" rel="noopener">42164476</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42148037/" target="_blank" rel="noopener">42148037</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41720694/" target="_blank" rel="noopener">41720694</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42324603/" target="_blank" rel="noopener">42324603</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42265983/" target="_blank" rel="noopener">42265983</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42257240/" target="_blank" rel="noopener">42257240</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42249833/" target="_blank" rel="noopener">42249833</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42237068/" target="_blank" rel="noopener">42237068</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">AI agents + LLM in clinic</span>
+        <div class="chips">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41323158/" target="_blank" rel="noopener">41323158</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42217263/" target="_blank" rel="noopener">42217263</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42358410/" target="_blank" rel="noopener">42358410</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41962624/" target="_blank" rel="noopener">41962624</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42361884/" target="_blank" rel="noopener">42361884</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42351930/" target="_blank" rel="noopener">42351930</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="methods">
+      <h2><span class="hn">04</span> How this was built</h2>
+      <div class="card">
+        <div class="kv"><b>Sources</b><span>PubMed (NLM E-utilities), medRxiv / bioRxiv / arXiv</span></div>
+        <div class="kv"><b>Query window</b><span>Sorted by publication date; recent-first</span></div>
+        <div class="kv"><b>Verification</b><span>Every count re-run live; every record links to its primary page</span></div>
+        <div class="kv"><b>Cadence</b><span>Regenerated daily at 08:00</span></div>
+        <div class="kv"><b>Prepared for</b><span>A Public Health professor, by an AI research assistant</span></div>
+      </div>
+    </section>
+
+    <footer>
+      Part 01 of 3 · Research Literature · <code>daily-ai-public-health-digest</code><br>
+      Continue to <a class="f" href="02-clinical-trials.html">02 · Clinical Trials</a> and <a class="f" href="03-news-digest.html">03 · News</a>.
+    </footer>
+  </main>
+
+</div>
+</div>
+</body>
+</html>

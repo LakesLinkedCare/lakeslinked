@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>154 New AI Clinical Trials: The Field Is Moving From Accuracy to Outcomes</title>
+<meta name="description" content="The Next Phase of Clinical AI Is Not Chatbots. It Is Population-Scale Evidence.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="154 New AI Clinical Trials: The Field Is Moving From Accuracy to Outcomes">
+<meta property="og:description" content="The Next Phase of Clinical AI Is Not Chatbots. It Is Population-Scale Evidence.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="154 New AI Clinical Trials: The Field Is Moving From Accuracy to Outcomes">
+<meta name="twitter:description" content="The Next Phase of Clinical AI Is Not Chatbots. It Is Population-Scale Evidence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf6; --surface:#ffffff; --surface-2:#f6f4ec;
+    --ink:#1b1b16; --body:#2a2a22; --soft:#56564c; --faint:#8c8c81;
+    --line:#e7e3d8; --line-soft:#eeebe2;
+    --accent:#0e6e57; --accent-deep:#0a4d3d; --accent-soft:#e6f1ec;
+    --rule:#1b1b16; --maxw:720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--body);font-family:'Newsreader',Georgia,serif;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* reading progress */
+  #prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:120;transition:width .1s linear}
+
+  /* masthead */
+  .masthead{border-bottom:1px solid var(--line);background:var(--bg)}
+  .masthead .wrap{display:flex;align-items:center;gap:12px;height:56px;max-width:980px}
+  .masthead .brand{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .masthead .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .masthead nav{margin-left:auto;display:flex;gap:4px;font-family:'Inter',sans-serif}
+  .masthead nav a{font-size:12.5px;color:var(--soft);padding:6px 12px;border-radius:100px;transition:.2s}
+  .masthead nav a:hover{background:var(--surface-2);color:var(--ink)}
+  .masthead nav a.on{color:var(--accent-deep);font-weight:600}
+
+  /* article header */
+  header.art{padding:62px 0 0}
+  .kicker{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .kicker .sep{width:4px;height:4px;border-radius:50%;background:var(--faint)}
+  .kicker .date{color:var(--faint);font-weight:500}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(33px,5.2vw,52px);line-height:1.07;letter-spacing:-.018em;color:var(--ink);margin:20px 0 0}
+  .standfirst{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(19px,2.4vw,23px);line-height:1.5;color:var(--soft);margin-top:20px;font-weight:400}
+  .byline{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-family:'Inter',sans-serif;font-size:14px}
+  .byline .name{font-weight:600;color:var(--ink)}
+  .byline .role{color:var(--soft);font-size:13px}
+  .byline .role a{color:var(--accent-deep);border-bottom:1px solid rgba(14,110,87,.3)}
+
+  /* abstract */
+  .abstract{margin:34px 0 8px;padding:22px 26px;background:var(--surface-2);border:1px solid var(--line);border-radius:4px;border-left:3px solid var(--accent)}
+  .abstract .lab{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .abstract p{font-size:17px;line-height:1.62;color:var(--body);margin:0}
+
+  /* prose */
+  .prose{padding:8px 0 10px}
+  .prose p{font-size:19.5px;line-height:1.74;color:var(--body);margin:0 0 22px}
+  .prose p.lede:first-of-type::first-letter{font-family:'Fraunces',serif;font-weight:600;float:left;font-size:62px;line-height:.82;padding:6px 12px 0 0;color:var(--ink)}
+  .prose a{color:var(--accent-deep);border-bottom:1px solid rgba(14,110,87,.32);transition:.18s}
+  .prose a:hover{background:var(--accent-soft);border-bottom-color:var(--accent)}
+  .prose b,.prose strong{color:var(--ink);font-weight:600}
+  .prose em{font-style:italic}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(23px,3vw,30px);letter-spacing:-.01em;color:var(--ink);line-height:1.18;margin:46px 0 6px;scroll-margin-top:72px}
+  h2 .h2k{display:block;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h3.sub{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--ink);margin:26px 0 12px}
+
+  /* figure callout (the field in numbers) */
+  .figure{margin:34px 0;padding:30px 26px;background:var(--surface);border:1px solid var(--line);border-radius:6px;text-align:center}
+  .figrow{display:flex;align-items:flex-end;justify-content:center;gap:34px;flex-wrap:wrap}
+  .figrow .big{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,7vw,60px);line-height:.95;color:var(--accent-deep);letter-spacing:-.02em}
+  .figrow .small{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4vw,38px);line-height:.95;color:var(--ink);letter-spacing:-.02em}
+  .figrow .vs{font-family:'Inter',sans-serif;font-size:13px;color:var(--faint);align-self:center;text-transform:uppercase;letter-spacing:.1em}
+  .figrow .cap{font-family:'Inter',sans-serif;font-size:12.5px;color:var(--soft);margin-top:9px;font-weight:500}
+  .figure .note{font-family:'Inter',sans-serif;font-size:12.5px;font-style:normal;color:var(--faint);margin-top:18px;line-height:1.5;max-width:54ch;margin-left:auto;margin-right:auto}
+
+  /* spotlights */
+  .spot{margin:18px 0;padding:24px 26px;background:var(--surface);border:1px solid var(--line);border-radius:6px;border-left:3px solid var(--accent)}
+  .spot .top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px;font-family:'Inter',sans-serif}
+  .spot .nct{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#fff;background:var(--accent);padding:4px 10px;border-radius:5px}
+  .spot .nct:hover{background:var(--accent-deep)}
+  .spot .pill{font-family:'JetBrains Mono',monospace;font-size:11px;padding:3px 9px;border-radius:100px;border:1px solid var(--line);color:var(--soft)}
+  .spot .pill.big{color:var(--accent-deep);background:var(--accent-soft);border-color:#c4e2da;font-weight:600}
+  .spot h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600;line-height:1.25;color:var(--ink);margin-bottom:8px}
+  .spot p{font-size:16.5px;line-height:1.62;color:var(--body);margin-bottom:0}
+  .spot .why{font-size:15.5px;line-height:1.6;color:var(--accent-deep);background:var(--accent-soft);border-radius:6px;padding:13px 16px;margin-top:13px}
+  .spot .why b{color:var(--accent-deep);font-weight:700}
+
+  /* inline trial chips */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 24px;font-family:'JetBrains Mono',monospace}
+  .chips a{font-size:11.5px;color:var(--accent-deep);border:1px solid var(--line);background:var(--surface);padding:5px 10px;border-radius:6px;transition:.18s}
+  .chips a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  /* tables */
+  .table-wrap{border:1px solid var(--line);border-radius:6px;overflow:hidden;overflow-x:auto;background:var(--surface);margin:14px 0 6px}
+  table{width:100%;border-collapse:collapse;min-width:600px;font-family:'Inter',sans-serif}
+  th,td{text-align:left;padding:12px 16px;font-size:13.5px;border-bottom:1px solid var(--line-soft);color:var(--body)}
+  th{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);background:var(--surface-2)}
+  tbody tr:hover{background:var(--accent-soft)}
+  tbody tr:last-child td{border-bottom:none}
+  td .nct{font-family:'JetBrains Mono',monospace;color:var(--accent-deep);font-size:12.5px;font-weight:500}
+  td .nct:hover{text-decoration:underline}
+  .num{font-family:'JetBrains Mono',monospace;color:var(--ink)}
+  .badge{display:inline-block;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:100px;border:1px solid}
+  .badge.rec{color:var(--accent-deep);border-color:#bfe5dd;background:var(--accent-soft)}
+  .badge.soon{color:#8a5f12;border-color:#ecd9a6;background:#fbf3df}
+
+  /* principle / takeaway callout */
+  .principle{margin:38px 0;padding:30px 30px;background:var(--ink);color:#eceade;border-radius:8px}
+  .principle .lab{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#86c7b5;margin-bottom:12px}
+  .principle p{font-family:'Fraunces',serif;font-size:21px;line-height:1.45;color:#f4f2e8;margin-bottom:14px;font-weight:400}
+  .principle p:last-child{margin-bottom:0}
+  .principle b{color:#fff;font-weight:600}
+
+  /* methods / sources / about */
+  .meta-sec{margin-top:46px;padding-top:26px;border-top:1px solid var(--line)}
+  .kv{display:flex;gap:14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--soft);padding:9px 0;border-bottom:1px solid var(--line-soft)}
+  .kv:last-child{border-bottom:none}
+  .kv b{color:var(--ink);min-width:120px;font-weight:600;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;padding-top:3px}
+  ol.sources{margin:6px 0 0;padding-left:22px}
+  ol.sources li{font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.6;color:var(--soft);margin-bottom:9px}
+  ol.sources a{color:var(--accent-deep);border-bottom:1px solid rgba(14,110,87,.3)}
+  .about p{font-family:'Inter',sans-serif;font-size:14.5px;line-height:1.65;color:var(--soft);margin-bottom:14px}
+  .about b{color:var(--ink);font-weight:600}
+  .disclosure{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.6;color:var(--faint);margin-top:14px}
+  .tags{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags span{font-family:'Inter',sans-serif;font-size:12px;color:var(--accent-deep);background:var(--accent-soft);padding:4px 11px;border-radius:100px}
+
+  footer{margin-top:40px;padding:28px 0 70px;border-top:1px solid var(--line);font-family:'Inter',sans-serif;font-size:13px;color:var(--faint);line-height:1.7}
+  footer a{color:var(--accent-deep);font-weight:500}
+  footer code{font-family:'JetBrains Mono',monospace;color:var(--accent-deep)}
+
+  @media(max-width:680px){
+    .prose p{font-size:18px}
+    .prose p.lede:first-of-type::first-letter{font-size:52px}
+    .figrow{gap:18px}
+    .masthead nav a:not(.on){display:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<div class="masthead">
+  <div class="wrap">
+    <span class="brand"><span class="dot"></span>Lakes Linked · Public-Health Analytics</span>
+    <nav>
+      <a href="01-research-literature.html">Research</a>
+      <a class="on" href="02-clinical-trials.html">Trials</a>
+      <a href="03-news-digest.html">News</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="art">
+    <div class="kicker">
+      <span>Field Notes · Clinical AI</span>
+      <span class="sep"></span>
+      <span class="date">June 2026</span>
+    </div>
+    <h1>154 New AI Clinical Trials: The Field Is Moving From Accuracy to Outcomes</h1>
+    <p class="standfirst">The next phase of clinical AI is not chatbots. It is population-scale evidence.</p>
+    <div class="byline">
+      <span class="name">Sergey Soshnikov, MD, PhD</span>
+      <span class="role">Public-Health Physician-Scientist · Founder, <a href="https://lakeslinked.com">Lakes Linked</a></span>
+    </div>
+  </header>
+
+  <div class="abstract">
+    <div class="lab">Abstract</div>
+    <p>Since 1 May 2026, 154 AI-related clinical trials have been registered on ClinicalTrials.gov. Read as a set rather than a list, they mark a shift in clinical AI — away from diagnostic-accuracy demonstrations and toward the questions public health turns on: survival, screening yield, antimicrobial stewardship, workflow integration, equity, and implementation at scale. Diagnostic imaging still dominates the count, but the studies that matter attach hard endpoints, embed models inside the electronic record, or benchmark general-purpose language models against clinicians under prospective conditions. This brief organises the set by function, scale, endpoint, and public-health relevance; spotlights five trials that show the direction of travel; and reads the signal for researchers, policymakers, and implementation scientists. Every NCT links to its source record.</p>
+  </div>
+
+  <div class="prose">
+
+    <p class="lede">A scan of newly registered AI-related clinical trials suggests the field is entering a different phase. Since 1 May 2026, <b>154 AI-related clinical trials</b> have been registered on ClinicalTrials.gov. Most still focus on diagnosis and imaging. But the most interesting studies are moving beyond accuracy metrics toward the questions public health researchers actually care about: survival, screening, stewardship, workflow, equity, and implementation at scale.</p>
+
+    <p>The story is not that AI can read images. The story is that AI is being tested as <em>public health infrastructure.</em></p>
+
+    <div class="figure">
+      <div class="figrow">
+        <div><div class="big">200,000</div><div class="cap">PANDA · opportunistic pancreatic screening</div></div>
+        <div class="vs">vs</div>
+        <div><div class="small">690</div><div class="cap">GPT-4o vs Claude on the HEART score</div></div>
+      </div>
+      <p class="note">The same registry holds both ends of the field — population-scale screening built on scans people already have, and tightly controlled head-to-head benchmarking of language models against clinicians. Enrolment figures are planned targets from the trial records, not results.</p>
+    </div>
+
+    <h2 id="how"><span class="h2k">01 · Method of reading</span>How to read the signal</h2>
+    <p>A ClinicalTrials.gov search is only useful once it is read for meaning rather than counted. A raw query returns a list; the signal appears when trials are interpreted by <b>function</b> (what the model does at the point of care), by <b>scale</b> (who is running population-sized cohorts), by <b>endpoints</b> (accuracy metrics versus survival, length of stay, mortality), and by <b>public-health relevance</b> (whether the study touches screening, stewardship, equity, or implementation). A single trial can carry more than one of these signals.</p>
+    <p>Two facts frame everything that follows. The headline: diagnostic imaging still leads new registrations, yet a fast-growing minority test large language models head-to-head against clinicians, and a few push AI into population-scale opportunistic screening — the most public-health-relevant frontier. The caveat: most studies remain observational diagnostic-accuracy work, and only a handful carry hard clinical endpoints like 30-day mortality. Those are the ones worth watching.</p>
+
+    <h2 id="function"><span class="h2k">02 · Taxonomy</span>By what the AI actually does</h2>
+    <p>Seven functional buckets capture today's set. The point of sorting by function rather than by disease is that it exposes where AI is merely reading and where it is beginning to decide. Click any identifier to open its record.</p>
+
+    <h3 class="sub">Diagnosis &amp; imaging — the largest group</h3>
+    <p>Models reading scans, slides and ultrasound — the workhorse category, spanning radiology, pathology, endoscopy and dentistry.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT07643090" target="_blank" rel="noopener">07643090 · placenta accreta US</a>
+      <a href="https://clinicaltrials.gov/study/NCT07647692" target="_blank" rel="noopener">07647692 · lung nodule CT</a>
+      <a href="https://clinicaltrials.gov/study/NCT07662967" target="_blank" rel="noopener">07662967 · AI-ROSE cytology</a>
+      <a href="https://clinicaltrials.gov/study/NCT07651644" target="_blank" rel="noopener">07651644 · gastric T-staging</a>
+      <a href="https://clinicaltrials.gov/study/NCT07620457" target="_blank" rel="noopener">07620457 · coronary CT recon</a>
+    </div>
+
+    <h3 class="sub">Risk prediction &amp; early warning — growing</h3>
+    <p>Models forecasting deterioration before it happens — hypotension, kidney injury, drug dosing — usually embedded in the EHR or monitoring stream.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT07604662" target="_blank" rel="noopener">07604662 · post-surgical AKI</a>
+      <a href="https://clinicaltrials.gov/study/NCT07627607" target="_blank" rel="noopener">07627607 · ICU hypotension</a>
+      <a href="https://clinicaltrials.gov/study/NCT07614516" target="_blank" rel="noopener">07614516 · DIANA epidural dosing</a>
+      <a href="https://clinicaltrials.gov/study/NCT07624786" target="_blank" rel="noopener">07624786 · ventilator asynchrony</a>
+    </div>
+
+    <h3 class="sub">Population &amp; opportunistic screening — highest stakes</h3>
+    <p>The most public-health-relevant frontier: re-reading routine scans, or stratifying whole populations, to catch disease no one was looking for.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT06528223" target="_blank" rel="noopener">06528223 · PANDA pancreatic</a>
+      <a href="https://clinicaltrials.gov/study/NCT07639567" target="_blank" rel="noopener">07639567 · opportunistic tumor CT</a>
+      <a href="https://clinicaltrials.gov/study/NCT07611695" target="_blank" rel="noopener">07611695 · TB stratification</a>
+      <a href="https://clinicaltrials.gov/study/NCT07586098" target="_blank" rel="noopener">07586098 · hearing/tinnitus triage</a>
+    </div>
+
+    <h3 class="sub">Clinical decision support — high impact</h3>
+    <p>AI advising the order, the test, the stage — at the point of care. Includes the few trials with real outcome endpoints.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT06163781" target="_blank" rel="noopener">06163781 · ABC blood cultures</a>
+      <a href="https://clinicaltrials.gov/study/NCT07626060" target="_blank" rel="noopener">07626060 · GPT-4o vs Claude HEART</a>
+      <a href="https://clinicaltrials.gov/study/NCT07590271" target="_blank" rel="noopener">07590271 · IBD management system</a>
+    </div>
+
+    <h3 class="sub">Patient-facing LLMs &amp; communication — emerging</h3>
+    <p>Generative models translating, summarising and counselling — tested for trust, comprehension and equity rather than diagnostic accuracy.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT07602725" target="_blank" rel="noopener">07602725 · plain-language notes</a>
+      <a href="https://clinicaltrials.gov/study/NCT07666399" target="_blank" rel="noopener">07666399 · AI health translation</a>
+      <a href="https://clinicaltrials.gov/study/NCT07589088" target="_blank" rel="noopener">07589088 · grief narrative writing</a>
+      <a href="https://clinicaltrials.gov/study/NCT07654868" target="_blank" rel="noopener">07654868 · CHARGE activity LLM</a>
+    </div>
+
+    <h3 class="sub">Education &amp; workflow — high volume</h3>
+    <p>Training clinicians and easing paperwork. Numerous but lower clinical stakes — heavily nursing-education focused.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT07618975" target="_blank" rel="noopener">07618975 · nursing process</a>
+      <a href="https://clinicaltrials.gov/study/NCT07611383" target="_blank" rel="noopener">07611383 · nursing case analysis</a>
+      <a href="https://clinicaltrials.gov/study/NCT07618819" target="_blank" rel="noopener">07618819 · literature reviews</a>
+    </div>
+
+    <h3 class="sub">Therapeutic-adjacent &amp; digital — niche</h3>
+    <p>AI personalising prevention and rehab — nutrition, cognitive training, prehabilitation — often as a digital companion app.</p>
+    <div class="chips">
+      <a href="https://clinicaltrials.gov/study/NCT07622628" target="_blank" rel="noopener">07622628 · AIM-MET microbiome</a>
+      <a href="https://clinicaltrials.gov/study/NCT07638345" target="_blank" rel="noopener">07638345 · DASH-obesity</a>
+      <a href="https://clinicaltrials.gov/study/NCT07562100" target="_blank" rel="noopener">07562100 · oral-cancer prehab</a>
+    </div>
+
+    <h2 id="spotlight"><span class="h2k">03 · Spotlights</span>Five trials that show where the field is going</h2>
+    <p>Chosen not for novelty alone but for direction of travel — population-scale screening, antimicrobial stewardship, hard endpoints, EHR implementation, clinician–AI benchmarking, and infectious-disease surveillance. These are the studies asking public-health questions, not demo questions.</p>
+
+    <div class="spot">
+      <div class="top">
+        <a class="nct" href="https://clinicaltrials.gov/study/NCT06528223" target="_blank" rel="noopener">NCT06528223</a>
+        <span class="pill big">200,000 participants</span><span class="pill">RCT</span><span class="pill">Zhejiang University</span>
+      </div>
+      <h3>PANDA — opportunistic pancreatic-cancer screening from ordinary CT</h3>
+      <p>A deep-learning model re-reads routine non-contrast CT scans to flag pancreatic cancer that radiologists missed. Patients who are imaging-negative but PANDA-positive get recalled for gold-standard work-up; the primary endpoint is overall survival.</p>
+      <div class="why"><b>Why it matters:</b> this is opportunistic screening at population scale — the single most consequential public-health use of clinical AI. Pancreatic cancer is almost always caught too late; re-reading scans people already have, then tying the model to an overall-survival endpoint rather than an AUC, is precisely the move from accuracy to outcomes. If it works, the screening pathway costs almost nothing to deploy because the imaging already exists.</div>
+    </div>
+
+    <div class="spot">
+      <div class="top">
+        <a class="nct" href="https://clinicaltrials.gov/study/NCT06163781" target="_blank" rel="noopener">NCT06163781</a>
+        <span class="pill big">30-day mortality endpoint</span><span class="pill">RCT · 7,584</span><span class="pill">Amsterdam UMC</span>
+      </div>
+      <h3>ABC — machine learning to stop unnecessary blood cultures in the ED</h3>
+      <p>A model predicts whether a blood culture will come back positive. Below 5% probability, the test is cancelled. Validation shows it can cut blood-culture volume by at least 30% — the trial tests non-inferiority on 30-day mortality, admissions and length of stay.</p>
+      <div class="why"><b>Why it matters:</b> antimicrobial stewardship is a core public-health priority, and this is one of the very few AI trials willing to defend a hard safety endpoint — 30-day mortality — rather than diagnostic accuracy. By cancelling low-yield blood cultures it targets both antibiotic overuse and false-positive contamination, the everyday drivers of resistance. A non-inferiority result here is what turns a prediction model into a defensible change in practice.</div>
+    </div>
+
+    <div class="spot">
+      <div class="top">
+        <a class="nct" href="https://clinicaltrials.gov/study/NCT07604662" target="_blank" rel="noopener">NCT07604662</a>
+        <span class="pill big">25,518 participants</span><span class="pill">Cluster-RCT</span><span class="pill">UCSF</span>
+      </div>
+      <h3>EHR-embedded AKI risk score after surgery</h3>
+      <p>A pragmatic three-arm cluster-randomised trial of an acute-kidney-injury risk score built into the electronic record — tested with and without a "best practice advisory" nudge to clinicians.</p>
+      <div class="why"><b>Why it matters:</b> this is implementation science, not model-building. A risk score only helps if it is embedded in the EHR, surfaced in the workflow, and acted on — and the three-arm design (score alone, score plus advisory, usual care) isolates exactly which part of that chain changes outcomes. It is the question that decides whether the thousands of published prediction models ever earn their place inside a real health system.</div>
+    </div>
+
+    <div class="spot">
+      <div class="top">
+        <a class="nct" href="https://clinicaltrials.gov/study/NCT07626060" target="_blank" rel="noopener">NCT07626060</a>
+        <span class="pill big">LLM head-to-head</span><span class="pill">690 · ED chest pain</span><span class="pill">Marmara University</span>
+      </div>
+      <h3>GPT-4o vs Claude vs three-expert consensus on the HEART score</h3>
+      <p>A prospective validation pitting two frontier language models against a three-expert gold standard for HEART-score calculation and 30-day major-adverse-cardiac-event prediction in emergency chest-pain patients.</p>
+      <div class="why"><b>Why it matters:</b> general-purpose LLMs are already in clinicians' pockets, so the relevant question is no longer whether they sound plausible but whether they hold up against a defined gold standard on a real triage decision with a 30-day outcome. Formal, prospective clinician–AI benchmarking — rather than leaderboard scores on exam questions — is how the field earns the right to put these tools near patients.</div>
+    </div>
+
+    <div class="spot">
+      <div class="top">
+        <a class="nct" href="https://clinicaltrials.gov/study/NCT07611695" target="_blank" rel="noopener">NCT07611695</a>
+        <span class="pill big">31,600 participants</span><span class="pill">Observational</span><span class="pill">Huashan Hospital</span>
+      </div>
+      <h3>AI-driven tuberculosis landscape analysis &amp; stratification</h3>
+      <p>A large-scale effort to map and risk-stratify pulmonary tuberculosis across a population using AI — squarely in the infectious-disease, public-health surveillance lane.</p>
+      <div class="why"><b>Why it matters:</b> tuberculosis is still one of the world's leading infectious killers, and case-finding — not treatment — is the binding constraint. Risk-stratifying tens of thousands of people is AI used as surveillance infrastructure: it directs scarce screening and treatment capacity toward those most likely to be missed. This is the public-health lane where AI's marginal value is highest, precisely because human screening cannot scale to meet the need.</div>
+    </div>
+
+    <h2 id="scale"><span class="h2k">04 · Scale</span>The mega-cohorts</h2>
+    <p>Sorted by planned enrolment — the trials big enough to generate population-level evidence. Scale is not virtue on its own, but it is what separates a proof-of-concept from a study that could change a guideline.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>NCT</th><th>Focus</th><th>Enrolment</th><th>Type</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT06528223" target="_blank" rel="noopener">NCT06528223</a></td><td>PANDA — pancreatic screening from plain CT</td><td class="num">200,000</td><td>RCT</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07639567" target="_blank" rel="noopener">NCT07639567</a></td><td>Opportunistic tumour screening on routine CT</td><td class="num">100,000</td><td>Obs.</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07611695" target="_blank" rel="noopener">NCT07611695</a></td><td>TB landscape analysis &amp; stratification</td><td class="num">31,600</td><td>Obs.</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07604662" target="_blank" rel="noopener">NCT07604662</a></td><td>EHR-embedded post-surgical AKI score</td><td class="num">25,518</td><td>Cluster-RCT</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07614516" target="_blank" rel="noopener">NCT07614516</a></td><td>DIANA — ML epidural dosing in labour</td><td class="num">12,500</td><td>Obs.</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT06163781" target="_blank" rel="noopener">NCT06163781</a></td><td>ABC — blood-culture stewardship in ED</td><td class="num">7,584</td><td>RCT</td><td><span class="badge rec">Recruiting</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07647692" target="_blank" rel="noopener">NCT07647692</a></td><td>Lung ground-glass-nodule progression</td><td class="num">4,750</td><td>Obs.</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07590271" target="_blank" rel="noopener">NCT07590271</a></td><td>AI IBD diagnosis &amp; management system</td><td class="num">4,500</td><td>Obs.</td><td><span class="badge soon">Not yet</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="patterns"><span class="h2k">05 · Interpretation</span>The public health signal</h2>
+    <p><b>Accuracy is no longer enough.</b> The most credible new trials treat a high AUC as the starting point, not the result. Diagnostic imaging still leads, but the studies worth attention attach survival, length of stay, or mortality to the model — a quiet admission that performance on a test set says little about whether patients are better off.</p>
+    <p><b>Opportunistic screening is becoming population-scale.</b> PANDA (200,000) and the routine-CT tumour cohort (100,000) point to AI's largest public-health lever: extracting new diagnoses from scans people already have, at a marginal cost close to zero. This is where AI stops being a clinic tool and starts behaving like screening infrastructure.</p>
+    <p><b>LLMs are entering formal clinical benchmarking.</b> General-purpose models like GPT-4o and Claude are now being tested prospectively against clinician gold standards on defined decisions — a shift from exam-style leaderboards toward the evidentiary bar real triage requires. It is early, narrow, and exactly the right direction.</p>
+    <p><b>Hard outcomes remain rare — and therefore valuable.</b> Most registrations still measure diagnostic accuracy, not patient outcomes. That scarcity is what makes the exceptions — ABC's 30-day mortality endpoint and the UCSF AKI cluster-RCT — disproportionately important: they are the studies capable of moving guidelines rather than dashboards.</p>
+
+    <h2 id="browse"><span class="h2k">06 · The wider set</span>Browse the cross-section</h2>
+    <p>A wider slice of today's newly registered trials, beyond the spotlights. Click any identifier for the full record.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>NCT</th><th>Focus</th><th>Function</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07643090" target="_blank" rel="noopener">NCT07643090</a></td><td>Vision-Transformer ultrasound for placenta accreta</td><td>Diagnosis</td><td><span class="badge rec">Recruiting</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07662967" target="_blank" rel="noopener">NCT07662967</a></td><td>AI-ROSE cytology during bronchoscopy (lung cancer)</td><td>Diagnosis</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07651644" target="_blank" rel="noopener">NCT07651644</a></td><td>TRACE — gastric-cancer T-staging support (crossover RCT)</td><td>Decision support</td><td><span class="badge rec">Recruiting</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07627607" target="_blank" rel="noopener">NCT07627607</a></td><td>ML early prediction of ICU hypotension</td><td>Risk prediction</td><td><span class="badge rec">Recruiting</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07618416" target="_blank" rel="noopener">NCT07618416</a></td><td>ML post-induction hypotension in the elderly</td><td>Risk prediction</td><td><span class="badge rec">Recruiting</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07602725" target="_blank" rel="noopener">NCT07602725</a></td><td>LLM plain-language summaries vs original notes</td><td>Patient LLM</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07666399" target="_blank" rel="noopener">NCT07666399</a></td><td>AI translation of health-knowledge resources (RCT)</td><td>Patient LLM</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07589088" target="_blank" rel="noopener">NCT07589088</a></td><td>AI grief-focused narrative writing for adolescents</td><td>Mental health</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07622628" target="_blank" rel="noopener">NCT07622628</a></td><td>AIM-MET — AI microbiome nutrition for T2D (RCT)</td><td>Therapeutic</td><td><span class="badge rec">Recruiting</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07592702" target="_blank" rel="noopener">NCT07592702</a></td><td>AI 3D-printed videolaryngoscope for intubation</td><td>Decision support</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07593560" target="_blank" rel="noopener">NCT07593560</a></td><td>Deep learning + mmWave radar for scoliosis detection</td><td>Diagnosis</td><td><span class="badge soon">Not yet</span></td></tr>
+          <tr><td><a class="nct" href="https://clinicaltrials.gov/study/NCT07619430" target="_blank" rel="noopener">NCT07619430</a></td><td>AI marker-free wound-progression monitoring</td><td>Diagnosis</td><td><span class="badge soon">Not yet</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="principle">
+      <div class="lab">The takeaway</div>
+      <p>For public health, the most important question is no longer whether an AI model can predict. The harder question is whether it <b>improves decisions, reduces harm, reaches the right populations, and works safely inside real health systems.</b></p>
+      <p>At Lakes Linked, we track that shift — from AI performance claims to public-health-relevant evidence: scale, endpoints, implementation, and equity.</p>
+    </div>
+
+  </div><!-- /prose -->
+
+  <section class="meta-sec" id="methods">
+    <h2 style="margin-top:0"><span class="h2k">07 · Methods</span>How this was built</h2>
+    <div class="kv"><b>Source</b><span>ClinicalTrials.gov API v2 (NIH/NLM)</span></div>
+    <div class="kv"><b>Filter</b><span>AI / ML / deep-learning conditions · registered since 2026-05-01 · recruiting or not-yet-recruiting</span></div>
+    <div class="kv"><b>Total matched</b><span>154 trials · a representative cross-section is detailed here</span></div>
+    <div class="kv"><b>Verification</b><span>Spotlight trials confirmed against full protocol records; every NCT links to source</span></div>
+    <div class="kv"><b>Prepared by</b><span>An AI research assistant for a public-health researcher · regenerated daily 08:00 · AI-assisted, human-reviewed</span></div>
+  </section>
+
+  <section class="meta-sec">
+    <h2 style="margin-top:0"><span class="h2k">References</span>Sources</h2>
+    <ol class="sources">
+      <li><a href="https://clinicaltrials.gov/" target="_blank" rel="noopener">ClinicalTrials.gov</a> — NIH/NLM registry; primary source for every trial cited (search: AI / machine learning / deep learning, registered since 1 May 2026).</li>
+      <li>PANDA — opportunistic pancreatic-cancer screening from CT: <a href="https://clinicaltrials.gov/study/NCT06528223" target="_blank" rel="noopener">NCT06528223</a>.</li>
+      <li>ABC — blood-culture stewardship with 30-day mortality endpoint: <a href="https://clinicaltrials.gov/study/NCT06163781" target="_blank" rel="noopener">NCT06163781</a>.</li>
+      <li>UCSF EHR-embedded AKI risk score (cluster-RCT): <a href="https://clinicaltrials.gov/study/NCT07604662" target="_blank" rel="noopener">NCT07604662</a>.</li>
+      <li>GPT-4o vs Claude vs clinician consensus on the HEART score: <a href="https://clinicaltrials.gov/study/NCT07626060" target="_blank" rel="noopener">NCT07626060</a>.</li>
+      <li>AI-driven tuberculosis landscape analysis &amp; stratification: <a href="https://clinicaltrials.gov/study/NCT07611695" target="_blank" rel="noopener">NCT07611695</a>.</li>
+    </ol>
+  </section>
+
+  <section class="meta-sec about">
+    <h2 style="margin-top:0"><span class="h2k">About</span>About this brief</h2>
+    <p><b>Lakes Linked</b> is a public-health analytics project that turns open data — ClinicalTrials.gov, CDC, US Census, IHME — into briefs and dashboards that local decision-makers can actually use. This is Part 02 of a three-part daily digest on AI in public health; the literature review (Part 01) and the news digest (Part 03) are published as separate articles.</p>
+    <p class="disclosure"><b>Method &amp; limits.</b> This analysis is AI-assisted (using tools such as Claude) and human-reviewed. Enrolment numbers, statuses, and sponsors are planned values drawn from the trial registry and may change; nothing here is a result. This is a research and public-health-education brief, not medical, regulatory, or investment advice. Confirm any trial detail against its source record before relying on it.</p>
+    <div class="tags">
+      <span>#ClinicalAI</span><span>#PublicHealth</span><span>#ClinicalTrials</span><span>#ImplementationScience</span><span>#HealthPolicy</span><span>#AIinHealthcare</span><span>#AntimicrobialStewardship</span><span>#CancerScreening</span><span>#HealthData</span><span>#LLM</span>
+    </div>
+  </section>
+
+  <footer>
+    <b>Lakes Linked · Public-Health Analytics</b> — Part 02 of 03 · Clinical Trials · <code>daily-ai-public-health-digest</code><br>
+    Back to <a href="01-research-literature.html">01 · Research</a> · forward to <a href="03-news-digest.html">03 · News</a>.
+  </footer>
+
+</div>
+
+<script>
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    prog.style.width=(h>0?(st/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
+</body>
+</html>
