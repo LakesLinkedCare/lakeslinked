@@ -45,7 +45,7 @@ body{font-family:var(--sans);background:#fff;color:#111;font-size:13.5px;line-he
 
 .keywords{font-size:11.5px;color:#555;margin-bottom:26px;}
 
-h2.sec{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);border-top:2px solid var(--navy);padding-top:14px;margin-top:36px;margin-bottom:12px;}
+h2.sec{scroll-margin-top:68px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);border-top:2px solid var(--navy);padding-top:14px;margin-top:36px;margin-bottom:12px;}
 h3.sub{font-size:13.5px;font-weight:700;color:#1e3a5f;margin-top:20px;margin-bottom:8px;}
 p{margin-bottom:10px;}
 
@@ -78,12 +78,37 @@ tbody td{padding:7px 10px;vertical-align:top;}
 .doc-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:#888;line-height:1.8;}
 
 @media print{.sitenav{display:none;}.doc{padding-top:20px;}}
+
+/* floating toc */
+html{scroll-behavior:smooth}
+#toc{position:fixed;top:68px;right:max(16px,calc(50% - 586px));width:162px;z-index:90;max-height:calc(100vh - 84px);overflow-y:auto;
+  background:#fff;border:1px solid var(--border,#e2e8f0);border-radius:8px;
+  padding:12px 0 10px;box-shadow:0 2px 12px rgba(0,0,0,.07);
+  font-family:var(--sans,-apple-system,system-ui,sans-serif);}
+#toc .toc-title{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted,#64748b);padding:0 13px 9px;
+  border-bottom:1px solid var(--border,#e2e8f0);margin-bottom:7px;}
+#toc a{display:block;padding:4px 13px;font-size:11.5px;line-height:1.35;
+  color:var(--muted,#64748b);border-left:2px solid transparent;transition:.15s;text-decoration:none;}
+#toc a:hover{color:var(--navy,#0f1f3d);background:var(--bg,#f8fafc);}
+#toc a.toc-active{color:var(--blue,#1a56db);border-left-color:var(--blue,#1a56db);
+  font-weight:600;background:#eff6ff;}
+@media(max-width:1192px){#toc{display:none}}
 </style>
 </head>
 <body>
+<nav id="toc" aria-label="Table of contents">
+  <div class="toc-title">Contents</div>
+  <a href="#data-availability-and-quality">Data Availability and Quality</a>
+  <a href="#social-determinants-of-health-sdoh-pro">Social Determinants of Health …</a>
+  <a href="#industrial-and-environmental-health-co">Industrial and Environmental H…</a>
+  <a href="#automated-fact-check-summary">Automated Fact Check Summary</a>
+  <a href="#path-to-full-analysis">Path to Full Analysis</a>
+  <a href="#references">References</a>
+</nav>
 
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_background_version.png" alt="Lakes Linked" style="height:30px;width:auto;"></a>
+  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
   <div class="links">
     <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
     <div class="county-group">
@@ -145,7 +170,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <div class="keywords"><strong>Keywords:</strong> disability-adjusted life years · disease burden · Michigan · Midland County · industrial health · Dow Chemical · DALY methodology · public health planning · CDC PLACES 2023</div>
 
 <!-- 1. Data availability -->
-<h2 class="sec">1. Data Availability and Quality</h2>
+<h2 id="data-availability-and-quality" class="sec">1. Data Availability and Quality</h2>
 
 <h3 class="sub">1.1 CDC PLACES API Status</h3>
 <p>The primary source for YLD prevalence inputs — CDC PLACES 2024 (BRFSS 2021–22, MLRP model) — was queried via the Socrata API endpoint (<code>data.cdc.gov/resource/swc5-untb.json</code>) with filter <code>locationid=26111</code> during the June 2026 pipeline run. The API returned <strong>0 records</strong>. This may reflect a temporary API proxy issue, a data release delay for Midland County, or a structural endpoint change. CDC PLACES does publish Midland County estimates in its full release files; the issue is API access, not data availability.</p>
@@ -259,7 +284,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <p class="tbl-note">* Prevalence from CDC PLACES 2023 (BRFSS 2021–22), age-adjusted county-level estimates for Midland County (FIPS 26111), adult population 67,136 (ACS 2022). Mortality for Cancer, COPD, and CVD from CDC WONDER 2020–22 3-year pooled counts; remaining conditions use Michigan state rates × rural adjustment due to WONDER suppression. YLL calculated using Michigan LE 78.6 yrs. MH YLD includes ×0.50 active-disease remission factor. SUD prevalence derived from binge-drinking + OUD proxy (direct SUD not in PLACES).</p>
 
 <!-- 2. SDOH Profile -->
-<h2 class="sec">2. Social Determinants of Health (SDOH) Profile</h2>
+<h2 id="social-determinants-of-health-sdoh-pro" class="sec">2. Social Determinants of Health (SDOH) Profile</h2>
 
 <div class="tbl-wrap">
 <table>
@@ -285,7 +310,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <p class="tbl-note">Midland has the most favorable SDOH profile of the three analyzed counties, consistent with its higher income and industrial employment base. Obesity (40.5%) is notably above the Michigan average — possibly reflecting industrial workforce demographics and dietary patterns. Binge drinking (14.2%) is lower than Michigan average, consistent with higher income and different social environment than rural neighbors.</p>
 
 <!-- 3. Industrial/Environmental Context -->
-<h2 class="sec">3. Industrial and Environmental Health Context</h2>
+<h2 id="industrial-and-environmental-health-co" class="sec">3. Industrial and Environmental Health Context</h2>
 <p>Midland County is home to <strong>Dow Chemical Company</strong> global headquarters and a large industrial manufacturing base. This creates SDOH and occupational health considerations not captured in the standard DALY framework:</p>
 
 <h3 class="sub">3.1 PFAS Legacy Contamination</h3>
@@ -298,7 +323,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <p>The direction of bias in current estimates is uncertain: industrial exposures push burden higher; higher income and better access push it lower. Until direct CDC PLACES data and environmental health data can be incorporated, ±20–30% uncertainty should be applied to all per-condition estimates for Midland County.</p>
 
 <!-- 4. Fact Check Summary -->
-<h2 class="sec">4. Automated Fact Check Summary</h2>
+<h2 id="automated-fact-check-summary" class="sec">4. Automated Fact Check Summary</h2>
 <p>Pipeline step: <code>fact_checker.py</code> — run June 2026 against <code>midland_county_config.json</code>.</p>
 
 <div class="info-box">
@@ -322,7 +347,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 </div>
 
 <!-- 5. Update path -->
-<h2 class="sec">5. Path to Full Analysis</h2>
+<h2 id="path-to-full-analysis" class="sec">5. Path to Full Analysis</h2>
 <p>Upgrading this analysis from planning-grade to CHNA-ready requires the following steps:</p>
 
 <ol style="font-size:13px;line-height:2;padding-left:18px;margin-bottom:10px;">
@@ -335,7 +360,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 </ol>
 
 <!-- References -->
-<h2 class="sec">References</h2>
+<h2 id="references" class="sec">References</h2>
 <ol class="refs">
   <li>GBD 2021 Diseases and Injuries Collaborators. Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted life-years (DALYs), and healthy life expectancy (HALE) for 371 diseases and injuries. <em>Lancet</em>. 2024;403(10440):2133–2161.</li>
   <li>Murray CJL, Lopez AD. Alternative projections of mortality and disability by cause 1990–2020: Global Burden of Disease Study. <em>Lancet</em>. 1997;349:1498–1504.</li>
@@ -354,5 +379,17 @@ tbody td{padding:7px 10px;vertical-align:top;}
 </div>
 
 </div>
+<script>
+(function(){
+  var links=document.querySelectorAll('#toc a');
+  var secs=Array.from(links).map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  function upd(){
+    var active=-1;
+    for(var i=0;i<secs.length;i++){if(secs[i]&&secs[i].getBoundingClientRect().top<=80)active=i;}
+    links.forEach(function(a,i){a.classList.toggle('toc-active',i===active);});
+  }
+  window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
 </body>
 </html>

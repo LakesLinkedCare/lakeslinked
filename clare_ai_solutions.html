@@ -48,7 +48,7 @@ body { font-family: var(--sans); background: #fff; color: #111; font-size: 13.5p
 .abstract p { font-size: 13px; line-height: 1.65; }
 
 /* Section headings */
-h2.sec { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--navy); border-top: 2px solid var(--navy); padding-top: 14px; margin-top: 36px; margin-bottom: 12px; }
+h2.sec {scroll-margin-top:68px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--navy); border-top: 2px solid var(--navy); padding-top: 14px; margin-top: 36px; margin-bottom: 12px; }
 h3.sub { font-size: 13.5px; font-weight: 700; color: #1e3a5f; margin-top: 22px; margin-bottom: 8px; }
 p { margin-bottom: 10px; }
 
@@ -120,9 +120,32 @@ p { margin-bottom: 10px; }
 .refs a { color: var(--blue); }
 
 footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 11px; color: #888; line-height: 1.7; }
+
+/* floating toc */
+html{scroll-behavior:smooth}
+#toc{position:fixed;top:100px;right:max(16px,calc(50% - 586px));width:162px;z-index:90;max-height:calc(100vh - 84px);overflow-y:auto;
+  background:#fff;border:1px solid var(--border,#e2e8f0);border-radius:8px;
+  padding:12px 0 10px;box-shadow:0 2px 12px rgba(0,0,0,.07);
+  font-family:var(--sans,-apple-system,system-ui,sans-serif);}
+#toc .toc-title{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted,#64748b);padding:0 13px 9px;
+  border-bottom:1px solid var(--border,#e2e8f0);margin-bottom:7px;}
+#toc a{display:block;padding:4px 13px;font-size:11.5px;line-height:1.35;
+  color:var(--muted,#64748b);border-left:2px solid transparent;transition:.15s;text-decoration:none;}
+#toc a:hover{color:var(--navy,#0f1f3d);background:var(--bg,#f8fafc);}
+#toc a.toc-active{color:var(--blue,#1a56db);border-left-color:var(--blue,#1a56db);
+  font-weight:600;background:#eff6ff;}
+@media(max-width:1192px){#toc{display:none}}
 </style>
 </head>
 <body>
+<nav id="toc" aria-label="Table of contents">
+  <div class="toc-title">Contents</div>
+  <a href="#summary-clare-county-priority-frame">Summary — Clare County Priorit…</a>
+  <a href="#ai-applications-by-condition-priority-">AI Applications by Condition P…</a>
+  <a href="#phased-implementation-roadmap-clare-co">Phased Implementation Roadmap …</a>
+  <a href="#selected-references">Selected References</a>
+</nav>
 
 <style>
 .sitenav{background:#0f1f3d;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
@@ -135,7 +158,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 .county-group .navlink{border-radius:5px;}
 </style>
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_background_version.png" alt="Lakes Linked" style="height:30px;width:auto;"></a>
+  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
   <div class="links">
     <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
     <div class="county-group">
@@ -171,7 +194,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 </div>
 
 <div class="abstract">
-  <h2>Summary — Clare County Priority Frame</h2>
+  <h2 id="summary-clare-county-priority-frame">Summary — Clare County Priority Frame</h2>
   <p>This supplement maps the disease burden priorities identified in the Clare County health analysis (8,198 primary DALYs/year, frontier LE; 5,943 DALYs MI LE planning standard) to AI and digital health interventions supported by current evidence. Clare County differs fundamentally from Isabella County in its priority profile: the opioid/SUD crisis is the highest-priority acute intervention target (~47/100k overdose mortality, among Michigan's highest), followed by COPD remote monitoring (12.7% prevalence — the standout Clare condition), cancer screening navigation, and combined diabetes/hypertension telehealth. Mental health burden is compounded by whole-county MUA designation and absence of any university psychiatry pipeline. The county's older population (median 46.8 yrs), absence of an institutional health anchor, and rural isolation create distinct implementation barriers that digital health must work within — not around. All estimates are planning-grade; not peer-reviewed.</p>
 </div>
 
@@ -193,7 +216,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 </div>
 
 <!-- Section 1 -->
-<h2 class="sec">1. AI Applications by Condition Priority — Clare County</h2>
+<h2 id="ai-applications-by-condition-priority-" class="sec">1. AI Applications by Condition Priority — Clare County</h2>
 <p>The following cards are ordered by Clare County's intervention priority — which differs from the DALY rank order because some conditions have stronger acute crisis signals and more immediately actionable AI solutions. For each condition, interventions are rated: <span class="ev strong">Strong</span> = RCT/meta-analysis evidence; <span class="ev mod">Moderate</span> = mixed, indirect, or implementation evidence; <span class="ev emrg">Emerging</span> = promising early-stage. Clare population base: 30,013 total / ~24,310 adults.</p>
 
 <div class="ps-grid">
@@ -443,7 +466,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 </div><!-- end ps-grid -->
 
 <!-- Section 2 - Implementation Roadmap -->
-<h2 class="sec">2. Phased Implementation Roadmap — Clare County</h2>
+<h2 id="phased-implementation-roadmap-clare-co" class="sec">2. Phased Implementation Roadmap — Clare County</h2>
 <p>Given Clare County's resource constraints (no a university anchor, smaller population, MUA designation limiting specialist recruitment), the following phased approach prioritizes high-impact, low-infrastructure interventions first. All Year 1+ interventions should be built on FQHC and county health department infrastructure, not greenfield systems.</p>
 
 <table class="impl-table">
@@ -538,7 +561,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 </div>
 
 <!-- References -->
-<h2 class="sec">4. Selected References</h2>
+<h2 id="selected-references" class="sec">4. Selected References</h2>
 <ol class="refs">
   <li>Perry CE, et al. Opioid agonist treatment in primary care compared to specialist settings for opioid dependence. Cochrane Database Syst Rev. 2025;(3):CD013672. PMID 40919724.</li>
   <li>Whittaker R, et al. Mobile phone text messaging and app-based interventions for smoking cessation. Cochrane Database Syst Rev. 2019;(10):CD006611. PMID 31638271.</li>
@@ -562,5 +585,17 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 </footer-doc>
 
 </div><!-- end .doc -->
+<script>
+(function(){
+  var links=document.querySelectorAll('#toc a');
+  var secs=Array.from(links).map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  function upd(){
+    var active=-1;
+    for(var i=0;i<secs.length;i++){if(secs[i]&&secs[i].getBoundingClientRect().top<=80)active=i;}
+    links.forEach(function(a,i){a.classList.toggle('toc-active',i===active);});
+  }
+  window.addEventListener('scroll',upd,{passive:true});upd();
+})();
+</script>
 </body>
 </html>

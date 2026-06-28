@@ -130,13 +130,31 @@ tbody td{padding:7px 10px;vertical-align:top;font-size:12.5px;}
 .doc-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:#888;line-height:1.8;}
 
 @media print{.sitenav{display:none;}.doc{padding-top:20px;}}
+
+/* floating toc */
+html{scroll-behavior:smooth}
+h2.sec{scroll-margin-top:68px}
+#toc{
+  position:fixed;top:68px;
+  right:max(16px,calc(50% - 596px));
+  width:162px;z-index:90;max-height:calc(100vh - 84px);overflow-y:auto;
+  background:#fff;border:1px solid var(--border);border-radius:8px;
+  padding:12px 0 10px;box-shadow:0 2px 12px rgba(0,0,0,.07);
+  font-family:var(--sans);
+}
+#toc .toc-title{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 13px 9px;border-bottom:1px solid var(--border);margin-bottom:7px;}
+#toc a{display:block;padding:4px 13px;font-size:11.5px;line-height:1.35;color:var(--muted);border-left:2px solid transparent;transition:.15s;text-decoration:none;}
+#toc a:hover{color:var(--navy);background:var(--bg);}
+#toc a.toc-active{color:var(--blue);border-left-color:var(--blue);font-weight:600;background:#eff6ff;}
+#toc .toc-num{font-size:10px;color:#b0bec5;margin-right:4px;}
+@media(max-width:1220px){#toc{display:none}}
 </style>
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_background_version.png" alt="Lakes Linked" style="height:30px;width:auto;"></a>
+  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
   <div class="links">
     <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
     <div class="county-group">
@@ -152,6 +170,17 @@ tbody td{padding:7px 10px;vertical-align:top;font-size:12.5px;}
   </div>
 </nav>
 <div style="max-width:1100px;margin:14px auto 0;padding:10px 16px;background:#f0f7ff;border:1px solid #bfdbfe;border-left:4px solid #1a56db;border-radius:0 8px 8px 0;font-size:12.5px;color:#1e3a5f;line-height:1.6;"><strong>Scope note:</strong> The AI &amp; digital-health interventions referenced across these analyses are illustrative <strong>“low-hanging fruit”</strong> — a small, high-feasibility/high-impact sample chosen to demonstrate planning-grade ROI. They are not an exhaustive or prescriptive list; many other interventions may apply.</div>
+
+<nav id="toc" aria-label="Table of contents">
+  <div class="toc-title">Contents</div>
+  <a href="#s-daly"><span class="toc-num">1.</span>DALY Framework</a>
+  <a href="#s-pipeline"><span class="toc-num">2.</span>Python Pipeline</a>
+  <a href="#s-data"><span class="toc-num">3.</span>Data Sources</a>
+  <a href="#s-uncertainty"><span class="toc-num">4.</span>Uncertainty</a>
+  <a href="#s-counties"><span class="toc-num">5.</span>County Supplements</a>
+  <a href="#s-scope"><span class="toc-num">6.</span>Scope &amp; Limits</a>
+  <a href="#s-references"><span class="toc-num">7.</span>References</a>
+</nav>
 
 <div class="doc">
 
@@ -195,7 +224,7 @@ tbody td{padding:7px 10px;vertical-align:top;font-size:12.5px;}
 </div>
 
 <!-- 1. DALY Framework -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">1.</span> DALY Framework</h2>
+<h2 id="s-daly" class="sec"><span style="color:var(--blue);margin-right:6px">1.</span> DALY Framework</h2>
 
 <h3 class="sub">1.1 Standard formula</h3>
 <p>This analysis adopts the standard WHO DALY formula with no age-weighting and no time discounting, consistent with the 2010 GBD revision and subsequent global burden analyses:</p>
@@ -277,7 +306,7 @@ tbody td{padding:7px 10px;vertical-align:top;font-size:12.5px;}
 <p>Evidence basis: NSDUH 2021 national past-year major depressive episode prevalence ~8.3% vs. PLACES national lifetime-diagnosed ~20.7%, implying ~60% remission at any given time. Published psychiatric epidemiology reports 40–60% 12-month remission for MDD. The central factor of 0.50 is propagated through Monte Carlo with uncertainty Uniform(0.40, 0.60). The planning sensitivity retains raw PLACES prevalence (no remission adjustment) for continuity with prior county documents.</p>
 
 <!-- 2. Python Pipeline -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">2.</span> Python Analysis Pipeline</h2>
+<h2 id="s-pipeline" class="sec"><span style="color:var(--blue);margin-right:6px">2.</span> Python Analysis Pipeline</h2>
 
 <p>All DALY computations are implemented in Python 3.10+ using a modular agent-based pipeline. The pipeline is designed for reproducibility: every computation step is parameterized by a county FIPS code, all intermediate outputs are serialized to JSON, and the full pipeline can be re-run with a single command.</p>
 
@@ -374,7 +403,7 @@ python3 director.py --county midland --dry-run</div>
 <p>Each county requires a minimal configuration entry in <code>director.py</code> (FIPS code, population, name) and the harvester automatically retrieves all other data from public APIs. Adding a new county to the pipeline is a one-line configuration change.</p>
 
 <!-- 3. Data Sources -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">3.</span> Data Sources</h2>
+<h2 id="s-data" class="sec"><span style="color:var(--blue);margin-right:6px">3.</span> Data Sources</h2>
 
 <div class="tbl-wrap">
   <table>
@@ -477,7 +506,7 @@ python3 director.py --county midland --dry-run</div>
 </div>
 
 <!-- 4. Uncertainty Model -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">4.</span> Uncertainty Quantification</h2>
+<h2 id="s-uncertainty" class="sec"><span style="color:var(--blue);margin-right:6px">4.</span> Uncertainty Quantification</h2>
 
 <h3 class="sub">4.1 Monte Carlo simulation design</h3>
 
@@ -524,7 +553,7 @@ python3 director.py --county midland --dry-run</div>
 <p>For the 2017–2023 longitudinal analysis, additional uncertainty sources apply: (1) CDC PLACES 2021 and 2022 county-level data are unavailable — values for those years are linearly interpolated between 2020 and 2023 observations and flagged with <code>interpolated: True</code> in the output CSV; (2) CHR YPLL scaling introduces year-specific uncertainty in YLL estimates; (3) the 2021 all-cause mortality spike (COVID-19 driven YPLL = 8,100 per Isabella CHR) is preserved in the longitudinal model but flagged as an anomalous year. For 2026 projections, OLS regression is applied where ≥3 observed data points exist; conditions with fewer than 3 points receive flat projections and are flagged <code>reliability: insufficient_data</code>.</p>
 
 <!-- 5. County Supplements -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">5.</span> County-Specific Supplements</h2>
+<h2 id="s-counties" class="sec"><span style="color:var(--blue);margin-right:6px">5.</span> County-Specific Supplements</h2>
 
 <p>This shared framework document covers methodology common to all county analyses. County-specific data quality tables, condition rankings, population characteristics, and analytic considerations are documented in each county's supplement. The supplement also notes where county-specific data availability required modifications to the standard pipeline (e.g., Clare County: WONDER fully suppressed for all causes, requiring full state-rate substitution; Isabella County: University of Michigan university student population inflates ACS poverty rate).</p>
 
@@ -588,7 +617,7 @@ python3 director.py --county midland --dry-run</div>
 </div>
 
 <!-- 6. Scope and Limitations -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">6.</span> Scope, Limitations, and Intended Use</h2>
+<h2 id="s-scope" class="sec"><span style="color:var(--blue);margin-right:6px">6.</span> Scope, Limitations, and Intended Use</h2>
 
 <p><strong>Intended use.</strong> These analyses are intended for: county health department planning, Community Health Needs Assessment (CHNA) process support, grant application development (SAMHSA SOR, HRSA Rural Health, MDHHS, NIH R21), academic collaboration, and public health education. They are NOT intended for clinical decision-making, regulatory submissions, or direct policy implementation without additional validation.</p>
 
@@ -601,7 +630,7 @@ python3 director.py --county midland --dry-run</div>
 <p><strong>Reproducibility caveats.</strong> CDC PLACES prevalence estimates are updated annually (new BRFSS data) and may differ between releases. CDC WONDER data are periodically revised. Re-running the pipeline with current-year data will produce updated estimates that may differ from those reported here. County config JSON files are version-stamped; always verify the data vintage when citing specific values.</p>
 
 <!-- 7. References -->
-<h2 class="sec"><span style="color:var(--blue);margin-right:6px">7.</span> References</h2>
+<h2 id="s-references" class="sec"><span style="color:var(--blue);margin-right:6px">7.</span> References</h2>
 
 <ol class="refs">
   <li>Salomon JA, Vos T, Hogan DR, et al. Common values in assessing health outcomes from disease and injury: disability weights measurement study for the Global Burden of Disease Study 2010. <em>Lancet</em>. 2012;380(9859):2129–2143.</li>
@@ -631,5 +660,15 @@ python3 director.py --county midland --dry-run</div>
 </div>
 
 </div><!-- end .doc -->
+<script>
+  var tocLinks=document.querySelectorAll('#toc a');
+  var sections=Array.from(tocLinks).map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  function updateToc(){
+    var active=-1;
+    for(var i=0;i<sections.length;i++){if(sections[i]&&sections[i].getBoundingClientRect().top<=80)active=i;}
+    tocLinks.forEach(function(a,i){a.classList.toggle('toc-active',i===active);});
+  }
+  window.addEventListener('scroll',updateToc,{passive:true});updateToc();
+</script>
 </body>
 </html>

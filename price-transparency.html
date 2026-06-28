@@ -103,13 +103,39 @@
   .endnote{margin-top:22px;font-size:13px;color:var(--faint);font-style:italic;line-height:1.6;}
   .tags{margin-top:24px;font-size:13.5px;color:var(--green-d);line-height:1.95;word-spacing:1px;}
   .tags .tg-label{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:7px;}
+
+  /* floating toc */
+  html{scroll-behavior:smooth}
+  #toc{
+    position:fixed;top:50%;transform:translateY(-50%);
+    right:max(16px,calc(50% - 566px));
+    width:160px;z-index:90;
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:14px 0 12px;box-shadow:0 2px 12px rgba(0,0,0,.07);
+    font-family:var(--sans);
+  }
+  #toc .toc-title{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding:0 14px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;}
+  #toc a{display:block;padding:5px 14px;font-size:12px;line-height:1.35;color:var(--soft);border-left:2px solid transparent;transition:.15s;}
+  #toc a:hover{color:var(--ink);background:#f0efe9;border-bottom:none;}
+  #toc a.toc-active{color:var(--green-d);border-left-color:var(--green);font-weight:600;background:#edf3ec;}
+  @media(max-width:1160px){#toc{display:none}}
 </style>
 </head>
 <body>
+<nav id="toc" aria-label="Table of contents">
+  <div class="toc-title">Contents</div>
+  <a href="#what-changed">What changed</a>
+  <a href="#raw-data">Raw data</a>
+  <a href="#from-files">Files to answer</a>
+  <a href="#limits">Limits</a>
+  <a href="#responsibly">Reading numbers</a>
+  <a href="#opportunity">Opportunity</a>
+</nav>
+
 <div class="wrap">
 
   <div class="banner">
-    <div class="b-left"><a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;"><img src="logos/lakeslinked_dark_background_version.png" alt="Lakes Linked" style="height:34px;width:auto;"></a></div>
+    <div class="b-left"><a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a></div>
     <div class="b-right">June 2026</div>
   </div>
 
@@ -139,7 +165,7 @@
 
     <p>That has changed on paper. U.S. hospitals now have to publish their real prices — payer-negotiated rates and a cash price — in a machine-readable file, and insurers have to publish their negotiated rates too. The prices are public. The trouble is that <strong>"public" and "usable" are very different things</strong> — and closing that gap is its own discipline.</p>
 
-    <h2>What changed, and when</h2>
+    <h2 id="what-changed">What changed, and when</h2>
 
     <figure>
       <div class="fig-label">Three rules that pried the market open</div>
@@ -149,10 +175,10 @@
       <figcaption>Sources: <a href="https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency" target="_blank" rel="noopener">CMS Hospital Price Transparency</a> · <a href="https://www.cms.gov/newsroom/fact-sheets/cy-2026-opps-ambulatory-surgical-center-final-rule-hospital-price-transparency-policy-changes" target="_blank" rel="noopener">CMS CY2026 final rule</a> · codified at <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50" target="_blank" rel="noopener">45 CFR 180.50</a>.</figcaption>
     </figure>
 
-    <h2>What the raw data looks like</h2>
+    <h2 id="raw-data">What the raw data looks like</h2>
     <p>Open one of these files expecting a price list and you'll find something else: gigabyte-scale JSON, keyed by each hospital's own identifier, with thousands of services and every payer and plan stacked in structures no human was meant to read. Multiply that by thousands of hospitals, plus insurer files that run into the <strong>terabytes</strong>. The information is public and effectively invisible at the same time. Making it usable used to be a data-engineering project with a budget.</p>
 
-    <h2>From files to an answer</h2>
+    <h2 id="from-files">From files to an answer</h2>
     <p>This is where AI-assisted analytics helps — and it's worth being precise about how. Good tooling can cut the manual grind: it can help locate the files, extract the right fields, check them against the schema, flag inconsistencies, and support comparisons. What it does not do is make the problem trivial. Reliable output still requires a reproducible data pipeline, validated code, careful service-code matching, payer-and-plan normalization, facility-identity checks, and human review at the end. The machine removes drudgery; it does not remove judgment.</p>
 
     <p>The first step, in fact, is not asking an AI, "What does an MRI cost?" It is defining exactly which service is being compared — the code, the facility, the payer, the plan, the setting, and whether the patient is cash-pay or insured. Without that, price comparison becomes noise with a dollar sign.</p>
@@ -177,13 +203,13 @@
 
     <p>That isn't a radical idea; it's the ordinary rule of every other market, finally reaching the one where the stakes are highest and the secrecy ran deepest. The law made the data exist; making it usable is what gives the right meaning.</p>
 
-    <h2>What it doesn't cover</h2>
+    <h2 id="limits">What it doesn't cover</h2>
     <p>Two honest limits. <strong>Emergencies are a different system</strong> — you can't shop for a heart attack. There the relevant law is the No Surprises Act (2022), which bans most surprise bills for emergency care and for out-of-network providers at in-network hospitals, and gives uninsured patients a good-faith estimate; its stubborn gap is ground ambulances, still excluded. <strong>And for insured patients, the negotiated rate isn't the bill</strong> — out-of-pocket cost depends on the deductible, coinsurance, and plan year, which is why plans must now offer a personalized estimator tool. Shopping across a region therefore helps cash-pay patients and self-funded employers most; a member locked to a network can't simply drive elsewhere.</p>
 
-    <h2>Reading the numbers responsibly</h2>
+    <h2 id="responsibly">Reading the numbers responsibly</h2>
     <p>A few cautions keep this honest. The files are inconsistent and sometimes non-compliant, so the numbers need validating, not just parsing. <strong>Price is not quality:</strong> the cheapest provider is not automatically the best one, and a price should be read alongside quality, outcomes, access, and patient safety. And transparency can widen the gap it is meant to close — it rewards whoever has the time, tools, and literacy to use it, which is why the data has to reach community health workers, navigators, and safety-net clinics, not only the confident shopper.</p>
 
-    <h2>A cautious opportunity</h2>
+    <h2 id="opportunity">A cautious opportunity</h2>
     <p>There may be an upside for the providers everyone assumes have the least to gain. For some routine, planned services, transparent pricing may help well-priced regional and rural hospitals become more visible to patients, employers, and navigators outside their immediate county. That is a hypothesis worth testing, not a promise — but a market where buyers can finally see prices behaves differently from one where they can't.</p>
 
     <p>The near term is smaller and already real. A patient facing a planned procedure can <strong>ask</strong> what it will cost and <strong>compare</strong> a few nearby options before scheduling. A community health worker can <strong>steer</strong> a client toward an affordable provider with a real number instead of a guess. A rural or safety-net clinic can compare its own posted prices against the region and see where it stands. The data won't act on its own — but those are decisions someone can finally make.</p>
@@ -215,5 +241,16 @@
 
   </div>
 </div>
+<script>
+  var tocLinks=document.querySelectorAll('#toc a');
+  var sections=Array.from(tocLinks).map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  function updateToc(){
+    var st=window.scrollY||0;
+    var active=-1;
+    for(var i=0;i<sections.length;i++){if(sections[i]&&sections[i].getBoundingClientRect().top<=80)active=i;}
+    tocLinks.forEach(function(a,i){a.classList.toggle('toc-active',i===active);});
+  }
+  window.addEventListener('scroll',updateToc,{passive:true});updateToc();
+</script>
 </body>
 </html>

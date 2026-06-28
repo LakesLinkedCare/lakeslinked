@@ -137,6 +137,34 @@
   footer a{color:var(--accent-deep);font-weight:500}
   footer code{font-family:'JetBrains Mono',monospace;color:var(--accent-deep)}
 
+  /* floating toc */
+  #toc{
+    position:fixed;
+    top:50%;
+    right:max(16px, calc(50% - var(--maxw)/2 - 180px));
+    transform:translateY(-50%);
+    width:160px;
+    z-index:100;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 0 12px;
+    box-shadow:0 2px 12px rgba(0,0,0,.07);
+    font-family:'Inter',sans-serif;
+  }
+  #toc .toc-title{
+    font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);padding:0 14px 10px;border-bottom:1px solid var(--line-soft);margin-bottom:8px;
+  }
+  #toc a{
+    display:block;padding:5px 14px;font-size:12px;line-height:1.35;color:var(--soft);
+    border-left:2px solid transparent;transition:.15s;
+  }
+  #toc a:hover{color:var(--ink);background:var(--surface-2)}
+  #toc a.toc-active{color:var(--accent-deep);border-left-color:var(--accent);font-weight:600;background:var(--accent-soft)}
+  #toc .toc-num{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--faint);margin-right:5px;font-weight:400}
+
+  @media(max-width:1100px){#toc{display:none}}
   @media(max-width:680px){
     .prose p{font-size:18px}
     .prose p.lede:first-of-type::first-letter{font-size:52px}
@@ -148,6 +176,17 @@
 <body>
 
 <div id="prog"></div>
+
+<nav id="toc" aria-label="Table of contents">
+  <div class="toc-title">Contents</div>
+  <a href="#how"><span class="toc-num">01</span>Reading the signal</a>
+  <a href="#function"><span class="toc-num">02</span>Taxonomy</a>
+  <a href="#spotlight"><span class="toc-num">03</span>Spotlights</a>
+  <a href="#scale"><span class="toc-num">04</span>Mega-cohorts</a>
+  <a href="#patterns"><span class="toc-num">05</span>PH signal</a>
+  <a href="#browse"><span class="toc-num">06</span>Browse</a>
+  <a href="#methods"><span class="toc-num">07</span>Methods</a>
+</nav>
 
 <div class="masthead">
   <div class="wrap">
@@ -415,7 +454,22 @@
     var st=window.scrollY||document.documentElement.scrollTop;
     var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
     prog.style.width=(h>0?(st/h*100):0)+'%';
+    updateToc(st);
   }
+
+  var tocLinks=document.querySelectorAll('#toc a');
+  var sections=Array.from(tocLinks).map(function(a){
+    return document.getElementById(a.getAttribute('href').slice(1));
+  });
+  function updateToc(st){
+    var offset=80;
+    var active=-1;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i]&&sections[i].getBoundingClientRect().top+st-offset<=st+2) active=i;
+    }
+    tocLinks.forEach(function(a,i){a.classList.toggle('toc-active',i===active)});
+  }
+
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 </script>
 </body>
