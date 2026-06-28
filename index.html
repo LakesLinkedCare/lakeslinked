@@ -1,23 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Michigan Rural Health Burden Analysis | Lakes Linked</title>
-<meta name="description" content="Educational disease burden analysis for rural Michigan counties — identifying top health conditions, quantifying economic impact, and supporting grant applications and health planning. Dr. Sergey Soshnikov, MD PhD.">
-<meta property="og:title" content="Michigan Rural Health Burden Analysis | Lakes Linked">
-<meta property="og:description" content="4 counties complete · ~45,500 DALYs/yr · 2 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy.">
-<meta property="og:url" content="https://lakeslinked.com/index.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://lakeslinked.com/logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lakeslinked.com/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<meta content="Educational disease burden analysis for rural Michigan counties — identifying top health conditions, quantifying economic impact, and supporting grant applications and health planning. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="Michigan Rural Health Burden Analysis | Lakes Linked" property="og:title"/>
+<meta content="4 counties complete · ~45,500 DALYs/yr · 2 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy." property="og:description"/>
+<meta content="https://www.lakeslinked.com/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.lakeslinked.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://lakeslinked.com/logo.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
 /* ── DESIGN TOKENS ── */
@@ -610,216 +611,220 @@ html{scroll-behavior:smooth}
   font-weight:600;background:#eff6ff;}
 @media(max-width:1232px){#toc{display:none}}
 </style>
-</head>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><meta content="Sergey Soshnikov, MD PhD — Lakes Linked" name="author"/><link href="https://www.lakeslinked.com/" rel="canonical"/></head>
 <body>
-<nav id="toc" aria-label="Table of contents">
-  <div class="toc-title">Contents</div>
-  <a href="#michigan-coverage-map">Michigan Coverage Map</a>
-  <a href="#completed-county-analyses">Completed County Analyses</a>
-  <a href="#counties-in-development-pipeline">Counties in Development Pipeli…</a>
-  <a href="#articles">Articles</a>
-  <a href="#references">References</a>
+<nav aria-label="Table of contents" id="toc">
+<div class="toc-title">Contents</div>
+<a href="#michigan-coverage-map">Michigan Coverage Map</a>
+<a href="#completed-county-analyses">Completed County Analyses</a>
+<a href="#counties-in-development-pipeline">Counties in Development Pipeli…</a>
+<a href="#articles">Articles</a>
+<a href="#references">References</a>
 </nav>
-
 <!-- ══ HEADER ══ -->
 <header>
-  <div class="brand">
-    <a href="index.html" style="display:flex;align-items:center;">
-      <img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:44px;width:auto;">
-    </a>
-  </div>
-  </div>
-  <div class="header-right">
-    <a class="gh-link" href="founder.html">About the founder</a>
-    <a class="gh-link" href="https://github.com/lakeslinkedcare" target="_blank">
-      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+<div class="brand">
+<a href="index.html" style="display:flex;align-items:center;">
+<img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:44px;width:auto;"/>
+</a>
+</div>
+
+<div class="header-right">
+<a class="gh-link" href="founder.html">About the founder</a>
+<a class="gh-link" href="https://github.com/lakeslinkedcare" target="_blank">
+<svg fill="currentColor" height="12" viewbox="0 0 16 16" width="12"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
       GitHub
     </a>
-  </div>
+</div>
 </header>
-
 <!-- ══ NAV STRIP ══ -->
 <div class="nav-strip">
-  <div class="nav-strip-inner">
-    <span class="nav-label">Counties</span>
-    <div class="nav-group">
-      <a href="isabella.html">
-        <span class="nav-dot" style="background:var(--blue);"></span>Isabella
+<div class="nav-strip-inner">
+<span class="nav-label">Counties</span>
+<div class="nav-group">
+<a href="isabella.html">
+<span class="nav-dot" style="background:var(--blue);"></span>Isabella
       </a>
-      <a href="clare.html">
-        <span class="nav-dot" style="background:var(--red);"></span>Clare
+<a href="clare.html">
+<span class="nav-dot" style="background:var(--red);"></span>Clare
       </a>
-      <a href="midland.html">
-        <span class="nav-dot" style="background:var(--green);"></span>Midland
+<a href="midland.html">
+<span class="nav-dot" style="background:var(--green);"></span>Midland
       </a>
-      <a href="gratiot.html">
-        <span class="nav-dot" style="background:var(--amber);"></span>Gratiot
+<a href="gratiot.html">
+<span class="nav-dot" style="background:var(--amber);"></span>Gratiot
       </a>
-    </div>
-    <div class="nav-divider"></div>
-    <span class="nav-pipeline">Pipeline: Mecosta &middot; Washtenaw</span>
-    <div class="nav-divider"></div>
-    <div class="nav-group">
-      <a href="articles.html">
-        <span class="nav-dot" style="background:var(--teal);"></span>Articles
-      </a>
-      <a href="news.html">
-        <span class="nav-dot" style="background:var(--amber);"></span>News
-      </a>
-    </div>
-  </div>
 </div>
-
+<div class="nav-divider"></div>
+<span class="nav-pipeline">Pipeline: Mecosta · Washtenaw</span>
+<div class="nav-divider"></div>
+<div class="nav-group">
+<a href="articles.html">
+<span class="nav-dot" style="background:var(--teal);"></span>Articles
+      </a>
+<a href="news.html">
+<span class="nav-dot" style="background:var(--amber);"></span>News
+      </a>
+</div>
+</div>
+</div>
 <!-- ══ HERO ══ -->
 <div class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="project-kicker">Educational Research Project &middot; Public Health</div>
-      <h1>Disease Burden in <em>Rural Michigan</em></h1>
-
-      <div class="byline-block">
-        <div class="author">Sergey Soshnikov, MD PhD</div>
-        <div class="affil">
-          Assistant Professor, Public Health &middot; Lakes Linked<br>
-          Mount Pleasant, Michigan &middot; 2026
+<div class="hero-inner">
+<div class="hero-content">
+<div class="project-kicker">Educational Research Project · Public Health</div>
+<h1>Disease Burden in <em>Rural Michigan</em></h1>
+<div class="byline-block">
+<div class="author">Sergey Soshnikov, MD PhD</div>
+<div class="affil">
+          Assistant Professor, Public Health · Lakes Linked<br/>
+          Mount Pleasant, Michigan · 2026
         </div>
-      </div>
-
-      <p class="hero-abstract">Disability-adjusted life year (DALY) burden analysis for rural Michigan counties — built for county health planning, CHNA reports, and grant applications (SAMHSA, HRSA, MDHHS). Open CDC and US Census data sources; disability weights adapted from IHME GBD 2021 and WHO reference standards.</p>
-
-      <div class="hero-stats">
-        <div class="hs">
-          <div class="n">4</div>
-          <div class="l">Counties analyzed</div>
-          <div class="hs-sub">Isabella &middot; Clare &middot; Midland &middot; Gratiot</div>
-        </div>
-        <div class="hs">
-          <div class="n">~45,500</div>
-          <div class="l">Combined DALYs/yr</div>
-          <div class="hs-sub">Primary estimates &middot; frontier LE 89.1 yrs</div>
-        </div>
-        <div class="hs">
-          <div class="n">2</div>
-          <div class="l">In pipeline</div>
-          <div class="hs-sub">Mecosta &middot; Washtenaw</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+</div>
+<p class="hero-abstract">Disability-adjusted life year (DALY) burden analysis for rural Michigan counties — built for county health planning, CHNA reports, and grant applications (SAMHSA, HRSA, MDHHS). Open CDC and US Census data sources; disability weights adapted from IHME GBD 2021 and WHO reference standards.</p><div class="ll-request-cta-inline" style="margin:20px 0;"><p>📍 Need this analysis for your county?</p><a class="ll-btn-primary" href="#request-county">Request your county snapshot →</a></div>
+<div class="hero-stats">
+<div class="hs">
+<div class="n">4</div>
+<div class="l">Counties analyzed</div>
+<div class="hs-sub">Isabella · Clare · Midland · Gratiot</div>
+</div>
+<div class="hs">
+<div class="n">~45,500</div>
+<div class="l">Combined DALYs/yr</div>
+<div class="hs-sub">Primary estimates · frontier LE 89.1 yrs</div>
+</div>
+<div class="hs">
+<div class="n">2</div>
+<div class="l">In pipeline</div>
+<div class="hs-sub">Mecosta · Washtenaw</div>
+</div>
+</div>
+</div>
+</div>
 </div><!-- end .hero -->
-
 <!-- ══ ABOUT STRIP ══ -->
 <div class="about-strip">
-  <div class="about-strip-inner">
-    <div class="about-icon">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-      </svg>
-    </div>
-    <div class="about-text">
-      <strong>About this project</strong>
-      <p>This series quantifies disease burden for rural Michigan counties using disability-adjusted life years (DALYs) — a metric that combines premature mortality and years lived with disability into a single, actionable measure. Data sources: CDC PLACES 2023, CDC WONDER 2020–22 mortality files, and US Census Bureau ACS estimates. Disability weights adapted from IHME GBD 2021. Analyses are designed for county health needs assessments, grant applications, and public health planning — not as formal GBD estimates or peer-reviewed epidemiological studies.</p>
-    </div>
-  </div>
+<div class="about-strip-inner">
+<div class="about-icon">
+<svg fill="none" height="18" stroke="#1a56db" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
 </div>
-
+<div class="about-text">
+<strong>About this project</strong>
+<p>This series quantifies disease burden for rural Michigan counties using disability-adjusted life years (DALYs) — a metric that combines premature mortality and years lived with disability into a single, actionable measure. Data sources: CDC PLACES 2023, CDC WONDER 2020–22 mortality files, and US Census Bureau ACS estimates. Disability weights adapted from IHME GBD 2021. Analyses are designed for county health needs assessments, grant applications, and public health planning — not as formal GBD estimates or peer-reviewed epidemiological studies.</p>
+</div>
+</div>
+</div>
 <!-- ══ DATA SOURCES STRIP ══ -->
 <div class="ds-strip">
-  <div class="ds-inner">
-    <span class="ds-label">Data sources</span>
-    <div class="ds-grid">
-      <div class="ds-item">
-        <div class="ds-name">CDC PLACES 2023</div>
-        <div class="ds-desc">Prevalence · 12 conditions</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">CDC WONDER 2020–22</div>
-        <div class="ds-desc">Mortality · cause-of-death</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">IHME GBD 2021</div>
-        <div class="ds-desc">Disability weights · DW</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">US Census ACS 2022</div>
-        <div class="ds-desc">Demographics · SDOH</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">County Health Rankings</div>
-        <div class="ds-desc">500+ health indicators</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">Michigan DHHS</div>
-        <div class="ds-desc">Vital stats · YPLL · mortality</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">MyMichigan CHNA</div>
-        <div class="ds-desc">Community health needs</div>
-        <div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">IRS 990 Schedule H</div>
-        <div class="ds-desc">Hospital community benefit</div>
-        <div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">HRSA Data Warehouse</div>
-        <div class="ds-desc">HPSA / MUA · provider shortage</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">HHS ASPE 2026</div>
-        <div class="ds-desc">Value of Statistical Life · VSL</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">SAMHSA NSDUH</div>
-        <div class="ds-desc">Substance use · behavioral health</div>
-        <div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">CDC/ATSDR SVI 2022</div>
-        <div class="ds-desc">Social Vulnerability Index</div>
-        <div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">USDA Food Atlas</div>
-        <div class="ds-desc">Food insecurity · access</div>
-        <div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
-      </div>
-      <div class="ds-item">
-        <div class="ds-name">Census SAIPE / SAHIE</div>
-        <div class="ds-desc">Income, poverty &amp; insurance</div>
-        <div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
-      </div>
-    </div>
-  </div>
+<div class="ds-inner">
+<span class="ds-label">Data sources</span>
+<div class="ds-grid">
+<div class="ds-item">
+<div class="ds-name">CDC PLACES 2023</div>
+<div class="ds-desc">Prevalence · 12 conditions</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
 </div>
-
+<div class="ds-item">
+<div class="ds-name">CDC WONDER 2020–22</div>
+<div class="ds-desc">Mortality · cause-of-death</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">IHME GBD 2021</div>
+<div class="ds-desc">Disability weights · DW</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">US Census ACS 2022</div>
+<div class="ds-desc">Demographics · SDOH</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">County Health Rankings</div>
+<div class="ds-desc">500+ health indicators</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">Michigan DHHS</div>
+<div class="ds-desc">Vital stats · YPLL · mortality</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">MyMichigan CHNA</div>
+<div class="ds-desc">Community health needs</div>
+<div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">IRS 990 Schedule H</div>
+<div class="ds-desc">Hospital community benefit</div>
+<div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">HRSA Data Warehouse</div>
+<div class="ds-desc">HPSA / MUA · provider shortage</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">HHS ASPE 2026</div>
+<div class="ds-desc">Value of Statistical Life · VSL</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">SAMHSA NSDUH</div>
+<div class="ds-desc">Substance use · behavioral health</div>
+<div class="ds-status"><span class="ds-tag dl">Downloaded</span><span class="ds-tag on">Access on</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">CDC/ATSDR SVI 2022</div>
+<div class="ds-desc">Social Vulnerability Index</div>
+<div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">USDA Food Atlas</div>
+<div class="ds-desc">Food insecurity · access</div>
+<div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
+</div>
+<div class="ds-item">
+<div class="ds-name">Census SAIPE / SAHIE</div>
+<div class="ds-desc">Income, poverty &amp; insurance</div>
+<div class="ds-status"><span class="ds-tag pend">Pending</span><span class="ds-tag off">Access off</span></div>
+</div>
+</div>
+</div>
+</div>
 <!-- ══ MICHIGAN COVERAGE MAP ══ -->
 <div class="main" style="padding-bottom:0;">
-  <!-- Michigan Coverage Map -->
-  <div class="section-head">
-    <h2 id="michigan-coverage-map">Michigan Coverage Map</h2>
-    <div class="sh-line"></div>
-    <span class="section-meta" id="mi-counter">4 of 83 counties analyzed</span>
-  </div>
-  <p style="font-size:13px;color:var(--text-secondary);max-width:760px;margin:-2px 0 12px;">Click a completed county (blue) to open its dashboard. Counties in grey aren't analyzed yet — available on request.</p>
-  <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--text-secondary);margin-bottom:10px;align-items:center;">
-    <span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#1a56db;vertical-align:-2px;margin-right:6px;"></span>Analyzed (click)</span>
-    <span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#bfdbfe;vertical-align:-2px;margin-right:6px;"></span>In pipeline</span>
-    <span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#e2e8f0;border:1px solid #cbd5e1;vertical-align:-2px;margin-right:6px;"></span>Not yet analyzed</span>
-  </div>
-  <div id="mi-map" style="height:440px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
-  <p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map →</a></p>
-  <script>
+<!-- Michigan Coverage Map -->
+<div class="section-head">
+<h2 id="michigan-coverage-map">Michigan Coverage Map</h2>
+<div class="sh-line"></div>
+<span class="section-meta" id="mi-counter">4 of 83 counties analyzed</span>
+</div><section aria-label="Request a county burden snapshot" class="ll-request-section" id="request-county">
+<p class="ll-eyebrow">Free consultation · No commitment</p>
+<h2>Request Your County Burden Snapshot</h2>
+<p class="ll-lead">Need this for your county? Lakes Linked can prepare a planning-grade county burden snapshot using public data, transparent methods, and human-reviewed interpretation.</p>
+<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="">
+<input name="_subject" type="hidden" value="County burden snapshot request — Lakes Linked"/>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<div class="ll-form__group"><label for="req-name-1">Your name *</label><input id="req-name-1" name="name" placeholder="Dr. Jane Smith" required="" type="text"/></div>
+<div class="ll-form__group"><label for="req-org-1">Organization *</label><input id="req-org-1" name="org" placeholder="Isabella County Health Department" required="" type="text"/></div>
+<div class="ll-form__group"><label for="req-email-1">Work email *</label><input id="req-email-1" name="email" placeholder="you@organization.org" required="" type="email"/></div>
+<div class="ll-form__group"><label for="req-county-1">County and state *</label><input id="req-county-1" name="county" placeholder="e.g. Mecosta County, Michigan" required="" type="text"/></div>
+<div class="ll-form__group ll-form__group--full"><button class="ll-btn-submit" type="submit">Send request →</button><p class="ll-form-note">No spam. Direct to Sergey's inbox. We respond within 2–3 business days.</p></div>
+<div class="ll-form-success" role="alert">✓ Request received — we'll be in touch within 2–3 business days.</div>
+</form>
+</section>
+<p style="font-size:13px;color:var(--text-secondary);max-width:760px;margin:-2px 0 12px;">Click a completed county (blue) to open its dashboard. Counties in grey aren't analyzed yet — available on request.</p>
+<div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--text-secondary);margin-bottom:10px;align-items:center;">
+<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#1a56db;vertical-align:-2px;margin-right:6px;"></span>Analyzed (click)</span>
+<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#bfdbfe;vertical-align:-2px;margin-right:6px;"></span>In pipeline</span>
+<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#e2e8f0;border:1px solid #cbd5e1;vertical-align:-2px;margin-right:6px;"></span>Not yet analyzed</span>
+</div>
+<div id="mi-map" style="height:440px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
+<p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map →</a></p>
+<script>
   (function(){
     if (typeof L === 'undefined') return;
     const DONE = {
@@ -857,404 +862,385 @@ html{scroll-behavior:smooth}
   })();
   </script>
 </div>
-
 <!-- ══ MAIN CONTENT ══ -->
 <div class="main">
-
-  <!-- Completed Counties -->
-  <div class="section-head">
-    <h2 id="completed-county-analyses">Completed County Analyses</h2>
-    <div class="sh-line"></div>
-    <span class="section-meta">4 counties &middot; full DALY framework</span>
-  </div>
-
-  <div class="county-grid">
-
-    <!-- Isabella County -->
-    <div class="county-card" onclick="window.location='isabella.html'" style="--accent:var(--blue);cursor:pointer">
-      <div class="county-card-top"></div>
-      <div class="cc-head">
-        <div>
-          <span class="cc-status-badge status-complete">
-            <span class="status-dot"></span>Completed
+<!-- Completed Counties -->
+<div class="section-head">
+<h2 id="completed-county-analyses">Completed County Analyses</h2>
+<div class="sh-line"></div>
+<span class="section-meta">4 counties · full DALY framework</span>
+</div>
+<div class="county-grid">
+<!-- Isabella County -->
+<div class="county-card" onclick="window.location='isabella.html'" style="--accent:var(--blue);cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge status-complete">
+<span class="status-dot"></span>Completed
           </span>
-          <div class="version-tag">v5.0</div>
-        </div>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="flex-shrink:0;opacity:.18;">
-          <rect width="36" height="36" rx="8" fill="var(--blue)"/>
-          <path d="M8 26 L12 16 L18 20 L22 12 L28 17" stroke="var(--blue)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="cc-body">
-        <div class="cc-title">Isabella County, Michigan</div>
-        <div class="cc-desc">Population 64,565 &middot; regional university county &middot; 15,140 DALYs/yr (primary). Diverse burden profile: cancer #1, CVD #2, opioids, mental health. Multiple HPSA designations.</div>
-        <div class="cc-stats">
-          <div class="cc-stat">
-            <div class="sv" style="color:var(--blue)">15,140</div>
-            <div class="sl">DALYs/yr</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv">64,565</div>
-            <div class="sl">Population</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv" style="color:var(--navy)">Cancer #1</div>
-            <div class="sl">Top condition</div>
-          </div>
-        </div>
-      </div>
-      <div class="cc-chips">
-        <span class="chip">15,140 DALYs</span>
-        <span class="chip">5 tools</span>
-        <span class="chip">Trends 2017&ndash;23</span>
-        <span class="chip chip-fips">FIPS 26073</span>
-      </div>
-      <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="isabella.html">View Dashboard</a>
-        <div class="cc-secondary-links">
-          <a href="isabella_methods.html">Methods</a>
-          <span class="sep">&middot;</span>
-          <a href="isabella_roi.html">Economic Impact</a>
-          <span class="sep">&middot;</span>
-          <a href="isabella_interventions.html">Interventions</a>
-          <span class="sep">&middot;</span>
-          <a href="isabella_trends.html">Trends</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Clare County -->
-    <div class="county-card" onclick="window.location='clare.html'" style="--accent:#1e40af;cursor:pointer">
-      <div class="county-card-top"></div>
-      <div class="cc-head">
-        <div>
-          <span class="cc-status-badge status-complete">
-            <span class="status-dot"></span>Completed
+<div class="version-tag">v5.0</div>
+</div>
+<svg fill="none" height="36" style="flex-shrink:0;opacity:.18;" viewbox="0 0 36 36" width="36">
+<rect fill="var(--blue)" height="36" rx="8" width="36"></rect>
+<path d="M8 26 L12 16 L18 20 L22 12 L28 17" stroke="var(--blue)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">Isabella County, Michigan</div>
+<div class="cc-desc">Population 64,565 · regional university county · 15,140 DALYs/yr (primary). Diverse burden profile: cancer #1, CVD #2, opioids, mental health. Multiple HPSA designations.</div>
+<div class="cc-stats">
+<div class="cc-stat">
+<div class="sv" style="color:var(--blue)">15,140</div>
+<div class="sl">DALYs/yr</div>
+</div>
+<div class="cc-stat">
+<div class="sv">64,565</div>
+<div class="sl">Population</div>
+</div>
+<div class="cc-stat">
+<div class="sv" style="color:var(--navy)">Cancer #1</div>
+<div class="sl">Top condition</div>
+</div>
+</div>
+</div>
+<div class="cc-chips">
+<span class="chip">15,140 DALYs</span>
+<span class="chip">5 tools</span>
+<span class="chip">Trends 2017–23</span>
+<span class="chip chip-fips">FIPS 26073</span>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="isabella.html">View Dashboard</a>
+<div class="cc-secondary-links">
+<a href="isabella_methods.html">Methods</a>
+<span class="sep">·</span>
+<a href="isabella_roi.html">Economic Impact</a>
+<span class="sep">·</span>
+<a href="isabella_interventions.html">Interventions</a>
+<span class="sep">·</span>
+<a href="isabella_trends.html">Trends</a>
+</div>
+</div>
+</div>
+<!-- Clare County -->
+<div class="county-card" onclick="window.location='clare.html'" style="--accent:#1e40af;cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge status-complete">
+<span class="status-dot"></span>Completed
           </span>
-          <div class="version-tag">v1.0</div>
-        </div>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="flex-shrink:0;opacity:.18;">
-          <rect width="36" height="36" rx="8" fill="#1e40af"/>
-          <path d="M18 8 L18 20 M14 14 L22 14" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="18" cy="26" r="2" fill="#1e40af"/>
-        </svg>
-      </div>
-      <div class="cc-body">
-        <div class="cc-title">Clare County, Michigan</div>
-        <div class="cc-desc">Population 30,013 &middot; MUA-designated &middot; 8,198 DALYs/yr (primary). Severe opioid crisis, aging population (median age 46.8 yrs), highest COPD in comparison set.</div>
-        <div class="cc-stats">
-          <div class="cc-stat">
-            <div class="sv" style="color:#1e40af">8,198</div>
-            <div class="sl">DALYs/yr</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv">30,013</div>
-            <div class="sl">Population</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv" style="color:var(--navy)">Opioids #1</div>
-            <div class="sl">Crisis priority</div>
-          </div>
-        </div>
-      </div>
-      <div class="cc-chips">
-        <span class="chip">8,198 DALYs</span>
-        <span class="chip">3 tools</span>
-        <span class="chip">Opioid crisis</span>
-        <span class="chip chip-fips">FIPS 26035</span>
-      </div>
-      <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="clare.html">View Dashboard</a>
-        <div class="cc-secondary-links">
-          <a href="clare_methods.html">Methods</a>
-          <span class="sep">&middot;</span>
-          <a href="clare_roi.html">Economic Impact</a>
-          <span class="sep">&middot;</span>
-          <a href="clare_ai_solutions.html">Interventions</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Midland County -->
-    <div class="county-card" onclick="window.location='midland.html'" style="--accent:#3b82f6;cursor:pointer">
-      <div class="county-card-top"></div>
-      <div class="cc-head">
-        <div>
-          <span class="cc-status-badge status-complete">
-            <span class="status-dot"></span>Completed
+<div class="version-tag">v1.0</div>
+</div>
+<svg fill="none" height="36" style="flex-shrink:0;opacity:.18;" viewbox="0 0 36 36" width="36">
+<rect fill="#1e40af" height="36" rx="8" width="36"></rect>
+<path d="M18 8 L18 20 M14 14 L22 14" stroke="#1e40af" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="18" cy="26" fill="#1e40af" r="2"></circle>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">Clare County, Michigan</div>
+<div class="cc-desc">Population 30,013 · MUA-designated · 8,198 DALYs/yr (primary). Severe opioid crisis, aging population (median age 46.8 yrs), highest COPD in comparison set.</div>
+<div class="cc-stats">
+<div class="cc-stat">
+<div class="sv" style="color:#1e40af">8,198</div>
+<div class="sl">DALYs/yr</div>
+</div>
+<div class="cc-stat">
+<div class="sv">30,013</div>
+<div class="sl">Population</div>
+</div>
+<div class="cc-stat">
+<div class="sv" style="color:var(--navy)">Opioids #1</div>
+<div class="sl">Crisis priority</div>
+</div>
+</div>
+</div>
+<div class="cc-chips">
+<span class="chip">8,198 DALYs</span>
+<span class="chip">3 tools</span>
+<span class="chip">Opioid crisis</span>
+<span class="chip chip-fips">FIPS 26035</span>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="clare.html">View Dashboard</a>
+<div class="cc-secondary-links">
+<a href="clare_methods.html">Methods</a>
+<span class="sep">·</span>
+<a href="clare_roi.html">Economic Impact</a>
+<span class="sep">·</span>
+<a href="clare_ai_solutions.html">Interventions</a>
+</div>
+</div>
+</div>
+<!-- Midland County -->
+<div class="county-card" onclick="window.location='midland.html'" style="--accent:#3b82f6;cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge status-complete">
+<span class="status-dot"></span>Completed
           </span>
-          <div class="version-tag">v1.0</div>
-        </div>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="flex-shrink:0;opacity:.18;">
-          <rect width="36" height="36" rx="8" fill="#3b82f6"/>
-          <rect x="10" y="18" width="5" height="10" rx="1" fill="#3b82f6"/>
-          <rect x="16" y="13" width="5" height="15" rx="1" fill="#3b82f6"/>
-          <rect x="22" y="8" width="5" height="20" rx="1" fill="#3b82f6"/>
-        </svg>
-      </div>
-      <div class="cc-body">
-        <div class="cc-title">Midland County, Michigan</div>
-        <div class="cc-desc">Population 82,884 &middot; Dow Chemical HQ &middot; 14,335 DALYs/yr (planning-grade). Cancer #1, SUD #2. Higher income profile; CDC PLACES 2023 observed county-level data.</div>
-        <div class="cc-stats">
-          <div class="cc-stat">
-            <div class="sv" style="color:#3b82f6">14,335</div>
-            <div class="sl">DALYs/yr</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv">82,884</div>
-            <div class="sl">Population</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv" style="color:var(--navy)">Cancer #1</div>
-            <div class="sl">Top condition</div>
-          </div>
-        </div>
-      </div>
-      <div class="cc-chips">
-        <span class="chip">14,335 DALYs</span>
-        <span class="chip">$889M burden</span>
-        <span class="chip chip-fips">FIPS 26111</span>
-      </div>
-      <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="midland.html">View Dashboard</a>
-        <div class="cc-secondary-links">
-          <a href="midland_methods.html">Methods</a>
-          <span class="sep">&middot;</span>
-          <a href="midland_roi.html">Economic Impact</a>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Gratiot County -->
-    <div class="county-card" onclick="window.location='gratiot.html'" style="--accent:var(--amber);cursor:pointer">
-      <div class="county-card-top"></div>
-      <div class="cc-head">
-        <div>
-          <span class="cc-status-badge status-complete">
-            <span class="status-dot"></span>Completed
+<div class="version-tag">v1.0</div>
+</div>
+<svg fill="none" height="36" style="flex-shrink:0;opacity:.18;" viewbox="0 0 36 36" width="36">
+<rect fill="#3b82f6" height="36" rx="8" width="36"></rect>
+<rect fill="#3b82f6" height="10" rx="1" width="5" x="10" y="18"></rect>
+<rect fill="#3b82f6" height="15" rx="1" width="5" x="16" y="13"></rect>
+<rect fill="#3b82f6" height="20" rx="1" width="5" x="22" y="8"></rect>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">Midland County, Michigan</div>
+<div class="cc-desc">Population 82,884 · Dow Chemical HQ · 14,335 DALYs/yr (planning-grade). Cancer #1, SUD #2. Higher income profile; CDC PLACES 2023 observed county-level data.</div>
+<div class="cc-stats">
+<div class="cc-stat">
+<div class="sv" style="color:#3b82f6">14,335</div>
+<div class="sl">DALYs/yr</div>
+</div>
+<div class="cc-stat">
+<div class="sv">82,884</div>
+<div class="sl">Population</div>
+</div>
+<div class="cc-stat">
+<div class="sv" style="color:var(--navy)">Cancer #1</div>
+<div class="sl">Top condition</div>
+</div>
+</div>
+</div>
+<div class="cc-chips">
+<span class="chip">14,335 DALYs</span>
+<span class="chip">$889M burden</span>
+<span class="chip chip-fips">FIPS 26111</span>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="midland.html">View Dashboard</a>
+<div class="cc-secondary-links">
+<a href="midland_methods.html">Methods</a>
+<span class="sep">·</span>
+<a href="midland_roi.html">Economic Impact</a>
+</div>
+</div>
+</div>
+<!-- Gratiot County -->
+<div class="county-card" onclick="window.location='gratiot.html'" style="--accent:var(--amber);cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge status-complete">
+<span class="status-dot"></span>Completed
           </span>
-          <div class="version-tag">v1.0</div>
-        </div>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="flex-shrink:0;opacity:.18;">
-          <rect width="36" height="36" rx="8" fill="#d97706"/>
-          <path d="M6 28 L12 14 L18 20 L22 10 L30 16" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="12" cy="14" r="2" fill="#d97706"/>
-        </svg>
-      </div>
-      <div class="cc-body">
-        <div class="cc-title">Gratiot County, Michigan</div>
-        <div class="cc-desc">Population 41,368 &middot; agricultural rural economy &middot; 7,533 DALYs/yr (primary). Cancer #1, SUD #2, MH #3. Correctional population effect, HPSA-designated, MMDHD service area.</div>
-        <div class="cc-stats">
-          <div class="cc-stat">
-            <div class="sv" style="color:var(--amber)">7,533</div>
-            <div class="sl">DALYs/yr</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv">41,368</div>
-            <div class="sl">Population</div>
-          </div>
-          <div class="cc-stat">
-            <div class="sv" style="color:var(--navy)">Cancer #1</div>
-            <div class="sl">Top condition</div>
-          </div>
-        </div>
-      </div>
-      <div class="cc-chips">
-        <span class="chip">7,533 DALYs</span>
-        <span class="chip">$467M burden</span>
-        <span class="chip">Agricultural</span>
-        <span class="chip chip-fips">FIPS 26057</span>
-      </div>
-      <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="gratiot.html">View Dashboard</a>
-        <div class="cc-secondary-links">
-          <a href="gratiot_methods.html">Methods</a>
-          <span class="sep">&middot;</span>
-          <a href="gratiot_roi.html">Economic Impact</a>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- end county-grid -->
-
-  <!-- Pipeline Counties -->
-  <div class="section-head">
-    <h2 id="counties-in-development-pipeline">Counties in Development Pipeline</h2>
-    <div class="sh-line"></div>
-    <span class="section-meta">Planned Q4 2026</span>
-  </div>
-
-  <div class="pipeline-grid">
-
-    <div class="pipe-card">
-      <div class="pipe-card-top"></div>
-      <span class="pipe-status-badge">
-        <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"/></svg>
+<div class="version-tag">v1.0</div>
+</div>
+<svg fill="none" height="36" style="flex-shrink:0;opacity:.18;" viewbox="0 0 36 36" width="36">
+<rect fill="#d97706" height="36" rx="8" width="36"></rect>
+<path d="M6 28 L12 14 L18 20 L22 10 L30 16" stroke="#d97706" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="12" cy="14" fill="#d97706" r="2"></circle>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">Gratiot County, Michigan</div>
+<div class="cc-desc">Population 41,368 · agricultural rural economy · 7,533 DALYs/yr (primary). Cancer #1, SUD #2, MH #3. Correctional population effect, HPSA-designated, MMDHD service area.</div>
+<div class="cc-stats">
+<div class="cc-stat">
+<div class="sv" style="color:var(--amber)">7,533</div>
+<div class="sl">DALYs/yr</div>
+</div>
+<div class="cc-stat">
+<div class="sv">41,368</div>
+<div class="sl">Population</div>
+</div>
+<div class="cc-stat">
+<div class="sv" style="color:var(--navy)">Cancer #1</div>
+<div class="sl">Top condition</div>
+</div>
+</div>
+</div>
+<div class="cc-chips">
+<span class="chip">7,533 DALYs</span>
+<span class="chip">$467M burden</span>
+<span class="chip">Agricultural</span>
+<span class="chip chip-fips">FIPS 26057</span>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="gratiot.html">View Dashboard</a>
+<div class="cc-secondary-links">
+<a href="gratiot_methods.html">Methods</a>
+<span class="sep">·</span>
+<a href="gratiot_roi.html">Economic Impact</a>
+</div>
+</div>
+</div>
+</div><!-- end county-grid -->
+<!-- Pipeline Counties -->
+<div class="section-head">
+<h2 id="counties-in-development-pipeline">Counties in Development Pipeline</h2>
+<div class="sh-line"></div>
+<span class="section-meta">Planned Q4 2026</span>
+</div>
+<div class="pipeline-grid">
+<div class="pipe-card">
+<div class="pipe-card-top"></div>
+<span class="pipe-status-badge">
+<svg fill="none" height="8" viewbox="0 0 8 8" width="8"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"></circle></svg>
         Q4 2026
       </span>
-      <div class="pipe-icon-wrap">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
-        </svg>
-      </div>
-      <h3>Mecosta County</h3>
-      <div class="pipe-fips">FIPS 26107</div>
-      <p>Ferris State University county; rural health desert designation. University demographic parallels Isabella for comparative analysis.</p>
-    </div>
-
-    <div class="pipe-card">
-      <div class="pipe-card-top"></div>
-      <span class="pipe-status-badge">
-        <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"/></svg>
+<div class="pipe-icon-wrap">
+<svg fill="none" height="16" stroke="#94a3b8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="16">
+<path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"></path><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"></path>
+</svg>
+</div>
+<h3>Mecosta County</h3>
+<div class="pipe-fips">FIPS 26107</div>
+<p>Ferris State University county; rural health desert designation. University demographic parallels Isabella for comparative analysis.</p>
+</div>
+<div class="pipe-card">
+<div class="pipe-card-top"></div>
+<span class="pipe-status-badge">
+<svg fill="none" height="8" viewbox="0 0 8 8" width="8"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"></circle></svg>
         Q4 2026
       </span>
-      <div class="pipe-icon-wrap">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-        </svg>
-      </div>
-      <h3>Washtenaw County</h3>
-      <div class="pipe-fips">FIPS 26161</div>
-      <p>Ann Arbor / University of Michigan. Urban reference for rural&ndash;urban health equity benchmarking across the Michigan series.</p>
-    </div>
-
-  </div><!-- end pipeline-grid -->
-
-  <!-- ══ ARTICLES ══ -->
-  <div class="section-head">
-    <h2 id="articles"><a href="articles.html" style="color:inherit;text-decoration:none;">Articles</a></h2>
-    <div class="sh-line"></div>
-    <a href="articles.html" class="section-meta" style="text-decoration:none;">View all field notes &rarr;</a>
-  </div>
-
-  <div class="county-grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-bottom:52px;">
-
-    <!-- Price Transparency -->
-    <div class="county-card" onclick="window.location='price-transparency.html'" style="--accent:var(--teal);cursor:pointer">
-      <div class="county-card-top"></div>
-      <div class="cc-head">
-        <div>
-          <span class="cc-status-badge" style="background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 25%,transparent);">
-            <span class="status-dot"></span>Field Note
+<div class="pipe-icon-wrap">
+<svg fill="none" height="16" stroke="#94a3b8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="16">
+<circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+</svg>
+</div>
+<h3>Washtenaw County</h3>
+<div class="pipe-fips">FIPS 26161</div>
+<p>Ann Arbor / University of Michigan. Urban reference for rural–urban health equity benchmarking across the Michigan series.</p>
+</div>
+</div><!-- end pipeline-grid -->
+<!-- ══ ARTICLES ══ -->
+<div class="section-head">
+<h2 id="articles"><a href="articles.html" style="color:inherit;text-decoration:none;">Articles</a></h2>
+<div class="sh-line"></div>
+<a class="section-meta" href="articles.html" style="text-decoration:none;">View all field notes →</a>
+</div>
+<div class="county-grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-bottom:52px;">
+<!-- Price Transparency -->
+<div class="county-card" onclick="window.location='price-transparency.html'" style="--accent:var(--teal);cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge" style="background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 25%,transparent);">
+<span class="status-dot"></span>Field Note
           </span>
-          <div class="version-tag">June 2026</div>
-        </div>
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.2;">
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-          <line x1="9" y1="7" x2="16" y2="7"/><line x1="9" y1="11" x2="16" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/>
-        </svg>
-      </div>
-      <div class="cc-body">
-        <div class="cc-title">The Price Before the Procedure</div>
-        <div class="cc-desc">U.S. hospitals must now publish their real prices &mdash; but the machine-readable files are gigabyte-scale and unreadable on their own. How the price-transparency rules work, and how AI-assisted public-health analytics can turn that open data into usable answers for patients, community health workers, and rural clinics &mdash; with the limits, the disclaimers, and a simple workflow.</div>
-        <div class="cc-chips">
-          <span class="chip">Price transparency</span>
-          <span class="chip">CMS 2026 rule</span>
-          <span class="chip">No Surprises Act</span>
-          <span class="chip">AI-assisted analytics</span>
-        </div>
-      </div>
-      <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="price-transparency.html">Read the article &rarr;</a>
-      </div>
-    </div>
-
-    <!-- Clinical Trials -->
-    <div class="county-card" onclick="window.location='02-clinical-trials.html'" style="--accent:var(--purple);cursor:pointer">
-      <div class="county-card-top"></div>
-      <div class="cc-head">
-        <div>
-          <span class="cc-status-badge" style="background:color-mix(in srgb,var(--purple) 12%,transparent);color:var(--purple);border:1px solid color-mix(in srgb,var(--purple) 25%,transparent);">
-            <span class="status-dot"></span>Field Note
+<div class="version-tag">June 2026</div>
+</div>
+<svg fill="none" height="36" stroke="var(--teal)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" style="flex-shrink:0;opacity:.2;" viewbox="0 0 24 24" width="36">
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+<line x1="9" x2="16" y1="7" y2="7"></line><line x1="9" x2="16" y1="11" y2="11"></line><line x1="9" x2="13" y1="15" y2="15"></line>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">The Price Before the Procedure</div>
+<div class="cc-desc">U.S. hospitals must now publish their real prices — but the machine-readable files are gigabyte-scale and unreadable on their own. How the price-transparency rules work, and how AI-assisted public-health analytics can turn that open data into usable answers for patients, community health workers, and rural clinics — with the limits, the disclaimers, and a simple workflow.</div>
+<div class="cc-chips">
+<span class="chip">Price transparency</span>
+<span class="chip">CMS 2026 rule</span>
+<span class="chip">No Surprises Act</span>
+<span class="chip">AI-assisted analytics</span>
+</div>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="price-transparency.html">Read the article →</a>
+</div>
+</div>
+<!-- Clinical Trials -->
+<div class="county-card" onclick="window.location='02-clinical-trials.html'" style="--accent:var(--purple);cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge" style="background:color-mix(in srgb,var(--purple) 12%,transparent);color:var(--purple);border:1px solid color-mix(in srgb,var(--purple) 25%,transparent);">
+<span class="status-dot"></span>Field Note
           </span>
-          <div class="version-tag">June 2026</div>
-        </div>
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.2;">
-          <path d="M9 2v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V2"/>
-          <line x1="8" y1="2" x2="16" y2="2"/><line x1="7" y1="16" x2="17" y2="16"/>
-        </svg>
-      </div>
-      <div class="cc-body">
-        <div class="cc-title">154 New AI Clinical Trials</div>
-        <div class="cc-desc">Since 1 May 2026, 154 AI-related clinical trials have been registered on ClinicalTrials.gov. Read as a set, they mark a shift in clinical AI &mdash; away from diagnostic-accuracy demonstrations and toward the questions public health turns on: survival, screening yield, antimicrobial stewardship, workflow integration, and equity.</div>
-        <div class="cc-chips">
-          <span class="chip">Clinical AI</span>
-          <span class="chip">ClinicalTrials.gov</span>
-          <span class="chip">Outcomes evidence</span>
-          <span class="chip">Public health</span>
-        </div>
-      </div>
-      <div class="cc-links" onclick="event.stopPropagation()">
-        <a class="primary" href="02-clinical-trials.html">Read the article &rarr;</a>
-      </div>
-    </div>
-
-
-  </div><!-- end Articles grid -->
-
-  <!-- References -->
-  <div class="references-section">
-    <h2 id="references">References</h2>
-    <ol class="references-list">
-      <li>
-        GBD 2023 Collaborators. Global burden of 292 causes of death, 1990&ndash;2023.
-        <span class="ref-journal">Lancet.</span> 2025;406(10):2160&ndash;2203.
+<div class="version-tag">June 2026</div>
+</div>
+<svg fill="none" height="36" stroke="var(--purple)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" style="flex-shrink:0;opacity:.2;" viewbox="0 0 24 24" width="36">
+<path d="M9 2v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V2"></path>
+<line x1="8" x2="16" y1="2" y2="2"></line><line x1="7" x2="17" y1="16" y2="16"></line>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">154 New AI Clinical Trials</div>
+<div class="cc-desc">Since 1 May 2026, 154 AI-related clinical trials have been registered on ClinicalTrials.gov. Read as a set, they mark a shift in clinical AI — away from diagnostic-accuracy demonstrations and toward the questions public health turns on: survival, screening yield, antimicrobial stewardship, workflow integration, and equity.</div>
+<div class="cc-chips">
+<span class="chip">Clinical AI</span>
+<span class="chip">ClinicalTrials.gov</span>
+<span class="chip">Outcomes evidence</span>
+<span class="chip">Public health</span>
+</div>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="02-clinical-trials.html">Read the article →</a>
+</div>
+</div>
+</div><!-- end Articles grid -->
+<!-- References -->
+<div class="references-section">
+<h2 id="references">References</h2>
+<ol class="references-list">
+<li>
+        GBD 2023 Collaborators. Global burden of 292 causes of death, 1990–2023.
+        <span class="ref-journal">Lancet.</span> 2025;406(10):2160–2203.
       </li>
-      <li>
+<li>
         Centers for Disease Control and Prevention. PLACES: Local Data for Better Health, 2024 release.
         <span class="ref-doi">cdc.gov/places</span>. Accessed 2025.
       </li>
-      <li>
-        Centers for Disease Control and Prevention. WONDER: Underlying Cause of Death, 2020&ndash;2022.
+<li>
+        Centers for Disease Control and Prevention. WONDER: Underlying Cause of Death, 2020–2022.
         <span class="ref-doi">wonder.cdc.gov</span>. Accessed 2025.
       </li>
-      <li>
+<li>
         Institute for Health Metrics and Evaluation. Global Burden of Disease Study 2021: Disability Weights.
         Seattle, WA: IHME; 2022.
       </li>
-      <li>
+<li>
         Murray CJL, Lopez AD. Measuring the global burden of disease.
-        <span class="ref-journal">N Engl J Med.</span> 2013;369:448&ndash;457.
+        <span class="ref-journal">N Engl J Med.</span> 2013;369:448–457.
       </li>
-      <li>
+<li>
         US Census Bureau. American Community Survey 5-Year Estimates, 2022.
         <span class="ref-doi">data.census.gov</span>. Accessed 2025.
       </li>
-      <li>
+<li>
         Michigan Department of Health and Human Services. 2020 Primary Care Needs Assessment: Isabella County Profile.
         Lansing, MI: MDHHS; 2020.
       </li>
-    </ol>
-  </div>
-
+</ol>
+</div>
 </div><!-- end .main -->
-
-
 <!-- ══ FOOTER ══ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <span>Lakes Linked &middot; Dr. Sergey Soshnikov, MD PhD &middot; Assistant Professor, Public Health &middot; Lakes Linked &middot; 2026</span>
-      <span>Lakes Linked &middot; Mount Pleasant, Michigan</span>
+<div class="footer-inner">
+<div class="footer-top">
+<span>Lakes Linked · Dr. Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked · 2026</span>
+<span>Lakes Linked · Mount Pleasant, Michigan</span>
+</div>
+<div class="footer-sources">
+<span class="footer-sources-label">Data sources</span>
+<span class="src-badge">CDC PLACES 2023</span>
+<span class="src-badge">CDC WONDER 2020–22</span>
+<span class="src-badge">IHME GBD 2021</span>
+<span class="src-badge">ACS 2022</span>
+<span class="src-badge">County Health Rankings</span>
+<span class="src-badge">Michigan DHHS</span>
+<span class="src-badge">MyMichigan CHNA</span>
+<span class="src-badge">IRS 990-H</span>
+</div>
+<div class="footer-disclaimer">
+      Planning-grade burden analysis — not a peer-reviewed study or formal GBD estimate. Disability weights adapted from IHME GBD 2021. County data from CDC PLACES 2023, CDC WONDER 2020–22, and US Census Bureau ACS. Results are intended to support health planning and grant development; independent review is recommended before clinical or policy decisions.
     </div>
-    <div class="footer-sources">
-      <span class="footer-sources-label">Data sources</span>
-      <span class="src-badge">CDC PLACES 2023</span>
-      <span class="src-badge">CDC WONDER 2020&ndash;22</span>
-      <span class="src-badge">IHME GBD 2021</span>
-      <span class="src-badge">ACS 2022</span>
-      <span class="src-badge">County Health Rankings</span>
-      <span class="src-badge">Michigan DHHS</span>
-      <span class="src-badge">MyMichigan CHNA</span>
-      <span class="src-badge">IRS 990-H</span>
-    </div>
-    <div class="footer-disclaimer">
-      Planning-grade burden analysis &mdash; not a peer-reviewed study or formal GBD estimate. Disability weights adapted from IHME GBD 2021. County data from CDC PLACES 2023, CDC WONDER 2020–22, and US Census Bureau ACS. Results are intended to support health planning and grant development; independent review is recommended before clinical or policy decisions.
-    </div>
-  </div>
-</footer>
-
+</div>
+<div class="ll-footer-trust" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.73rem;color:#64748b;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;">
+<span>🔒 Secure (HTTPS)</span><span>·</span>
+<span>Planning-grade estimates — not a formal GBD study</span><span>·</span>
+<a href="/privacy.html" style="color:#64748b;">Privacy Policy</a><span>·</span>
+<a href="/terms.html" style="color:#64748b;">Terms of Use</a><span>·</span>
+<span>© 2026 Lakes Linked · Sergey Soshnikov, MD PhD</span>
+</div></footer>
 <script>
 (function(){
   var links=document.querySelectorAll('#toc a');
@@ -1267,5 +1253,5 @@ html{scroll-behavior:smooth}
   window.addEventListener('scroll',upd,{passive:true});upd();
 })();
 </script>
-</body>
+<script src="ll-features.js"></script></body>
 </html>

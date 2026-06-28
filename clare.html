@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Clare County Health Burden Dashboard | Lakes Linked</title>
-<meta name="description" content="Clare County, Michigan health burden analysis: 8,198 DALYs/year. Opioid crisis, COPD, aging rural population. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD.">
-<meta property="og:title" content="Clare County Health Burden Dashboard | Lakes Linked">
-<meta property="og:description" content="8,198 DALYs/yr · SUD/Opioids #1, Cancer #2. MUA-designated rural county. DALY burden analysis for SAMHSA, HRSA, and MDHHS grant applications.">
-<meta property="og:url" content="https://lakeslinked.com/clare.html">
-<meta property="og:type" content="website">
+<meta content="Clare County, Michigan health burden analysis: 8,198 DALYs/year. Opioid crisis, COPD, aging rural population. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="Clare County Health Burden Dashboard | Lakes Linked" property="og:title"/>
+<meta content="8,198 DALYs/yr · SUD/Opioids #1, Cancer #2. MUA-designated rural county. DALY burden analysis for SAMHSA, HRSA, and MDHHS grant applications." property="og:description"/>
+<meta content="https://lakeslinked.com/clare.html" property="og:url"/>
+<meta content="website" property="og:type"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root {
@@ -143,361 +144,370 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
 .county-group{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:3px;}
 .county-group .navlink{border-radius:5px;}
 </style>
-</head>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><meta content="Sergey Soshnikov, MD PhD — Lakes Linked" name="author"/><link href="https://www.lakeslinked.com/clare" rel="canonical"/><meta content="https://www.lakeslinked.com/og-clare.png" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.lakeslinked.com/og-clare.png" name="twitter:image"/></head>
 <body>
-
 <!-- Navigation -->
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
-  <div class="links">
-    <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
-    <div class="county-group">
-      <a class="navlink" href="isabella.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</a>
-      <a class="navlink active" href="clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
-      <a class="navlink" href="midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
-      <a class="navlink" href="gratiot.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</a>
-    </div>
-    <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
-    <a class="navlink" href="index.html"><svg class="nico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Portal</a>
-    <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
-    <a class="navlink" href="clare_roi.html"><svg class="nico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"/></svg>Economic Impact</a>
-    <a class="navlink" href="clare_ai_solutions.html"><svg class="nico" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M7.8 8.4 10.4 15.4M16.2 8.4 13.6 15.4M8 7h8"/></svg>Interventions</a>
-    <a class="navlink" href="clare_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Methods</a>
-  </div>
+<a class="brand" href="index.html"><img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:34px;width:auto;"/></a>
+<div class="links">
+<span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
+<div class="county-group">
+<a class="navlink" href="isabella.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Isabella</a>
+<a class="navlink active" href="clare.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Clare</a>
+<a class="navlink" href="midland.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Midland</a>
+<a class="navlink" href="gratiot.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Gratiot</a>
+</div>
+<span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+<a class="navlink" href="index.html"><svg class="nico" viewbox="0 0 24 24"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect><rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect></svg>Portal</a>
+<span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+<a class="navlink" href="clare_roi.html"><svg class="nico" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"></path></svg>Economic Impact</a>
+<a class="navlink" href="clare_ai_solutions.html"><svg class="nico" viewbox="0 0 24 24"><circle cx="6" cy="7" r="2"></circle><circle cx="18" cy="7" r="2"></circle><circle cx="12" cy="17" r="2"></circle><path d="M7.8 8.4 10.4 15.4M16.2 8.4 13.6 15.4M8 7h8"></path></svg>Interventions</a>
+<a class="navlink" href="clare_methods.html"><svg class="nico" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Methods</a>
+</div>
 </nav>
-
 <!-- County Compare Bar -->
 <div class="county-compare-bar">
-  <div class="ccb-inner">
-    <a class="ccb-county" href="isabella.html">
-      <span class="ccb-name"><svg class="nico" style="color:#1a56db" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella County</span>
-      <span class="ccb-stat" style="color:#1a56db">15,140 DALYs/yr</span>
-      <span class="ccb-pop">Pop. 64,565 · FIPS 26073</span>
-    </a>
-    <div class="ccb-county active">
-      <span class="ccb-name"><svg class="nico" style="color:#1e40af" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare County</span>
-      <span class="ccb-stat" style="color:#1e40af">8,198 DALYs/yr</span>
-      <span class="ccb-pop">Pop. 30,013 · FIPS 26035</span>
-    </div>
-    <a class="ccb-county" href="midland.html">
-      <span class="ccb-name"><svg class="nico" style="color:#3b82f6" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland County</span>
-      <span class="ccb-stat" style="color:#3b82f6">14,335 DALYs/yr</span>
-      <span class="ccb-pop">Pop. 82,884 · FIPS 26111</span>
-    </a>
-    <div class="ccb-county disabled">
-      <span class="ccb-name"><svg class="nico" style="color:var(--muted)" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</span>
-      <span class="ccb-stat" style="color:var(--muted);font-size:11px">Q3 2026</span>
-    </div>
-    <div class="ccb-county disabled">
-      <span class="ccb-name"><svg class="nico" style="color:var(--muted)" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Mecosta</span>
-      <span class="ccb-stat" style="color:var(--muted);font-size:11px">Q4 2026</span>
-    </div>
-    <div class="ccb-county disabled">
-      <span class="ccb-name"><svg class="nico" style="color:var(--muted)" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Washtenaw</span>
-      <span class="ccb-stat" style="color:var(--muted);font-size:11px">Q4 2026</span>
-    </div>
-  </div>
+<div class="ccb-inner">
+<a class="ccb-county" href="isabella.html">
+<span class="ccb-name"><svg class="nico" style="color:#1a56db" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Isabella County</span>
+<span class="ccb-stat" style="color:#1a56db">15,140 DALYs/yr</span>
+<span class="ccb-pop">Pop. 64,565 · FIPS 26073</span>
+</a>
+<div class="ccb-county active">
+<span class="ccb-name"><svg class="nico" style="color:#1e40af" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Clare County</span>
+<span class="ccb-stat" style="color:#1e40af">8,198 DALYs/yr</span>
+<span class="ccb-pop">Pop. 30,013 · FIPS 26035</span>
 </div>
-
+<a class="ccb-county" href="midland.html">
+<span class="ccb-name"><svg class="nico" style="color:#3b82f6" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Midland County</span>
+<span class="ccb-stat" style="color:#3b82f6">14,335 DALYs/yr</span>
+<span class="ccb-pop">Pop. 82,884 · FIPS 26111</span>
+</a>
+<div class="ccb-county disabled">
+<span class="ccb-name"><svg class="nico" style="color:var(--muted)" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Gratiot</span>
+<span class="ccb-stat" style="color:var(--muted);font-size:11px">Q3 2026</span>
+</div>
+<div class="ccb-county disabled">
+<span class="ccb-name"><svg class="nico" style="color:var(--muted)" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Mecosta</span>
+<span class="ccb-stat" style="color:var(--muted);font-size:11px">Q4 2026</span>
+</div>
+<div class="ccb-county disabled">
+<span class="ccb-name"><svg class="nico" style="color:var(--muted)" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Washtenaw</span>
+<span class="ccb-stat" style="color:var(--muted);font-size:11px">Q4 2026</span>
+</div>
+</div>
+</div>
 <!-- Hero -->
 <div class="hero">
-  <div class="hero-inner">
-    <h1>Clare County, Michigan — Health Burden Analysis</h1>
-    <p class="sub">Planning-grade DALY framework · Severe opioid crisis, aging rural population, MUA designation · 2026</p>
-    <div class="hero-stats">
-      <div class="hstat">
-        <div class="num">8,198</div>
-        <div class="lbl">DALYs/yr (Primary · Frontier LE)</div>
-        <div class="cmp neu">Frontier LE 89.1 yrs · YLL 4,612 + YLD 3,586 (MH remission-adj)</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">6,555</div>
-        <div class="lbl">DALYs/yr (Sensitivity · MI LE)</div>
-        <div class="cmp neu">Michigan LE 78.6 yrs · YLL 2,358 + YLD 4,197</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">~850</div>
-        <div class="lbl">Mortality rate per 100k (est.)</div>
-        <div class="cmp bad">▲ ~8.6% above MI avg (783) · High-mortality rural</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">~47/100k</div>
-        <div class="lbl">Opioid overdose death rate (est.)</div>
-        <div class="cmp bad">▲ Among highest in Michigan · ~14 deaths/yr</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">30,013</div>
-        <div class="lbl">County population</div>
-        <div class="cmp neu">Census ACS 2022 · FIPS 26035 · Median age 46.8</div>
-      </div>
-    </div>
-  </div>
+<div class="hero-inner">
+<h1>Clare County, Michigan — Health Burden Analysis</h1>
+<p class="sub">Planning-grade DALY framework · Severe opioid crisis, aging rural population, MUA designation · 2026</p>
+<div class="hero-stats">
+<div class="hstat">
+<div class="num">8,198</div>
+<div class="lbl">DALYs/yr (Primary · Frontier LE)</div>
+<div class="cmp neu">Frontier LE 89.1 yrs · YLL 4,612 + YLD 3,586 (MH remission-adj)</div>
 </div>
-
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">6,555</div>
+<div class="lbl">DALYs/yr (Sensitivity · MI LE)</div>
+<div class="cmp neu">Michigan LE 78.6 yrs · YLL 2,358 + YLD 4,197</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">~850</div>
+<div class="lbl">Mortality rate per 100k (est.)</div>
+<div class="cmp bad">▲ ~8.6% above MI avg (783) · High-mortality rural</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">~47/100k</div>
+<div class="lbl">Opioid overdose death rate (est.)</div>
+<div class="cmp bad">▲ Among highest in Michigan · ~14 deaths/yr</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">30,013</div>
+<div class="lbl">County population</div>
+<div class="cmp neu">Census ACS 2022 · FIPS 26035 · Median age 46.8</div>
+</div>
+</div>
+</div>
+</div>
 <!-- Notice -->
 <div class="notice">
-  <span>&#9888;</span>
-  <span><strong>Planning model — not a validated county burden estimate.</strong> Primary: WHO/GBD Frontier LE 89.1 yrs + MH remission adjustment (×0.50) = 8,198 DALYs. Sensitivity (Michigan LE 78.6 yrs) = 6,555 DALYs. Mixed-source: CDC PLACES 2024, Michigan CDC WONDER rates × rural adjustment, IHME GBD 2021 disability weights. ±20% uncertainty applies to all figures.
+<span>⚠</span>
+<span><strong>Planning model — not a validated county burden estimate.</strong> Primary: WHO/GBD Frontier LE 89.1 yrs + MH remission adjustment (×0.50) = 8,198 DALYs. Sensitivity (Michigan LE 78.6 yrs) = 6,555 DALYs. Mixed-source: CDC PLACES 2024, Michigan CDC WONDER rates × rural adjustment, IHME GBD 2021 disability weights. ±20% uncertainty applies to all figures.
   <a href="clare_methods.html" style="color:#7f1d1d;font-weight:700;"> Full methods &amp; data quality notes</a></span>
 </div>
-
 <!-- Controls -->
 <div class="ctrl-bar">
-  <div class="ctrl-group">
-    <label>LE Standard</label>
-    <div class="btns">
-      <button class="btn-toggle active" id="btn-mi" onclick="setLE('mi', this)">MI LE 78.6</button>
-      <button class="btn-toggle" id="btn-frontier" onclick="setLE('frontier', this)">Frontier LE 89.1</button>
-    </div>
-  </div>
-  <div class="ctrl-group">
-    <label>MH Prevalence</label>
-    <div class="btns">
-      <button class="btn-toggle" id="btn-raw" onclick="setRemission(false, this)">PLACES 28.1%</button>
-      <button class="btn-toggle active" id="btn-remission" onclick="setRemission(true, this)">Remission-Adj. 14.1%</button>
-    </div>
-  </div>
-  <div class="ctrl-group">
-    <label>Show Conditions</label>
-    <div class="cond-checks" id="cond-checks"></div>
-  </div>
-  <div class="ctrl-info" id="ctrl-info">Michigan LE 78.6 yrs + MH remission-adjustment = 5,943 DALYs. Primary standard (Frontier LE 89.1) = 8,198 DALYs. Clare County is an MUA-designated, HPSA-designated high-mortality rural county with severe opioid crisis.</div>
+<div class="ctrl-group">
+<label>LE Standard</label>
+<div class="btns">
+<button class="btn-toggle active" id="btn-mi" onclick="setLE('mi', this)">MI LE 78.6</button>
+<button class="btn-toggle" id="btn-frontier" onclick="setLE('frontier', this)">Frontier LE 89.1</button>
 </div>
-
+</div>
+<div class="ctrl-group">
+<label>MH Prevalence</label>
+<div class="btns">
+<button class="btn-toggle" id="btn-raw" onclick="setRemission(false, this)">PLACES 28.1%</button>
+<button class="btn-toggle active" id="btn-remission" onclick="setRemission(true, this)">Remission-Adj. 14.1%</button>
+</div>
+</div>
+<div class="ctrl-group">
+<label>Show Conditions</label>
+<div class="cond-checks" id="cond-checks"></div>
+</div>
+<div class="ctrl-info" id="ctrl-info">Michigan LE 78.6 yrs + MH remission-adjustment = 5,943 DALYs. Primary standard (Frontier LE 89.1) = 8,198 DALYs. Clare County is an MUA-designated, HPSA-designated high-mortality rural county with severe opioid crisis.</div>
+</div>
 <!-- Jump Bar -->
 <div class="jump-bar">
-  <span class="jb-label">Jump to:</span>
-  <a class="jb-link" href="#sec-kpi">KPIs</a>
-  <a class="jb-link" href="#sec-charts">Charts</a>
-  <a class="jb-link" href="#sec-opioid">Opioid Crisis</a>
-  <a class="jb-link" href="#sec-econ">Economic Burden</a>
-  <a class="jb-link" href="#sec-table">DALY Table</a>
-  <a class="jb-link" href="#sec-findings">Key Findings</a>
-  <a class="jb-link" href="#sec-recs">Recommendations</a>
+<span class="jb-label">Jump to:</span>
+<a class="jb-link" href="#sec-kpi">KPIs</a>
+<a class="jb-link" href="#sec-charts">Charts</a>
+<a class="jb-link" href="#sec-opioid">Opioid Crisis</a>
+<a class="jb-link" href="#sec-econ">Economic Burden</a>
+<a class="jb-link" href="#sec-table">DALY Table</a>
+<a class="jb-link" href="#sec-findings">Key Findings</a>
+<a class="jb-link" href="#sec-recs">Recommendations</a>
 </div>
-
 <div class="page">
-
-  <!-- KPI Strip -->
-  <div class="kpi-strip" id="sec-kpi">
-    <div class="kpi" style="--accent:var(--red)">
-      <div class="kpi-num">~850</div>
-      <div class="kpi-label">Estimated mortality rate per 100k</div>
-      <div class="kpi-delta up">▲ ~8.6% vs MI (783) · Rural high-mortality</div>
-    </div>
-    <div class="kpi" style="--accent:var(--red)">
-      <div class="kpi-num">~47/100k</div>
-      <div class="kpi-label">Opioid overdose deaths (est. 14/yr)</div>
-      <div class="kpi-delta up">▲ Among highest in Michigan</div>
-    </div>
-    <div class="kpi" style="--accent:var(--amber)">
-      <div class="kpi-num">16.8%</div>
-      <div class="kpi-label">Poverty rate (ACS 2022)</div>
-      <div class="kpi-delta up">▲ vs MI 15% · Up to 22-25% by MDHHS sources</div>
-    </div>
-    <div class="kpi" style="--accent:var(--amber)">
-      <div class="kpi-num">40.5%</div>
-      <div class="kpi-label">Adult obesity (CDC PLACES 2024)</div>
-      <div class="kpi-delta up">▲ vs MI 36.7% · ▲ vs US 35.3%</div>
-    </div>
-    <div class="kpi" style="--accent:var(--red)">
-      <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;">
-        <div>
-          <div class="kpi-num" id="kpi-dalys-primary" style="font-size:20px">8,198</div>
-          <div style="font-size:10px;color:var(--muted);font-weight:600">Frontier LE</div>
-        </div>
-        <div style="color:#cbd5e1;font-size:18px">|</div>
-        <div>
-          <div class="kpi-num" id="kpi-dalys-mi" style="font-size:20px">6,555</div>
-          <div style="font-size:10px;color:var(--muted);font-weight:600">MI LE</div>
-        </div>
-      </div>
-      <div class="kpi-label">Estimated DALYs/year · YLL + YLD</div>
-      <div class="kpi-delta neu">±20% uncertainty</div>
-    </div>
-    <div class="kpi" style="--accent:var(--purple)">
-      <div class="kpi-num">MUA</div>
-      <div class="kpi-label">Medically Underserved Area + HPSA designation</div>
-      <div class="kpi-delta up">Primary care &amp; mental health shortage</div>
-    </div>
-  </div>
-
-  <!-- Charts row 1: DALY bar + comorbidity heatmap -->
-  <div class="g2" id="sec-charts">
-    <div class="card">
-      <h3>DALYs by Condition</h3>
-      <p class="sub">Disability-Adjusted Life Years · <span id="chart1-sub">Michigan LE 78.6 · ranked by burden</span></p>
-      <canvas id="dalyChart" height="270"></canvas>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">Interactive — use LE standard and MH prevalence toggles above to recalculate.</p>
-      <p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> DALY = disability-adjusted life year · YLL = years of life lost · YLD = years lived with disability · MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes</p>
-    </div>
-    <div class="card">
-      <h3>Comorbidity Co-occurrence — Expected Counts</h3>
-      <p class="sub">Expected cases with both conditions simultaneously · independence model · Clare County n=30,013 · hover cell for DW product &amp; DALY correction</p>
-      <canvas id="heatmapChart" style="width:100%;display:block;margin:0 auto"></canvas>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">DM+COPD highest pair (385 expected co-occurring cases). Independence-model planning estimate (prevalence × prevalence × adult population), consistent with the Isabella methodology. Largest DALY-correction pairs: COPD+Cancer (−11.1), COPD+SUD (−10.8), COPD+MH (−10.1).</p>
-      <p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DW = disability weight · DALY = disability-adjusted life year</p>
-    </div>
-  </div>
-
-  <!-- Charts row 2: SDOH radar + MI LE vs Frontier comparison -->
-  <div class="g2">
-    <div class="card">
-      <h3>Social Determinants vs Michigan Average</h3>
-      <p class="sub">% of population · CDC PLACES 2024 + ACS 2022</p>
-      <canvas id="sdohChart" height="250"></canvas>
-    </div>
-    <div class="card">
-      <h3>Economic Burden by Condition</h3>
-      <p class="sub">Annual productivity loss · DALYs × $62K GDP per capita (human-capital method)</p>
-      <div style="height:240px;position:relative"><canvas id="compareChart"></canvas></div>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">Cancer (~$85M/yr) and the opioid/SUD crisis (~$77M/yr) dominate Clare's measurable economic burden. Each averted DALY ≈ $62,000 recovered — the ROI basis for SAMHSA/HRSA grant budgets. Reactive to the toggles above.</p>
-      <p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DALY = disability-adjusted life year</p>
-    </div>
-  </div>
-
-  <!-- DALY Detail Table -->
-  <div class="card" id="sec-table" style="margin-bottom:18px">
-    <h3>Disease Burden Detail</h3>
-    <p class="sub"><span id="table-sub">Michigan LE 78.6 yrs · No discounting (WHO standard) · Population 30,013</span></p>
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Condition</th>
-            <th>Prevalence</th>
-            <th>Prevalent Cases</th>
-            <th>Deaths/yr (est.)</th>
-            <th>Mean Age at Death</th>
-            <th>YLL</th>
-            <th>DW</th>
-            <th>YLD</th>
-            <th>DALYs</th>
-            <th>Data Source</th>
-          </tr>
-        </thead>
-        <tbody id="daly-tbody"></tbody>
-      </table>
-    </div>
-    <p style="font-size:11px;color:var(--muted);margin-top:10px">Mortality derived from Michigan CDC WONDER 2020–22 rates × rural high-mortality adjustment (+15–20%). Prevalence from CDC PLACES 2024 model-based estimates (FIPS 26035). SUD prevalence is a derived estimate — no direct county-level survey.
+<!-- KPI Strip -->
+<div class="kpi-strip" id="sec-kpi">
+<div class="kpi" style="--accent:var(--red)">
+<div class="kpi-num">~850</div>
+<div class="kpi-label">Estimated mortality rate per 100k</div>
+<div class="kpi-delta up">▲ ~8.6% vs MI (783) · Rural high-mortality</div>
+</div>
+<div class="kpi" style="--accent:var(--red)">
+<div class="kpi-num">~47/100k</div>
+<div class="kpi-label">Opioid overdose deaths (est. 14/yr)</div>
+<div class="kpi-delta up">▲ Among highest in Michigan</div>
+</div>
+<div class="kpi" style="--accent:var(--amber)">
+<div class="kpi-num">16.8%</div>
+<div class="kpi-label">Poverty rate (ACS 2022)</div>
+<div class="kpi-delta up">▲ vs MI 15% · Up to 22-25% by MDHHS sources</div>
+</div>
+<div class="kpi" style="--accent:var(--amber)">
+<div class="kpi-num">40.5%</div>
+<div class="kpi-label">Adult obesity (CDC PLACES 2024)</div>
+<div class="kpi-delta up">▲ vs MI 36.7% · ▲ vs US 35.3%</div>
+</div>
+<div class="kpi" style="--accent:var(--red)">
+<div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;">
+<div>
+<div class="kpi-num" id="kpi-dalys-primary" style="font-size:20px">8,198</div>
+<div style="font-size:10px;color:var(--muted);font-weight:600">Frontier LE</div>
+</div>
+<div style="color:#cbd5e1;font-size:18px">|</div>
+<div>
+<div class="kpi-num" id="kpi-dalys-mi" style="font-size:20px">6,555</div>
+<div style="font-size:10px;color:var(--muted);font-weight:600">MI LE</div>
+</div>
+</div>
+<div class="kpi-label">Estimated DALYs/year · YLL + YLD</div>
+<div class="kpi-delta neu">±20% uncertainty</div>
+</div>
+<div class="kpi" style="--accent:var(--purple)">
+<div class="kpi-num">MUA</div>
+<div class="kpi-label">Medically Underserved Area + HPSA designation</div>
+<div class="kpi-delta up">Primary care &amp; mental health shortage</div>
+</div>
+</div><div class="ll-share-block" data-county="Clare County" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://www.lakeslinked.com/clare" data-value="8,198" style="margin:20px 0;">
+<span class="ll-share-label">Share this dashboard:</span>
+<button class="ll-share-btn ll-share-btn--linkedin" type="button"><span class="ll-share-icon">in</span> LinkedIn</button>
+<button class="ll-share-btn ll-share-btn--x" type="button"><span class="ll-share-icon">𝕏</span> Post</button>
+<button class="ll-share-btn ll-share-btn--copy" type="button"><span class="ll-share-icon">📋</span> Copy insight</button>
+</div>
+<!-- Charts row 1: DALY bar + comorbidity heatmap -->
+<div class="g2" id="sec-charts">
+<div class="card">
+<h3>DALYs by Condition</h3>
+<p class="sub">Disability-Adjusted Life Years · <span id="chart1-sub">Michigan LE 78.6 · ranked by burden</span></p>
+<canvas height="270" id="dalyChart"></canvas>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">Interactive — use LE standard and MH prevalence toggles above to recalculate.</p>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> DALY = disability-adjusted life year · YLL = years of life lost · YLD = years lived with disability · MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes</p>
+</div>
+<div class="card">
+<h3>Comorbidity Co-occurrence — Expected Counts</h3>
+<p class="sub">Expected cases with both conditions simultaneously · independence model · Clare County n=30,013 · hover cell for DW product &amp; DALY correction</p>
+<canvas id="heatmapChart" style="width:100%;display:block;margin:0 auto"></canvas>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">DM+COPD highest pair (385 expected co-occurring cases). Independence-model planning estimate (prevalence × prevalence × adult population), consistent with the Isabella methodology. Largest DALY-correction pairs: COPD+Cancer (−11.1), COPD+SUD (−10.8), COPD+MH (−10.1).</p>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DW = disability weight · DALY = disability-adjusted life year</p>
+</div>
+</div><div aria-label="Download county brief" class="ll-brief-section">
+<div aria-hidden="true" class="ll-brief-icon">📄</div>
+<div class="ll-brief-body">
+<p class="ll-eyebrow">One-page county summary</p>
+<h3>Download the Clare County Brief <span class="ll-badge-soon">Coming soon</span></h3>
+<p>A polished one-page PDF summary for public health leaders, grant writers, and community stakeholders. Includes top burden drivers, planning-grade DALY estimates, and practical implications.<br/><em>Planning-grade estimate. Not a peer-reviewed study or official GBD estimate.</em></p>
+<div class="ll-brief-actions">
+<a aria-label="Download Clare County brief PDF" class="ll-btn-primary ll-btn-brief" href="#">⇩ Download 1-page brief</a>
+<a class="ll-btn-secondary" href="#request-county">📬 Request this county's brief</a>
+</div>
+</div>
+</div>
+<!-- Charts row 2: SDOH radar + MI LE vs Frontier comparison -->
+<div class="g2">
+<div class="card">
+<h3>Social Determinants vs Michigan Average</h3>
+<p class="sub">% of population · CDC PLACES 2024 + ACS 2022</p>
+<canvas height="250" id="sdohChart"></canvas>
+</div>
+<div class="card">
+<h3>Economic Burden by Condition</h3>
+<p class="sub">Annual productivity loss · DALYs × $62K GDP per capita (human-capital method)</p>
+<div style="height:240px;position:relative"><canvas id="compareChart"></canvas></div>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">Cancer (~$85M/yr) and the opioid/SUD crisis (~$77M/yr) dominate Clare's measurable economic burden. Each averted DALY ≈ $62,000 recovered — the ROI basis for SAMHSA/HRSA grant budgets. Reactive to the toggles above.</p>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DALY = disability-adjusted life year</p>
+</div>
+</div>
+<!-- DALY Detail Table -->
+<div class="card" id="sec-table" style="margin-bottom:18px">
+<h3>Disease Burden Detail</h3>
+<p class="sub"><span id="table-sub">Michigan LE 78.6 yrs · No discounting (WHO standard) · Population 30,013</span></p>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Prevalence</th>
+<th>Prevalent Cases</th>
+<th>Deaths/yr (est.)</th>
+<th>Mean Age at Death</th>
+<th>YLL</th>
+<th>DW</th>
+<th>YLD</th>
+<th>DALYs</th>
+<th>Data Source</th>
+</tr>
+</thead>
+<tbody id="daly-tbody"></tbody>
+</table>
+</div>
+<p style="font-size:11px;color:var(--muted);margin-top:10px">Mortality derived from Michigan CDC WONDER 2020–22 rates × rural high-mortality adjustment (+15–20%). Prevalence from CDC PLACES 2024 model-based estimates (FIPS 26035). SUD prevalence is a derived estimate — no direct county-level survey.
     <span id="remission-footnote"> * MH YLD uses active disease prevalence (14.1% = 28.1% × 0.50 remission factor) when remission-adjusted mode is selected.</span></p>
-  </div>
-
-  <!-- Methodology note box -->
-  <div style="border:2px solid var(--navy);border-radius:12px;padding:22px 28px;margin-bottom:28px;background:linear-gradient(135deg,#0f1f3d 0%,#1a2d5f 100%);position:relative;overflow:hidden;">
-    <div style="position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(220,38,38,.15) 0%,transparent 70%);pointer-events:none;"></div>
-    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:6px;">Methodology</div>
-    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;letter-spacing:-.01em;">Two standards, one county</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px;">Both estimates are valid — they answer different questions about burden.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">Sensitivity · MI LE 78.6</div>
-        <div style="font-size:26px;font-weight:800;color:#94a3b8;letter-spacing:-.02em;line-height:1;">6,555</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">Michigan state life expectancy · Local planning standard · YLL 2,358 + YLD 4,197</div>
-        <div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">CVD #1 · Cancer #2 · MH #3</div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">&#8594;</div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">+MH Remission Adj. ×0.50</div>
-        <div style="font-size:26px;font-weight:800;color:#60a5fa;letter-spacing:-.02em;line-height:1;">5,943</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">CDC PLACES reports lifetime-diagnosed prevalence. Active burden ×0.50 = 14.1% active. Reduces MH YLD 1,223 → 611.</div>
-        <div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">CVD #1 · Cancer #2 · SUD #3</div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">&#8594;</div>
-      <div style="background:rgba(13,148,136,.18);border:1.5px solid rgba(13,148,136,.5);border-radius:8px;padding:14px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55);margin-bottom:8px;">Primary · Frontier LE 89.1</div>
-        <div style="font-size:26px;font-weight:800;color:#34d399;letter-spacing:-.02em;line-height:1;">8,198</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5;">WHO GBD frontier LE · Enables cross-county comparison · YLL 4,612 + YLD 3,586 (remission-adj)</div>
-        <div style="font-size:10.5px;color:#34d399;margin-top:6px;font-weight:600;">CVD #1 · Cancer #2 · SUD #3</div>
-      </div>
+</div>
+<!-- Methodology note box -->
+<div style="border:2px solid var(--navy);border-radius:12px;padding:22px 28px;margin-bottom:28px;background:linear-gradient(135deg,#0f1f3d 0%,#1a2d5f 100%);position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(220,38,38,.15) 0%,transparent 70%);pointer-events:none;"></div>
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:6px;">Methodology</div>
+<div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;letter-spacing:-.01em;">Two standards, one county</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px;">Both estimates are valid — they answer different questions about burden.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">Sensitivity · MI LE 78.6</div>
+<div style="font-size:26px;font-weight:800;color:#94a3b8;letter-spacing:-.02em;line-height:1;">6,555</div>
+<div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">Michigan state life expectancy · Local planning standard · YLL 2,358 + YLD 4,197</div>
+<div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">CVD #1 · Cancer #2 · MH #3</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">→</div>
+<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">+MH Remission Adj. ×0.50</div>
+<div style="font-size:26px;font-weight:800;color:#60a5fa;letter-spacing:-.02em;line-height:1;">5,943</div>
+<div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">CDC PLACES reports lifetime-diagnosed prevalence. Active burden ×0.50 = 14.1% active. Reduces MH YLD 1,223 → 611.</div>
+<div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">CVD #1 · Cancer #2 · SUD #3</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">→</div>
+<div style="background:rgba(13,148,136,.18);border:1.5px solid rgba(13,148,136,.5);border-radius:8px;padding:14px;">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55);margin-bottom:8px;">Primary · Frontier LE 89.1</div>
+<div style="font-size:26px;font-weight:800;color:#34d399;letter-spacing:-.02em;line-height:1;">8,198</div>
+<div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5;">WHO GBD frontier LE · Enables cross-county comparison · YLL 4,612 + YLD 3,586 (remission-adj)</div>
+<div style="font-size:10.5px;color:#34d399;margin-top:6px;font-weight:600;">CVD #1 · Cancer #2 · SUD #3</div>
+</div>
+</div>
+<div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.4);line-height:1.7;">
+<strong style="color:rgba(255,255,255,.6);">Note:</strong> All figures are planning estimates. Mortality data derived from Michigan CDC WONDER 2020–22 state rates with rural adjustment. No discounting or age-weighting applied (WHO standard). Disability weights: IHME GBD 2021.
     </div>
-    <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.4);line-height:1.7;">
-      <strong style="color:rgba(255,255,255,.6);">Note:</strong> All figures are planning estimates. Mortality data derived from Michigan CDC WONDER 2020–22 state rates with rural adjustment. No discounting or age-weighting applied (WHO standard). Disability weights: IHME GBD 2021.
-    </div>
-  </div>
-
-  <!-- Key Findings -->
-  <h2 id="sec-findings" style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--navy)">Key Findings</h2>
-  <div class="findings">
-
-    <div class="finding" style="--accent:var(--red)">
-      <h4>Opioid Crisis — #3 Burden · ~1,247 DALYs (MI LE)</h4>
-      <p>Opioid overdose death rate estimated at ~47/100k — among the highest in Michigan. Approximately 14 opioid deaths/year in a population of 30,013. SUD kills at a mean age of 44 (34.6 years of remaining life lost per death). Clare County's opioid crisis is structural: high poverty, older workforce, limited MAT access, and MUA designation all compound risk. Neonatal abstinence syndrome rates are elevated statewide in rural Michigan counties.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--blue)">
-      <h4>Aging Population — Elevated CVD &amp; Cancer Burden</h4>
-      <p>Clare County's median age is 46.8 years versus Michigan's ~40 — one of the oldest counties in the state. This demographic drives the #1 ranking for cardiovascular disease (710 DALYs, MI LE) and #2 for cancer (1,372 DALYs). CVD accounts for 82.8 estimated deaths/year. An older, rural population also means higher COPD burden (12.7% prevalence vs. MI ~8.2%) and greater disability years relative to mortality.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--purple)">
-      <h4>Mental Health — 28.1% Prevalence · #3 DALY Driver</h4>
-      <p>CDC PLACES 2024 reports 28.1% lifetime-diagnosed mental health prevalence — well above state and national averages. With remission adjustment (×0.50 active burden = 14.1%), MH contributes ~611 YLD. Clare is MUA-designated with severe mental health provider shortages. The intersection of SUD + mental health comorbidity (dual diagnosis) creates disproportionate burden in this population.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--amber)">
-      <h4>Poverty &amp; Social Determinants</h4>
-      <p>16.8% poverty rate by ACS 2022 (estimated 22–25% by MDHHS sources). Median household income of $42,100 versus Michigan's ~$63,000. Physical inactivity at 30.4%, obesity 40.5%, smoking 19.5%. These SDOH are structural drivers of every health condition in the DALY model. Medicaid-heavy payer mix reduces hospital margins and limits specialist access, further compounding the access gap.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--teal)">
-      <h4>COPD — Elevated Respiratory Burden</h4>
-      <p>COPD prevalence of 12.7% is well above Michigan average (~8.2%). This reflects the county's high smoking rates (19.5%), older population, and occupational/environmental exposures. COPD contributes 868 DALYs (MI LE) — the 4th largest driver. Smoking cessation and pulmonary rehabilitation are high-ROI interventions in this population.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--green)">
-      <h4>Diabetes &amp; Hypertension — Chronic Disease Cluster</h4>
-      <p>Diabetes prevalence of 15.4% (vs MI ~11%) and hypertension at 35.4% signal a severe chronic disease cluster. Both are amplified by obesity (40.5%), physical inactivity (30.4%), and limited preventive care access. Diabetes contributes 351 DALYs and is a multiplicative risk factor for CVD, stroke, and COPD mortality.</p>
-    </div>
-
-  </div>
-
-  <!-- Abbreviations -->
-  <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:18px;font-size:11.5px;color:var(--muted);line-height:1.9;">
-    <span style="font-weight:700;color:#374151;margin-right:8px;">Abbreviations:</span>
-    <strong>DALY</strong> Disability-Adjusted Life Year &nbsp;&#183;&nbsp;
-    <strong>YLL</strong> Years of Life Lost (premature mortality) &nbsp;&#183;&nbsp;
-    <strong>YLD</strong> Years Lived with Disability &nbsp;&#183;&nbsp;
-    <strong>MH</strong> Mental Health Disorders &nbsp;&#183;&nbsp;
-    <strong>SUD</strong> Substance Use Disorders (opioids primary) &nbsp;&#183;&nbsp;
-    <strong>CVD</strong> Cardiovascular Disease &nbsp;&#183;&nbsp;
-    <strong>COPD</strong> Chronic Obstructive Pulmonary Disease &nbsp;&#183;&nbsp;
-    <strong>DM</strong> Diabetes Mellitus Type 2 &nbsp;&#183;&nbsp;
-    <strong>DW</strong> Disability Weight (IHME GBD 2021) &nbsp;&#183;&nbsp;
-    <strong>LE</strong> Life Expectancy &nbsp;&#183;&nbsp;
-    <strong>MUA</strong> Medically Underserved Area &nbsp;&#183;&nbsp;
-    <strong>HPSA</strong> Health Professional Shortage Area &nbsp;&#183;&nbsp;
-    <strong>MAT</strong> Medication-Assisted Treatment &nbsp;&#183;&nbsp;
+</div>
+<!-- Key Findings -->
+<h2 id="sec-findings" style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--navy)">Key Findings</h2>
+<div class="findings">
+<div class="finding" style="--accent:var(--red)">
+<h4>Opioid Crisis — #3 Burden · ~1,247 DALYs (MI LE)</h4>
+<p>Opioid overdose death rate estimated at ~47/100k — among the highest in Michigan. Approximately 14 opioid deaths/year in a population of 30,013. SUD kills at a mean age of 44 (34.6 years of remaining life lost per death). Clare County's opioid crisis is structural: high poverty, older workforce, limited MAT access, and MUA designation all compound risk. Neonatal abstinence syndrome rates are elevated statewide in rural Michigan counties.</p>
+</div>
+<div class="finding" style="--accent:var(--blue)">
+<h4>Aging Population — Elevated CVD &amp; Cancer Burden</h4>
+<p>Clare County's median age is 46.8 years versus Michigan's ~40 — one of the oldest counties in the state. This demographic drives the #1 ranking for cardiovascular disease (710 DALYs, MI LE) and #2 for cancer (1,372 DALYs). CVD accounts for 82.8 estimated deaths/year. An older, rural population also means higher COPD burden (12.7% prevalence vs. MI ~8.2%) and greater disability years relative to mortality.</p>
+</div>
+<div class="finding" style="--accent:var(--purple)">
+<h4>Mental Health — 28.1% Prevalence · #3 DALY Driver</h4>
+<p>CDC PLACES 2024 reports 28.1% lifetime-diagnosed mental health prevalence — well above state and national averages. With remission adjustment (×0.50 active burden = 14.1%), MH contributes ~611 YLD. Clare is MUA-designated with severe mental health provider shortages. The intersection of SUD + mental health comorbidity (dual diagnosis) creates disproportionate burden in this population.</p>
+</div>
+<div class="finding" style="--accent:var(--amber)">
+<h4>Poverty &amp; Social Determinants</h4>
+<p>16.8% poverty rate by ACS 2022 (estimated 22–25% by MDHHS sources). Median household income of $42,100 versus Michigan's ~$63,000. Physical inactivity at 30.4%, obesity 40.5%, smoking 19.5%. These SDOH are structural drivers of every health condition in the DALY model. Medicaid-heavy payer mix reduces hospital margins and limits specialist access, further compounding the access gap.</p>
+</div>
+<div class="finding" style="--accent:var(--teal)">
+<h4>COPD — Elevated Respiratory Burden</h4>
+<p>COPD prevalence of 12.7% is well above Michigan average (~8.2%). This reflects the county's high smoking rates (19.5%), older population, and occupational/environmental exposures. COPD contributes 868 DALYs (MI LE) — the 4th largest driver. Smoking cessation and pulmonary rehabilitation are high-ROI interventions in this population.</p>
+</div>
+<div class="finding" style="--accent:var(--green)">
+<h4>Diabetes &amp; Hypertension — Chronic Disease Cluster</h4>
+<p>Diabetes prevalence of 15.4% (vs MI ~11%) and hypertension at 35.4% signal a severe chronic disease cluster. Both are amplified by obesity (40.5%), physical inactivity (30.4%), and limited preventive care access. Diabetes contributes 351 DALYs and is a multiplicative risk factor for CVD, stroke, and COPD mortality.</p>
+</div>
+</div>
+<!-- Abbreviations -->
+<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:18px;font-size:11.5px;color:var(--muted);line-height:1.9;">
+<span style="font-weight:700;color:#374151;margin-right:8px;">Abbreviations:</span>
+<strong>DALY</strong> Disability-Adjusted Life Year  · 
+    <strong>YLL</strong> Years of Life Lost (premature mortality)  · 
+    <strong>YLD</strong> Years Lived with Disability  · 
+    <strong>MH</strong> Mental Health Disorders  · 
+    <strong>SUD</strong> Substance Use Disorders (opioids primary)  · 
+    <strong>CVD</strong> Cardiovascular Disease  · 
+    <strong>COPD</strong> Chronic Obstructive Pulmonary Disease  · 
+    <strong>DM</strong> Diabetes Mellitus Type 2  · 
+    <strong>DW</strong> Disability Weight (IHME GBD 2021)  · 
+    <strong>LE</strong> Life Expectancy  · 
+    <strong>MUA</strong> Medically Underserved Area  · 
+    <strong>HPSA</strong> Health Professional Shortage Area  · 
+    <strong>MAT</strong> Medication-Assisted Treatment  · 
     <strong>NAS</strong> Neonatal Abstinence Syndrome
   </div>
-
-  <!-- Recommendations -->
-  <div class="card" id="sec-recs" style="margin-bottom:24px">
-    <h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
-    <p class="sub" style="margin-bottom:16px">Prioritized by DALY impact and Clare County context · Clare-specific MUA/HPSA designations qualify for additional federal funding streams</p>
-    <div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>MAT telehealth for opioid use disorder</h5><p>SUD · ~14 opioid deaths/year · mean age 44 · 34.6 life-years lost per death · Buprenorphine + naltrexone via telehealth addresses geographic access barriers</p></div><span class="rec-ev">Strong</span></div>
-    <div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>AI-assisted CVD risk stratification in primary care</h5><p>CVD · 82.8 deaths/year · 35.4% hypertension · Older population amplifies benefit · Community health worker hypertension control + remote monitoring</p></div><span class="rec-ev">Strong</span></div>
-    <div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>Cancer screening navigation + teleoncology</h5><p>Cancer · 60.5 deaths/year at mean age 67 · Rural travel barriers reduce screening rates · Stage-shift = highest mortality impact per dollar in rural settings</p></div><span class="rec-ev">Strong</span></div>
-    <div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>Integrated behavioral health in primary care</h5><p>MH + SUD · 28.1% MH prevalence · Collaborative care model (IMPACT) + SUD co-management · Addresses dual diagnosis burden at point of care</p></div><span class="rec-ev">Moderate–Strong</span></div>
-    <div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>Tobacco cessation + COPD pulmonary rehab via telehealth</h5><p>COPD · 12.7% prevalence · 19.5% smoking · Michigan Tobacco Quitline + NRT through Medicaid · Telehealth pulmonary rehab for rural access</p></div><span class="rec-ev">Strong</span></div>
+<!-- Recommendations -->
+<div class="card" id="sec-recs" style="margin-bottom:24px">
+<h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
+<p class="sub" style="margin-bottom:16px">Prioritized by DALY impact and Clare County context · Clare-specific MUA/HPSA designations qualify for additional federal funding streams</p>
+<div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>MAT telehealth for opioid use disorder</h5><p>SUD · ~14 opioid deaths/year · mean age 44 · 34.6 life-years lost per death · Buprenorphine + naltrexone via telehealth addresses geographic access barriers</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>AI-assisted CVD risk stratification in primary care</h5><p>CVD · 82.8 deaths/year · 35.4% hypertension · Older population amplifies benefit · Community health worker hypertension control + remote monitoring</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>Cancer screening navigation + teleoncology</h5><p>Cancer · 60.5 deaths/year at mean age 67 · Rural travel barriers reduce screening rates · Stage-shift = highest mortality impact per dollar in rural settings</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>Integrated behavioral health in primary care</h5><p>MH + SUD · 28.1% MH prevalence · Collaborative care model (IMPACT) + SUD co-management · Addresses dual diagnosis burden at point of care</p></div><span class="rec-ev">Moderate–Strong</span></div>
+<div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>Tobacco cessation + COPD pulmonary rehab via telehealth</h5><p>COPD · 12.7% prevalence · 19.5% smoking · Michigan Tobacco Quitline + NRT through Medicaid · Telehealth pulmonary rehab for rural access</p></div><span class="rec-ev">Strong</span></div>
+</div><section aria-label="Request analysis for your county" class="ll-request-section ll-request-section--light">
+<p class="ll-eyebrow">Need this for your county?</p>
+<h2>Request a County Burden Snapshot</h2>
+<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="">
+<input name="_subject" type="hidden" value="County snapshot request — Lakes Linked"/>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<div class="ll-form__group"><label for="req-name-2">Name *</label><input id="req-name-2" name="name" placeholder="Your name" required="" type="text"/></div>
+<div class="ll-form__group"><label for="req-email-2">Email *</label><input id="req-email-2" name="email" placeholder="you@org.org" required="" type="email"/></div>
+<div class="ll-form__group"><label for="req-org-2">Organization</label><input id="req-org-2" name="org" placeholder="Health dept, hospital, university…" type="text"/></div>
+<div class="ll-form__group"><label for="req-county-2">County and state</label><input id="req-county-2" name="county" placeholder="e.g. Mecosta County, MI" type="text"/></div>
+<div class="ll-form__group ll-form__group--full"><button class="ll-btn-submit" type="submit">Send request →</button><p class="ll-form-note">Direct to Sergey's inbox. No spam.</p></div>
+<div class="ll-form-success" role="alert">✓ Sent — we'll follow up within 2–3 business days.</div>
+</form>
+</section>
+<!-- Methodology disclaimer -->
+<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:12px;color:#7c2d12;line-height:1.7;">
+<strong>Planning-grade estimate — methodology note.</strong> All DALY figures are derived from public data sources: CDC PLACES 2024 (prevalence, model-based county estimates), Michigan CDC WONDER 2020–22 (mortality rates, applied with rural adjustment), IHME GBD 2021 (disability weights), and Census ACS 2022 (demographics). Mortality for Clare County is estimated from Michigan state rates adjusted +15–20% to reflect documented high-mortality rural status — direct county-level vital statistics were not available via the automated pipeline. SUD/opioid prevalence is a derived estimate. Uncertainty: ±20% on all DALY components. These estimates are intended for grant applications, community health needs assessments, and program planning — not for clinical or regulatory decisions. For peer-reviewed analysis, see the Isabella County methodology supplement.
   </div>
-
-  <!-- Methodology disclaimer -->
-  <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:12px;color:#7c2d12;line-height:1.7;">
-    <strong>Planning-grade estimate — methodology note.</strong> All DALY figures are derived from public data sources: CDC PLACES 2024 (prevalence, model-based county estimates), Michigan CDC WONDER 2020–22 (mortality rates, applied with rural adjustment), IHME GBD 2021 (disability weights), and Census ACS 2022 (demographics). Mortality for Clare County is estimated from Michigan state rates adjusted +15–20% to reflect documented high-mortality rural status — direct county-level vital statistics were not available via the automated pipeline. SUD/opioid prevalence is a derived estimate. Uncertainty: ±20% on all DALY components. These estimates are intended for grant applications, community health needs assessments, and program planning — not for clinical or regulatory decisions. For peer-reviewed analysis, see the Isabella County methodology supplement.
-  </div>
-
 </div><!-- end .page -->
-
 <footer>
-  <span>Clare County Health Burden Dashboard · June 2026 · Data: CDC PLACES 2024, Michigan CDC WONDER 2020–22, IHME GBD 2021</span>
-  <span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
-</footer>
-
+<span>Clare County Health Burden Dashboard · June 2026 · Data: CDC PLACES 2024, Michigan CDC WONDER 2020–22, IHME GBD 2021</span>
+<span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
+<div class="ll-footer-trust" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.73rem;color:#64748b;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;">
+<span>🔒 Secure (HTTPS)</span><span>·</span>
+<span>Planning-grade estimates — not a formal GBD study</span><span>·</span>
+<a href="/privacy.html" style="color:#64748b;">Privacy Policy</a><span>·</span>
+<a href="/terms.html" style="color:#64748b;">Terms of Use</a><span>·</span>
+<span>© 2026 Lakes Linked · Sergey Soshnikov, MD PhD</span>
+</div></footer>
 <script>
 // ═══════════════════════════════════════════
 // CLARE COUNTY DATA
@@ -880,5 +890,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   sections.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 });
 </script>
-</body>
+<script src="ll-features.js"></script></body>
 </html>

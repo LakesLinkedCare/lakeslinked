@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Midland County Health Burden Dashboard | Lakes Linked</title>
-<meta name="description" content="Midland County, Michigan health burden analysis: 14,335 DALYs/year. Cancer #1, SUD #2. Industrial economy county. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD.">
-<meta property="og:title" content="Midland County Health Burden Dashboard | Lakes Linked">
-<meta property="og:description" content="14,335 DALYs/yr · Cancer #1, SUD #2. Industrial economy county. Planning-grade DALY analysis.">
-<meta property="og:url" content="https://lakeslinked.com/midland.html">
-<meta property="og:type" content="website">
+<meta content="Midland County, Michigan health burden analysis: 14,335 DALYs/year. Cancer #1, SUD #2. Industrial economy county. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="Midland County Health Burden Dashboard | Lakes Linked" property="og:title"/>
+<meta content="14,335 DALYs/yr · Cancer #1, SUD #2. Industrial economy county. Planning-grade DALY analysis." property="og:description"/>
+<meta content="https://lakeslinked.com/midland.html" property="og:url"/>
+<meta content="website" property="og:type"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root {
@@ -142,373 +143,383 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
 .county-group{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:3px;}
 .county-group .navlink{border-radius:5px;}
 </style>
-</head>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><meta content="Sergey Soshnikov, MD PhD — Lakes Linked" name="author"/><link href="https://www.lakeslinked.com/midland" rel="canonical"/><meta content="https://www.lakeslinked.com/og-midland.png" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://www.lakeslinked.com/og-midland.png" name="twitter:image"/></head>
 <body>
-
 <!-- Navigation -->
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
-  <div class="links" style="display:flex;gap:4px;align-items:center;">
-    <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
-    <div class="county-group">
-      <a class="navlink" href="isabella.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</a>
-      <a class="navlink" href="clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
-      <a class="navlink active" href="midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
-      <a class="navlink" href="gratiot.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</a>
-    </div>
-    <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
-    <a class="navlink" href="index.html"><svg class="nico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Portal</a>
-    <a class="navlink" href="midland_roi.html"><svg class="nico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"/></svg>Economic Impact</a>
-    <a class="navlink" href="midland_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Methods</a>
-  </div>
+<a class="brand" href="index.html"><img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:34px;width:auto;"/></a>
+<div class="links" style="display:flex;gap:4px;align-items:center;">
+<span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
+<div class="county-group">
+<a class="navlink" href="isabella.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Isabella</a>
+<a class="navlink" href="clare.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Clare</a>
+<a class="navlink active" href="midland.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Midland</a>
+<a class="navlink" href="gratiot.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Gratiot</a>
+</div>
+<span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+<a class="navlink" href="index.html"><svg class="nico" viewbox="0 0 24 24"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect><rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect></svg>Portal</a>
+<a class="navlink" href="midland_roi.html"><svg class="nico" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"></path></svg>Economic Impact</a>
+<a class="navlink" href="midland_methods.html"><svg class="nico" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Methods</a>
+</div>
 </nav>
-
 <!-- Notice (green — observed data confirmed) -->
 <div class="notice">
-  <span>⚠</span>
-  <span><strong>Planning model — not a validated county burden estimate.</strong> 14,335 DALYs/yr (Michigan LE) from CDC PLACES 2023 observed county prevalence, CDC WONDER 2020–22 and IHME GBD 2021. <a href="midland_methods.html" style="color:#92400e;font-weight:700;">→ Full methods &amp; data quality notes</a></span>
+<span>⚠</span>
+<span><strong>Planning model — not a validated county burden estimate.</strong> 14,335 DALYs/yr (Michigan LE) from CDC PLACES 2023 observed county prevalence, CDC WONDER 2020–22 and IHME GBD 2021. <a href="midland_methods.html" style="color:#92400e;font-weight:700;">→ Full methods &amp; data quality notes</a></span>
 </div>
-
 <!-- County Compare Bar -->
 <div class="county-compare-bar" style="background:#f8fafc;border-bottom:1px solid #e2e8f0;">
-  <div style="max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:stretch;overflow-x:auto;">
-    <a href="isabella.html" style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;border-right:1px solid #e2e8f0;text-decoration:none;color:inherit;flex-shrink:0;border-bottom:3px solid transparent;">
-      <span style="font-size:11.5px;font-weight:700;color:#1a56db;"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</span>
-      <span style="font-size:13px;font-weight:800;">15,140</span>
-      <span style="font-size:10px;color:#64748b;">DALYs · pop 64,565</span>
-    </a>
-    <a href="clare.html" style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;border-right:1px solid #e2e8f0;text-decoration:none;color:inherit;flex-shrink:0;border-bottom:3px solid transparent;">
-      <span style="font-size:11.5px;font-weight:700;color:#1e40af;"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</span>
-      <span style="font-size:13px;font-weight:800;">8,198</span>
-      <span style="font-size:10px;color:#64748b;">DALYs · pop 30,013</span>
-    </a>
-    <div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;border-right:1px solid #e2e8f0;flex-shrink:0;border-bottom:3px solid #3b82f6;">
-      <span style="font-size:11.5px;font-weight:700;color:#3b82f6;"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</span>
-      <span style="font-size:13px;font-weight:800;">14,335</span>
-      <span style="font-size:10px;color:#64748b;">DALYs · pop 82,884</span>
-    </div>
-    <div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;flex-shrink:0;opacity:0.4;">
-      <span style="font-size:11.5px;font-weight:700;color:#64748b;"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</span>
-      <span style="font-size:13px;font-weight:800;">—</span>
-      <span style="font-size:10px;color:#64748b;">Q3 2026</span>
-    </div>
-    <div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;flex-shrink:0;opacity:0.4;">
-      <span style="font-size:11.5px;font-weight:700;color:#64748b;"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Mecosta</span>
-      <span style="font-size:13px;font-weight:800;">—</span>
-      <span style="font-size:10px;color:#64748b;">Q4 2026</span>
-    </div>
-    <div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;flex-shrink:0;opacity:0.4;">
-      <span style="font-size:11.5px;font-weight:700;color:#64748b;"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Washtenaw</span>
-      <span style="font-size:13px;font-weight:800;">—</span>
-      <span style="font-size:10px;color:#64748b;">Q4 2026</span>
-    </div>
-  </div>
+<div style="max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:stretch;overflow-x:auto;">
+<a href="isabella.html" style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;border-right:1px solid #e2e8f0;text-decoration:none;color:inherit;flex-shrink:0;border-bottom:3px solid transparent;">
+<span style="font-size:11.5px;font-weight:700;color:#1a56db;"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Isabella</span>
+<span style="font-size:13px;font-weight:800;">15,140</span>
+<span style="font-size:10px;color:#64748b;">DALYs · pop 64,565</span>
+</a>
+<a href="clare.html" style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;border-right:1px solid #e2e8f0;text-decoration:none;color:inherit;flex-shrink:0;border-bottom:3px solid transparent;">
+<span style="font-size:11.5px;font-weight:700;color:#1e40af;"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Clare</span>
+<span style="font-size:13px;font-weight:800;">8,198</span>
+<span style="font-size:10px;color:#64748b;">DALYs · pop 30,013</span>
+</a>
+<div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;border-right:1px solid #e2e8f0;flex-shrink:0;border-bottom:3px solid #3b82f6;">
+<span style="font-size:11.5px;font-weight:700;color:#3b82f6;"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Midland</span>
+<span style="font-size:13px;font-weight:800;">14,335</span>
+<span style="font-size:10px;color:#64748b;">DALYs · pop 82,884</span>
 </div>
-
+<div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;flex-shrink:0;opacity:0.4;">
+<span style="font-size:11.5px;font-weight:700;color:#64748b;"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Gratiot</span>
+<span style="font-size:13px;font-weight:800;">—</span>
+<span style="font-size:10px;color:#64748b;">Q3 2026</span>
+</div>
+<div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;flex-shrink:0;opacity:0.4;">
+<span style="font-size:11.5px;font-weight:700;color:#64748b;"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Mecosta</span>
+<span style="font-size:13px;font-weight:800;">—</span>
+<span style="font-size:10px;color:#64748b;">Q4 2026</span>
+</div>
+<div style="display:flex;flex-direction:column;padding:10px 20px 10px 0;margin-right:20px;flex-shrink:0;opacity:0.4;">
+<span style="font-size:11.5px;font-weight:700;color:#64748b;"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Washtenaw</span>
+<span style="font-size:13px;font-weight:800;">—</span>
+<span style="font-size:10px;color:#64748b;">Q4 2026</span>
+</div>
+</div>
+</div>
 <!-- Hero -->
 <div class="hero">
-  <div class="hero-inner">
-    <h1>Midland County Health Burden Analysis</h1>
-    <p class="sub">Population 82,884 · Industrial economy · Planning-grade DALY estimates · June 2026</p>
-    <div class="hero-stats">
-      <div class="hstat">
-        <div class="num">14,335</div>
-        <div class="lbl">DALYs/yr (MI LE 78.6)</div>
-        <div class="cmp neu">Michigan LE 78.6 yrs · YLL 6,506 + YLD 9,331</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">~20,700</div>
-        <div class="lbl">DALYs/yr (Frontier LE 89.1)</div>
-        <div class="cmp neu">Frontier LE 89.1 yrs · Higher YLL under longer standard</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">592</div>
-        <div class="lbl">Est. annual deaths</div>
-        <div class="cmp neu">~714/100k · Similar to MI avg 783</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">$889M</div>
-        <div class="lbl">Economic burden (human capital)</div>
-        <div class="cmp neu">DALYs × $62,000 GDP/capita · VSL: $7.2B</div>
-      </div>
-      <div class="hdiv"></div>
-      <div class="hstat">
-        <div class="num">82,884</div>
-        <div class="lbl">County population</div>
-        <div class="cmp neu">Census ACS 2022 · FIPS 26111 · Dow Chemical HQ</div>
-      </div>
-    </div>
-  </div>
+<div class="hero-inner">
+<h1>Midland County Health Burden Analysis</h1>
+<p class="sub">Population 82,884 · Industrial economy · Planning-grade DALY estimates · June 2026</p>
+<div class="hero-stats">
+<div class="hstat">
+<div class="num">14,335</div>
+<div class="lbl">DALYs/yr (MI LE 78.6)</div>
+<div class="cmp neu">Michigan LE 78.6 yrs · YLL 6,506 + YLD 9,331</div>
 </div>
-
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">~20,700</div>
+<div class="lbl">DALYs/yr (Frontier LE 89.1)</div>
+<div class="cmp neu">Frontier LE 89.1 yrs · Higher YLL under longer standard</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">592</div>
+<div class="lbl">Est. annual deaths</div>
+<div class="cmp neu">~714/100k · Similar to MI avg 783</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">$889M</div>
+<div class="lbl">Economic burden (human capital)</div>
+<div class="cmp neu">DALYs × $62,000 GDP/capita · VSL: $7.2B</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">82,884</div>
+<div class="lbl">County population</div>
+<div class="cmp neu">Census ACS 2022 · FIPS 26111 · Dow Chemical HQ</div>
+</div>
+</div>
+</div>
+</div>
 <!-- Controls -->
 <div class="ctrl-bar">
-  <div class="ctrl-group">
-    <label>LE Standard</label>
-    <div class="btns">
-      <button class="btn-toggle active" id="btn-mi" onclick="setLE('mi', this)">MI LE 78.6</button>
-      <button class="btn-toggle" id="btn-frontier" onclick="setLE('frontier', this)">Frontier LE 89.1</button>
-    </div>
-  </div>
-  <div class="ctrl-group">
-    <label>MH Prevalence</label>
-    <div class="btns">
-      <button class="btn-toggle" id="btn-raw" onclick="setRemission(false, this)">Raw 28.1%</button>
-      <button class="btn-toggle active" id="btn-remission" onclick="setRemission(true, this)">Remission-Adj. 14.1%</button>
-    </div>
-  </div>
-  <div class="ctrl-group">
-    <label>Show Conditions</label>
-    <div class="cond-checks" id="cond-checks"></div>
-  </div>
-  <div class="ctrl-info" id="ctrl-info">Michigan LE 78.6 yrs + MH remission-adjustment. Midland County: industrial economy, Dow Chemical HQ, lower poverty than rural neighbors, higher median income ($62,000).</div>
+<div class="ctrl-group">
+<label>LE Standard</label>
+<div class="btns">
+<button class="btn-toggle active" id="btn-mi" onclick="setLE('mi', this)">MI LE 78.6</button>
+<button class="btn-toggle" id="btn-frontier" onclick="setLE('frontier', this)">Frontier LE 89.1</button>
 </div>
-
+</div>
+<div class="ctrl-group">
+<label>MH Prevalence</label>
+<div class="btns">
+<button class="btn-toggle" id="btn-raw" onclick="setRemission(false, this)">Raw 28.1%</button>
+<button class="btn-toggle active" id="btn-remission" onclick="setRemission(true, this)">Remission-Adj. 14.1%</button>
+</div>
+</div>
+<div class="ctrl-group">
+<label>Show Conditions</label>
+<div class="cond-checks" id="cond-checks"></div>
+</div>
+<div class="ctrl-info" id="ctrl-info">Michigan LE 78.6 yrs + MH remission-adjustment. Midland County: industrial economy, Dow Chemical HQ, lower poverty than rural neighbors, higher median income ($62,000).</div>
+</div>
 <!-- Jump Bar -->
 <div class="jump-bar">
-  <span class="jb-label">Jump to:</span>
-  <a class="jb-link" href="#sec-kpi">KPIs</a>
-  <a class="jb-link" href="#sec-charts">Charts</a>
-  <a class="jb-link" href="#sec-econ">Economic Burden</a>
-  <a class="jb-link" href="#sec-table">DALY Table</a>
-  <a class="jb-link" href="#sec-findings">Key Findings</a>
-  <a class="jb-link" href="#sec-recs">Recommendations</a>
+<span class="jb-label">Jump to:</span>
+<a class="jb-link" href="#sec-kpi">KPIs</a>
+<a class="jb-link" href="#sec-charts">Charts</a>
+<a class="jb-link" href="#sec-econ">Economic Burden</a>
+<a class="jb-link" href="#sec-table">DALY Table</a>
+<a class="jb-link" href="#sec-findings">Key Findings</a>
+<a class="jb-link" href="#sec-recs">Recommendations</a>
 </div>
-
 <div class="page">
-
-  <!-- KPI Strip -->
-  <div class="kpi-strip" id="sec-kpi">
-    <div class="kpi" style="--accent:var(--green)">
-      <div class="kpi-num">~714/100k</div>
-      <div class="kpi-label">Estimated mortality rate per 100k</div>
-      <div class="kpi-delta good">▼ Below MI avg 783 · Industrial economy advantage</div>
+<!-- KPI Strip -->
+<div class="kpi-strip" id="sec-kpi">
+<div class="kpi" style="--accent:var(--green)">
+<div class="kpi-num">~714/100k</div>
+<div class="kpi-label">Estimated mortality rate per 100k</div>
+<div class="kpi-delta good">▼ Below MI avg 783 · Industrial economy advantage</div>
+</div>
+<div class="kpi" style="--accent:var(--red)">
+<div class="kpi-num">167</div>
+<div class="kpi-label">Cancer deaths/yr (est.) — #1 burden driver</div>
+<div class="kpi-delta neu">160/100k · Similar to MI avg 161 · 3,457 DALYs</div>
+</div>
+<div class="kpi" style="--accent:var(--amber)">
+<div class="kpi-num">9.0%</div>
+<div class="kpi-label">Poverty rate (ACS 2022)</div>
+<div class="kpi-delta good">▼ vs MI 15% · Higher median income $62,000</div>
+</div>
+<div class="kpi" style="--accent:var(--amber)">
+<div class="kpi-num">40.5%</div>
+<div class="kpi-label">Adult obesity (state proxy)</div>
+<div class="kpi-delta up">▲ vs MI 36.7% · Key SDOH risk factor</div>
+</div>
+<div class="kpi" style="--accent:var(--green)">
+<div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;">
+<div>
+<div class="kpi-num" id="kpi-dalys-primary" style="font-size:20px">14,335</div>
+<div style="font-size:10px;color:var(--muted);font-weight:600">MI LE</div>
+</div>
+<div style="color:#cbd5e1;font-size:18px">|</div>
+<div>
+<div class="kpi-num" id="kpi-dalys-frontier" style="font-size:20px">~20,700</div>
+<div style="font-size:10px;color:var(--muted);font-weight:600">Frontier LE</div>
+</div>
+</div>
+<div class="kpi-label">Estimated DALYs/year · YLL + YLD</div>
+<div class="kpi-delta neu">CDC PLACES 2023 · Age-adjusted prevalence</div>
+</div>
+<div class="kpi" style="--accent:var(--teal)">
+<div class="kpi-num">$62K</div>
+<div class="kpi-label">Median household income</div>
+<div class="kpi-delta good">▲ vs MI ~$63K · Dow Chemical industrial base</div>
+</div>
+</div><div class="ll-share-block" data-county="Midland County" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://www.lakeslinked.com/midland" data-value="14,335" style="margin:20px 0;">
+<span class="ll-share-label">Share this dashboard:</span>
+<button class="ll-share-btn ll-share-btn--linkedin" type="button"><span class="ll-share-icon">in</span> LinkedIn</button>
+<button class="ll-share-btn ll-share-btn--x" type="button"><span class="ll-share-icon">𝕏</span> Post</button>
+<button class="ll-share-btn ll-share-btn--copy" type="button"><span class="ll-share-icon">📋</span> Copy insight</button>
+</div>
+<!-- Charts row 1: DALY bar + comorbidity heatmap -->
+<div class="g2" id="sec-charts">
+<div class="card">
+<h3>DALYs by Condition</h3>
+<p class="sub">Disability-Adjusted Life Years · <span id="chart1-sub">Michigan LE 78.6 · ranked by burden</span></p>
+<canvas height="270" id="dalyChart"></canvas>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">Interactive — use LE standard and MH prevalence toggles above to recalculate.</p>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> DALY = disability-adjusted life year · YLL = years of life lost · YLD = years lived with disability · MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes</p>
+</div>
+<div class="card">
+<h3>Comorbidity Co-occurrence — Expected Counts</h3>
+<p class="sub">Expected cases with both conditions simultaneously · independence model · Midland County n=82,884 · hover cell for DW product &amp; DALY correction</p>
+<canvas id="heatmapChart" style="width:100%;display:block;margin:0 auto"></canvas>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">DM+Cancer highest pair (364 expected co-occurring cases). Independence-model planning estimate (prevalence × prevalence × adult population), consistent with the Isabella methodology. Largest DALY-correction pairs: SUD+Cancer (−29.6), SUD+MH (−25.8), Cancer+MH (−24.3).</p>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DW = disability weight · DALY = disability-adjusted life year</p>
+</div>
+</div><div aria-label="Download county brief" class="ll-brief-section">
+<div aria-hidden="true" class="ll-brief-icon">📄</div>
+<div class="ll-brief-body">
+<p class="ll-eyebrow">One-page county summary</p>
+<h3>Download the Midland County Brief <span class="ll-badge-soon">Coming soon</span></h3>
+<p>A polished one-page PDF summary for public health leaders, grant writers, and community stakeholders. Includes top burden drivers, planning-grade DALY estimates, and practical implications.<br/><em>Planning-grade estimate. Not a peer-reviewed study or official GBD estimate.</em></p>
+<div class="ll-brief-actions">
+<a aria-label="Download Midland County brief PDF" class="ll-btn-primary ll-btn-brief" href="#">⇩ Download 1-page brief</a>
+<a class="ll-btn-secondary" href="#request-county">📬 Request this county's brief</a>
+</div>
+</div>
+</div>
+<!-- Charts row 2: SDOH radar + MI LE vs Frontier comparison -->
+<div class="g2">
+<div class="card">
+<h3>Social Determinants vs Michigan Average</h3>
+<p class="sub">% of population · State-rate proxies scaled to Midland demographics · ACS 2022</p>
+<canvas height="250" id="sdohChart"></canvas>
+</div>
+<div class="card">
+<h3>Economic Burden by Condition</h3>
+<p class="sub">Annual productivity loss · DALYs × $62K GDP per capita (human-capital method)</p>
+<div style="height:240px;position:relative"><canvas id="compareChart"></canvas></div>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">Cancer (~$214M/yr), substance use (~$204M/yr), and mental health (~$201M/yr) are Midland's costliest conditions. Each averted DALY ≈ $62,000 recovered productivity — the ROI basis for employer and grant partnerships. Reactive to the toggles above.</p>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DALY = disability-adjusted life year</p>
+</div>
+</div>
+<!-- Economic Burden Section -->
+<div class="card" id="sec-econ" style="margin-bottom:18px">
+<h3>Economic Burden</h3>
+<p class="sub">Human Capital + Value of Statistical Life approaches · Midland County pop. 82,884</p>
+<div class="industrial-badge">🏭 Dow Chemical HQ — $62,000 median income baseline</div>
+<div class="econ-split">
+<div class="econ-m">
+<h4>Human Capital Method</h4>
+<div class="econ-big" style="color:var(--green)">$889M</div>
+<div class="econ-rng">14,335 DALYs × $62,000 GDP/capita</div>
+<div class="econ-desc">Lost economic productivity from premature death (YLL) and disability (YLD). Reflects Midland's higher-than-rural median income driven by industrial and chemical sector employment.</div>
+</div>
+<div class="econ-m">
+<h4>Value of Statistical Life</h4>
+<div class="econ-big" style="color:var(--navy)">$7,235M</div>
+<div class="econ-rng">592 deaths × $12.2M VSL (income-adjusted)</div>
+<div class="econ-desc">Willingness-to-pay based VSL. Includes mortality only — does not capture morbidity burden. VSL income-adjusted for $62,000 median income. Full morbidity burden adds ~$889M.</div>
+</div>
+</div>
+<div class="econ-note">
+<strong>Note:</strong> Human Capital ($889M) is the conservative floor — it captures what's measurable in productivity terms. VSL ($7.2B) reflects societal willingness-to-pay to prevent death and is the standard for federal cost-benefit analysis (EPA, DOT, HHS). Both figures are based on observed CDC PLACES 2023 prevalence data. Cancer dominates economic burden: 3,457 DALYs × $62,000 = ~$214M in HC terms alone.
     </div>
-    <div class="kpi" style="--accent:var(--red)">
-      <div class="kpi-num">167</div>
-      <div class="kpi-label">Cancer deaths/yr (est.) — #1 burden driver</div>
-      <div class="kpi-delta neu">160/100k · Similar to MI avg 161 · 3,457 DALYs</div>
-    </div>
-    <div class="kpi" style="--accent:var(--amber)">
-      <div class="kpi-num">9.0%</div>
-      <div class="kpi-label">Poverty rate (ACS 2022)</div>
-      <div class="kpi-delta good">▼ vs MI 15% · Higher median income $62,000</div>
-    </div>
-    <div class="kpi" style="--accent:var(--amber)">
-      <div class="kpi-num">40.5%</div>
-      <div class="kpi-label">Adult obesity (state proxy)</div>
-      <div class="kpi-delta up">▲ vs MI 36.7% · Key SDOH risk factor</div>
-    </div>
-    <div class="kpi" style="--accent:var(--green)">
-      <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;">
-        <div>
-          <div class="kpi-num" id="kpi-dalys-primary" style="font-size:20px">14,335</div>
-          <div style="font-size:10px;color:var(--muted);font-weight:600">MI LE</div>
-        </div>
-        <div style="color:#cbd5e1;font-size:18px">|</div>
-        <div>
-          <div class="kpi-num" id="kpi-dalys-frontier" style="font-size:20px">~20,700</div>
-          <div style="font-size:10px;color:var(--muted);font-weight:600">Frontier LE</div>
-        </div>
-      </div>
-      <div class="kpi-label">Estimated DALYs/year · YLL + YLD</div>
-      <div class="kpi-delta neu">CDC PLACES 2023 · Age-adjusted prevalence</div>
-    </div>
-    <div class="kpi" style="--accent:var(--teal)">
-      <div class="kpi-num">$62K</div>
-      <div class="kpi-label">Median household income</div>
-      <div class="kpi-delta good">▲ vs MI ~$63K · Dow Chemical industrial base</div>
-    </div>
-  </div>
-
-  <!-- Charts row 1: DALY bar + comorbidity heatmap -->
-  <div class="g2" id="sec-charts">
-    <div class="card">
-      <h3>DALYs by Condition</h3>
-      <p class="sub">Disability-Adjusted Life Years · <span id="chart1-sub">Michigan LE 78.6 · ranked by burden</span></p>
-      <canvas id="dalyChart" height="270"></canvas>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">Interactive — use LE standard and MH prevalence toggles above to recalculate.</p>
-      <p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> DALY = disability-adjusted life year · YLL = years of life lost · YLD = years lived with disability · MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes</p>
-    </div>
-    <div class="card">
-      <h3>Comorbidity Co-occurrence — Expected Counts</h3>
-      <p class="sub">Expected cases with both conditions simultaneously · independence model · Midland County n=82,884 · hover cell for DW product &amp; DALY correction</p>
-      <canvas id="heatmapChart" style="width:100%;display:block;margin:0 auto"></canvas>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">DM+Cancer highest pair (364 expected co-occurring cases). Independence-model planning estimate (prevalence × prevalence × adult population), consistent with the Isabella methodology. Largest DALY-correction pairs: SUD+Cancer (−29.6), SUD+MH (−25.8), Cancer+MH (−24.3).</p>
-      <p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DW = disability weight · DALY = disability-adjusted life year</p>
-    </div>
-  </div>
-
-  <!-- Charts row 2: SDOH radar + MI LE vs Frontier comparison -->
-  <div class="g2">
-    <div class="card">
-      <h3>Social Determinants vs Michigan Average</h3>
-      <p class="sub">% of population · State-rate proxies scaled to Midland demographics · ACS 2022</p>
-      <canvas id="sdohChart" height="250"></canvas>
-    </div>
-    <div class="card">
-      <h3>Economic Burden by Condition</h3>
-      <p class="sub">Annual productivity loss · DALYs × $62K GDP per capita (human-capital method)</p>
-      <div style="height:240px;position:relative"><canvas id="compareChart"></canvas></div>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">Cancer (~$214M/yr), substance use (~$204M/yr), and mental health (~$201M/yr) are Midland's costliest conditions. Each averted DALY ≈ $62,000 recovered productivity — the ROI basis for employer and grant partnerships. Reactive to the toggles above.</p>
-      <p style="font-size:10.5px;color:#94a3b8;margin-top:6px"><strong>Abbreviations:</strong> MH = mental health · SUD = substance use · CVD = cardiovascular disease · COPD = chronic obstructive pulmonary disease · DM = type-2 diabetes · DALY = disability-adjusted life year</p>
-    </div>
-  </div>
-
-  <!-- Economic Burden Section -->
-  <div class="card" id="sec-econ" style="margin-bottom:18px">
-    <h3>Economic Burden</h3>
-    <p class="sub">Human Capital + Value of Statistical Life approaches · Midland County pop. 82,884</p>
-    <div class="industrial-badge">🏭 Dow Chemical HQ — $62,000 median income baseline</div>
-    <div class="econ-split">
-      <div class="econ-m">
-        <h4>Human Capital Method</h4>
-        <div class="econ-big" style="color:var(--green)">$889M</div>
-        <div class="econ-rng">14,335 DALYs × $62,000 GDP/capita</div>
-        <div class="econ-desc">Lost economic productivity from premature death (YLL) and disability (YLD). Reflects Midland's higher-than-rural median income driven by industrial and chemical sector employment.</div>
-      </div>
-      <div class="econ-m">
-        <h4>Value of Statistical Life</h4>
-        <div class="econ-big" style="color:var(--navy)">$7,235M</div>
-        <div class="econ-rng">592 deaths × $12.2M VSL (income-adjusted)</div>
-        <div class="econ-desc">Willingness-to-pay based VSL. Includes mortality only — does not capture morbidity burden. VSL income-adjusted for $62,000 median income. Full morbidity burden adds ~$889M.</div>
-      </div>
-    </div>
-    <div class="econ-note">
-      <strong>Note:</strong> Human Capital ($889M) is the conservative floor — it captures what's measurable in productivity terms. VSL ($7.2B) reflects societal willingness-to-pay to prevent death and is the standard for federal cost-benefit analysis (EPA, DOT, HHS). Both figures are based on observed CDC PLACES 2023 prevalence data. Cancer dominates economic burden: 3,457 DALYs × $62,000 = ~$214M in HC terms alone.
-    </div>
-  </div>
-
-  <!-- DALY Detail Table -->
-  <div class="card" id="sec-table" style="margin-bottom:18px">
-    <h3>Disease Burden Detail</h3>
-    <p class="sub"><span id="table-sub">Michigan LE 78.6 yrs · No discounting (WHO standard) · Population 82,884</span></p>
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Condition</th>
-            <th>Prevalence</th>
-            <th>Prevalent Cases</th>
-            <th>Deaths/yr (est.)</th>
-            <th>Mean Age at Death</th>
-            <th>YLL</th>
-            <th>DW</th>
-            <th>YLD</th>
-            <th>DALYs</th>
-            <th>Data Source</th>
-          </tr>
-        </thead>
-        <tbody id="daly-tbody"></tbody>
-      </table>
-    </div>
-    <p style="font-size:11px;color:var(--muted);margin-top:10px">Prevalence from CDC PLACES 2023 (BRFSS 2021–22) county-level estimates. Mortality from CDC WONDER 2020–22 3-year pooled. YLL and YLD are planning-grade estimates.
+</div>
+<!-- DALY Detail Table -->
+<div class="card" id="sec-table" style="margin-bottom:18px">
+<h3>Disease Burden Detail</h3>
+<p class="sub"><span id="table-sub">Michigan LE 78.6 yrs · No discounting (WHO standard) · Population 82,884</span></p>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Prevalence</th>
+<th>Prevalent Cases</th>
+<th>Deaths/yr (est.)</th>
+<th>Mean Age at Death</th>
+<th>YLL</th>
+<th>DW</th>
+<th>YLD</th>
+<th>DALYs</th>
+<th>Data Source</th>
+</tr>
+</thead>
+<tbody id="daly-tbody"></tbody>
+</table>
+</div>
+<p style="font-size:11px;color:var(--muted);margin-top:10px">Prevalence from CDC PLACES 2023 (BRFSS 2021–22) county-level estimates. Mortality from CDC WONDER 2020–22 3-year pooled. YLL and YLD are planning-grade estimates.
     <span id="remission-footnote"> * MH YLD uses active disease prevalence (14.1% = 28.1% × 0.50 remission factor) when remission-adjusted mode is selected.</span></p>
-  </div>
-
-  <!-- Methodology note box -->
-  <div style="border:2px solid var(--navy);border-radius:12px;padding:22px 28px;margin-bottom:28px;background:linear-gradient(135deg,#0a2618 0%,#0d3321 100%);position:relative;overflow:hidden;">
-    <div style="position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(5,150,105,.2) 0%,transparent 70%);pointer-events:none;"></div>
-    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:6px;">Methodology</div>
-    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;letter-spacing:-.01em;">Two standards, one county</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px;">Both estimates are valid — they answer different questions about burden.</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">Primary · MI LE 78.6</div>
-        <div style="font-size:26px;font-weight:800;color:#86efac;letter-spacing:-.02em;line-height:1;">14,335</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">Michigan state life expectancy · Local planning standard · YLL 6,506 + YLD 9,331</div>
-        <div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">Cancer #1 · MH #2 · SUD #3</div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">&#8594;</div>
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">+MH Remission Adj. ×0.50</div>
-        <div style="font-size:26px;font-weight:800;color:#60a5fa;letter-spacing:-.02em;line-height:1;">14,468</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">Active burden ×0.50 = 14.1% active MH prevalence. Reduces MH YLD 2,735 → 1,368.</div>
-        <div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">Cancer #1 · MH #2 · SUD #3</div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">&#8594;</div>
-      <div style="background:rgba(5,150,105,.18);border:1.5px solid rgba(5,150,105,.5);border-radius:8px;padding:14px;">
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55);margin-bottom:8px;">Sensitivity · Frontier LE 89.1</div>
-        <div style="font-size:26px;font-weight:800;color:#34d399;letter-spacing:-.02em;line-height:1;">~20,700</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5;">WHO GBD frontier LE · Enables cross-county comparison · Higher YLL under longer standard</div>
-        <div style="font-size:10.5px;color:#34d399;margin-top:6px;font-weight:600;">Cancer #1 · CVD #2 · SUD #3</div>
-      </div>
+</div>
+<!-- Methodology note box -->
+<div style="border:2px solid var(--navy);border-radius:12px;padding:22px 28px;margin-bottom:28px;background:linear-gradient(135deg,#0a2618 0%,#0d3321 100%);position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(5,150,105,.2) 0%,transparent 70%);pointer-events:none;"></div>
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.45);margin-bottom:6px;">Methodology</div>
+<div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;letter-spacing:-.01em;">Two standards, one county</div>
+<div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px;">Both estimates are valid — they answer different questions about burden.</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">Primary · MI LE 78.6</div>
+<div style="font-size:26px;font-weight:800;color:#86efac;letter-spacing:-.02em;line-height:1;">14,335</div>
+<div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">Michigan state life expectancy · Local planning standard · YLL 6,506 + YLD 9,331</div>
+<div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">Cancer #1 · MH #2 · SUD #3</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">→</div>
+<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px;">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:8px;">+MH Remission Adj. ×0.50</div>
+<div style="font-size:26px;font-weight:800;color:#60a5fa;letter-spacing:-.02em;line-height:1;">14,468</div>
+<div style="font-size:10.5px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5;">Active burden ×0.50 = 14.1% active MH prevalence. Reduces MH YLD 2,735 → 1,368.</div>
+<div style="font-size:10.5px;color:#fbbf24;margin-top:6px;font-weight:600;">Cancer #1 · MH #2 · SUD #3</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;font-size:20px;color:rgba(255,255,255,.2);">→</div>
+<div style="background:rgba(5,150,105,.18);border:1.5px solid rgba(5,150,105,.5);border-radius:8px;padding:14px;">
+<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55);margin-bottom:8px;">Sensitivity · Frontier LE 89.1</div>
+<div style="font-size:26px;font-weight:800;color:#34d399;letter-spacing:-.02em;line-height:1;">~20,700</div>
+<div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5;">WHO GBD frontier LE · Enables cross-county comparison · Higher YLL under longer standard</div>
+<div style="font-size:10.5px;color:#34d399;margin-top:6px;font-weight:600;">Cancer #1 · CVD #2 · SUD #3</div>
+</div>
+</div>
+<div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.4);line-height:1.7;">
+<strong style="color:rgba(255,255,255,.6);">Note:</strong> Prevalence from CDC PLACES 2023 (BRFSS 2021–22), age-adjusted county-level estimates. Mortality from CDC WONDER 2020–22 3-year pooled. No discounting or age-weighting (WHO standard). Disability weights: IHME GBD 2021.
     </div>
-    <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.4);line-height:1.7;">
-      <strong style="color:rgba(255,255,255,.6);">Note:</strong> Prevalence from CDC PLACES 2023 (BRFSS 2021–22), age-adjusted county-level estimates. Mortality from CDC WONDER 2020–22 3-year pooled. No discounting or age-weighting (WHO standard). Disability weights: IHME GBD 2021.
-    </div>
-  </div>
-
-  <!-- Key Findings -->
-  <h2 id="sec-findings" style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--navy)">Key Findings</h2>
-  <div class="findings">
-
-    <div class="finding" style="--accent:var(--red)">
-      <h4>Cancer Leads Burden — 3,457 DALYs/yr · 167 Deaths</h4>
-      <p>Cancer is the #1 disease burden driver with 3,457 DALYs/yr and 167 estimated deaths annually. Per-capita cancer mortality (~160/100k) is nearly identical to the Michigan state average (161/100k), reflecting Midland's less-rural population with better healthcare access than counties like Clare. Despite overall lower mortality, the large population base (82,884) means the absolute burden is substantial. Cancer screening and early detection are high-priority interventions.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--purple)">
-      <h4>Mental Health #2 — 3,319 DALYs/yr · Predominantly YLD-Driven</h4>
-      <p>Mental health disorders rank second with 3,319 DALYs/yr — predominantly from disability (YLD: 2,735 raw, 1,368 remission-adjusted) rather than premature death. The 28.1% prevalence estimate (state proxy) is notable in Midland's context: the Dow Chemical industrial workforce faces specific occupational stress and potential chemical exposure burdens not fully captured in general prevalence data. Workplace-based mental health programs represent a key partnership opportunity.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--amber)">
-      <h4>SUD Third — 3,101 DALYs/yr · 48 Estimated Deaths</h4>
-      <p>Substance use disorders rank third with 3,101 DALYs/yr and 48 estimated annual deaths. The opioid mortality rate (~58/100k estimated) is lower than Clare County (~47/100k direct) when adjusted for population, but Midland's larger population base (82,884 vs 30,013) means the absolute number of deaths is substantially higher. SUD kills at a mean age of 44 — among the youngest of any condition — maximizing years of life lost per death.</p>
-    </div>
-
-    <div class="finding" style="--accent:var(--green)">
-      <h4>Dow Chemical SDOH Context — Industrial Economy Advantage and Burden</h4>
-      <p>Midland is home to Dow Chemical global headquarters. Higher median income ($62,000) and lower poverty (9.0% vs MI 15%) create a better health baseline than rural neighbors Isabella and Clare. However, the industrial workforce carries specific occupational health exposures — chemical, respiratory, and stress-related — that are not captured in the standard DALY framework. Dow's scale also presents a major corporate wellness and workplace health partnership opportunity.</p>
-    </div>
-
-  </div>
-
-  <!-- Abbreviations -->
-  <div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:18px;font-size:11.5px;color:var(--muted);line-height:1.9;">
-    <span style="font-weight:700;color:#374151;margin-right:8px;">Abbreviations:</span>
-    <strong>DALY</strong> Disability-Adjusted Life Year &nbsp;&#183;&nbsp;
-    <strong>YLL</strong> Years of Life Lost (premature mortality) &nbsp;&#183;&nbsp;
-    <strong>YLD</strong> Years Lived with Disability &nbsp;&#183;&nbsp;
-    <strong>MH</strong> Mental Health Disorders &nbsp;&#183;&nbsp;
-    <strong>SUD</strong> Substance Use Disorders &nbsp;&#183;&nbsp;
-    <strong>CVD</strong> Cardiovascular Disease &nbsp;&#183;&nbsp;
-    <strong>COPD</strong> Chronic Obstructive Pulmonary Disease &nbsp;&#183;&nbsp;
-    <strong>DM</strong> Diabetes Mellitus Type 2 &nbsp;&#183;&nbsp;
-    <strong>DW</strong> Disability Weight (IHME GBD 2021) &nbsp;&#183;&nbsp;
-    <strong>LE</strong> Life Expectancy &nbsp;&#183;&nbsp;
-    <strong>HC</strong> Human Capital &nbsp;&#183;&nbsp;
-    <strong>VSL</strong> Value of Statistical Life &nbsp;&#183;&nbsp;
+</div>
+<!-- Key Findings -->
+<h2 id="sec-findings" style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--navy)">Key Findings</h2>
+<div class="findings">
+<div class="finding" style="--accent:var(--red)">
+<h4>Cancer Leads Burden — 3,457 DALYs/yr · 167 Deaths</h4>
+<p>Cancer is the #1 disease burden driver with 3,457 DALYs/yr and 167 estimated deaths annually. Per-capita cancer mortality (~160/100k) is nearly identical to the Michigan state average (161/100k), reflecting Midland's less-rural population with better healthcare access than counties like Clare. Despite overall lower mortality, the large population base (82,884) means the absolute burden is substantial. Cancer screening and early detection are high-priority interventions.</p>
+</div>
+<div class="finding" style="--accent:var(--purple)">
+<h4>Mental Health #2 — 3,319 DALYs/yr · Predominantly YLD-Driven</h4>
+<p>Mental health disorders rank second with 3,319 DALYs/yr — predominantly from disability (YLD: 2,735 raw, 1,368 remission-adjusted) rather than premature death. The 28.1% prevalence estimate (state proxy) is notable in Midland's context: the Dow Chemical industrial workforce faces specific occupational stress and potential chemical exposure burdens not fully captured in general prevalence data. Workplace-based mental health programs represent a key partnership opportunity.</p>
+</div>
+<div class="finding" style="--accent:var(--amber)">
+<h4>SUD Third — 3,101 DALYs/yr · 48 Estimated Deaths</h4>
+<p>Substance use disorders rank third with 3,101 DALYs/yr and 48 estimated annual deaths. The opioid mortality rate (~58/100k estimated) is lower than Clare County (~47/100k direct) when adjusted for population, but Midland's larger population base (82,884 vs 30,013) means the absolute number of deaths is substantially higher. SUD kills at a mean age of 44 — among the youngest of any condition — maximizing years of life lost per death.</p>
+</div>
+<div class="finding" style="--accent:var(--green)">
+<h4>Dow Chemical SDOH Context — Industrial Economy Advantage and Burden</h4>
+<p>Midland is home to Dow Chemical global headquarters. Higher median income ($62,000) and lower poverty (9.0% vs MI 15%) create a better health baseline than rural neighbors Isabella and Clare. However, the industrial workforce carries specific occupational health exposures — chemical, respiratory, and stress-related — that are not captured in the standard DALY framework. Dow's scale also presents a major corporate wellness and workplace health partnership opportunity.</p>
+</div>
+</div>
+<!-- Abbreviations -->
+<div style="background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:18px;font-size:11.5px;color:var(--muted);line-height:1.9;">
+<span style="font-weight:700;color:#374151;margin-right:8px;">Abbreviations:</span>
+<strong>DALY</strong> Disability-Adjusted Life Year  · 
+    <strong>YLL</strong> Years of Life Lost (premature mortality)  · 
+    <strong>YLD</strong> Years Lived with Disability  · 
+    <strong>MH</strong> Mental Health Disorders  · 
+    <strong>SUD</strong> Substance Use Disorders  · 
+    <strong>CVD</strong> Cardiovascular Disease  · 
+    <strong>COPD</strong> Chronic Obstructive Pulmonary Disease  · 
+    <strong>DM</strong> Diabetes Mellitus Type 2  · 
+    <strong>DW</strong> Disability Weight (IHME GBD 2021)  · 
+    <strong>LE</strong> Life Expectancy  · 
+    <strong>HC</strong> Human Capital  · 
+    <strong>VSL</strong> Value of Statistical Life  · 
     <strong>CHNA</strong> Community Health Needs Assessment
   </div>
-
-  <!-- Recommendations -->
-  <div class="card" id="sec-recs" style="margin-bottom:24px">
-    <h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
-    <p class="sub" style="margin-bottom:16px">Prioritized by DALY impact and Midland County context · Industrial economy + Dow Chemical partnership opportunities</p>
-    <div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>Cancer screening outreach — industrial workforce focus</h5><p>Cancer · 3,457 DALYs · 167 deaths/yr · Expand colorectal, lung, and breast screening to at-risk industrial and chemical workforce segments; Dow Chemical and supplier employer partnerships for occupational screening programs</p></div><span class="rec-ev">Strong</span></div>
-    <div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>SUD harm reduction — naloxone, MOUD at primary care</h5><p>SUD · 3,267 DALYs · 7.3% prevalence · 48 deaths/yr · Naloxone community access, Medication for Opioid Use Disorder (MOUD) at primary care sites; binge drinking 19.0% is above state average (17.5%)</p></div><span class="rec-ev">Strong</span></div>
-    <div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>MH workplace programs — Dow Chemical partnership</h5><p>Mental Health · 3,231 DALYs · 27.2% prevalence · Employee Assistance Program expansion, stress/burnout reduction, occupational psychological safety initiatives; leverage Dow's scale for population-level impact</p></div><span class="rec-ev">Strong</span></div>
-    <div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>COPD occupational monitoring — chemical exposure tracking</h5><p>COPD · 1,150 DALYs · 6.3% prevalence · Industrial chemical exposure surveillance for Dow and downstream employers; spirometry screening for at-risk workers; smoking cessation integration (13.5% smokers)</p></div><span class="rec-ev">Moderate–Strong</span></div>
-    <div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>PFAS health surveillance — cancer registry linkage</h5><p>Cancer · 3,457 DALYs · 7.7% prevalence · Establish PFAS-exposed worker registry and cancer incidence tracking; Dow legacy contamination may underestimate true cancer burden beyond PLACES estimates</p></div><span class="rec-ev">Moderate</span></div>
+<!-- Recommendations -->
+<div class="card" id="sec-recs" style="margin-bottom:24px">
+<h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
+<p class="sub" style="margin-bottom:16px">Prioritized by DALY impact and Midland County context · Industrial economy + Dow Chemical partnership opportunities</p>
+<div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>Cancer screening outreach — industrial workforce focus</h5><p>Cancer · 3,457 DALYs · 167 deaths/yr · Expand colorectal, lung, and breast screening to at-risk industrial and chemical workforce segments; Dow Chemical and supplier employer partnerships for occupational screening programs</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>SUD harm reduction — naloxone, MOUD at primary care</h5><p>SUD · 3,267 DALYs · 7.3% prevalence · 48 deaths/yr · Naloxone community access, Medication for Opioid Use Disorder (MOUD) at primary care sites; binge drinking 19.0% is above state average (17.5%)</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>MH workplace programs — Dow Chemical partnership</h5><p>Mental Health · 3,231 DALYs · 27.2% prevalence · Employee Assistance Program expansion, stress/burnout reduction, occupational psychological safety initiatives; leverage Dow's scale for population-level impact</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>COPD occupational monitoring — chemical exposure tracking</h5><p>COPD · 1,150 DALYs · 6.3% prevalence · Industrial chemical exposure surveillance for Dow and downstream employers; spirometry screening for at-risk workers; smoking cessation integration (13.5% smokers)</p></div><span class="rec-ev">Moderate–Strong</span></div>
+<div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>PFAS health surveillance — cancer registry linkage</h5><p>Cancer · 3,457 DALYs · 7.7% prevalence · Establish PFAS-exposed worker registry and cancer incidence tracking; Dow legacy contamination may underestimate true cancer burden beyond PLACES estimates</p></div><span class="rec-ev">Moderate</span></div>
+</div><section aria-label="Request analysis for your county" class="ll-request-section ll-request-section--light">
+<p class="ll-eyebrow">Need this for your county?</p>
+<h2>Request a County Burden Snapshot</h2>
+<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="">
+<input name="_subject" type="hidden" value="County snapshot request — Lakes Linked"/>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<div class="ll-form__group"><label for="req-name-2">Name *</label><input id="req-name-2" name="name" placeholder="Your name" required="" type="text"/></div>
+<div class="ll-form__group"><label for="req-email-2">Email *</label><input id="req-email-2" name="email" placeholder="you@org.org" required="" type="email"/></div>
+<div class="ll-form__group"><label for="req-org-2">Organization</label><input id="req-org-2" name="org" placeholder="Health dept, hospital, university…" type="text"/></div>
+<div class="ll-form__group"><label for="req-county-2">County and state</label><input id="req-county-2" name="county" placeholder="e.g. Mecosta County, MI" type="text"/></div>
+<div class="ll-form__group ll-form__group--full"><button class="ll-btn-submit" type="submit">Send request →</button><p class="ll-form-note">Direct to Sergey's inbox. No spam.</p></div>
+<div class="ll-form-success" role="alert">✓ Sent — we'll follow up within 2–3 business days.</div>
+</form>
+</section>
+<!-- Methodology note -->
+<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:12px;color:#064e3b;line-height:1.7;">
+<strong>Data sources — methodology note.</strong> Prevalence from CDC PLACES 2023 (BRFSS 2021–22), age-adjusted county-level estimates for Midland County (FIPS 26111). Mortality from CDC WONDER 2020–22 3-year pooled. Disability weights from IHME GBD 2021. Methodological uncertainty ±15% inherent in the DALY framework. See <a href="midland_methods.html" style="color:#065f46;font-weight:700;">Methods →</a> for full data quality notes.
   </div>
-
-  <!-- Methodology note -->
-  <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:12px;color:#064e3b;line-height:1.7;">
-    <strong>Data sources — methodology note.</strong> Prevalence from CDC PLACES 2023 (BRFSS 2021–22), age-adjusted county-level estimates for Midland County (FIPS 26111). Mortality from CDC WONDER 2020–22 3-year pooled. Disability weights from IHME GBD 2021. Methodological uncertainty ±15% inherent in the DALY framework. See <a href="midland_methods.html" style="color:#065f46;font-weight:700;">Methods →</a> for full data quality notes.
-  </div>
-
 </div><!-- end .page -->
-
 <footer>
-  <span>Midland County, Michigan · FIPS 26111 · Pipeline run June 2026 · Data: CDC PLACES 2023, CDC WONDER 2020–22, ACS 2022, IHME GBD 2021 · Observed county-level data</span>
-  <span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
-</footer>
-
+<span>Midland County, Michigan · FIPS 26111 · Pipeline run June 2026 · Data: CDC PLACES 2023, CDC WONDER 2020–22, ACS 2022, IHME GBD 2021 · Observed county-level data</span>
+<span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
+<div class="ll-footer-trust" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.73rem;color:#64748b;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;">
+<span>🔒 Secure (HTTPS)</span><span>·</span>
+<span>Planning-grade estimates — not a formal GBD study</span><span>·</span>
+<a href="/privacy.html" style="color:#64748b;">Privacy Policy</a><span>·</span>
+<a href="/terms.html" style="color:#64748b;">Terms of Use</a><span>·</span>
+<span>© 2026 Lakes Linked · Sergey Soshnikov, MD PhD</span>
+</div></footer>
 <script>
 // ═══════════════════════════════════════════
 // MIDLAND COUNTY DATA
@@ -897,5 +908,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   sections.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 });
 </script>
-</body>
+<script src="ll-features.js"></script></body>
 </html>
