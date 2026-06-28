@@ -628,7 +628,6 @@ html{scroll-behavior:smooth}
 <img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:44px;width:auto;"/>
 </a>
 </div>
-
 <div class="header-right">
 <a class="gh-link" href="founder.html">About the founder</a>
 <a class="gh-link" href="https://github.com/lakeslinkedcare" target="_blank">
@@ -681,7 +680,7 @@ html{scroll-behavior:smooth}
           Mount Pleasant, Michigan · 2026
         </div>
 </div>
-<p class="hero-abstract">Disability-adjusted life year (DALY) burden analysis for rural Michigan counties — built for county health planning, CHNA reports, and grant applications (SAMHSA, HRSA, MDHHS). Open CDC and US Census data sources; disability weights adapted from IHME GBD 2021 and WHO reference standards.</p><div class="ll-request-cta-inline" style="margin:20px 0;"><p>📍 Need this analysis for your county?</p><a class="ll-btn-primary" href="#request-county">Request your county snapshot →</a></div>
+<p class="hero-abstract">Disability-adjusted life year (DALY) burden analysis for rural Michigan counties — built for county health planning, CHNA reports, and grant applications (SAMHSA, HRSA, MDHHS). Open CDC and US Census data sources; disability weights adapted from IHME GBD 2021 and WHO reference standards.</p>
 <div class="hero-stats">
 <div class="hs">
 <div class="n">4</div>
@@ -801,7 +800,15 @@ html{scroll-behavior:smooth}
 <h2 id="michigan-coverage-map">Michigan Coverage Map</h2>
 <div class="sh-line"></div>
 <span class="section-meta" id="mi-counter">4 of 83 counties analyzed</span>
-</div><section aria-label="Request a county burden snapshot" class="ll-request-section" id="request-county">
+</div>
+<p style="font-size:13px;color:var(--text-secondary);max-width:760px;margin:-2px 0 12px;">Click a completed county (blue) to open its dashboard. Counties in grey aren't analyzed yet — available on request.</p>
+<div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--text-secondary);margin-bottom:10px;align-items:center;">
+<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#1a56db;vertical-align:-2px;margin-right:6px;"></span>Analyzed (click)</span>
+<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#bfdbfe;vertical-align:-2px;margin-right:6px;"></span>In pipeline</span>
+<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#e2e8f0;border:1px solid #cbd5e1;vertical-align:-2px;margin-right:6px;"></span>Not yet analyzed</span>
+</div>
+<div id="mi-map" style="height:440px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
+<p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map →</a></p><section aria-label="Request a county burden snapshot" class="ll-request-section" id="request-county">
 <p class="ll-eyebrow">Free consultation · No commitment</p>
 <h2>Request Your County Burden Snapshot</h2>
 <p class="ll-lead">Need this for your county? Lakes Linked can prepare a planning-grade county burden snapshot using public data, transparent methods, and human-reviewed interpretation.</p>
@@ -816,14 +823,6 @@ html{scroll-behavior:smooth}
 <div class="ll-form-success" role="alert">✓ Request received — we'll be in touch within 2–3 business days.</div>
 </form>
 </section>
-<p style="font-size:13px;color:var(--text-secondary);max-width:760px;margin:-2px 0 12px;">Click a completed county (blue) to open its dashboard. Counties in grey aren't analyzed yet — available on request.</p>
-<div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--text-secondary);margin-bottom:10px;align-items:center;">
-<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#1a56db;vertical-align:-2px;margin-right:6px;"></span>Analyzed (click)</span>
-<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#bfdbfe;vertical-align:-2px;margin-right:6px;"></span>In pipeline</span>
-<span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#e2e8f0;border:1px solid #cbd5e1;vertical-align:-2px;margin-right:6px;"></span>Not yet analyzed</span>
-</div>
-<div id="mi-map" style="height:440px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
-<p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map →</a></p>
 <script>
   (function(){
     if (typeof L === 'undefined') return;
@@ -1253,5 +1252,13 @@ html{scroll-behavior:smooth}
   window.addEventListener('scroll',upd,{passive:true});upd();
 })();
 </script>
-<script src="ll-features.js"></script></body>
+<script src="ll-features.js"></script><a href="#request-county" id="ll-float-cta" onmouseout="this.style.background='#1a56db';this.style.transform='none'" onmouseover="this.style.background='#1e40af';this.style.transform='translateY(-2px)'" style="position:fixed;bottom:28px;right:24px;z-index:999;
+          background:#1a56db;color:#fff;border-radius:28px;
+          padding:10px 20px;font-size:13px;font-weight:600;
+          text-decoration:none;box-shadow:0 4px 20px rgba(26,86,219,.4);
+          display:flex;align-items:center;gap:7px;
+          transition:background .15s,transform .15s;white-space:nowrap;">
+<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+  Request for your county
+</a></body>
 </html>
