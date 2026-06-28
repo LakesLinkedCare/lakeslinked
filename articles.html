@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes &amp; Analysis | Lakes Linked</title>
+<meta name="description" content="Field notes and analysis from Lakes Linked — health policy, clinical AI, and public-health data. Short, sourced articles by Dr. Sergey Soshnikov, MD PhD.">
+<meta property="og:title" content="Field Notes & Analysis | Lakes Linked">
+<meta property="og:description" content="4 counties complete · ~45,500 DALYs/yr · 2 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy.">
+<meta property="og:url" content="https://lakeslinked.com/articles.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+/* ── DESIGN TOKENS ── */
+:root {
+  --navy:#0f1f3d; --blue:#1a56db; --teal:#0d9488; --red:#dc2626;
+  --amber:#d97706; --purple:#7c3aed; --green:#059669; --slate:#64748b;
+  --bg:#f8fafc; --surface:#fff; --border:#e2e8f0; --muted:#94a3b8;
+  --text:#0f172a; --text-secondary:#334155;
+  --radius:12px;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.07);
+  --shadow-card:0 1px 3px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.08);
+  --font-serif:'Source Serif 4',Georgia,serif;
+  --font-sans:'Inter',system-ui,-apple-system,sans-serif;
+}
+
+/* ── RESET ── */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-sans);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* ── HEADER ── */
+header{
+  background:var(--navy);
+  padding:0 32px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-mark{
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.brand-mark svg{display:block;}
+.brand-text .brand-name{
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+.brand-text .brand-sub{
+  color:rgba(255,255,255,.42);
+  font-size:10.5px;
+  font-weight:400;
+  margin-top:1px;
+}
+.header-right{display:flex;align-items:center;gap:12px;}
+.gh-link{
+  color:rgba(255,255,255,.5);
+  font-size:11.5px;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.18);
+  padding:5px 12px;
+  border-radius:6px;
+  display:inline-flex;align-items:center;gap:5px;
+  transition:all .15s;
+  font-weight:500;
+}
+.gh-link:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);}
+
+/* ── NAV STRIP ── */
+.nav-strip{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.09);}
+.nav-strip-inner{
+  max-width:1080px;margin:0 auto;padding:0 32px;
+  display:flex;align-items:center;gap:8px;height:38px;
+  flex-wrap:nowrap;overflow-x:auto;
+}
+.nav-strip-inner::-webkit-scrollbar{display:none;}
+.nav-label{
+  font-size:9.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;color:rgba(255,255,255,.3);margin-right:2px;
+  white-space:nowrap;
+}
+.nav-group{
+  display:flex;gap:1px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:7px;padding:2px;
+}
+.nav-group a{
+  color:rgba(255,255,255,.7);font-size:11.5px;font-weight:500;
+  padding:3px 10px;border-radius:5px;text-decoration:none;
+  display:flex;align-items:center;gap:5px;
+  transition:all .15s;white-space:nowrap;
+}
+.nav-group a:hover,.nav-group a.active{background:rgba(255,255,255,.12);color:#fff;}
+.nav-dot{
+  width:6px;height:6px;border-radius:50%;flex-shrink:0;
+}
+.nav-divider{width:1px;height:16px;background:rgba(255,255,255,.12);margin:0 4px;}
+.nav-pipeline{
+  font-size:10.5px;color:rgba(255,255,255,.28);
+  font-style:italic;white-space:nowrap;
+}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);
+  padding:48px 32px 52px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 40%,rgba(13,148,136,.12) 0%,transparent 55%),
+             radial-gradient(ellipse at 10% 80%,rgba(26,86,219,.1) 0%,transparent 50%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:860px;margin:0 auto;position:relative;z-index:1;
+}
+.hero-content{}
+.project-kicker{
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;color:rgba(255,255,255,.4);
+  margin-bottom:16px;display:flex;align-items:center;gap:8px;
+}
+.project-kicker::after{
+  content:'';flex:1;height:1px;background:rgba(255,255,255,.1);max-width:80px;
+}
+.hero h1{
+  font-family:var(--font-serif);
+  font-size:34px;font-weight:700;
+  color:#fff;
+  letter-spacing:-.02em;line-height:1.2;
+  margin-bottom:20px;
+}
+.hero h1 em{
+  font-style:italic;
+  color:rgba(255,255,255,.75);
+}
+.byline-block{
+  border-left:2px solid rgba(255,255,255,.15);
+  padding-left:16px;
+  margin-bottom:22px;
+}
+.byline-block .author{
+  font-size:14px;font-weight:600;color:rgba(255,255,255,.85);
+  margin-bottom:4px;
+}
+.byline-block .affil{
+  font-size:12px;color:rgba(255,255,255,.42);line-height:1.6;
+}
+.hero-abstract{
+  color:rgba(255,255,255,.55);
+  font-size:13.5px;
+  line-height:1.7;
+  max-width:560px;
+  margin-bottom:28px;
+  font-family:var(--font-sans);
+}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap;}
+.hs{
+  padding:14px 18px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:10px;
+  min-width:120px;
+}
+.hs .n{
+  font-size:24px;font-weight:700;color:#fff;
+  letter-spacing:-.03em;line-height:1;margin-bottom:4px;
+}
+.hs .l{
+  font-size:10px;color:rgba(255,255,255,.45);
+  font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+}
+.hs-sub{
+  font-size:10px;color:rgba(255,255,255,.3);
+  margin-top:4px;line-height:1.4;font-style:italic;
+}
+
+
+/* ── DATA SOURCE STATUS TAGS ── */
+.ds-status{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap;}
+.ds-tag{font-size:9px;font-weight:700;padding:1px 7px;border-radius:8px;letter-spacing:.02em;white-space:nowrap;}
+.ds-tag.dl{background:#dcfce7;color:#166534;}
+.ds-tag.pend{background:#f1f5f9;color:#64748b;}
+.ds-tag.on{background:#dbeafe;color:#1e40af;}
+.ds-tag.off{background:#f8fafc;color:#94a3b8;border:1px solid #e2e8f0;}
+
+/* ── DATA SOURCES STRIP ── */
+.ds-strip{
+  background:#f1f5f9;
+  border-bottom:1px solid var(--border);
+}
+.ds-inner{
+  max-width:1160px;margin:0 auto;padding:16px 32px;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+}
+.ds-label{
+  font-size:9.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--slate);white-space:nowrap;flex-shrink:0;
+}
+.ds-grid{
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+}
+.ds-item{
+  display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:6px;padding:5px 10px;min-width:0;
+}
+.ds-name{
+  font-size:11px;font-weight:600;color:var(--navy);line-height:1.3;
+}
+.ds-desc{
+  font-size:9.5px;color:var(--muted);line-height:1.3;
+}
+
+/* ── ABOUT SECTION ── */
+.about-strip{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+.about-strip-inner{
+  max-width:1080px;margin:0 auto;padding:24px 32px;
+  display:flex;align-items:flex-start;gap:20px;
+}
+.about-icon{
+  width:36px;height:36px;border-radius:8px;
+  background:#eff6ff;border:1px solid #bfdbfe;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+.about-text{
+  flex:1;
+}
+.about-text strong{
+  font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--blue);display:block;margin-bottom:6px;
+}
+.about-text p{
+  font-size:13px;color:var(--text-secondary);line-height:1.7;
+  font-family:var(--font-serif);
+}
+
+/* ── MAIN CONTENT ── */
+.main{max-width:1160px;margin:0 auto;padding:48px 40px;flex:1;}
+
+/* ── SECTION HEADER ── */
+.section-head{
+  display:flex;align-items:baseline;gap:16px;
+  margin-bottom:24px;
+}
+.section-head h2{
+  font-family:var(--font-serif);
+  font-size:20px;font-weight:600;
+  color:var(--text);letter-spacing:-.01em;
+}
+.section-head .sh-line{
+  flex:1;height:1px;background:var(--border);
+}
+.section-meta{
+  font-size:11px;color:var(--muted);font-weight:500;
+  letter-spacing:.02em;white-space:nowrap;
+}
+
+/* ── COUNTY GRID ── */
+.county-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-bottom:52px;
+}
+
+/* ── COUNTY CARD ── */
+.county-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  display:flex;
+  flex-direction:column;
+  transition:box-shadow .2s,transform .2s,border-color .2s;
+  position:relative;
+  box-shadow:var(--shadow-card);
+}
+.county-card-top{
+  height:4px;background:var(--accent);
+}
+.county-card:hover{
+  box-shadow:0 4px 20px rgba(0,0,0,.12),0 12px 40px rgba(0,0,0,.1);
+  transform:translateY(-2px);
+  border-color:color-mix(in srgb,var(--accent) 40%,var(--border));
+}
+
+.cc-head{
+  padding:20px 22px 14px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+}
+.cc-status-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;
+  padding:3px 9px;border-radius:20px;white-space:nowrap;
+  flex-shrink:0;
+}
+.status-complete{
+  background:color-mix(in srgb,var(--green) 12%,transparent);
+  color:var(--green);
+  border:1px solid color-mix(in srgb,var(--green) 25%,transparent);
+}
+.status-dot{width:5px;height:5px;border-radius:50%;background:currentColor;}
+.version-tag{
+  font-size:9.5px;color:var(--muted);margin-top:3px;text-align:right;
+}
+
+.cc-body{padding:0 22px 14px;}
+.cc-title{
+  font-family:var(--font-serif);
+  font-size:18px;font-weight:600;
+  color:var(--text);
+  letter-spacing:-.01em;line-height:1.2;
+  margin-bottom:8px;
+}
+.cc-desc{
+  font-size:12.5px;color:var(--slate);line-height:1.65;
+  margin-bottom:14px;
+}
+
+/* mini stat row */
+.cc-stats{
+  display:flex;gap:0;
+  border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+  margin-bottom:12px;
+}
+.cc-stat{
+  flex:1;padding:9px 10px;
+  border-right:1px solid var(--border);
+  text-align:center;
+}
+.cc-stat:last-child{border-right:none;}
+.cc-stat .sv{
+  font-size:14px;font-weight:700;color:var(--text);
+  letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;
+}
+.cc-stat .sl{
+  font-size:9px;color:var(--muted);font-weight:600;
+  text-transform:uppercase;letter-spacing:.04em;margin-top:2px;
+}
+
+/* chip row */
+.cc-chips{
+  display:flex;gap:4px;flex-wrap:wrap;
+  padding:0 22px 12px;
+}
+.chip{
+  font-size:9.5px;font-weight:600;color:var(--slate);
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:4px;padding:2px 7px;
+}
+.chip-fips{font-family:'Courier New',monospace;}
+
+/* card links */
+.cc-links{
+  padding:14px 22px 18px;
+  border-top:1px solid var(--border);
+  display:flex;flex-direction:column;gap:9px;
+  margin-top:auto;
+}
+.cc-links a.primary{
+  display:block;text-align:center;
+  background:var(--accent);color:#fff;
+  font-size:12.5px;font-weight:600;
+  padding:9px 14px;border-radius:7px;
+  text-decoration:none;transition:all .15s;
+  letter-spacing:-.01em;
+}
+.cc-links a.primary:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.cc-secondary-links{
+  display:flex;gap:5px;flex-wrap:wrap;align-items:center;
+}
+.cc-secondary-links a{
+  font-size:10.5px;font-weight:500;color:var(--slate);
+  text-decoration:none;padding:3px 9px;
+  border-radius:5px;border:1px solid var(--border);
+  background:var(--bg);
+  transition:all .15s;white-space:nowrap;
+}
+.cc-secondary-links a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 6%,transparent);
+}
+.cc-secondary-links .sep{display:none;}
+
+/* ── PIPELINE SECTION ── */
+.pipeline-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:52px;
+}
+.pipe-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  display:flex;flex-direction:column;gap:8px;
+  opacity:.78;position:relative;overflow:hidden;
+}
+.pipe-card-top{
+  position:absolute;top:0;left:0;right:0;
+  height:3px;background:#cbd5e1;
+}
+.pipe-status-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:9.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--muted);
+  background:#f1f5f9;border:1px solid var(--border);
+  padding:2px 8px;border-radius:20px;width:fit-content;
+}
+.pipe-icon-wrap{
+  width:32px;height:32px;border-radius:7px;
+  background:#f1f5f9;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+}
+.pipe-card h3{
+  font-family:var(--font-serif);
+  font-size:14.5px;font-weight:600;
+  color:#475569;letter-spacing:-.01em;
+}
+.pipe-fips{
+  font-size:10px;color:var(--muted);
+  font-family:'Courier New',monospace;
+}
+.pipe-card p{
+  font-size:11.5px;color:var(--muted);line-height:1.6;
+}
+
+/* ── REFERENCES ── */
+.references-section{
+  border-top:1px solid var(--border);
+  padding-top:36px;
+  margin-bottom:40px;
+}
+.references-section h2{
+  font-family:var(--font-serif);
+  font-size:17px;font-weight:600;
+  color:var(--text);margin-bottom:18px;
+  letter-spacing:-.01em;
+}
+.references-list{
+  list-style:none;
+  counter-reset:ref-counter;
+  display:flex;flex-direction:column;gap:8px;
+}
+.references-list li{
+  counter-increment:ref-counter;
+  display:flex;gap:12px;
+  font-size:12.5px;
+  color:var(--text-secondary);
+  line-height:1.65;
+  font-family:var(--font-serif);
+}
+.references-list li::before{
+  content:counter(ref-counter)".";
+  color:var(--muted);
+  font-size:11.5px;
+  font-weight:600;
+  font-family:var(--font-sans);
+  min-width:16px;
+  padding-top:1px;
+  flex-shrink:0;
+}
+.ref-journal{font-style:italic;}
+.ref-doi{
+  color:var(--blue);font-size:11px;
+  font-family:var(--font-sans);
+  font-style:normal;
+}
+
+/* ── CTA STRIP ── */
+.cta-strip{
+  background:linear-gradient(90deg,#0f2d52 0%,#0b3a3a 100%);
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.cta-strip-inner{
+  max-width:1080px;margin:0 auto;
+  padding:22px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.cta-text h3{
+  font-family:var(--font-serif);
+  font-size:16px;font-weight:600;
+  color:#fff;margin-bottom:4px;
+}
+.cta-text p{
+  font-size:12.5px;color:rgba(255,255,255,.5);
+  max-width:560px;line-height:1.55;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--teal);color:#fff;
+  font-size:13px;font-weight:600;
+  padding:9px 20px;border-radius:7px;
+  text-decoration:none;white-space:nowrap;transition:all .15s;
+}
+.cta-btn:hover{filter:brightness(1.1);transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:22px 32px;}
+.footer-inner{
+  max-width:1080px;margin:0 auto;
+  display:flex;flex-direction:column;gap:14px;
+}
+.footer-top{
+  display:flex;align-items:baseline;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;
+}
+.footer-top span{
+  font-size:11.5px;color:rgba(255,255,255,.4);
+}
+.footer-top a{color:rgba(255,255,255,.5);text-decoration:none;}
+.footer-top a:hover{color:rgba(255,255,255,.8);}
+.footer-sources{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.footer-sources-label{
+  font-size:9.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.07em;color:rgba(255,255,255,.25);margin-right:2px;
+}
+.src-badge{
+  font-size:10px;font-weight:500;
+  color:rgba(255,255,255,.38);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  padding:2px 9px;border-radius:4px;
+}
+.footer-disclaimer{
+  font-size:10.5px;color:rgba(255,255,255,.22);
+  border-top:1px solid rgba(255,255,255,.07);
+  padding-top:12px;
+  line-height:1.6;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1099px){
+  .county-grid{grid-template-columns:repeat(2,1fr);}
+  .pipeline-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:699px){
+  header{padding:0 18px;}
+  .brand-sub{display:none;}
+  .nav-strip-inner{padding:0 18px;}
+  .hero{padding:32px 18px 36px;}
+  .about-strip-inner{padding:18px;}
+  .about-icon{display:none;}
+  .main{padding:32px 18px;}
+  .county-grid{grid-template-columns:1fr;}
+  .pipeline-grid{grid-template-columns:1fr;}
+  .cta-strip-inner{padding:18px;}
+  footer{padding:18px;}
+  .footer-top{flex-direction:column;gap:6px;}
+  .hs{min-width:100px;}
+  .hero h1{font-size:26px;}
+  .hero-stats{gap:10px;}
+}
+</style>
+<body>
+
+<header>
+  <div class="brand">
+    <a href="index.html" style="display:flex;align-items:center;">
+      <img src="logos/lakeslinked_dark_background_version.png" alt="Lakes Linked" style="height:40px;width:auto;">
+      </a>
+  </div>
+  </div>
+  <div class="header-right">
+    <a class="gh-link" href="https://github.com/lakeslinkedcare" target="_blank">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub
+    </a>
+  </div>
+</header>
+
+<!-- ══ NAV STRIP ══ -->
+<div class="nav-strip">
+  <div class="nav-strip-inner">
+    <span class="nav-label">Counties</span>
+    <div class="nav-group">
+      <a href="isabella.html"><span class="nav-dot" style="background:var(--blue);"></span>Isabella</a>
+      <a href="clare.html"><span class="nav-dot" style="background:var(--red);"></span>Clare</a>
+      <a href="midland.html"><span class="nav-dot" style="background:var(--green);"></span>Midland</a>
+      <a href="gratiot.html"><span class="nav-dot" style="background:var(--amber);"></span>Gratiot</a>
+    </div>
+    <div class="nav-divider"></div>
+    <span class="nav-pipeline">Pipeline: Mecosta &middot; Washtenaw</span>
+    <div class="nav-divider"></div>
+    <div class="nav-group">
+      <a href="index.html"><span class="nav-dot" style="background:var(--slate);"></span>Home</a>
+      <a href="articles.html" class="navlink active"><span class="nav-dot" style="background:var(--teal);"></span>Articles</a>
+    </div>
+  </div>
+</div>
+
+<div class="hub-intro">
+  <div class="kick">Lakes Linked &middot; Field Notes</div>
+  <h1>Field Notes &amp; <em>Analysis</em></h1>
+  <p>Short, sourced articles on the questions where public health meets data and AI &mdash; health-price transparency, clinical-AI evidence, and the methods behind the county dashboards. Written for planners, clinicians, and anyone working on rural and population health. New notes are added here as they're published.</p>
+</div>
+
+<div class="filterbar" id="filterbar">
+  <span class="fb-label">Topic</span>
+  <button class="fchip on" data-filter="all">All</button>
+  <button class="fchip" data-filter="policy">Health Policy</button>
+  <button class="fchip" data-filter="clinical">Clinical AI</button>
+  <button class="fchip" data-filter="research">Research</button>
+</div>
+
+<div class="main">
+  <div class="county-grid" id="articleGrid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-top:14px;">
+
+    <div class="county-card cc-card" data-rubric="policy" style="--accent:var(--teal);cursor:pointer" onclick="window.location='price-transparency.html'">
+      <div class="county-card-top"></div>
+      <div class="cc-head">
+        <div>
+          <span class="cc-status-badge" style="background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 25%,transparent);"><span class="status-dot"></span>Field Note</span>
+          <div class="version-tag">June 2026</div>
+        </div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.2;"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="16" y2="7"/><line x1="9" y1="11" x2="16" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
+      </div>
+      <div class="cc-body">
+        <div class="cc-title">The Price Before the Procedure</div>
+        <div class="cc-desc">U.S. hospitals must now publish their real prices &mdash; but the machine-readable files are gigabyte-scale and unreadable on their own. How the price-transparency rules work, and how AI-assisted analytics can turn that open data into usable answers &mdash; with the limits, the disclaimers, and a simple workflow.</div>
+        <div class="cc-chips"><span class="chip">Price transparency</span><span class="chip">CMS 2026 rule</span><span class="chip">No Surprises Act</span><span class="chip">AI-assisted analytics</span></div>
+      </div>
+      <div class="cc-links" onclick="event.stopPropagation()"><a class="primary" href="price-transparency.html">Read the article &rarr;</a></div>
+    </div>
+
+    <div class="county-card cc-card" data-rubric="clinical" style="--accent:var(--purple);cursor:pointer" onclick="window.location='02-clinical-trials.html'">
+      <div class="county-card-top"></div>
+      <div class="cc-head">
+        <div>
+          <span class="cc-status-badge" style="background:color-mix(in srgb,var(--purple) 12%,transparent);color:var(--purple);border:1px solid color-mix(in srgb,var(--purple) 25%,transparent);"><span class="status-dot"></span>Field Note</span>
+          <div class="version-tag">June 2026</div>
+        </div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.2;"><path d="M9 2v6l-5 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-9V2"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="7" y1="16" x2="17" y2="16"/></svg>
+      </div>
+      <div class="cc-body">
+        <div class="cc-title">154 New AI Clinical Trials</div>
+        <div class="cc-desc">Since 1 May 2026, 154 AI-related clinical trials have been registered on ClinicalTrials.gov. Read as a set, they mark a shift in clinical AI &mdash; away from diagnostic-accuracy demonstrations and toward the questions public health turns on: survival, screening yield, antimicrobial stewardship, and equity.</div>
+        <div class="cc-chips"><span class="chip">Clinical AI</span><span class="chip">ClinicalTrials.gov</span><span class="chip">Outcomes evidence</span><span class="chip">Public health</span></div>
+      </div>
+      <div class="cc-links" onclick="event.stopPropagation()"><a class="primary" href="02-clinical-trials.html">Read the article &rarr;</a></div>
+    </div>
+
+    <div class="county-card cc-card is-soon" data-rubric="research" style="--accent:var(--blue);cursor:default">
+      <div class="county-card-top"></div>
+      <div class="cc-head">
+        <div>
+          <span class="cc-status-badge soon-badge" style=""><span class="status-dot"></span>In preparation</span>
+          <div class="version-tag">Coming soon</div>
+        </div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.2;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="cc-body">
+        <div class="cc-title">Research Literature Digest</div>
+        <div class="cc-desc">Part 01 of the daily AI &amp; public-health digest: what the new peer-reviewed literature is actually testing, and which findings hold up to scrutiny. Companion to the clinical-trials note.</div>
+        <div class="cc-chips"><span class="chip">Literature</span><span class="chip">Evidence review</span><span class="chip">Digest 01</span></div>
+      </div>
+      
+    </div>
+
+    <div class="county-card cc-card is-soon" data-rubric="research" style="--accent:var(--green);cursor:default">
+      <div class="county-card-top"></div>
+      <div class="cc-head">
+        <div>
+          <span class="cc-status-badge soon-badge" style=""><span class="status-dot"></span>In preparation</span>
+          <div class="version-tag">Coming soon</div>
+        </div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:.2;"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+      </div>
+      <div class="cc-body">
+        <div class="cc-title">News Digest: AI in Public Health</div>
+        <div class="cc-desc">Part 03 of the digest: the week in AI and public health &mdash; policy moves, deployments, and signals worth tracking, filtered for what matters to rural and population health.</div>
+        <div class="cc-chips"><span class="chip">News</span><span class="chip">Policy</span><span class="chip">Digest 03</span></div>
+      </div>
+      
+    </div>
+
+  </div>
+  <div class="hub-empty" id="hubEmpty">No notes in this topic yet &mdash; check back soon.</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <span>Lakes Linked &middot; Dr. Sergey Soshnikov, MD PhD &middot; Assistant Professor, Public Health &middot; Lakes Linked &middot; 2026</span>
+      <span>Lakes Linked &middot; Mount Pleasant, Michigan</span>
+    </div>
+    <div class="footer-sources">
+      <span class="footer-sources-label">Data sources</span>
+      <span class="src-badge">CDC PLACES 2023</span>
+      <span class="src-badge">CDC WONDER 2020&ndash;22</span>
+      <span class="src-badge">IHME GBD 2021</span>
+      <span class="src-badge">ACS 2022</span>
+      <span class="src-badge">County Health Rankings</span>
+      <span class="src-badge">Michigan DHHS</span>
+      <span class="src-badge">MyMichigan CHNA</span>
+      <span class="src-badge">IRS 990-H</span>
+    </div>
+    <div class="footer-disclaimer">
+      Planning-grade burden analysis &mdash; not a peer-reviewed study or formal GBD estimate. Disability weights adapted from IHME GBD 2021. County data from CDC PLACES 2023, CDC WONDER 2020–22, and US Census Bureau ACS. Results are intended to support health planning and grant development; independent review is recommended before clinical or policy decisions.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.fchip');
+  var cards=document.querySelectorAll('#articleGrid .cc-card');
+  var empty=document.getElementById('hubEmpty');
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('on');});
+      ch.classList.add('on');
+      var f=ch.getAttribute('data-filter');
+      var shown=0;
+      cards.forEach(function(card){
+        var match = f==='all' || card.getAttribute('data-rubric')===f;
+        card.style.display = match ? '' : 'none';
+        if(match) shown++;
+      });
+      empty.style.display = shown? 'none':'block';
+    });
+  });
+})();
+</script>
+<style>
+/* Articles hub additions */
+.hub-intro{max-width:760px;margin:26px auto 0;padding:0 32px;}
+.hub-intro .kick{font-family:var(--font-sans);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+.hub-intro h1{font-family:var(--font-serif);font-weight:700;font-size:34px;line-height:1.15;letter-spacing:-.02em;color:var(--navy);margin-bottom:12px;}
+.hub-intro h1 em{font-style:italic;color:var(--teal);}
+.hub-intro p{font-size:15px;color:var(--text-secondary);line-height:1.65;}
+.filterbar{max-width:1180px;margin:26px auto 4px;padding:0 32px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.filterbar .fb-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px;}
+.fchip{font-family:var(--font-sans);font-size:12.5px;font-weight:600;color:var(--text-secondary);background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;cursor:pointer;transition:all .15s;}
+.fchip:hover{border-color:var(--teal);color:var(--teal);}
+.fchip.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+.cc-card.is-soon{opacity:.62;}
+.cc-card.is-soon .cc-title{color:var(--slate);}
+.soon-badge{background:color-mix(in srgb,var(--slate) 12%,transparent);color:var(--slate);border:1px solid color-mix(in srgb,var(--slate) 25%,transparent);}
+.hub-empty{display:none;text-align:center;color:var(--muted);font-size:14px;padding:40px 0;}
+.nav-strip .navlink.active{color:var(--teal);font-weight:700;}
+@media(max-width:640px){.hub-intro h1{font-size:27px;}.hub-intro,.filterbar{padding:0 20px;}}
+</style>
+</body>
+</html>

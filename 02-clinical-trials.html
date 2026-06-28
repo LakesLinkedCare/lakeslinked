@@ -35,12 +35,13 @@
   /* masthead */
   .masthead{border-bottom:1px solid var(--line);background:var(--bg)}
   .masthead .wrap{display:flex;align-items:center;gap:12px;height:56px;max-width:980px}
-  .masthead .brand{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink);display:flex;align-items:center;gap:8px}
-  .masthead .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .masthead .brand{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink);display:flex;align-items:center;gap:10px}
   .masthead nav{margin-left:auto;display:flex;gap:4px;font-family:'Inter',sans-serif}
   .masthead nav a{font-size:12.5px;color:var(--soft);padding:6px 12px;border-radius:100px;transition:.2s}
   .masthead nav a:hover{background:var(--surface-2);color:var(--ink)}
   .masthead nav a.on{color:var(--accent-deep);font-weight:600}
+  .masthead nav span.soon{font-size:12.5px;color:var(--soft);padding:6px 12px;border-radius:100px;opacity:.55;cursor:default}
+  .masthead nav span.soon::after{content:" · soon";font-size:10px;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
 
   /* article header */
   header.art{padding:62px 0 0}
@@ -150,11 +151,12 @@
 
 <div class="masthead">
   <div class="wrap">
-    <span class="brand"><span class="dot"></span>Lakes Linked · Public-Health Analytics</span>
+    <a class="brand" href="index.html"><img src="logos/lakeslinked_mark_only.png" alt="" style="height:22px;width:auto;vertical-align:middle;margin-right:6px;">Lakes Linked</a>
     <nav>
-      <a href="01-research-literature.html">Research</a>
+      <a href="articles.html">Field Notes</a>
+      <span class="soon" title="In preparation">Research</span>
       <a class="on" href="02-clinical-trials.html">Trials</a>
-      <a href="03-news-digest.html">News</a>
+      <span class="soon" title="In preparation">News</span>
     </nav>
   </div>
 </div>
@@ -402,7 +404,7 @@
 
   <footer>
     <b>Lakes Linked · Public-Health Analytics</b> — Part 02 of 03 · Clinical Trials · <code>daily-ai-public-health-digest</code><br>
-    Back to <a href="01-research-literature.html">01 · Research</a> · forward to <a href="03-news-digest.html">03 · News</a>.
+    Parts 01 · Research and 03 · News are in preparation — see all <a href="articles.html">Field Notes</a>.
   </footer>
 
 </div>
