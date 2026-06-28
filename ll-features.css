@@ -1,0 +1,698 @@
+/* =============================================================
+   Lakes Linked — Feature Components CSS
+   ll-features.css  |  v1.0  |  2026-06-28
+   Paste ONE <link> tag into every page <head>:
+     <link rel="stylesheet" href="ll-features.css">
+   ============================================================= */
+
+/* ── Design tokens (matches Lakes Linked academic palette) ── */
+:root {
+  --ll-blue:        #1a4b7a;   /* primary navy */
+  --ll-blue-mid:    #2563a8;   /* link/accent blue */
+  --ll-blue-light:  #dbeafe;   /* pale blue tint */
+  --ll-teal:        #0e7490;   /* secondary accent */
+  --ll-green:       #166534;   /* success / strong evidence */
+  --ll-orange:      #b45309;   /* caution */
+  --ll-red:         #991b1b;   /* alert */
+  --ll-gray-50:     #f8fafc;
+  --ll-gray-100:    #f1f5f9;
+  --ll-gray-200:    #e2e8f0;
+  --ll-gray-400:    #94a3b8;
+  --ll-gray-600:    #475569;
+  --ll-gray-800:    #1e293b;
+  --ll-radius:      6px;
+  --ll-radius-lg:   10px;
+  --ll-shadow:      0 1px 4px rgba(0,0,0,.10);
+  --ll-shadow-md:   0 4px 16px rgba(0,0,0,.12);
+  --ll-font:        -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ll-mono:        'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─────────────────────────────────────────────
+   FEATURE 1 · SHARE THIS INSIGHT
+   ───────────────────────────────────────────── */
+
+.ll-share-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+/* small label */
+.ll-share-label {
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ll-gray-400);
+  font-family: var(--ll-font);
+}
+
+/* base share button */
+.ll-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: var(--ll-radius);
+  font-family: var(--ll-font);
+  font-size: .78rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: opacity .15s, transform .1s;
+  white-space: nowrap;
+}
+.ll-share-btn:hover  { opacity: .85; transform: translateY(-1px); }
+.ll-share-btn:active { transform: translateY(0); opacity: 1; }
+
+/* LinkedIn – brand blue */
+.ll-share-btn--linkedin {
+  background: #0a66c2;
+  color: #fff;
+  border-color: #0a66c2;
+}
+
+/* X / Twitter */
+.ll-share-btn--x {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* Facebook */
+.ll-share-btn--facebook {
+  background: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+}
+
+/* Copy-to-clipboard — ghost */
+.ll-share-btn--copy {
+  background: transparent;
+  color: var(--ll-blue-mid);
+  border-color: var(--ll-blue-mid);
+}
+.ll-share-btn--copy.ll-copied {
+  background: var(--ll-green);
+  color: #fff;
+  border-color: var(--ll-green);
+}
+
+/* icon placeholder (SVG inline or text emoji) */
+.ll-share-icon {
+  font-size: .85em;
+  line-height: 1;
+}
+
+/* Full-width "Share this insight" card (for dashboard pages) */
+.ll-share-card {
+  background: var(--ll-gray-50);
+  border: 1px solid var(--ll-gray-200);
+  border-left: 3px solid var(--ll-blue-mid);
+  border-radius: var(--ll-radius-lg);
+  padding: 16px 20px;
+  margin: 24px 0;
+  font-family: var(--ll-font);
+}
+.ll-share-card__headline {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ll-gray-600);
+  margin: 0 0 6px;
+}
+.ll-share-card__preview {
+  font-size: .86rem;
+  color: var(--ll-gray-800);
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0 0 12px;
+  background: #fff;
+  border: 1px solid var(--ll-gray-200);
+  border-radius: var(--ll-radius);
+  padding: 10px 14px;
+}
+
+
+/* ─────────────────────────────────────────────
+   FEATURE 2 · REQUEST YOUR COUNTY FORM
+   ───────────────────────────────────────────── */
+
+/* Section wrapper */
+.ll-request-section {
+  background: var(--ll-blue);
+  color: #fff;
+  border-radius: var(--ll-radius-lg);
+  padding: 40px 36px;
+  margin: 40px 0;
+  font-family: var(--ll-font);
+}
+
+/* Eyebrow label */
+.ll-request-section .ll-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.65);
+  margin: 0 0 8px;
+}
+
+.ll-request-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.ll-request-section .ll-lead {
+  font-size: .95rem;
+  color: rgba(255,255,255,.85);
+  margin: 0 0 28px;
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+/* Inline mini CTA (for hero / top of page — lighter variant) */
+.ll-request-cta-inline {
+  display: inline-block;
+  background: var(--ll-blue-light);
+  border: 1px solid #93c5fd;
+  border-radius: var(--ll-radius-lg);
+  padding: 20px 24px;
+  margin: 20px 0;
+  font-family: var(--ll-font);
+}
+.ll-request-cta-inline p {
+  font-size: .9rem;
+  color: var(--ll-blue);
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+/* Form grid */
+.ll-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 600px) {
+  .ll-form { grid-template-columns: 1fr; }
+  .ll-request-section { padding: 28px 20px; }
+}
+
+.ll-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.ll-form__group--full { grid-column: 1 / -1; }
+
+.ll-form label {
+  font-size: .78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.80);
+  font-family: var(--ll-font);
+}
+
+/* Light form on dark background */
+.ll-form input,
+.ll-form select,
+.ll-form textarea {
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--ll-radius);
+  padding: 9px 12px;
+  font-size: .875rem;
+  color: #fff;
+  font-family: var(--ll-font);
+  transition: border-color .15s, background .15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.ll-form input::placeholder,
+.ll-form textarea::placeholder {
+  color: rgba(255,255,255,.40);
+}
+.ll-form input:focus,
+.ll-form select:focus,
+.ll-form textarea:focus {
+  outline: none;
+  border-color: rgba(255,255,255,.65);
+  background: rgba(255,255,255,.18);
+}
+.ll-form select option { color: var(--ll-gray-800); background: #fff; }
+.ll-form textarea { resize: vertical; min-height: 90px; }
+
+/* Submit button */
+.ll-btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 24px;
+  background: #fff;
+  color: var(--ll-blue);
+  font-weight: 700;
+  font-size: .9rem;
+  border: none;
+  border-radius: var(--ll-radius);
+  cursor: pointer;
+  font-family: var(--ll-font);
+  transition: background .15s, transform .1s;
+  margin-top: 6px;
+}
+.ll-btn-submit:hover  { background: var(--ll-blue-light); transform: translateY(-1px); }
+.ll-btn-submit:active { transform: translateY(0); }
+
+/* Success message */
+.ll-form-success {
+  display: none;
+  padding: 16px 20px;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.30);
+  border-radius: var(--ll-radius);
+  font-size: .9rem;
+  color: #fff;
+  margin-top: 16px;
+}
+.ll-form-success.ll-visible { display: block; }
+
+/* Privacy note */
+.ll-form-note {
+  font-size: .72rem;
+  color: rgba(255,255,255,.50);
+  margin: 10px 0 0;
+}
+
+/* Light-background variant (for use inside county dashboard) */
+.ll-request-section--light {
+  background: var(--ll-blue-light);
+  color: var(--ll-gray-800);
+  border: 1px solid #93c5fd;
+}
+.ll-request-section--light .ll-eyebrow   { color: var(--ll-blue-mid); }
+.ll-request-section--light h2            { color: var(--ll-blue); }
+.ll-request-section--light .ll-lead      { color: var(--ll-gray-600); }
+.ll-request-section--light label         { color: var(--ll-gray-600); }
+.ll-request-section--light input,
+.ll-request-section--light select,
+.ll-request-section--light textarea {
+  background: #fff;
+  border-color: var(--ll-gray-200);
+  color: var(--ll-gray-800);
+}
+.ll-request-section--light input::placeholder,
+.ll-request-section--light textarea::placeholder { color: var(--ll-gray-400); }
+.ll-request-section--light .ll-btn-submit {
+  background: var(--ll-blue);
+  color: #fff;
+}
+.ll-request-section--light .ll-btn-submit:hover { background: var(--ll-blue-mid); }
+.ll-request-section--light .ll-form-note  { color: var(--ll-gray-400); }
+.ll-request-section--light .ll-form-success {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: var(--ll-green);
+}
+
+
+/* ─────────────────────────────────────────────
+   FEATURE 3 · DOWNLOAD ONE-PAGE COUNTY BRIEF
+   ───────────────────────────────────────────── */
+
+.ll-brief-section {
+  border: 1px solid var(--ll-gray-200);
+  border-radius: var(--ll-radius-lg);
+  padding: 28px 32px;
+  margin: 32px 0;
+  background: var(--ll-gray-50);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  font-family: var(--ll-font);
+}
+@media (max-width: 600px) {
+  .ll-brief-section { flex-direction: column; padding: 20px; gap: 16px; }
+}
+
+.ll-brief-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--ll-blue);
+  color: #fff;
+  border-radius: var(--ll-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.ll-brief-body { flex: 1; }
+
+.ll-brief-body .ll-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ll-gray-400);
+  margin: 0 0 4px;
+}
+
+.ll-brief-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ll-blue);
+  margin: 0 0 6px;
+}
+
+.ll-brief-body p {
+  font-size: .85rem;
+  color: var(--ll-gray-600);
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+
+/* What's included list */
+.ll-brief-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ll-brief-includes li {
+  font-size: .75rem;
+  background: var(--ll-blue-light);
+  color: var(--ll-blue);
+  border-radius: 99px;
+  padding: 3px 10px;
+  font-weight: 500;
+}
+.ll-brief-includes li::before {
+  content: '✓ ';
+  font-weight: 700;
+}
+
+/* Button group */
+.ll-brief-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ll-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: var(--ll-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--ll-radius);
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--ll-font);
+  transition: background .15s, transform .1s;
+}
+.ll-btn-primary:hover  { background: var(--ll-blue-mid); transform: translateY(-1px); }
+.ll-btn-primary:active { transform: translateY(0); }
+
+.ll-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: transparent;
+  color: var(--ll-blue-mid);
+  border: 1px solid var(--ll-blue-mid);
+  border-radius: var(--ll-radius);
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--ll-font);
+  transition: background .15s, transform .1s;
+}
+.ll-btn-secondary:hover {
+  background: var(--ll-blue-light);
+  transform: translateY(-1px);
+}
+
+/* "Coming soon" variant badge */
+.ll-badge-soon {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  background: #fef3c7;
+  color: var(--ll-orange);
+  border: 1px solid #fcd34d;
+  border-radius: 99px;
+  padding: 2px 8px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+/* Disclaimer */
+.ll-brief-disclaimer {
+  font-size: .72rem;
+  color: var(--ll-gray-400);
+  margin: 12px 0 0;
+  font-style: italic;
+}
+
+
+/* ─────────────────────────────────────────────
+   FEATURE 4 · SPONSOR AN OPEN COUNTY DASHBOARD
+   ───────────────────────────────────────────── */
+
+.ll-sponsor-section {
+  margin: 48px 0;
+  font-family: var(--ll-font);
+}
+
+.ll-sponsor-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.ll-sponsor-header .ll-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ll-gray-400);
+  margin: 0 0 8px;
+}
+.ll-sponsor-header h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--ll-blue);
+  margin: 0 0 12px;
+}
+.ll-sponsor-header .ll-lead {
+  font-size: .92rem;
+  color: var(--ll-gray-600);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* Tier cards grid */
+.ll-sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+@media (max-width: 760px) {
+  .ll-sponsor-grid { grid-template-columns: 1fr; }
+}
+
+.ll-tier-card {
+  border: 1px solid var(--ll-gray-200);
+  border-radius: var(--ll-radius-lg);
+  padding: 24px 22px;
+  background: #fff;
+  box-shadow: var(--ll-shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow .2s, transform .15s;
+}
+.ll-tier-card:hover {
+  box-shadow: var(--ll-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Featured (middle) tier */
+.ll-tier-card--featured {
+  border-color: var(--ll-blue-mid);
+  border-width: 2px;
+}
+.ll-tier-card--featured::before {
+  content: 'Most popular';
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ll-blue-mid);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  padding: 3px 12px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.ll-tier-badge {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ll-gray-400);
+  margin: 0 0 6px;
+}
+
+.ll-tier-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ll-blue);
+  margin: 0 0 4px;
+}
+
+.ll-tier-price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--ll-gray-800);
+  margin: 0 0 14px;
+  line-height: 1;
+}
+.ll-tier-price span {
+  font-size: .85rem;
+  font-weight: 400;
+  color: var(--ll-gray-400);
+}
+
+.ll-tier-divider {
+  border: none;
+  border-top: 1px solid var(--ll-gray-200);
+  margin: 0 0 14px;
+}
+
+.ll-tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  flex: 1;
+}
+.ll-tier-features li {
+  font-size: .82rem;
+  color: var(--ll-gray-600);
+  padding: 4px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.4;
+}
+.ll-tier-features li::before {
+  content: '→';
+  color: var(--ll-blue-mid);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Sponsor CTA button */
+.ll-btn-sponsor {
+  display: block;
+  text-align: center;
+  padding: 10px 18px;
+  border-radius: var(--ll-radius);
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity .15s, transform .1s;
+  border: none;
+  font-family: var(--ll-font);
+}
+.ll-btn-sponsor--primary {
+  background: var(--ll-blue);
+  color: #fff;
+}
+.ll-btn-sponsor--outline {
+  background: transparent;
+  color: var(--ll-blue-mid);
+  border: 1px solid var(--ll-blue-mid);
+}
+.ll-btn-sponsor:hover  { opacity: .87; transform: translateY(-1px); }
+.ll-btn-sponsor:active { transform: translateY(0); opacity: 1; }
+
+/* Footer disclaimer */
+.ll-sponsor-disclaimer {
+  background: var(--ll-gray-100);
+  border: 1px solid var(--ll-gray-200);
+  border-radius: var(--ll-radius);
+  padding: 14px 18px;
+  font-size: .77rem;
+  color: var(--ll-gray-600);
+  line-height: 1.55;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.ll-sponsor-disclaimer strong { color: var(--ll-gray-800); }
+
+/* ─────────────────────────────────────────────
+   SHARED UTILITIES
+   ───────────────────────────────────────────── */
+
+.ll-eyebrow {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ll-gray-400);
+  margin: 0 0 6px;
+}
+
+/* Section divider */
+.ll-divider {
+  border: none;
+  border-top: 1px solid var(--ll-gray-200);
+  margin: 40px 0;
+}
+
+/* Subtle toast notification */
+.ll-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ll-gray-800);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--ll-radius);
+  font-size: .83rem;
+  font-family: var(--ll-font);
+  box-shadow: var(--ll-shadow-md);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .25s, transform .25s;
+  pointer-events: none;
+}
+.ll-toast.ll-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
