@@ -19,7 +19,7 @@ body{font-family:var(--sans);background:#fff;color:#111;font-size:13.5px;line-he
 
 /* ── NAV (matches all pages) ── */
 .sitenav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
-.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;display:flex;align-items:center;gap:10px;}
+.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;}
 .sitenav .links{display:flex;gap:4px;align-items:center;}
 .sitenav a.navlink{color:rgba(255,255,255,.7);font-size:12.5px;padding:6px 12px;border-radius:6px;text-decoration:none;transition:all .15s;}
 .sitenav a.navlink:hover,.sitenav a.navlink.active{background:rgba(255,255,255,.12);color:#fff;}
@@ -52,7 +52,7 @@ body{font-family:var(--sans);background:#fff;color:#111;font-size:13.5px;line-he
 .keywords{font-size:11.5px;color:#555;margin-bottom:26px;}
 
 /* ── SECTIONS ── */
-h2.sec{scroll-margin-top:68px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);border-top:2px solid var(--navy);padding-top:14px;margin-top:36px;margin-bottom:12px;}
+h2.sec{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);border-top:2px solid var(--navy);padding-top:14px;margin-top:36px;margin-bottom:12px;}
 h3.sub{font-size:13.5px;font-weight:700;color:#1e3a5f;margin-top:20px;margin-bottom:8px;}
 p{margin-bottom:10px;}
 
@@ -95,47 +95,19 @@ tbody td{padding:7px 10px;vertical-align:top;}
 .doc-footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:#888;line-height:1.8;}
 
 @media print{.sitenav{display:none;}.doc{padding-top:20px;}}
-
-/* floating toc */
-html{scroll-behavior:smooth}
-#toc{position:fixed;top:68px;right:max(16px,calc(50% - 586px));width:162px;z-index:90;max-height:calc(100vh - 84px);overflow-y:auto;
-  background:#fff;border:1px solid var(--border,#e2e8f0);border-radius:8px;
-  padding:12px 0 10px;box-shadow:0 2px 12px rgba(0,0,0,.07);
-  font-family:var(--sans,-apple-system,system-ui,sans-serif);}
-#toc .toc-title{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted,#64748b);padding:0 13px 9px;
-  border-bottom:1px solid var(--border,#e2e8f0);margin-bottom:7px;}
-#toc a{display:block;padding:4px 13px;font-size:11.5px;line-height:1.35;
-  color:var(--muted,#64748b);border-left:2px solid transparent;transition:.15s;text-decoration:none;}
-#toc a:hover{color:var(--navy,#0f1f3d);background:var(--bg,#f8fafc);}
-#toc a.toc-active{color:var(--blue,#1a56db);border-left-color:var(--blue,#1a56db);
-  font-weight:600;background:#eff6ff;}
-@media(max-width:1192px){#toc{display:none}}
 </style>
 </head>
 <body>
-<nav id="toc" aria-label="Table of contents">
-  <div class="toc-title">Contents</div>
-  <a href="#background-and-study-context">Background and Study Context</a>
-  <a href="#data-sources">Data Sources</a>
-  <a href="#analytic-methods">Analytic Methods</a>
-  <a href="#analytic-considerations">Analytic Considerations</a>
-  <a href="#results">Results</a>
-  <a href="#discussion">Discussion</a>
-  <a href="#recommendations-for-future-analysis">Recommendations for Future Ana…</a>
-  <a href="#references">References</a>
-</nav>
 
 <!-- Navigation -->
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
+  <a class="brand" href="index.html">Lakes Linked</a>
   <div class="links">
     <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
     <div class="county-group">
       <a class="navlink" href="isabella.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella</a>
       <a class="navlink" href="clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
       <a class="navlink" href="midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
-      <a class="navlink" href="gratiot.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</a>
     </div>
     <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
     <a class="navlink" href="index.html"><svg class="nico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Portal</a>
@@ -162,7 +134,7 @@ html{scroll-behavior:smooth}
   <div class="badge">Supplementary Material · Methods &amp; Data Tables</div>
   <h1>Health Burden from NCDs, SUDs, and MHCs in Clare County, Michigan: A Mixed-Source Modeled Estimate</h1>
   <div class="sub">Cross-sectional analysis for community health planning, 2026</div>
-  <div class="authors">Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</div>
+  <div class="authors">Sergey Soshnikov, MD PhD · Public Health Researcher</div>
   <div class="meta-chips">
     <span class="chip">Version 1.0</span>
     <span class="chip">June 2026</span>
@@ -182,13 +154,13 @@ html{scroll-behavior:smooth}
   <p><strong>Methods.</strong> Disability-adjusted life year (DALY) estimates were constructed from secondary data: Michigan state CDC WONDER rates 2020–2022 with rural adjustment factors (Clare is too small for reliable direct WONDER counts — median suppression applies to the majority of cause-specific cells), CDC PLACES 2024 (prevalence), IHME GBD 2021 (disability weights), and U.S. Census ACS 2022 (population denominators). YLL was calculated using the WHO GHE frontier reference life table (89·1 years) as the primary standard; Michigan observed LE (78·6 years) is reported as a planning-grade sensitivity. For mental health, a remission factor of 0·50 was applied. Methodology is structurally identical to the Isabella County analysis (v5.0).</p>
   <p><strong>Results.</strong> Primary burden (frontier LE, remission-adjusted MH): <strong>8,198 DALYs/yr</strong> (YLL 4,612 + YLD 3,586). SUD/Opioids and Cancer are co-leading conditions; COPD burden is the standout indicator — 12.7% prevalence, highest in the mid-Michigan comparison set. Planning-grade sensitivity (Michigan LE 78.6 yrs): <strong>5,943 DALYs</strong>. Total deaths: ~214/year (estimated). Economic burden: ~$508M/year (human capital, frontier).</p>
   <p><strong>Limitations.</strong> Clare County's small population (30,013) causes CDC WONDER cell suppression for nearly all cause-specific death counts. All mortality inputs use Michigan state rates with rural adjustment factors (×1.2–1.85), not direct CDC WONDER county counts. This introduces greater uncertainty than the Isabella County analysis, where some direct counts were available. Results are directional planning approximations only. ±20% uncertainty applies to all figures.</p>
-  <p><strong>Conclusion.</strong> Clare County's primary burden is driven by opioid/SUD crisis, cancer, COPD (standout), CVD, and mental health access deficits under a severe MUA designation. See <a href="clare_roi.html" style="color:var(--blue)">ROI analysis →</a> for investment return estimates and <a href="clare_ai_solutions.html" style="color:var(--blue)">AI Solutions →</a> for priority interventions.</p>
+  <p><strong>Conclusion.</strong> Clare County's primary burden is driven by opioid/SUD crisis, cancer, COPD (standout), CVD, and mental health access deficits under a severe MUA designation. See <a href="clare_roi.html" style="color:var(--blue)">ROI analysis →</a> for investment return estimates and <a href="clare_ai_solutions.html" style="color:var(--blue)">Interventions →</a> for priority interventions.</p>
 </div>
 
 <div class="keywords"><strong>Keywords:</strong> disability-adjusted life years · disease burden · rural health · Michigan · Clare County · opioid crisis · COPD · MUA designation · DALY methodology · public health planning</div>
 
 <!-- 1. Background -->
-<h2 id="background-and-study-context" class="sec"><span style="color:var(--red);margin-right:6px">1.</span> Background and Study Context</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">1.</span> Background and Study Context</h2>
 
 <p>Clare County is a rural county in mid-Michigan (FIPS 26035), located approximately 45 miles northeast of Isabella County. Population: 30,013 (Census ACS 2022). There is no university or major anchor institution — unlike Isabella County, which has a major regional university as a demographic stabilizer and health service anchor.</p>
 
@@ -214,7 +186,7 @@ html{scroll-behavior:smooth}
 </div>
 
 <!-- 2. Data Sources -->
-<h2 id="data-sources" class="sec"><span style="color:var(--red);margin-right:6px">2.</span> Data Sources</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">2.</span> Data Sources</h2>
 
 <h3 class="sub">2.1 Mortality data</h3>
 <p>Because Clare County's population of 30,013 produces suppressed cell counts in CDC WONDER for nearly all cause-specific causes (&lt;10 deaths/3-yr pool), <strong>all mortality inputs use Michigan state-level rates with rural adjustment factors</strong>. This is the same methodology used for suppressed cells in the Isabella County analysis, but applies to the full set of conditions for Clare rather than a subset.</p>
@@ -235,7 +207,7 @@ html{scroll-behavior:smooth}
 <p>Human capital: DALYs × $62,000 (Michigan GDP per capita 2024). VSL: HHS ASPE 2026 income-adjusted for Clare County: $13.4M × (38,000/80,000)^0.4 ≈ <strong>$9.2M</strong> per statistical life (county median income ~$38,000 per ACS 2022 — lower than Isabella's $46,000, reflecting absence of university employment anchor).</p>
 
 <!-- 3. Methods -->
-<h2 id="analytic-methods" class="sec"><span style="color:var(--red);margin-right:6px">3.</span> Analytic Methods</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">3.</span> Analytic Methods</h2>
 
 <h3 class="sub">3.1 DALY framework</h3>
 <p>Standard WHO DALY formula, no age-weighting, no discounting — identical to Isabella County analysis:</p>
@@ -253,7 +225,7 @@ html{scroll-behavior:smooth}
 <p>CDC PLACES 2024 reports lifetime-diagnosed depressive disorder prevalence (BRFSS ADDEPEV3). A remission factor of 0·50 is applied to approximate active burden, identical to the Isabella County v5.0 methodology. Clare's CDC PLACES MH prevalence: 14.1% adults. Active prevalence: 14.1% × 0.50 = 7.05%. This produces a lower active MH burden than Isabella (which had 29.8% raw prevalence), reflecting the PLACES estimate rather than population structure.</p>
 
 <!-- 4. Analytic Considerations -->
-<h2 id="analytic-considerations" class="sec"><span style="color:var(--red);margin-right:6px">4.</span> Analytic Considerations</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">4.</span> Analytic Considerations</h2>
 
 <h3 class="sub">4.1 Cell suppression — Clare County vs. Isabella County</h3>
 <p>In the Isabella County analysis (v5.0), direct CDC WONDER counts were available for cancer, CVD, COPD, and stroke; rural adjustment was applied only to SUD, mental health, and diabetes. For Clare County, given the smaller population (30,013 vs. 64,565), cell suppression extends to all or nearly all cause-specific conditions. This makes Clare's burden estimates less reliable than Isabella's, and the ±20% uncertainty applies uniformly and may understate the true uncertainty range for specific conditions.</p>
@@ -272,7 +244,7 @@ html{scroll-behavior:smooth}
 <p>Clare County's median age of 46.8 years (vs. 40.0 Michigan, 38.9 US) systematically amplifies conditions with age-dependent incidence and mortality. COPD (median onset 50–55 years), CVD (median death age 72), and cancer (median death age 67) are all disproportionately elevated in aging rural populations. The mean ages at death used in the YLL calculation (national proxies) may underestimate actual mean death age in Clare County, slightly understating YLL for these conditions under the Michigan LE standard and slightly overstating it under the frontier standard where remaining LE is the sensitive parameter.</p>
 
 <!-- 5. Results Tables -->
-<h2 id="results" class="sec"><span style="color:var(--red);margin-right:6px">5.</span> Results</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">5.</span> Results</h2>
 
 <h3 class="sub">5.1 Disease burden estimates — primary (WHO GHE Frontier LE 89.1 yrs)</h3>
 <div class="tbl-wrap">
@@ -387,7 +359,7 @@ html{scroll-behavior:smooth}
 </div>
 
 <!-- 6. Discussion -->
-<h2 id="discussion" class="sec"><span style="color:var(--red);margin-right:6px">6.</span> Discussion</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">6.</span> Discussion</h2>
 
 <p>Clare County's disease burden is concentrated in five conditions that together constitute a rural health emergency: opioid/SUD crisis (#2 burden, ~47/100k overdose mortality), cancer (#1), COPD (#3 — the standout condition at 12.7% vs. statewide ~7%), CVD (#5), and mental health access deficits under whole-county MUA designation. Unlike Isabella County, where the burden ranking is dominated by cancer and CVD under the frontier LE standard, Clare's burden is more evenly distributed across SUD, cancer, and COPD, with COPD emerging as the county's unique epidemiological signature.</p>
 
@@ -398,7 +370,7 @@ html{scroll-behavior:smooth}
 <p>The absence of a the university-equivalent institution creates a structurally different intervention landscape. All AI and telehealth solutions must be implemented through FQHC networks, county health department infrastructure, or regional hospital systems, without access to university health service delivery channels that exist in Isabella County.</p>
 
 <!-- 7. Recommendations -->
-<h2 id="recommendations-for-future-analysis" class="sec"><span style="color:var(--red);margin-right:6px">7.</span> Recommendations for Future Analysis</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">7.</span> Recommendations for Future Analysis</h2>
 
 <p><strong>1. MDHHS county opioid data.</strong> Use MDHHS opioid dashboard county-level data (available for most years) to replace the rural-adjusted proxy for SUD mortality. This is the highest-priority data gap for Clare.</p>
 <p><strong>2. CDC WONDER 5-year pooling.</strong> Use 5-year pooled CDC WONDER data (2019–2023) to reduce cell suppression — longer pooling period may allow direct cancer and CVD counts even for Clare.</p>
@@ -407,7 +379,7 @@ html{scroll-behavior:smooth}
 <p><strong>5. Mental health underdiagnosis.</strong> Clare's 14.1% MH PLACES prevalence vs. Isabella's 29.8% may reflect underdiagnosis rather than lower true burden. Triangulate against SAMHSA NSDUH regional estimates and emergency department mental health utilization data.</p>
 
 <!-- 8. References -->
-<h2 id="references" class="sec"><span style="color:var(--red);margin-right:6px">8.</span> References</h2>
+<h2 class="sec"><span style="color:var(--red);margin-right:6px">8.</span> References</h2>
 <ol class="refs">
   <li>Michigan MDHHS. <em>2020 Primary Care Needs Assessment: Clare County Profile</em>. MDHHS; 2020.</li>
   <li>IHME. <em>Global Burden of Disease Study 2021: Disability Weights</em>. Seattle: IHME; 2022. <a href="https://ghdx.healthdata.org/gbd-2021" target="_blank">ghdx.healthdata.org/gbd-2021</a></li>
@@ -428,23 +400,11 @@ html{scroll-behavior:smooth}
 
 <div class="doc-footer">
   <strong>Document status:</strong> Version 1.0 — Clare County planning model. Same methodology as Isabella County v5.0 but all mortality inputs use state rates × rural adjustment factors (no direct WONDER counts available). Not peer-reviewed.<br>
-  <strong>Author:</strong> Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked<br>
-  <strong>Related pages:</strong> <a href="clare.html" style="color:var(--blue)">Clare Dashboard</a> · <a href="clare_ai_solutions.html" style="color:var(--blue)">AI Solutions</a> · <a href="clare_roi.html" style="color:var(--blue)">ROI Analysis</a> · <a href="isabella_methods.html" style="color:var(--blue)">Isabella Methods (v5.0)</a><br>
+  <strong>Author:</strong> Sergey Soshnikov, MD PhD · Public Health Researcher<br>
+  <strong>Related pages:</strong> <a href="clare.html" style="color:var(--blue)">Clare Dashboard</a> · <a href="clare_ai_solutions.html" style="color:var(--blue)">Interventions</a> · <a href="clare_roi.html" style="color:var(--blue)">ROI Analysis</a> · <a href="isabella_methods.html" style="color:var(--blue)">Isabella Methods (v5.0)</a><br>
   © 2026 Soshnikov
 </div>
 
 </div><!-- end .doc -->
-<script>
-(function(){
-  var links=document.querySelectorAll('#toc a');
-  var secs=Array.from(links).map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
-  function upd(){
-    var active=-1;
-    for(var i=0;i<secs.length;i++){if(secs[i]&&secs[i].getBoundingClientRect().top<=80)active=i;}
-    links.forEach(function(a,i){a.classList.toggle('toc-active',i===active);});
-  }
-  window.addEventListener('scroll',upd,{passive:true});upd();
-})();
-</script>
 </body>
 </html>
