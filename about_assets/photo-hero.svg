@@ -160,6 +160,46 @@
         stroke="#40c8d8" stroke-width="0.6" stroke-dasharray="4 12" opacity="0.12"/>
 </g>
 
+<!-- ══ GLITCH OVERLAY ELEMENTS ══ -->
+<g clip-path="url(#cc)">
+  <!-- RGB colour-split ghosts of background -->
+  <circle id="glitch-r" cx="220" cy="220" r="216"
+          fill="none" stroke="#ff4444" stroke-width="1" stroke-dasharray="40 80" opacity="0"/>
+  <circle id="glitch-b" cx="220" cy="220" r="213"
+          fill="none" stroke="#4444ff" stroke-width="1" stroke-dasharray="30 90" opacity="0"/>
+
+  <!-- Glitch colour block — RGB overlay flash -->
+  <rect id="rgb-overlay" x="25" y="60" width="390" height="320" rx="0"
+        fill="none" stroke="#00ffee" stroke-width="0.5" opacity="0"/>
+
+  <!-- Scanlines -->
+  <rect id="scanline1" x="15" y="0" width="410" height="3" rx="0"
+        fill="#60f8ff" opacity="0"/>
+  <rect id="scanline2" x="15" y="0" width="410" height="1.5" rx="0"
+        fill="#a0f8e0" opacity="0"/>
+
+  <!-- Glitch data blocks (corruption rectangles) -->
+  <rect class="blk1" x="30"  y="120" width="55" height="8"  rx="1" fill="#00ffcc" opacity="0"/>
+  <rect class="blk2" x="355" y="280" width="40" height="6"  rx="1" fill="#ff00aa" opacity="0"/>
+  <rect class="blk3" x="60"  y="370" width="70" height="5"  rx="1" fill="#00aaff" opacity="0"/>
+
+  <!-- Extra data stream lines -->
+  <path id="data-l2"
+        d="M20 160 Q110 140 200 170 Q290 200 400 150"
+        fill="none" stroke="#30d8f8" stroke-width="0.9"
+        stroke-dasharray="12 40" opacity="0"/>
+  <path id="data-l3"
+        d="M20 330 Q120 310 220 340 Q320 360 420 320"
+        fill="none" stroke="#40e8d0" stroke-width="0.8"
+        stroke-dasharray="8 50" opacity="0"/>
+
+  <!-- Extra spark points -->
+  <circle class="sp1" cx="72"  cy="88"  r="1" fill="#ffffff" opacity="0"/>
+  <circle class="sp2" cx="368" cy="92"  r="1" fill="#80ffee" opacity="0"/>
+  <circle class="sp3" cx="66"  cy="348" r="1" fill="#60f0ff" opacity="0"/>
+  <circle class="sp4" cx="370" cy="352" r="1" fill="#a0f8e0" opacity="0"/>
+</g>
+
 <!-- ══ SHIRT — more chest visible ══ -->
 <path d="M0 440 L55 340 L140 385 L190 315 L220 335 L250 315 L300 385 L385 340 L440 440Z"
       fill="url(#shirt-g)" clip-path="url(#cc)"/>
@@ -306,7 +346,7 @@
 </g>
 
 <!-- ══ WINK LID ══ -->
-<g id="wink-lid">
+<g id="wink-lid" visibility="hidden">
   <ellipse cx="186" cy="205" rx="22" ry="14" fill="#e8c48a"/>
   <!-- closed-eye shadow crease -->
   <ellipse cx="186" cy="205" rx="22" ry="6" fill="#c8a060" opacity="0.30"/>
@@ -397,18 +437,43 @@
 <circle cx="220" cy="220" r="215" fill="none" stroke="#34b8cc" stroke-width="2.5"/>
 <circle cx="220" cy="220" r="218" fill="none" stroke="#071e34" stroke-width="4"/>
 
-<script><![CDATA[
-const avatar = document.getElementById('avatar');
-const lid    = document.getElementById('wink-lid');
+<script>
+(function() {
+  var root  = document.documentElement;
+  var lid   = document.getElementById('wink-lid');
+  var PIVOT_Y = 205;
+  var winking = false;
 
-avatar.addEventListener('mouseenter', () => {
-  lid.classList.remove('winking');
-  void lid.offsetWidth;
-  lid.classList.add('winking');
-});
+  function setLidScale(s) {
+    var t = 'translate(0 ' + PIVOT_Y + ') scale(1 ' + s + ') translate(0 ' + (-PIVOT_Y) + ')';
+    lid.setAttribute('transform', t);
+  }
 
-lid.addEventListener('animationend', () => {
-  lid.classList.remove('winking');
-});
-]]></script>
+  setLidScale(0); // start hidden
+
+  function ease(x) { return x < 0.5 ? 2*x*x : 1 - Math.pow(-2*x+2,2)/2; }
+
+  function doWink() {
+    if (winking) return;
+    winking = true;
+    var t0 = null;
+    var DUR = 700;
+
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / DUR, 1);
+      var s;
+      if      (p < 0.28) s = ease(p / 0.28);
+      else if (p < 0.66) s = 1;
+      else               s = 1 - ease((p - 0.66) / 0.34);
+      setLidScale(Math.max(0, Math.min(1, s)));
+      if (p < 1) requestAnimationFrame(step);
+      else { setLidScale(0); winking = false; }
+    }
+    requestAnimationFrame(step);
+  }
+
+  root.addEventListener('mouseenter', doWink);
+})();
+</script>
 </svg>
