@@ -1185,20 +1185,36 @@ html{scroll-behavior:smooth}
 </ol>
 </div>
 </div><!-- end .main -->
-<section aria-label="Report a data error" class="ll-request-section" id="request-county" style="padding:24px 28px;margin:28px 0;">
-<p class="ll-eyebrow" style="font-size:.65rem;margin-bottom:6px;">Data quality · Open to corrections</p>
-<h2 style="font-size:1.15rem;margin-bottom:8px;">Found a Mistake?</h2>
-<p class="ll-lead" style="font-size:.85rem;margin-bottom:18px;max-width:520px;">Spotted an error in the numbers or methods? Send a note — corrections are welcome.</p>
-<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="" style="grid-template-columns:1fr 1fr;gap:10px;">
+<section aria-label="Report a data error" id="request-county" style="
+  margin:20px 0;padding:14px 18px;
+  background:linear-gradient(135deg,#0f1f3d 0%,#0b3a3a 100%);
+  border-radius:10px;border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 4px 24px rgba(15,31,61,.18);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  max-width:620px;">
+<p style="font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:3px;">Data quality · Open to corrections</p>
+<h2 style="font-size:.88rem;font-weight:600;color:#fff;margin-bottom:3px;">Found a Mistake?</h2>
+<p style="font-size:.73rem;color:rgba(255,255,255,.55);margin-bottom:10px;line-height:1.5;">Spotted an error in the numbers or figured out methods interesting? Send a note — discussions are welcome.</p>
+<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
 <input name="_subject" type="hidden" value="Data correction note — Lakes Linked"/>
 <input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
-<div class="ll-form__group"><label for="req-name-1" style="font-size:.78rem;">Your name</label><input id="req-name-1" name="name" placeholder="Dr. Jane Smith" type="text" style="padding:7px 10px;font-size:.85rem;"/></div>
-<div class="ll-form__group"><label for="req-email-1" style="font-size:.78rem;">Email *</label><input id="req-email-1" name="email" placeholder="you@organization.org" required="" type="email" style="padding:7px 10px;font-size:.85rem;"/></div>
-<div class="ll-form__group ll-form__group--full"><label for="req-note-1" style="font-size:.78rem;">What did you find? *</label><textarea id="req-note-1" name="note" placeholder="Page, figure, or number — and what looks wrong." required="" rows="3" style="width:100%;padding:7px 10px;font-size:.85rem;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;resize:vertical;font-family:inherit;"></textarea></div>
-<div class="ll-form__group ll-form__group--full" style="display:flex;align-items:center;gap:16px;">
-<button class="ll-btn-submit" type="submit" style="padding:9px 22px;font-size:.85rem;min-width:0;">Send →</button>
-<p class="ll-form-note" style="font-size:.75rem;margin:0;">Goes directly to Sergey. Reply within 2–3 days.</p></div>
-<div class="ll-form-success" role="alert">✓ Thanks — we'll review and follow up.</div>
+<div style="display:flex;flex-direction:column;gap:3px;">
+  <label for="req-name-1" style="font-size:.68rem;color:rgba(255,255,255,.45);">Your name</label>
+  <input id="req-name-1" name="name" placeholder="Dr. Jane Smith" type="text" style="padding:5px 8px;font-size:.73rem;border-radius:5px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;outline:none;"/>
+</div>
+<div style="display:flex;flex-direction:column;gap:3px;">
+  <label for="req-email-1" style="font-size:.68rem;color:rgba(255,255,255,.45);">Email *</label>
+  <input id="req-email-1" name="email" placeholder="you@org.org" required="" type="email" style="padding:5px 8px;font-size:.73rem;border-radius:5px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;outline:none;"/>
+</div>
+<div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px;">
+  <label for="req-note-1" style="font-size:.68rem;color:rgba(255,255,255,.45);">What did you find? *</label>
+  <textarea id="req-note-1" name="note" placeholder="What question do you have? Thank you!" required="" rows="2" style="width:100%;padding:5px 8px;font-size:.73rem;border-radius:5px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;resize:vertical;font-family:inherit;outline:none;"></textarea>
+</div>
+<div style="grid-column:1/-1;display:flex;align-items:center;gap:12px;">
+  <button type="submit" style="padding:5px 14px;font-size:.73rem;font-weight:600;background:#0d9488;color:#fff;border:none;border-radius:5px;cursor:pointer;transition:filter .15s;">Send →</button>
+  <span style="font-size:.68rem;color:rgba(255,255,255,.35);">Goes directly to Sergey · reply in 2–3 days.</span>
+</div>
+<div class="ll-form-success" role="alert" style="grid-column:1/-1;font-size:.73rem;color:#6ee7b7;">✓ Thanks — we'll review and follow up.</div>
 </form>
 </section>
 <!-- ══ FOOTER ══ -->
@@ -1242,13 +1258,15 @@ html{scroll-behavior:smooth}
   window.addEventListener('scroll',upd,{passive:true});upd();
 })();
 </script>
-<script src="ll-features.js"></script><a href="#request-county" id="ll-float-cta" onmouseout="this.style.background='#1a56db';this.style.transform='none'" onmouseover="this.style.background='#1e40af';this.style.transform='translateY(-2px)'" style="position:fixed;bottom:28px;right:24px;z-index:999;
-          background:#1a56db;color:#fff;border-radius:28px;
-          padding:10px 20px;font-size:13px;font-weight:600;
-          text-decoration:none;box-shadow:0 4px 20px rgba(26,86,219,.4);
-          display:flex;align-items:center;gap:7px;
+<script src="ll-features.js"></script><a href="#request-county" id="ll-float-cta" onmouseout="this.style.background='rgba(26,86,219,.55)';this.style.transform='none'" onmouseover="this.style.background='rgba(30,64,175,.7)';this.style.transform='translateY(-2px)'" style="position:fixed;bottom:20px;right:18px;z-index:999;
+          background:rgba(26,86,219,.55);color:#fff;border-radius:20px;
+          padding:5px 12px;font-size:11px;font-weight:600;
+          text-decoration:none;box-shadow:0 2px 12px rgba(26,86,219,.3);
+          display:flex;align-items:center;gap:5px;
+          backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+          border:1px solid rgba(255,255,255,.2);
           transition:background .15s,transform .15s;white-space:nowrap;">
-<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewbox="0 0 24 24" width="13"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-  Request for your county
+<svg fill="none" height="11" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" viewbox="0 0 24 24" width="11"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+  Report a Mistake
 </a></body>
 </html>
