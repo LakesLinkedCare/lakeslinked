@@ -437,7 +437,7 @@
 <circle cx="220" cy="220" r="215" fill="none" stroke="#34b8cc" stroke-width="2.5"/>
 <circle cx="220" cy="220" r="218" fill="none" stroke="#071e34" stroke-width="4"/>
 
-<script>
+<script><![CDATA[
 (function() {
   var root  = document.documentElement;
   var lid   = document.getElementById('wink-lid');
@@ -475,5 +475,5 @@
 
   root.addEventListener('mouseenter', doWink);
 })();
-</script>
+]]></script>
 </svg>
