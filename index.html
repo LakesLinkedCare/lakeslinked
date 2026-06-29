@@ -15,6 +15,26 @@
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://lakeslinked.com/logo.png" name="twitter:image"/>
+<meta name="keywords" content="Michigan rural health, county health analysis, Isabella County health, Clare County health, Midland County health, public health analytics Michigan, county health planning, grant writing public health, rural health disparities, health department data, population health Michigan, rural Michigan communities, health data planning, community health assessment"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Lakes Linked",
+  "url": "https://www.lakeslinked.com",
+  "description": "Planning-grade disease burden analysis for rural Michigan counties using Global Burden of Disease methods.",
+  "author": {"@type": "Person", "name": "Sergey Soshnikov", "jobTitle": "Physician and Public Health Researcher"},
+  "publisher": {"@type": "Organization", "name": "Lakes Linked", "url": "https://www.lakeslinked.com"},
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "What is Lakes Linked?", "acceptedAnswer": {"@type": "Answer", "text": "Lakes Linked is a public health analytics project that turns open population and health data into practical planning tools for rural Michigan communities, county health departments, and grant writers."}},
+      {"@type": "Question", "name": "Which Michigan counties have been analyzed?", "acceptedAnswer": {"@type": "Answer", "text": "Isabella, Clare, and Midland counties are complete. Gratiot county is in progress for Q3 2026. Mecosta and Washtenaw are planned for Q4 2026."}},
+      {"@type": "Question", "name": "Who is Lakes Linked for?", "acceptedAnswer": {"@type": "Answer", "text": "Lakes Linked serves county health departments, community health planners, rural clinics, and grant writers who need clear, sourced health data for their county — without needing a research team to interpret it."}}
+    ]
+  }
+}
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -1100,35 +1120,6 @@ html{scroll-behavior:smooth}
 <a class="section-meta" href="articles.html" style="text-decoration:none;">View all field notes →</a>
 </div>
 <div class="county-grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-bottom:52px;">
-<!-- Price Transparency -->
-<div class="county-card" onclick="window.location='price-transparency.html'" style="--accent:var(--teal);cursor:pointer">
-<div class="county-card-top"></div>
-<div class="cc-head">
-<div>
-<span class="cc-status-badge" style="background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 25%,transparent);">
-<span class="status-dot"></span>Field Note
-          </span>
-<div class="version-tag">June 2026</div>
-</div>
-<svg fill="none" height="36" stroke="var(--teal)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" style="flex-shrink:0;opacity:.2;" viewbox="0 0 24 24" width="36">
-<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-<line x1="9" x2="16" y1="7" y2="7"></line><line x1="9" x2="16" y1="11" y2="11"></line><line x1="9" x2="13" y1="15" y2="15"></line>
-</svg>
-</div>
-<div class="cc-body">
-<div class="cc-title">The Price Before the Procedure</div>
-<div class="cc-desc">U.S. hospitals must now publish their real prices — but the machine-readable files are gigabyte-scale and unreadable on their own. How the price-transparency rules work, and how AI-assisted public-health analytics can turn that open data into usable answers for patients, community health workers, and rural clinics — with the limits, the disclaimers, and a simple workflow.</div>
-<div class="cc-chips">
-<span class="chip">Price transparency</span>
-<span class="chip">CMS 2026 rule</span>
-<span class="chip">No Surprises Act</span>
-<span class="chip">AI-assisted analytics</span>
-</div>
-</div>
-<div class="cc-links" onclick="event.stopPropagation()">
-<a class="primary" href="price-transparency.html">Read the article →</a>
-</div>
-</div>
 <!-- Clinical Trials -->
 <div class="county-card" onclick="window.location='02-clinical-trials.html'" style="--accent:var(--purple);cursor:pointer">
 <div class="county-card-top"></div>
@@ -1194,19 +1185,20 @@ html{scroll-behavior:smooth}
 </ol>
 </div>
 </div><!-- end .main -->
-<section aria-label="Request a county burden snapshot" class="ll-request-section" id="request-county">
-<p class="ll-eyebrow">Free consultation · No commitment</p>
-<h2>Request Your County Burden Snapshot</h2>
-<p class="ll-lead">Need this for your county? Lakes Linked can prepare a planning-grade county burden snapshot using public data, transparent methods, and human-reviewed interpretation.</p>
-<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="">
-<input name="_subject" type="hidden" value="County burden snapshot request — Lakes Linked"/>
+<section aria-label="Report a data error" class="ll-request-section" id="request-county" style="padding:24px 28px;margin:28px 0;">
+<p class="ll-eyebrow" style="font-size:.65rem;margin-bottom:6px;">Data quality · Open to corrections</p>
+<h2 style="font-size:1.15rem;margin-bottom:8px;">Found a Mistake?</h2>
+<p class="ll-lead" style="font-size:.85rem;margin-bottom:18px;max-width:520px;">Spotted an error in the numbers or methods? Send a note — corrections are welcome.</p>
+<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="" style="grid-template-columns:1fr 1fr;gap:10px;">
+<input name="_subject" type="hidden" value="Data correction note — Lakes Linked"/>
 <input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
-<div class="ll-form__group"><label for="req-name-1">Your name *</label><input id="req-name-1" name="name" placeholder="Dr. Jane Smith" required="" type="text"/></div>
-<div class="ll-form__group"><label for="req-org-1">Organization *</label><input id="req-org-1" name="org" placeholder="Isabella County Health Department" required="" type="text"/></div>
-<div class="ll-form__group"><label for="req-email-1">Work email *</label><input id="req-email-1" name="email" placeholder="you@organization.org" required="" type="email"/></div>
-<div class="ll-form__group"><label for="req-county-1">County and state *</label><input id="req-county-1" name="county" placeholder="e.g. Mecosta County, Michigan" required="" type="text"/></div>
-<div class="ll-form__group ll-form__group--full"><button class="ll-btn-submit" type="submit">Send request →</button><p class="ll-form-note">No spam. Direct to Sergey's inbox. We respond within 2–3 business days.</p></div>
-<div class="ll-form-success" role="alert">✓ Request received — we'll be in touch within 2–3 business days.</div>
+<div class="ll-form__group"><label for="req-name-1" style="font-size:.78rem;">Your name</label><input id="req-name-1" name="name" placeholder="Dr. Jane Smith" type="text" style="padding:7px 10px;font-size:.85rem;"/></div>
+<div class="ll-form__group"><label for="req-email-1" style="font-size:.78rem;">Email *</label><input id="req-email-1" name="email" placeholder="you@organization.org" required="" type="email" style="padding:7px 10px;font-size:.85rem;"/></div>
+<div class="ll-form__group ll-form__group--full"><label for="req-note-1" style="font-size:.78rem;">What did you find? *</label><textarea id="req-note-1" name="note" placeholder="Page, figure, or number — and what looks wrong." required="" rows="3" style="width:100%;padding:7px 10px;font-size:.85rem;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;resize:vertical;font-family:inherit;"></textarea></div>
+<div class="ll-form__group ll-form__group--full" style="display:flex;align-items:center;gap:16px;">
+<button class="ll-btn-submit" type="submit" style="padding:9px 22px;font-size:.85rem;min-width:0;">Send →</button>
+<p class="ll-form-note" style="font-size:.75rem;margin:0;">Goes directly to Sergey. Reply within 2–3 days.</p></div>
+<div class="ll-form-success" role="alert">✓ Thanks — we'll review and follow up.</div>
 </form>
 </section>
 <!-- ══ FOOTER ══ -->
