@@ -31,11 +31,22 @@
   .series .shell{display:flex;align-items:center;gap:14px;height:54px}
   .series .brand{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:-.01em}
   .series nav{margin-left:auto;display:flex;gap:6px}
-  .series a{font-size:13px;color:var(--ink-soft);padding:7px 13px;border-radius:100px;border:1px solid transparent;transition:.2s;font-weight:500}
-  .series a:hover{background:var(--surface);border-color:var(--line)}
-  .series a.on{background:var(--accent);color:#fff}
+  .series a{font-size:13px;color:var(--ink-soft);padding:7px 13px;border-radius:100px;border:1px solid var(--line);background:var(--surface);transition:.2s;font-weight:500}
+  .series a:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+  .series a.on{background:var(--accent);color:#fff;border-color:var(--accent)}
   .series a .n{font-family:'JetBrains Mono',monospace;opacity:.6;margin-right:5px;font-size:11px}
   .series a.on .n{opacity:.8}
+  .series .logo-link{display:flex;align-items:center}
+  .series .logo-link img{height:34px;width:auto;display:block}
+
+  /* share buttons */
+  .share{display:flex;gap:10px;margin:22px 0 4px;align-items:center;flex-wrap:wrap}
+  .share-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-right:4px}
+  .share a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:8px 16px;border-radius:100px;border:1px solid var(--line);transition:.2s;color:#fff;text-decoration:none}
+  .share a:hover{opacity:.88;transform:translateY(-1px)}
+  .share a.li{background:#0a66c2;border-color:#0a66c2}
+  .share a.fb{background:#1877f2;border-color:#1877f2}
+  .share a svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
 
   /* layout */
   .grid{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:46px 0 90px}
@@ -106,7 +117,10 @@
 
 <div class="series">
   <div class="shell">
-    <span class="brand">AI · Public Health Watch</span>
+    <a href="https://www.lakeslinked.com" target="_blank" rel="noopener" class="logo-link">
+      <img src="logos/lakeslinked_primary_full_logo.png" alt="Lakes Linked" height="34">
+    </a>
+    <span class="brand">Public Health Watch</span>
     <nav>
       <a class="on" href="01-research-literature.html"><span class="n">01</span><span class="lbl">Research</span></a>
       <a href="02-clinical-trials.html"><span class="n">02</span><span class="lbl">Trials</span></a>
@@ -140,6 +154,18 @@
       <span class="eyebrow">Daily Digest · Part 01 · Research Literature</span>
       <h1>What the literature is saying about AI in care</h1>
       <p class="dek">A daily read of peer-reviewed publications and preprints on artificial intelligence in clinical and public-health settings — distilled to the signal.</p>
+
+      <div class="share">
+        <span class="share-label">Share</span>
+        <a class="li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.lakeslinked.com%2F01-research-literature" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.lakeslinked.com%2F01-research-literature" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </div>
 
       <div class="verify">
         <span class="ico">✓</span>
