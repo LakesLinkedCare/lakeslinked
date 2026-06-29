@@ -808,21 +808,7 @@ html{scroll-behavior:smooth}
 <span><span style="display:inline-block;width:13px;height:13px;border-radius:3px;background:#e2e8f0;border:1px solid #cbd5e1;vertical-align:-2px;margin-right:6px;"></span>Not yet analyzed</span>
 </div>
 <div id="mi-map" style="height:440px;border:1px solid var(--border);border-radius:12px;background:#fff;box-shadow:var(--shadow);"></div>
-<p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map →</a></p><section aria-label="Request a county burden snapshot" class="ll-request-section" id="request-county">
-<p class="ll-eyebrow">Free consultation · No commitment</p>
-<h2>Request Your County Burden Snapshot</h2>
-<p class="ll-lead">Need this for your county? Lakes Linked can prepare a planning-grade county burden snapshot using public data, transparent methods, and human-reviewed interpretation.</p>
-<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="">
-<input name="_subject" type="hidden" value="County burden snapshot request — Lakes Linked"/>
-<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
-<div class="ll-form__group"><label for="req-name-1">Your name *</label><input id="req-name-1" name="name" placeholder="Dr. Jane Smith" required="" type="text"/></div>
-<div class="ll-form__group"><label for="req-org-1">Organization *</label><input id="req-org-1" name="org" placeholder="Isabella County Health Department" required="" type="text"/></div>
-<div class="ll-form__group"><label for="req-email-1">Work email *</label><input id="req-email-1" name="email" placeholder="you@organization.org" required="" type="email"/></div>
-<div class="ll-form__group"><label for="req-county-1">County and state *</label><input id="req-county-1" name="county" placeholder="e.g. Mecosta County, Michigan" required="" type="text"/></div>
-<div class="ll-form__group ll-form__group--full"><button class="ll-btn-submit" type="submit">Send request →</button><p class="ll-form-note">No spam. Direct to Sergey's inbox. We respond within 2–3 business days.</p></div>
-<div class="ll-form-success" role="alert">✓ Request received — we'll be in touch within 2–3 business days.</div>
-</form>
-</section>
+<p style="font-size:11px;color:var(--muted);margin-top:8px;">Boundaries: US Census counties, loaded at runtime. <a href="michigan_map.html" style="color:var(--blue);font-weight:600;">Open full-screen map →</a></p>
 <script>
   (function(){
     if (typeof L === 'undefined') return;
@@ -1211,6 +1197,21 @@ html{scroll-behavior:smooth}
 </ol>
 </div>
 </div><!-- end .main -->
+<section aria-label="Request a county burden snapshot" class="ll-request-section" id="request-county">
+<p class="ll-eyebrow">Free consultation · No commitment</p>
+<h2>Request Your County Burden Snapshot</h2>
+<p class="ll-lead">Need this for your county? Lakes Linked can prepare a planning-grade county burden snapshot using public data, transparent methods, and human-reviewed interpretation.</p>
+<form action="https://formspree.io/f/xvzjqppb" class="ll-form ll-request-form" method="POST" novalidate="">
+<input name="_subject" type="hidden" value="County burden snapshot request — Lakes Linked"/>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<div class="ll-form__group"><label for="req-name-1">Your name *</label><input id="req-name-1" name="name" placeholder="Dr. Jane Smith" required="" type="text"/></div>
+<div class="ll-form__group"><label for="req-org-1">Organization *</label><input id="req-org-1" name="org" placeholder="Isabella County Health Department" required="" type="text"/></div>
+<div class="ll-form__group"><label for="req-email-1">Work email *</label><input id="req-email-1" name="email" placeholder="you@organization.org" required="" type="email"/></div>
+<div class="ll-form__group"><label for="req-county-1">County and state *</label><input id="req-county-1" name="county" placeholder="e.g. Mecosta County, Michigan" required="" type="text"/></div>
+<div class="ll-form__group ll-form__group--full"><button class="ll-btn-submit" type="submit">Send request →</button><p class="ll-form-note">No spam. Direct to Sergey's inbox. We respond within 2–3 business days.</p></div>
+<div class="ll-form-success" role="alert">✓ Request received — we'll be in touch within 2–3 business days.</div>
+</form>
+</section>
 <!-- ══ FOOTER ══ -->
 <footer>
 <div class="footer-inner">
