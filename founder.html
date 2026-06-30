@@ -20,7 +20,7 @@
     "honorificPrefix": "Dr.",
     "honorificSuffix": "MD PhD",
     "jobTitle": "Physician and Public Health Researcher",
-    "description": "Physician and public health researcher applying advanced methods at every level — turning population and health data into practical insights for communities, health departments, and grant writers.",
+    "description": "Physician and public health researcher applying advanced methods at every level — turning population and health data into practical insights for communities, health departments, and colleagues.",
     "url": "https://www.lakeslinked.com/founder.html",
     "affiliation": {"@type": "Organization", "name": "Lakes Linked"},
     "knowsAbout": ["Public health analytics", "Rural health disparities", "Population health", "AI in public health", "Epidemiology", "Community health planning"],
@@ -125,11 +125,14 @@ body{
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
   .glass{ background:var(--glass-fill-solid); }
 }
-/* specular sheen sweep on top edge */
+/* specular sheen sweep on top edge — thin band only, never washes out text */
 .sheen::before{
-  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 34%);
+  content:'';position:absolute;left:0;right:0;top:0;height:72px;
+  border-radius:inherit;pointer-events:none;z-index:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,0) 100%);
 }
+/* keep real panel content painted above the sheen highlight */
+.glass.sheen > *{position:relative;z-index:1;}
 
 /* ── HEADER — floating glass pill ── */
 header{
@@ -526,7 +529,7 @@ footer a:hover{color:#1d4ed8;}
 <span class="cred blue">PhD</span>
 <span class="cred teal">Fulbright Scholar</span>
 </div>
-<p class="hero-bio">Physician and public health researcher translating population and health data into practical insights for communities, health departments, and grant writers.</p>
+<p class="hero-bio">Physician and public health researcher translating population and health data into practical insights for communities, health departments, and colleagues.</p>
 <div class="hero-stats">
 <div class="stat">
 <div class="n">52K+</div>
