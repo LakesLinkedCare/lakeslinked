@@ -298,16 +298,16 @@
       </div>
 
       <div class="share">
-        <a class="sbtn li" id="share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Flikeslinked.com" target="_blank" rel="noopener" aria-label="Repost on LinkedIn">
+        <a class="sbtn li" id="share-li" href="https://www.linkedin.com/feed/?shareActive=true&text=AI%20has%20moved%20into%20public%20health.%20Newest%20edition%20of%20the%20daily%20digest.%20%23PublicHealth%20%23DiseaseSurveillance%20%23HealthData%20%23CDC" target="_blank" rel="noopener" aria-label="Repost on LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.2.8 24 1.77 24h20.45c.98 0 1.78-.8 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
           Repost on LinkedIn
         </a>
-        <a class="sbtn fb" id="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flikeslinked.com" target="_blank" rel="noopener" aria-label="Repost on Facebook">
+        <a class="sbtn fb" id="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flakeslinked.com" target="_blank" rel="noopener" aria-label="Repost on Facebook">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07z"/></svg>
           Repost on Facebook
         </a>
-        <a class="sbtn link" href="https://likeslinked.com" target="_blank" rel="noopener">likeslinked.com</a>
-        <a class="sbtn ghost" href="https://likeslinked.com/founder" target="_blank" rel="noopener">Founder</a>
+        <a class="sbtn link" id="link-site" href="https://lakeslinked.com" target="_blank" rel="noopener">lakeslinked.com</a>
+        <a class="sbtn ghost" id="link-founder" href="https://lakeslinked.com/founder.html" target="_blank" rel="noopener">Founder</a>
       </div>
 
       <div class="verify">
@@ -749,15 +749,28 @@
   pickActiveDay();
   updateActiveLink();
 
-  /* ---------- Share buttons: use live URL when hosted ---------- */
+  /* ---------- Share + external buttons ----------
+     ONE place to configure. Set SITE_URL to your public address once it is live.
+     If this page is itself served over http(s), that live URL is shared instead. */
   (function(){
-    var href = window.location.href || '';
-    var pageUrl = href.indexOf('http') === 0 ? href : 'https://likeslinked.com';
-    var enc = encodeURIComponent(pageUrl);
+    var SITE_URL = 'https://lakeslinked.com';
+    var FOUNDER_URL = 'https://lakeslinked.com/founder.html';
+    var here = window.location.href || '';
+    var shareUrl = here.indexOf('http') === 0 ? here : SITE_URL;
+    var blurb = 'AI has moved into public health. Newest edition of the daily digest: ' +
+                shareUrl + ' #PublicHealth #DiseaseSurveillance #HealthData #CDC';
+
     var li = document.getElementById('share-li');
     var fb = document.getElementById('share-fb');
-    if(li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + enc;
-    if(fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + enc;
+    var site = document.getElementById('link-site');
+    var founder = document.getElementById('link-founder');
+
+    // LinkedIn: open the post composer prefilled (works even without a scrapeable URL)
+    if(li) li.href = 'https://www.linkedin.com/feed/?shareActive=true&text=' + encodeURIComponent(blurb);
+    // Facebook: sharer needs a URL to build a preview
+    if(fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
+    if(site) site.href = SITE_URL;
+    if(founder) founder.href = FOUNDER_URL;
   })();
 
   /* ---------- Voice read-aloud ---------- */
