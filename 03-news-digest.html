@@ -3,221 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News Feed · AI for Public Health · latest 03 Jul 2026</title>
+<title>AI in Public Health — News Digest · Lakes Linked · June 2026</title>
+<meta name="description" content="What AI is doing in real hospitals, clinics, and public health systems right now — cardiac arrest dispatch, radiology at scale, maternal heart failure detection, epidemic surveillance. Sourced digest for clinicians and health planners.">
+<meta name="keywords" content="AI in healthcare, artificial intelligence public health, clinical AI deployment, AI epidemic surveillance, ambient AI scribes, digital health 2026, AI radiology, machine learning hospital, healthcare AI outcomes, public health technology, AI maternal health, predictive analytics EHR, AI emergency dispatch, BlueDot epidemic intelligence, ambient documentation AI, AI burnout reduction clinicians">
+<meta property="og:title" content="AI in Public Health — News Digest · June 2026">
+<meta property="og:description" content="Cardiac arrest AI, maternal heart failure detection, AI imaging at 22 hospital sites, and the fragmentation problem in epidemic surveillance. Sourced digest for public health professionals.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lakeslinked.com/03-news-digest.html">
+<meta name="author" content="Dr. Sergey Soshnikov, MD PhD — Lakes Linked">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lakeslinked.com/03-news-digest.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI in Public Health — News Digest, June 2026",
+  "description": "Sourced digest of AI deployments in clinical and public health settings: emergency dispatch, radiology, maternal health, epidemic surveillance.",
+  "author": {"@type": "Person", "name": "Sergey Soshnikov", "jobTitle": "Physician and Public Health Researcher"},
+  "publisher": {"@type": "Organization", "name": "Lakes Linked", "url": "https://lakeslinked.com"},
+  "datePublished": "2026-06-28",
+  "dateModified": "2026-06-28",
+  "mainEntityOfPage": "https://lakeslinked.com/03-news-digest.html",
+  "keywords": ["AI in healthcare", "public health AI", "clinical AI deployment", "epidemic surveillance", "digital health"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#141733;--ink-soft:#3f4463;--ink-faint:#767b9c;
-    --glass:rgba(255,255,255,.55);
-    --glass-strong:rgba(255,255,255,.72);
-    --glass-soft:rgba(255,255,255,.34);
-    --stroke:rgba(255,255,255,.65);
-    --stroke-soft:rgba(255,255,255,.4);
-    --shadow:0 10px 40px rgba(31,38,96,.16);
-    --shadow-lg:0 20px 60px rgba(31,38,96,.22);
-    --grad:linear-gradient(120deg,#5b6cff 0%,#a15cff 42%,#ff5ca0 78%,#ff9d5c 100%);
-    --grad-soft:linear-gradient(120deg,rgba(91,108,255,.16),rgba(255,92,160,.16));
-    --maxw:1200px;
+    --bg:#f5f2ec;--surface:#fffdf8;--ink:#211a16;--ink-soft:#574d46;
+    --ink-faint:#938a80;--line:#e6ddd0;--accent:#c0612a;--accent-deep:#9c4a1c;--accent-soft:#f8ece1;--maxw:1180px;
+    /* liquid glass tokens */
+    --glass-bg:rgba(255,253,248,.55);--glass-bg-strong:rgba(255,253,248,.74);--glass-bg-soft:rgba(255,253,248,.40);
+    --glass-border:rgba(255,255,255,.65);--glass-border-soft:rgba(255,255,255,.42);
+    --glass-blur:18px;--glass-blur-nav:22px;--glass-sat:165%;
+    --glass-highlight:inset 0 1px 0 rgba(255,255,255,.75);
+    --glass-highlight-strong:inset 0 1px 0 rgba(255,255,255,.92);
+    --glass-shadow:0 8px 30px rgba(60,40,25,.10),0 2px 8px rgba(60,40,25,.06);
+    --glass-shadow-hover:0 16px 44px rgba(60,40,25,.16),0 4px 12px rgba(60,40,25,.08);
+    --glass-shadow-accent:0 10px 34px rgba(192,97,42,.18);
+    --r-lg:22px;--r-md:18px;--ease:cubic-bezier(.22,.61,.36,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    color:var(--ink);
-    font-family:'Inter',system-ui,sans-serif;line-height:1.62;
-    -webkit-font-smoothing:antialiased;
-    background:#eaf0ff;
-    position:relative;overflow-x:hidden;
-  }
-  /* ---------- liquid-glass background: drifting colour blobs ---------- */
-  .bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:
-      radial-gradient(120% 120% at 10% 0%,#e9f0ff 0%,#eef0ff 40%,#f6ecff 100%)}
-  .bg span{position:absolute;border-radius:50%;filter:blur(60px);opacity:.65;mix-blend-mode:normal;animation:drift 22s ease-in-out infinite}
-  .bg .b1{width:46vw;height:46vw;left:-8vw;top:-6vw;background:radial-gradient(circle,#7b8cff,transparent 68%)}
-  .bg .b2{width:42vw;height:42vw;right:-8vw;top:2vw;background:radial-gradient(circle,#ff7bc4,transparent 68%);animation-delay:-6s}
-  .bg .b3{width:40vw;height:40vw;left:16vw;bottom:-12vw;background:radial-gradient(circle,#5ce0d6,transparent 68%);animation-delay:-11s}
-  .bg .b4{width:38vw;height:38vw;right:6vw;bottom:-10vw;background:radial-gradient(circle,#ffb15c,transparent 70%);animation-delay:-16s}
-  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(4vw,3vw) scale(1.08)}66%{transform:translate(-3vw,2vw) scale(.94)}}
-  @media (prefers-reduced-motion:reduce){.bg span{animation:none}}
-
+  body{background:linear-gradient(180deg,#f7f3ec 0%,#f2ede4 55%,#f4efe7 100%);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(38vw 38vw at 12% 8%,rgba(192,97,42,.16),transparent 60%),radial-gradient(34vw 34vw at 88% 16%,rgba(120,170,190,.14),transparent 62%),radial-gradient(40vw 40vw at 78% 88%,rgba(140,180,150,.13),transparent 64%),radial-gradient(30vw 30vw at 22% 92%,rgba(212,150,90,.12),transparent 62%);filter:blur(8px) saturate(108%)}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(120vw 80vh at 50% -10%,rgba(255,255,255,.35),transparent 55%)}
   a{color:inherit;text-decoration:none}
   .shell{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 
-  /* reusable glass surface */
-  .glass{
-    background:var(--glass);
-    backdrop-filter:blur(22px) saturate(185%);
-    -webkit-backdrop-filter:blur(22px) saturate(185%);
-    border:1px solid var(--stroke);
-    border-radius:24px;
-    box-shadow:var(--shadow);
-    position:relative;
-  }
-  .glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-    background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0) 42%);opacity:.9}
-
-  /* ---------- top series bar ---------- */
-  .series{position:sticky;top:12px;z-index:60;margin:12px auto 0;max-width:var(--maxw);padding:0 26px}
-  .series-inner{display:flex;align-items:center;gap:14px;height:58px;padding:0 18px;border-radius:20px;
-    background:var(--glass-strong);backdrop-filter:blur(22px) saturate(185%);-webkit-backdrop-filter:blur(22px) saturate(185%);
-    border:1px solid var(--stroke);box-shadow:var(--shadow)}
-  .series .brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:-.01em}
-  .series .brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .series{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.62);-webkit-backdrop-filter:blur(var(--glass-blur-nav)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur-nav)) saturate(var(--glass-sat));border-bottom:1px solid var(--glass-border);box-shadow:var(--glass-shadow),var(--glass-highlight)}
+  .series .shell{display:flex;align-items:center;gap:14px;height:54px}
+  .series .brand{font-family:'Fraunces',serif;font-weight:600;font-size:15px;letter-spacing:-.01em}
   .series nav{margin-left:auto;display:flex;gap:6px}
-  .series a{font-size:13px;color:var(--ink-soft);padding:8px 14px;border-radius:100px;transition:.2s;font-weight:500}
-  .series a:hover{background:rgba(255,255,255,.6)}
-  .series a.on{background:var(--grad);color:#fff;box-shadow:0 6px 18px rgba(160,92,255,.35)}
+  .series a{font-size:13px;color:var(--ink-soft);padding:7px 13px;border-radius:100px;border:1px solid var(--glass-border);background:var(--glass-bg-soft);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:.2s;font-weight:500}
+  .series a:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+  .series a.on{background:var(--accent);color:#fff;border-color:var(--accent)}
   .series a .n{font-family:'JetBrains Mono',monospace;opacity:.6;margin-right:5px;font-size:11px}
+  .series a.on .n{opacity:.85}
+  .series .logo-link{display:flex;align-items:center}
+  .series .logo-link img{height:34px;width:auto;display:block}
 
-  .grid{display:grid;grid-template-columns:250px 1fr;gap:40px;padding:34px 0 90px}
-  aside{position:sticky;top:88px;align-self:start}
-  .toc-h{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
-  .side-pad{padding:18px}
-  .toc a{display:block;font-size:14px;color:var(--ink-soft);padding:8px 12px;border-radius:12px;transition:.18s;margin-bottom:2px}
-  .toc a:hover{background:rgba(255,255,255,.55);color:var(--ink)}
-  .toc a.active{color:#fff;background:var(--grad);font-weight:600;box-shadow:0 6px 16px rgba(160,92,255,.32)}
-  .aside-card{margin-top:16px;padding:16px 18px;font-size:12.5px;color:var(--ink-soft);border-radius:18px}
+  /* share buttons */
+  .share{display:flex;gap:10px;margin:22px 0 4px;align-items:center;flex-wrap:wrap}
+  .share-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-right:4px}
+  .share a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:8px 16px;border-radius:100px;border:1px solid var(--line);transition:.2s;color:#fff;text-decoration:none}
+  .share a:hover{opacity:.88;transform:translateY(-1px)}
+  .share a.li{background:#0a66c2;border-color:#0a66c2}
+  .share a.fb{background:#1877f2;border-color:#1877f2}
+  .share a svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+
+  .grid{display:grid;grid-template-columns:230px 1fr;gap:48px;padding:46px 0 90px}
+  aside{position:sticky;top:78px;align-self:start}
+  .toc-h{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+  .toc a{display:block;font-size:14px;color:var(--ink-soft);padding:7px 0 7px 15px;border-left:2px solid var(--line);transition:.2s}
+  .toc a:hover{color:var(--ink);border-left-color:var(--accent)}
+  .aside-card{margin-top:26px;padding:16px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);font-size:12.5px;color:var(--ink-soft);box-shadow:var(--glass-shadow),var(--glass-highlight);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat))}
   .aside-card b{color:var(--ink)}
-  .toc-editions{margin-top:16px;padding:16px 18px;border-radius:18px}
-  .toc-editions .toc-h{margin-bottom:10px}
-  .toc-editions a{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-soft);padding:9px 12px;border:1px solid var(--stroke-soft);border-radius:12px;margin-bottom:7px;background:var(--glass-soft);transition:.18s}
-  .toc-editions a:hover{color:var(--ink);border-color:rgba(160,92,255,.5)}
-  .toc-editions a .badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
-  .toc-day{transition:opacity .32s ease, transform .32s ease}
-  .toc-day[hidden]{display:none}
-  .toc-day.fade{opacity:0;transform:translateY(8px)}
+  header.top{margin-bottom:14px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 18px}
+  .dek{font-size:18px;color:var(--ink-soft);max-width:60ch}
 
-  /* ---------- hero ---------- */
-  header.top{margin-bottom:16px;padding:34px 34px 30px}
-  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  h1{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(34px,5.4vw,58px);line-height:1.03;letter-spacing:-.02em;margin:16px 0 18px}
-  h1 .shine{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .dek{font-size:18px;color:var(--ink-soft);max-width:64ch;margin-bottom:12px}
-  .dek + .dek{font-size:15.5px;max-width:68ch}
-
-  /* hashtag chips */
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-  .htag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;color:var(--ink-soft);
-    padding:6px 12px;border-radius:100px;background:var(--glass-soft);border:1px solid var(--stroke-soft);
-    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:.18s}
-  .htag:hover{color:#fff;background:var(--grad);border-color:transparent}
-  .htag::before{content:"#";opacity:.5;margin-right:1px}
-
-  /* share + external links */
-  .share{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .sbtn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink);
-    padding:10px 16px;border-radius:100px;background:var(--glass-strong);border:1px solid var(--stroke);
-    backdrop-filter:blur(14px) saturate(180%);-webkit-backdrop-filter:blur(14px) saturate(180%);
-    box-shadow:var(--shadow);transition:.18s;cursor:pointer}
-  .sbtn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-  .sbtn svg{width:16px;height:16px;flex:none}
-  .sbtn.li{color:#0a66c2}
-  .sbtn.fb{color:#1877f2}
-  .sbtn.link{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 8px 22px rgba(160,92,255,.35)}
-  .sbtn.link:hover{color:#fff}
-  .sbtn.ghost{color:var(--ink-soft)}
-
-  .verify{display:flex;gap:14px;align-items:flex-start;margin-top:22px;padding:16px 18px;border-radius:18px;
-    background:var(--grad-soft);border:1px solid var(--stroke-soft)}
+  .verify{display:flex;gap:14px;align-items:flex-start;margin:26px 0 8px;padding:16px 18px;background:linear-gradient(180deg,rgba(248,236,225,.62),rgba(255,253,248,.42));border:1px solid rgba(192,97,42,.3);border-left:3px solid var(--accent);border-radius:var(--r-md);box-shadow:var(--glass-shadow-accent),var(--glass-highlight);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat))}
   .verify .ico{font-size:18px}
-  .verify p{font-size:13.5px;color:var(--ink-soft);line-height:1.55}
-  .verify b{color:var(--ink)}
+  .verify p{font-size:13.5px;color:#6e3a18;line-height:1.55}
+  .verify b{color:#5a2f12}
 
-  /* ---------- day blocks ---------- */
-  .day-block{margin-top:8px}
-  .day-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:22px 0 6px;padding:12px 18px;border-radius:16px}
-  .day-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:12px;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--ink);font-weight:500}
-  .day-eyebrow .dot{width:9px;height:9px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 4px rgba(160,92,255,.18)}
-  .gathered{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-faint)}
-  .listen{margin-left:auto;font:inherit;font-size:12.5px;font-weight:500;color:var(--ink-soft);cursor:pointer;
-    padding:7px 13px;border-radius:100px;background:var(--glass-soft);border:1px solid var(--stroke-soft)}
-  .listen:hover{color:var(--ink)}
-
-  /* per-edition contents chips (added TOC) */
-  .contents{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 8px;padding:12px 16px;border-radius:16px}
-  .contents .clabel{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-right:2px}
-  .contents a{font-size:12.5px;font-weight:500;color:var(--ink-soft);padding:6px 12px;border-radius:100px;
-    background:var(--glass-soft);border:1px solid var(--stroke-soft);transition:.18s}
-  .contents a:hover{color:#fff;background:var(--grad);border-color:transparent}
-  .contents a .cn{font-family:'JetBrains Mono',monospace;font-size:10px;opacity:.6;margin-right:5px}
-
-  section{padding-top:34px;scroll-margin-top:96px}
-  h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-.01em;
-    margin-bottom:14px;display:flex;align-items:baseline;gap:12px;padding-left:4px}
-  h2 .hn{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lead{color:var(--ink-soft);font-size:15px;max-width:70ch;margin:0 4px 18px;padding-left:4px}
+  section{padding-top:50px;scroll-margin-top:76px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(23px,3vw,31px);letter-spacing:-.01em;margin-bottom:8px;display:flex;align-items:baseline;gap:12px}
+  h2 .hn{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);font-weight:500}
+  .lead{color:var(--ink-soft);font-size:15.5px;max-width:66ch;margin-bottom:22px}
 
   /* lead story */
-  .lead-story{padding:26px 28px;margin-bottom:6px}
-  .lead-story .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px;display:inline-block;font-weight:600}
-  .lead-story h3{font-family:'Space Grotesk',sans-serif;font-size:25px;font-weight:600;line-height:1.18;margin-bottom:12px;letter-spacing:-.01em}
-  .lead-story p{font-size:15.5px;color:var(--ink-soft);margin-bottom:10px;max-width:72ch}
+  .lead-story{background:var(--glass-bg-strong);border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:26px;margin-bottom:18px;box-shadow:var(--glass-shadow),var(--glass-highlight);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .lead-story:hover{transform:translateY(-3px);box-shadow:var(--glass-shadow-hover),var(--glass-highlight-strong)}
+  .lead-story .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+  .lead-story h3{font-family:'Fraunces',serif;font-size:24px;font-weight:600;line-height:1.2;margin-bottom:10px}
+  .lead-story p{font-size:15.5px;color:var(--ink-soft);margin-bottom:8px;max-width:70ch}
 
   .stories{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .story{padding:22px;display:flex;flex-direction:column}
-  .story .tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:#a15cff;margin-bottom:9px;font-weight:600}
-  .story .rank{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-faint);float:right;letter-spacing:.05em}
-  .story h3{font-family:'Space Grotesk',sans-serif;font-size:18.5px;font-weight:600;line-height:1.24;margin-bottom:8px;letter-spacing:-.01em}
-  .story p{font-size:14px;color:var(--ink-soft);margin-bottom:12px}
-  .src{margin-top:auto;display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .src::after{content:"↗";font-size:11px;-webkit-text-fill-color:#a15cff}
-  .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-  .card-tags .htag{font-size:10.5px;padding:4px 10px}
+  .story{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;box-shadow:var(--glass-shadow),var(--glass-highlight);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease)}
+  .story:hover{transform:translateY(-4px);background:var(--glass-bg-strong);box-shadow:var(--glass-shadow-hover),var(--glass-highlight-strong)}
+  .story .tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+  .story h3{font-family:'Fraunces',serif;font-size:18px;font-weight:600;line-height:1.25;margin-bottom:7px}
+  .story p{font-size:14px;color:var(--ink-soft);margin-bottom:10px}
+  .src{margin-top:auto;display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--accent);font-weight:500}
+  .src::after{content:"↗";font-size:11px}
+  .src:hover{text-decoration:underline}
+  .f{color:var(--accent-deep);border-bottom:1px solid rgba(192,97,42,.3);font-weight:500;transition:.2s}
+  .f:hover{background:var(--accent-soft);border-bottom-color:var(--accent)}
 
   /* numbers band */
-  .band{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
-  .b{padding:20px;border-radius:20px;display:block;transition:.2s}
-  .b:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-  .b .n{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;line-height:1;margin-bottom:8px;letter-spacing:-.02em;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .b .l{font-size:12.5px;color:var(--ink-soft);line-height:1.45}
+  .band{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
+  .b{background:linear-gradient(180deg,rgba(248,236,225,.55),rgba(255,253,248,.45));border:1px solid var(--glass-border);border-radius:var(--r-md);padding:18px;box-shadow:var(--glass-shadow),var(--glass-highlight);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+  .b:hover{transform:translateY(-4px);box-shadow:var(--glass-shadow-accent),var(--glass-highlight-strong)}
+  .b .n{font-family:'Fraunces',serif;font-weight:600;font-size:28px;color:var(--accent-deep);line-height:1}
+  .b .l{font-size:12.5px;color:var(--ink-faint);margin-top:7px}
 
-  /* methods panel */
-  .panel{padding:8px 6px;border-radius:20px}
-  .kv{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:14px 20px;border-bottom:1px solid var(--stroke-soft);font-size:13.5px}
-  .kv:last-child{border-bottom:0}
-  .kv b{color:var(--ink);font-weight:600}
-  .kv span{color:var(--ink-soft)}
+  .kv{display:flex;gap:10px;font-size:13.5px;color:var(--ink-soft);padding:7px 0;border-bottom:1px solid var(--line)}
+  .kv:last-child{border-bottom:none}
+  .kv b{color:var(--ink);min-width:120px;font-weight:600}
+  .panel{background:var(--glass-bg-strong);border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:8px 18px;box-shadow:var(--glass-shadow),var(--glass-highlight);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat));backdrop-filter:blur(var(--glass-blur)) saturate(var(--glass-sat))}
 
-  /* divider */
-  .day-divider{margin:40px 0 8px;text-align:center}
-  .day-divider .pill{display:inline-flex;flex-direction:column;gap:2px;padding:12px 22px;border-radius:18px;
-    background:var(--glass-soft);border:1px solid var(--stroke-soft);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  .day-divider .up{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-faint)}
-  .day-divider .prev{font-size:13px;font-weight:600;color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--ink-faint);font-size:13px}
+  footer code{font-family:'JetBrains Mono',monospace;color:var(--accent-deep)}
 
-  footer{margin-top:34px;padding:22px 26px;border-radius:20px;font-size:13px;color:var(--ink-soft);text-align:center}
-  footer .f{font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  footer code{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink)}
+  /* edition divider + badge */
+  .edition-divider{display:flex;align-items:center;gap:16px;margin:64px 0 0}
+  .edition-divider .line{flex:1;height:1px;background:var(--line)}
+  .edition-divider .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap}
+  .ed-badge{display:inline-block;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--accent-deep);background:var(--glass-bg-soft);border:1px solid var(--glass-border);border-radius:100px;padding:5px 13px;box-shadow:var(--glass-highlight);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 
-  @media(max-width:900px){
-    .grid{grid-template-columns:1fr;gap:22px;padding:24px 0 70px}
-    aside{position:static}
+  /* archive accordion */
+  #archive{padding-top:34px}
+  .arc-list{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .arc{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--glass-highlight);-webkit-backdrop-filter:blur(12px) saturate(var(--glass-sat));backdrop-filter:blur(12px) saturate(var(--glass-sat));transition:box-shadow .35s var(--ease),background .35s var(--ease)}
+  .arc[open]{background:var(--glass-bg-strong);box-shadow:var(--glass-shadow),var(--glass-highlight-strong)}
+  .arc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px}
+  .arc summary::-webkit-details-marker{display:none}
+  .arc summary:hover{background:rgba(248,236,225,.4)}
+  .arc summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .arc-date{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-faint);min-width:84px}
+  .arc-badge{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--glass-border);background:var(--glass-bg-soft);border-radius:100px;padding:3px 9px}
+  .arc-title{font-family:'Fraunces',serif;font-weight:600;font-size:16px;flex:1;line-height:1.25}
+  .arc-chev{font-family:'JetBrains Mono',monospace;font-size:20px;line-height:1;color:var(--ink-faint);transition:transform .35s var(--ease),color .35s}
+  .arc[open] .arc-chev{transform:rotate(45deg);color:var(--accent)}
+  .arc-body{padding:0 18px 18px;border-top:1px solid var(--line)}
+  .arc-body p{font-size:14px;color:var(--ink-soft);margin:14px 0 10px;max-width:72ch}
+  .arc-empty{font-size:13px;color:var(--ink-faint);font-style:italic;padding:14px 18px;border:1px dashed var(--glass-border-soft);border-radius:var(--r-md);background:var(--glass-bg-soft)}
+
+  @media(max-width:860px){
+    .grid{grid-template-columns:1fr;gap:0}
+    aside{position:static;margin-bottom:30px}
+    .toc{display:flex;flex-wrap:wrap;gap:4px}
+    .toc a{border-left:none;border:1px solid var(--line);border-radius:100px;padding:6px 12px}
+    .aside-card{display:none}
     .stories{grid-template-columns:1fr}
-    .series nav{display:none}
+    .band{grid-template-columns:repeat(2,1fr)}
+    .series nav a:not(.on) .lbl{display:none}
+    .arc summary{flex-wrap:wrap;gap:8px}
+    .arc-title{flex-basis:100%;order:3}
+    .edition-divider .lbl{white-space:normal;text-align:center}
+    :root{--glass-blur:14px;--glass-blur-nav:16px}
+  }
+
+  /* fallback when backdrop-filter unsupported */
+  @supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+    .lead-story,.story,.panel,.aside-card,.arc{background:var(--surface)}
+    .series{background:rgba(255,253,248,.98)}
+    .b,.verify{background:var(--accent-soft)}
+    .arc[open]{background:var(--surface)}
+  }
+  /* respect reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .lead-story,.story,.b,.arc,.arc-chev{transition:none}
+    .lead-story:hover,.story:hover,.b:hover{transform:none}
   }
 </style>
 </head>
 <body>
 
-<div class="bg"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
-
-<!-- ===================== TOP SERIES BAR ===================== -->
 <div class="series">
-  <div class="series-inner">
-    <span class="brand">🫧 <b>AI · Public Health</b> Feed</span>
+  <div class="shell">
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener" class="logo-link">
+      <img src="logos/lakeslinked_primary_full_logo.png" alt="Lakes Linked" height="34">
+    </a>
+    <span class="brand">Public Health Watch</span>
     <nav>
-      <a href="01-research-literature.html"><span class="n">01</span>Research</a>
-      <a href="02-clinical-trials.html"><span class="n">02</span>Trials</a>
-      <a href="#overview" class="on"><span class="n">03</span>News</a>
+      <a href="01-research-literature.html"><span class="n">01</span><span class="lbl">Research</span></a>
+      <a href="02-clinical-trials.html"><span class="n">02</span><span class="lbl">Trials</span></a>
+      <a class="on" href="03-news-digest.html"><span class="n">03</span><span class="lbl">News</span></a>
     </nav>
   </div>
 </div>
@@ -225,613 +204,165 @@
 <div class="shell">
 <div class="grid">
 
-  <!-- ===================== FLOATING PER-DAY TOC ===================== -->
   <aside>
-    <div class="glass side-pad">
-      <div class="toc-h">On this page</div>
-
-      <!-- July 3 TOC (default visible · newest) -->
-      <div class="toc-day" id="toc-d03" data-day="d03">
-        <nav class="toc">
-          <a href="#overview">Overview</a>
-          <a href="#d03-lead">Lead story</a>
-          <a href="#d03-data">Public health &amp; data</a>
-          <a href="#d03-surveillance">Surveillance</a>
-          <a href="#d03-numbers">By the numbers</a>
-          <a href="#d03-methods">Methods</a>
-        </nav>
-      </div>
-
-      <!-- July 2 TOC -->
-      <div class="toc-day" id="toc-d02" data-day="d02">
-        <nav class="toc">
-          <a href="#d02-lead">Lead story</a>
-          <a href="#d02-data">Public health &amp; data</a>
-          <a href="#d02-numbers">By the numbers</a>
-          <a href="#d02-methods">Methods</a>
-        </nav>
-      </div>
-
-      <!-- June 30 TOC -->
-      <div class="toc-day" id="toc-d30" data-day="d30">
-        <nav class="toc">
-          <a href="#d30-lead">Lead story</a>
-          <a href="#d30-programs">Screening &amp; programs</a>
-          <a href="#d30-numbers">By the numbers</a>
-          <a href="#d30-methods">Methods</a>
-        </nav>
-      </div>
-
-      <!-- June 28 TOC -->
-      <div class="toc-day" id="toc-d28" data-day="d28">
-        <nav class="toc">
-          <a href="#d28-lead">Lead story</a>
-          <a href="#d28-numbers">By the numbers</a>
-          <a href="#d28-methods">Methods</a>
-        </nav>
-      </div>
-    </div>
-
-    <div class="glass aside-card">
-      <b>Scope</b><br>Public health and AI only. Surveillance, forecasting, CDC and data, antimicrobial resistance. No clinical, imaging or trials.
-    </div>
-
-    <div class="glass toc-editions">
-      <div class="toc-h">Editions</div>
-      <a href="#day-d03"><span>03 July 2026</span><span class="badge">Today</span></a>
-      <a href="#day-d02"><span>02 July 2026</span><span class="badge">Earlier</span></a>
-      <a href="#day-d30"><span>30 June 2026</span><span class="badge">Earlier</span></a>
-      <a href="#day-d28"><span>28 June 2026</span><span class="badge">Earlier</span></a>
+    <div class="toc-h">On this page</div>
+    <nav class="toc">
+      <a href="#overview">Overview</a>
+      <a href="#lead">Lead story</a>
+      <a href="#deployments">Deployments</a>
+      <a href="#surveillance">Surveillance</a>
+      <a href="#numbers">By the numbers</a>
+      <a href="#methods">Methods</a>
+      <a href="#archive">Archive</a>
+    </nav>
+    <div class="aside-card">
+      <b>Current edition</b><br>No. 03 · 28 June 2026<br><br>
+      <b>Part 3 of 3</b><br>News &amp; deployments. Literature and trials are separate files.<br><br>
+      <b>Archive</b><br><a href="#archive" style="color:var(--accent-deep)">All past editions →</a>
     </div>
   </aside>
 
   <main>
-    <!-- ===================== HERO ===================== -->
-    <header class="glass top" id="overview">
-      <span class="eyebrow">Daily Digest · Part 03 · News Feed · latest 03 Jul 2026</span>
-      <h1>AI for <span class="shine">public health</span>,<br>not the hospital ward</h1>
-      <p class="dek">This is a running feed about AI doing population-scale work: watching for outbreaks, forecasting epidemics, shaping CDC strategy and data, tracking antimicrobial resistance. Newest edition sits on top. We leave out bedside tools, hospital operations, and medical imaging on purpose, so nothing here is about a single patient.</p>
-      <p class="dek">Today's lead is a genuinely fun one. Language models now beat the reference forecast for COVID hospitalizations. Below that you'll find the week's best public-health signals: generative AI reading infection charts, machine learning mapping HIV and flu, resistance prediction from genomes, and clever ways of building health data where official numbers just don't exist. The 2, 30 and 28 June editions follow, all trimmed to the same public-health lens.</p>
-      <div class="tags">
-        <a class="htag">PublicHealthAI</a><a class="htag">EpidemicIntelligence</a><a class="htag">DiseaseSurveillance</a>
-        <a class="htag">CDC</a><a class="htag">Forecasting</a><a class="htag">AMR</a><a class="htag">HealthData</a>
-      </div>
+    <header class="top" id="overview">
+      <span class="eyebrow">Daily Digest · Part 03 · News · June 2026</span>
+      <br><span class="ed-badge">Edition No. 03 · 28 June 2026 · Current</span>
+      <h1>AI in clinical care: what is actually deployed, and what the numbers really mean</h1>
+      <p class="dek">Cardiac arrest dispatch, maternal heart failure detection, radiology at 22 hospital sites, and the unsolved fragmentation problem in epidemic surveillance — with corrected sourcing and evidence grading for each claim.</p>
 
       <div class="share">
-        <a class="sbtn li" id="share-li" href="https://www.linkedin.com/feed/?shareActive=true&text=AI%20has%20moved%20into%20public%20health.%20Newest%20edition%20of%20the%20daily%20digest.%20%23PublicHealth%20%23DiseaseSurveillance%20%23HealthData%20%23CDC" target="_blank" rel="noopener" aria-label="Repost on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.2.8 24 1.77 24h20.45c.98 0 1.78-.8 1.78-1.75V1.75C24 .78 23.2 0 22.22 0z"/></svg>
-          Repost on LinkedIn
+        <span class="share-label">Share</span>
+        <a class="li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Flakeslinked.com%2F03-news-digest" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
         </a>
-        <a class="sbtn fb" id="share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flakeslinked.com" target="_blank" rel="noopener" aria-label="Repost on Facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07z"/></svg>
-          Repost on Facebook
+        <a class="fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flakeslinked.com%2F03-news-digest" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
         </a>
-        <a class="sbtn link" id="link-site" href="https://lakeslinked.com" target="_blank" rel="noopener">lakeslinked.com</a>
-        <a class="sbtn ghost" id="link-founder" href="https://lakeslinked.com/founder.html" target="_blank" rel="noopener">Founder</a>
       </div>
 
       <div class="verify">
-        <span class="ico">🫧</span>
-        <p>Put together each morning at 08:00 by an AI research assistant for a public-health professor, then checked against the original reporting. Every claim links back to its source, so read the original whenever you want.</p>
+        <span class="ico">⚠</span>
+        <p><b>Evidence disclosure.</b> Sources in this digest include vendor websites, health system announcements, trade press (AHA market scan, Becker's), and one peer-reviewed perspective article. None of the operational claims below have been independently replicated or published in an RCT. Where a figure comes from a vendor or institution reporting on its own deployment, this is noted. Treat all figures as preliminary and institution-reported unless otherwise stated. Click any source link to read the original.</p>
       </div>
     </header>
 
-    <!-- ===================== DAY BLOCK · 03 JULY 2026 (NEWEST) ===================== -->
-    <div class="day-block" id="day-d03" data-day="d03">
-      <div class="glass day-head">
-        <span class="day-eyebrow"><span class="dot"></span>Today · 03 July 2026</span>
-        <span class="gathered">Gathered 03 Jul 2026 · 08:00</span>
-        <button class="listen" id="listen-d03" type="button" aria-pressed="false" hidden>🔊 Listen / Слушать</button>
+    <section id="lead">
+      <h2><span class="hn">01</span> Lead story</h2>
+      <div class="lead-story">
+        <span class="tag">Emergency response · 911 dispatch · vendor-reported</span>
+        <h3>AI on emergency calls: a reported 13% reduction in stroke handling time at Seattle Medic One</h3>
+        <p>Corti — a Danish AI platform originally built to detect cardiac arrest patterns during emergency calls — is deployed at Seattle Fire Department's Medic One, which handles 149,000 calls per year. According to Corti's own case study data, stroke call handling time fell by approximately 13% following deployment; Boston EMS and SOS Alarm (Sweden) report similar operational improvements. <b>Note on evidence:</b> these figures are vendor-reported, not from an independent peer-reviewed study. Corti's strongest published evidence base is for out-of-hospital cardiac arrest detection (Blomberg et al., <em>Resuscitation</em> 2021), where prospective data exists. The stroke application is newer and less studied. Whether results at a large urban EMS system like Medic One would generalize to rural or under-resourced settings is an open question.</p>
+        <a class="src" href="https://www.corti.ai" target="_blank" rel="noopener">Corti · Emergency AI platform (vendor site)</a>
       </div>
+    </section>
 
-      <!-- per-edition contents (added TOC) -->
-      <div class="glass contents">
-        <span class="clabel">Contents</span>
-        <a href="#d03-lead"><span class="cn">01</span>Lead</a>
-        <a href="#d03-data"><span class="cn">02</span>Public health &amp; data</a>
-        <a href="#d03-surveillance"><span class="cn">03</span>Surveillance</a>
-        <a href="#d03-numbers"><span class="cn">04</span>By the numbers</a>
-        <a href="#d03-methods"><span class="cn">05</span>Methods</a>
+    <section id="deployments">
+      <h2><span class="hn">02</span> Clinical deployments: what health systems are reporting</h2>
+      <p class="lead">Four cases from AHA's May 2026 health system scan and Becker's June 2026 roundup. These are institution-reported outcomes, not RCT findings — each is labeled accordingly.</p>
+      <div class="stories">
+        <div class="story">
+          <span class="tag">Maternal health · Mayo Clinic · institution-reported</span>
+          <h3>AI stethoscope associated with doubled detection of peripartum cardiomyopathy</h3>
+          <p>Mayo Clinic deployed an AI-powered digital stethoscope to screen for peripartum cardiomyopathy (PPCM) — a serious but rare heart condition affecting approximately 1 in 2,000 pregnant people. PPCM is a significant contributor to maternal cardiac mortality in the US (cardiovascular disease as a category is among the leading causes of pregnancy-related death, per CDC MMWR). According to Mayo Clinic's self-reported data, physicians identified <b>twice as many patients</b> with PPCM compared to standard diagnostic pathways — though the baseline rate and comparison period are not specified in the available reporting. Spontaneous recovery occurs in roughly 50–70% of PPCM patients; earlier detection expands the treatment window and avoids delayed diagnosis in the remainder.</p>
+          <a class="src" href="https://www.aha.org/aha-center-health-innovation-market-scan/2026-05-12-4-health-systems-transforming-care-ai" target="_blank" rel="noopener">AHA · 4 Health Systems Transforming Care with AI</a>
+        </div>
+        <div class="story">
+          <span class="tag">Fetal imaging · Mount Sinai West · institution-reported</span>
+          <h3>FDA-cleared AI ultrasound: 97%+ detection rate for major congenital heart defects</h3>
+          <p>Mount Sinai West (New York City) reports using an FDA-cleared AI ultrasound tool to screen for major structural congenital heart defects (CHD) during routine prenatal care, achieving a detection rate above <b>97%</b>. Major structural CHD affects roughly 6–8 per 1,000 births. The 97% figure is institution-reported; the comparison arm, reference standard, and whether this reflects sensitivity, PPV, or overall accuracy are not specified in the AHA market scan. The meaningful clinical benefit of tools like this is largest in settings where specialist echocardiographers are not available — primary care and rural obstetric settings — where the equity argument is strongest.</p>
+          <a class="src" href="https://www.aha.org/aha-center-health-innovation-market-scan/2026-05-12-4-health-systems-transforming-care-ai" target="_blank" rel="noopener">AHA · 4 Health Systems Transforming Care with AI</a>
+        </div>
+        <div class="story">
+          <span class="tag">Radiology · Advocate Health · projected</span>
+          <h3>AI imaging at 22 sites: Advocate Health projects 63,000 patients per year reached</h3>
+          <p>Advocate Health (Wisconsin and North Carolina) embedded AI imaging models into radiology workflows at 22 sites beginning October 2024. The models flag time-critical findings: pulmonary embolisms, intracranial hemorrhages, rib and cervical spine fractures, pneumothorax, aortic dissections, and brain aneurysms. Advocate projects the deployment will reach <b>nearly 63,000 patients per year</b> through accelerated diagnosis and faster specialist notification. This figure is a forward projection from the institution, not an observed outcome — follow-up data on actual patient impact has not been published.</p>
+          <a class="src" href="https://www.aha.org/aha-center-health-innovation-market-scan/2026-05-12-4-health-systems-transforming-care-ai" target="_blank" rel="noopener">AHA · 4 Health Systems Transforming Care with AI</a>
+        </div>
+        <div class="story">
+          <span class="tag">Physician documentation · self-reported survey data</span>
+          <h3>Ambient AI scribes: clinicians report less fatigue, but survey methodology matters</h3>
+          <p>Sanford Health reports that after less than one year with ambient AI documentation tools, <b>88% of clinicians said they felt less burnout</b> and 95% said it reduced mental strain — from internal surveys. AdventHealth (Nuance DAX Copilot, ~2,000 physicians): 86% reported less burnout, 80% better patient experience. These figures are self-reported on employer-administered surveys and are subject to novelty effects and social desirability bias; they do not use validated burnout instruments (e.g., Maslach). They are meaningful as early signals of clinician experience, not as clinical outcome data. Separately: nearly two-thirds of Epic-connected hospitals have deployed some form of ambient AI as of January 2026 — a measure of spread, not of impact.</p>
+          <a class="src" href="https://www.beckershospitalreview.com/healthcare-information-technology/ai/health-systems-using-ai-50-examples/" target="_blank" rel="noopener">Becker's · Health Systems Using AI: 50 Examples (Jun 2026)</a>
+        </div>
       </div>
+    </section>
 
-      <section id="d03-lead">
-        <h2><span class="hn">01</span> Lead story</h2>
-        <div class="glass lead-story">
-          <span class="tag">Epidemic intelligence · forecasting</span>
-          <h3>Language models just outforecast the CDC ensemble</h3>
-          <p>Here's the public-health story that jumped out this week: the machines are now writing the better forecast. In a 2026 Nature study that the epidemic-intelligence field keeps citing, LLM and tree-search systems built their own COVID-19 hospitalization models, and those models came out ahead of the CDC ensemble and every single model in the benchmark. That's a real shift in who holds the most accurate crystal ball.</p>
-          <p>The bigger picture is that real-time epidemic intelligence now pulls from everything at once. Official reports, news, social posts, and genomic surveillance, across many languages, all feeding one view. It lets officials read how transmissible a variant is before it shows up locally, and it fills the gaps that slow traditional surveillance in places with thin infrastructure. It all builds on the CDC's first AI strategy for 2026 through 2030, which you'll find in the 30 June edition below.</p>
-          <div class="tags">
-            <a class="htag">LLMforecasting</a><a class="htag">COVID19</a><a class="htag">CDC</a><a class="htag">GenomicSurveillance</a>
-          </div>
-          <a class="src" href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1645467/full" target="_blank" rel="noopener">Frontiers in AI · AI-driven epidemic intelligence</a>
-        </div>
-      </section>
+    <section id="surveillance">
+      <h2><span class="hn">03</span> Epidemic surveillance: the fragmentation problem</h2>
+      <div class="lead-story">
+        <span class="tag">Public health · epidemic intelligence · perspective article, Frontiers in AI 2025</span>
+        <h3>BlueDot flagged early COVID signals before WHO's first statement. The integration gap that followed remains open.</h3>
+        <p>On December 31, 2019, BlueDot's commercial AI platform — which scans news, airline data, and public health feeds in dozens of languages — sent client alerts flagging an unusual pneumonia cluster in Wuhan and assessed it as a potential international spread risk. WHO issued its first public notice the same day. The distinction is meaningful: BlueDot's system surfaced the signal from unstructured public data before official confirmation, demonstrating the potential of AI-driven open-source intelligence for outbreak early warning. EPIWATCH (UNSW) and HealthMap (launched 2006) operate on similar principles.</p>
+        <p>A 2025 perspective paper in <em>Frontiers in Artificial Intelligence</em> (Kaur &amp; Butt, University of Waterloo / National Research Council Canada) argues that a structural problem persists: existing systems operate in silos. A hospital admission surge, a social media symptom spike, and a WHO notification may all point to the same outbreak — but arrive in separate platforms, analyzed separately, never synthesized into a unified signal. The authors propose a new LLM-based architecture (PandemicLLM) to integrate genomic, policy, and behavioral streams into a single real-time framework. <b>Note:</b> this is a perspective article, not a research study, and PandemicLLM is the authors' own proposed solution — independent validation does not yet exist. Key structural barriers beyond GDPR/HIPAA include the absence of standardized disease ontologies across systems and persistent underfunding of subnational surveillance infrastructure.</p>
+        <a class="src" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12343573/" target="_blank" rel="noopener">PMC12343573 · Frontiers in AI · Kaur &amp; Butt, 2025 (perspective)</a>
+      </div>
+    </section>
 
-      <section id="d03-data">
-        <h2><span class="hn">02</span> Public health &amp; data</h2>
-        <p class="lead">The week's public-health evidence: surveillance, forecasting, antimicrobial resistance, and health data built in the field. Clinical, imaging and hospital-operations items are left out on purpose.</p>
-        <div class="stories">
+    <section id="numbers">
+      <h2><span class="hn">04</span> Industry-reported figures</h2>
+      <p class="lead">These numbers come from surveys, corporate disclosures, and one vendor-commissioned study. Each is labeled by source type — read accordingly.</p>
+      <div class="band">
+        <a class="b" href="https://www.aha.org/aha-center-health-innovation-market-scan/2026-05-12-4-health-systems-transforming-care-ai" target="_blank" rel="noopener"><div class="n">71%</div><div class="l">of US hospitals reported running predictive AI in their EHR in 2024, up from 66% in 2023 — AHA survey (includes proprietary EHR risk scores, not only standalone AI tools)</div></a>
+        <a class="b" href="https://www.beckershospitalreview.com/healthcare-information-technology/ai/health-systems-using-ai-50-examples/" target="_blank" rel="noopener"><div class="n">$1.5B</div><div class="l">UnitedHealth Group's stated AI investment in 2026 — a corporate expenditure figure, not a patient outcome measure</div></a>
+        <a class="b" href="https://www.johnsnowlabs.com/preparing-hospitals-for-large-scale-ai-deployments-in-2026/" target="_blank" rel="noopener"><div class="n">$3.20</div><div class="l">Reported ROI per $1 on healthcare AI within 14 months — Microsoft/IDC study, vendor-commissioned; independent replication of this figure does not exist</div></a>
+        <a class="b" href="https://www.beckershospitalreview.com/healthcare-information-technology/ai/health-systems-using-ai-50-examples/" target="_blank" rel="noopener"><div class="n">40%+</div><div class="l">Reported reduction in neuro emergency door-to-treatment time across 50+ CommonSpirit facilities — institution-reported, no published control-group methodology</div></a>
+      </div>
+    </section>
 
-          <div class="glass story">
-            <span class="rank">02 · SURVEILLANCE</span>
-            <span class="tag">Infection surveillance · GenAI</span>
-            <h3>Generative AI reads infection charts at over 90% sensitivity</h3>
-            <p>A review in Current Opinion in Infectious Diseases (10 Jun 2026) finds that large language models catch more than 90% of healthcare-associated infections when scanning for them: bloodstream, surgical-site, and urinary cases. They're already helping with avian-flu surveillance and drug-resistant-organism risk too. The catch is simple. They work best next to an expert, not instead of one.</p>
-            <div class="card-tags"><a class="htag">InfectionSurveillance</a><a class="htag">LLM</a><a class="htag">AvianFlu</a></div>
-            <a class="src" href="https://doi.org/10.1097/QCO.0000000000001215" target="_blank" rel="noopener">Curr. Opin. Infect. Dis. (via PubMed)</a>
-          </div>
+    <section id="methods">
+      <h2><span class="hn">05</span> How this was built</h2>
+      <div class="panel">
+        <div class="kv"><b>Sources</b><span>AHA Center for Health Innovation (May 2026), Becker's Hospital Review (Jun 2026), BCG Health AI report (Jan 2026), John Snow Labs (Sep 2025 / Jun 2026), PMC12343573 (Frontiers in AI perspective, Jul 2025), Corti vendor case studies</span></div>
+        <div class="kv"><b>Evidence grading</b><span>No claim in this digest rests on an RCT. All operational figures are institution- or vendor-reported. The PMC article is a perspective, not a research study. Readers should verify figures of clinical significance against primary published literature before acting on them.</span></div>
+        <div class="kv"><b>Peer review</b><span>This edition was reviewed by two independent expert reviewers — an AI-in-healthcare specialist and a scientific journal methodologist — and revised to correct factual errors, add evidence qualifications, and remove unsupported causal language.</span></div>
+        <div class="kv"><b>Prepared by</b><span>Lakes Linked · Dr. Sergey Soshnikov, MD PhD · Public health researcher · Edition: 28 June 2026</span></div>
+      </div>
+    </section>
 
-          <div class="glass story">
-            <span class="rank">03 · FORECASTING</span>
-            <span class="tag">HIV/AIDS · disease modelling</span>
-            <h3>Machine learning maps HIV across 49 African countries to 2033</h3>
-            <p>In Infectious Disease Modelling (21 May 2026), a machine-learning ensemble forecasts adult HIV prevalence out to 2033 for 49 African countries, then groups them into epidemic archetypes. Southern Africa stays the epicentre at roughly 19.97% average prevalence. The takeaway is that forecasts plus routine surveillance let programs tailor prevention to each place instead of treating the whole continent the same way.</p>
-            <div class="card-tags"><a class="htag">HIV</a><a class="htag">DiseaseModelling</a><a class="htag">Africa</a></div>
-            <a class="src" href="https://doi.org/10.1016/j.idm.2026.05.003" target="_blank" rel="noopener">Infect. Dis. Model. (via PubMed)</a>
-          </div>
-
-          <div class="glass story">
-            <span class="rank">04 · AMR</span>
-            <span class="tag">Antimicrobial resistance · surveillance</span>
-            <h3>Reading a genome to predict which antibiotics will fail</h3>
-            <p>Food Research International (2026) trained interpretable models on the accessory genes of 655 foodborne E. coli samples, and they predicted resistance across five antibiotics reliably. The models even flagged mobile-genetic-element markers like qacEΔ1 as co-selection signals. That's a step toward genome-based tracking of antimicrobial resistance, which sits near the top of anyone's list of public-health threats.</p>
-            <div class="card-tags"><a class="htag">AMR</a><a class="htag">FoodSafety</a><a class="htag">Genomics</a></div>
-            <a class="src" href="https://doi.org/10.1016/j.foodres.2026.119492" target="_blank" rel="noopener">Food Research International (via PubMed)</a>
-          </div>
-
-          <div class="glass story">
-            <span class="rank">05 · FORECASTING</span>
-            <span class="tag">Influenza · CDC/WHO data</span>
-            <h3>Flu models that account for the random and the sudden</h3>
-            <p>Infectious Disease Modelling (2026) built a flu model with stochastic maths (Brownian motion plus Lévy jumps) and tuned it on Mexican case data and CDC and WHO surveillance. Once it accounts for random, abrupt swings, its outbreak forecasts sharpen up. The blunt lesson: tidy deterministic models keep underselling the real risk.</p>
-            <div class="card-tags"><a class="htag">Influenza</a><a class="htag">OutbreakForecasting</a><a class="htag">WHO</a></div>
-            <a class="src" href="https://doi.org/10.1016/j.idm.2026.01.005" target="_blank" rel="noopener">Infect. Dis. Model. (via PubMed)</a>
-          </div>
-
-          <div class="glass story">
-            <span class="rank">06 · HEALTH DATA</span>
-            <span class="tag">Data infrastructure · LMICs</span>
-            <h3>When official numbers vanish, AI rebuilds them from the news</h3>
-            <p>Global Health Research and Policy (2026) tackled a familiar problem: national road-injury stats that are missing or unreliable. A neural network trained on 379 vetted news outlets estimated crash counts closely enough to track the real trend (R² up to 0.93). It's a neat template for stitching together public-health data where the official pipeline is broken.</p>
-            <div class="card-tags"><a class="htag">HealthData</a><a class="htag">RoadSafety</a><a class="htag">LMIC</a></div>
-            <a class="src" href="https://doi.org/10.1016/j.ghrp.2026.02.002" target="_blank" rel="noopener">Glob. Health Res. &amp; Policy (via PubMed)</a>
-          </div>
-
-          <div class="glass story">
-            <span class="rank">07 · POLICY</span>
-            <span class="tag">Adoption · measurement gap</span>
-            <h3>Everyone bought AI. Almost nobody can say what it changed.</h3>
-            <p>Around 70% of health organizations have rolled out AI, yet most can't point to what actually moved in their decisions, workflow, or outcomes. For agencies leaning on AI for surveillance and forecasting, the question is quietly changing from "which tools did we buy?" to "what population-level effect can we actually measure?" That's the accountability idea sitting under the CDC's AI strategy.</p>
-            <div class="card-tags"><a class="htag">HealthPolicy</a><a class="htag">AIgovernance</a><a class="htag">Accountability</a></div>
-            <a class="src" href="https://www.onesynergy.eu/2026/06/04/healthcare-ai-deployment-value-gap-2026/" target="_blank" rel="noopener">OneSynergy · Healthcare AI value gap</a>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="d03-surveillance">
-        <h2><span class="hn">03</span> Outbreak surveillance</h2>
-        <div class="glass lead-story">
-          <span class="tag">Public health · real-time intelligence</span>
-          <h3>Real-time, multilingual outbreak intelligence goes live</h3>
-          <p>The 2026 reviews describe systems that finally do it all at once. They line up formal reports with the messy stuff (news, social media, search trends) and mix in genomic surveillance, in several languages, to steer resources and speed up the response. The open problems have moved from "can this work?" to "how do we run it well?" Staying real-time, covering more languages, filtering out misinformation, and getting forecasts to actually land in policy decisions.</p>
-          <div class="tags">
-            <a class="htag">OutbreakDetection</a><a class="htag">NLP</a><a class="htag">Biosurveillance</a>
-          </div>
-          <a class="src" href="https://publichealthaihandbook.com/applications/surveillance.html" target="_blank" rel="noopener">Public Health AI Handbook · Surveillance</a>
-        </div>
-      </section>
-
-      <section id="d03-numbers">
-        <h2><span class="hn">04</span> By the numbers</h2>
-        <p class="lead">Today's public-health AI signals. Each figure links to its source.</p>
-        <div class="band">
-          <a class="glass b" href="https://doi.org/10.1097/QCO.0000000000001215" target="_blank" rel="noopener"><div class="n">90%+</div><div class="l">sensitivity for LLM-based healthcare-associated-infection surveillance</div></a>
-          <a class="glass b" href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1645467/full" target="_blank" rel="noopener"><div class="n">beats CDC</div><div class="l">LLM and tree-search COVID hospitalization forecasts topped the CDC ensemble (Nature 2026)</div></a>
-          <a class="glass b" href="https://doi.org/10.1016/j.idm.2026.05.003" target="_blank" rel="noopener"><div class="n">49</div><div class="l">African countries in the machine-learning HIV forecast running to 2033</div></a>
-          <a class="glass b" href="https://publichealthaihandbook.com/applications/forecasting.html" target="_blank" rel="noopener"><div class="n">~10%</div><div class="l">of the CDC's roughly 100 AI use cases in 2025 were already agentic (first AI strategy, 2026 to 2030)</div></a>
-        </div>
-      </section>
-
-      <section id="d03-methods">
-        <h2><span class="hn">05</span> How this was built</h2>
-        <div class="glass panel">
-          <div class="kv"><b>Scope</b><span>Public health and AI only: outbreak surveillance, epidemic forecasting, CDC and policy, health data, antimicrobial resistance. Clinical care, hospital operations, medical imaging, and device trials are left out by design.</span></div>
-          <div class="kv"><b>Sources</b><span>PubMed (Current Opinion in Infectious Diseases, Infectious Disease Modelling ×2, Food Research International, Global Health Research and Policy), Frontiers in AI, Public Health AI Handbook, plus web search across Reuters, STAT, Nature News, WHO and CDC, and Russian-language feeds</span></div>
-          <div class="kv"><b>Window</b><span>Rolling 24 to 72 hours, multi-query (English and Russian). PubMed filtered to Jun and Jul 2026</span></div>
-          <div class="kv"><b>Gathered</b><span>03 July 2026 · 08:00</span></div>
-          <div class="kv"><b>Verification</b><span>PubMed items carry DOIs. Every claim links to its original source</span></div>
-          <div class="kv"><b>Prepared for</b><span>A public-health professor, by an AI research assistant. Regenerated daily at 08:00</span></div>
-        </div>
-      </section>
+    <div class="edition-divider">
+      <span class="line"></span>
+      <span class="lbl">End of current edition · 28 June 2026</span>
+      <span class="line"></span>
     </div>
 
-    <!-- ===================== DIVIDER 03 / 02 ===================== -->
-    <div class="day-divider" role="separator" aria-label="Edition boundary">
-      <div class="pill"><span class="up">↑ 03 July 2026 · Today</span><span class="prev">02 July 2026 · Earlier ↓</span></div>
-    </div>
+    <section id="archive">
+      <h2><span class="hn">∎</span> Archive · Past editions</h2>
+      <p class="lead">Every published edition of Public Health Watch, newest first. The current edition always appears at the top of this page; older issues are collapsed below.</p>
+      <div class="arc-list">
 
-    <!-- ===================== DAY BLOCK · 02 JULY 2026 ===================== -->
-    <div class="day-block" id="day-d02" data-day="d02">
-      <div class="glass day-head">
-        <span class="day-eyebrow"><span class="dot"></span>Earlier edition · 02 July 2026</span>
-        <span class="gathered">Gathered 02 Jul 2026 · 08:00</span>
-        <button class="listen" id="listen-d02" type="button" aria-pressed="false" hidden>🔊 Listen / Слушать</button>
-      </div>
+        <!-- ▼ NEWEST ENTRY GOES HERE — paste new editions directly below this line ▼ -->
 
-      <div class="glass contents">
-        <span class="clabel">Contents</span>
-        <a href="#d02-lead"><span class="cn">01</span>Lead</a>
-        <a href="#d02-data"><span class="cn">02</span>Public health &amp; data</a>
-        <a href="#d02-numbers"><span class="cn">03</span>By the numbers</a>
-        <a href="#d02-methods"><span class="cn">04</span>Methods</a>
-      </div>
-
-      <section id="d02-lead">
-        <h2><span class="hn">01</span> Lead story</h2>
-        <div class="glass lead-story">
-          <span class="tag">Population screening · policy</span>
-          <h3>AI chest X-ray screening could save about 24,763 lives across five countries</h3>
-          <p>A health-economics study in the Journal of Medical Economics (24 June 2026) asks a simple what-if. What happens when you add an AI chest X-ray reader to national screening, catch incidental lung nodules early, and send them for a low-dose CT? Across Vietnam, Colombia, Thailand, Costa Rica and Mexico, the model puts the answer at roughly 24,763 lung-cancer deaths avoided over five years, with the money paying for itself by year three.</p>
-          <p>The reason it belongs in a public-health feed is scale. This isn't one hospital's pilot. It's a population intervention that earns its keep precisely by running nationally in low and middle-income systems where radiologists are stretched thin. Catching cancer earlier drives both the lives saved and the eventual savings, so the health case and the money case point the same way.</p>
-          <div class="tags">
-            <a class="htag">CancerScreening</a><a class="htag">PopulationHealth</a><a class="htag">GlobalHealth</a><a class="htag">HealthEconomics</a>
+        <details class="arc" open>
+          <summary>
+            <span class="arc-date">28 Jun 2026</span>
+            <span class="arc-badge">No. 03</span>
+            <span class="arc-title">AI in clinical care: what is actually deployed</span>
+            <span class="arc-chev" aria-hidden="true">+</span>
+          </summary>
+          <div class="arc-body">
+            <p>Corti at Seattle Medic One, four clinical AI deployments (Mayo, Mount Sinai West, Advocate, Sanford), BlueDot and the surveillance-fragmentation problem — with evidence grading for every claim.</p>
+            <a class="src" href="#overview">Open this edition</a>
           </div>
-          <a class="src" href="https://doi.org/10.1080/13696998.2026.2682681" target="_blank" rel="noopener">Journal of Medical Economics · Budget-impact model (via PubMed)</a>
-        </div>
-      </section>
+        </details>
 
-      <section id="d02-data">
-        <h2><span class="hn">02</span> Public health &amp; data</h2>
-        <p class="lead">The public-health items from this edition: health-data infrastructure and influenza forecasting. Clinical, imaging and hospital-operations stories from the original edition have been removed.</p>
-        <div class="stories">
+        <div class="arc-empty">Earlier editions will appear here as they are published.</div>
 
-          <div class="glass story">
-            <span class="rank">02 · FORECASTING</span>
-            <span class="tag">Public health · influenza</span>
-            <h3>Flu forecasting steps into the AI and genomics era</h3>
-            <p>Work reviewed in PMC shows AI reshaping how we forecast flu, by predicting how the virus evolves and helping teams prepare. It blends language models, NLP, and real-time genomic surveillance, so officials can read a variant's traits before it lands locally. The open questions are the usual ones: staying real-time, handling many languages, cutting through misinformation, and getting forecasts into policy. It builds on the CDC's first AI strategy for 2026 to 2030.</p>
-            <div class="card-tags"><a class="htag">Influenza</a><a class="htag">Forecasting</a><a class="htag">GenomicSurveillance</a></div>
-            <a class="src" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12816819/" target="_blank" rel="noopener">PMC · Forecasting influenza in the age of AI</a>
-          </div>
-
-          <div class="glass story">
-            <span class="rank">03 · HEALTH DATA</span>
-            <span class="tag">Data infrastructure · governance</span>
-            <h3>Big health data grows up</h3>
-            <p>A decade-on review in Health Information Science and Systems traces the move to cloud and GPU AI, language models, and the first agentic systems. Its best idea is practical: take the classic "4Vs" of big data and add explainability, fairness, and sustainability, so bias and privacy risks stay in check. That framing matters a lot for population-health analytics.</p>
-            <div class="card-tags"><a class="htag">HealthData</a><a class="htag">DataGovernance</a><a class="htag">Fairness</a></div>
-            <a class="src" href="https://doi.org/10.1007/s13755-026-00433-2" target="_blank" rel="noopener">Health Inf. Sci. &amp; Systems (via PubMed)</a>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="d02-numbers">
-        <h2><span class="hn">03</span> By the numbers</h2>
-        <p class="lead">Public-health signals from this edition. Each figure links to its source.</p>
-        <div class="band">
-          <a class="glass b" href="https://doi.org/10.1080/13696998.2026.2682681" target="_blank" rel="noopener"><div class="n">~24,763</div><div class="l">lung-cancer deaths a five-country model says AI chest X-ray screening could avoid over five years</div></a>
-          <a class="glass b" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12816819/" target="_blank" rel="noopener"><div class="n">genomics</div><div class="l">real-time genomic surveillance now feeds AI flu forecasts before variants arrive locally</div></a>
-          <a class="glass b" href="https://doi.org/10.1007/s13755-026-00433-2" target="_blank" rel="noopener"><div class="n">4Vs → 7</div><div class="l">a big-health-data review adds explainability, fairness and sustainability to the classic model</div></a>
-        </div>
-      </section>
-
-      <section id="d02-methods">
-        <h2><span class="hn">04</span> How this was built</h2>
-        <div class="glass panel">
-          <div class="kv"><b>Scope</b><span>Public health and AI only. Clinical, hospital-operations, imaging, and trial items from the original 02 July edition were removed in the 03 July re-clean.</span></div>
-          <div class="kv"><b>Sources</b><span>PubMed (Journal of Medical Economics, Health Inf. Sci. and Systems), PMC, plus web search across Reuters, STAT, Nature News, WHO and CDC, and Russian-language feeds</span></div>
-          <div class="kv"><b>Window</b><span>Rolling 24 to 72 hours, multi-query (English and Russian). PubMed and preprints filtered to Jun and Jul 2026</span></div>
-          <div class="kv"><b>Gathered</b><span>02 July 2026 · 08:00</span></div>
-          <div class="kv"><b>Verification</b><span>PubMed items carry DOIs. Every claim links to its original source</span></div>
-          <div class="kv"><b>Prepared for</b><span>A public-health professor, by an AI research assistant. Regenerated daily at 08:00</span></div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ===================== DIVIDER 02 / 30 ===================== -->
-    <div class="day-divider" role="separator" aria-label="Edition boundary">
-      <div class="pill"><span class="up">↑ 02 July 2026 · Earlier</span><span class="prev">30 June 2026 · Earlier ↓</span></div>
-    </div>
-
-    <!-- ===================== DAY BLOCK · 30 JUNE 2026 ===================== -->
-    <div class="day-block" id="day-d30" data-day="d30">
-      <div class="glass day-head">
-        <span class="day-eyebrow"><span class="dot"></span>Earlier edition · 30 June 2026</span>
-        <span class="gathered">Gathered 30 Jun 2026 · 08:00</span>
-        <button class="listen" id="listen-d30" type="button" aria-pressed="false" hidden>🔊 Listen / Слушать</button>
       </div>
+    </section>
 
-      <div class="glass contents">
-        <span class="clabel">Contents</span>
-        <a href="#d30-lead"><span class="cn">01</span>Lead</a>
-        <a href="#d30-programs"><span class="cn">02</span>Screening &amp; programs</a>
-        <a href="#d30-numbers"><span class="cn">03</span>By the numbers</a>
-        <a href="#d30-methods"><span class="cn">04</span>Methods</a>
-      </div>
-
-      <section id="d30-lead">
-        <h2><span class="hn">01</span> Lead story</h2>
-        <div class="glass lead-story">
-          <span class="tag">Public health · epidemic intelligence</span>
-          <h3>The CDC's first AI strategy, plus genomics that cross borders</h3>
-          <p>In March 2026 the CDC put out its first-ever AI strategy, covering 2026 to 2030, along with separate guidance for state, tribal, local and territorial partners on agentic "deep research" tools. Around the same time, the PathGen project out of Duke-NUS started piloting a sovereign-by-design federated platform. It combines pathogen genomics with clinical and climate data for outbreak decisions, and here's the clever part: each country's raw data stays home while only the analytics get shared. Put together, it's a real move from reacting to outbreaks toward predicting them.</p>
-          <div class="tags">
-            <a class="htag">CDC</a><a class="htag">AIstrategy</a><a class="htag">PathogenGenomics</a><a class="htag">DataSovereignty</a>
-          </div>
-          <a class="src" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12343573/" target="_blank" rel="noopener">PMC · AI epidemic intelligence</a>
-        </div>
-      </section>
-
-      <section id="d30-programs">
-        <h2><span class="hn">02</span> Screening &amp; programs</h2>
-        <p class="lead">Population-scale public-health programs using AI. Clinical, imaging and hospital-operations items from the original edition have been removed.</p>
-        <div class="stories">
-          <div class="glass story">
-            <span class="rank">02 · GLOBAL SCREENING</span>
-            <span class="tag">Global screening · TB</span>
-            <h3>AI TB and lung screening scales up in national programs</h3>
-            <p>WHO-recommended chest X-ray computer-aided detection is running as national public-health screening in Ethiopia, the Philippines, and Vietnam. It's paired with lung-nodule detection, with suspicious findings referred onward. This is population case-finding aimed at two of the heaviest disease burdens in low-resource settings, not a one-off deployment.</p>
-            <div class="card-tags"><a class="htag">Tuberculosis</a><a class="htag">GlobalHealth</a><a class="htag">Screening</a></div>
-            <a class="src" href="https://www.auntminnie.com/clinical-news/digital-x-ray/article/15705023/cdc-considers-chest-xray-ai-for-tb-screening-program" target="_blank" rel="noopener">AuntMinnie · CXR AI for TB screening</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="d30-numbers">
-        <h2><span class="hn">03</span> By the numbers</h2>
-        <p class="lead">Public-health signals from this edition. Each figure links to its source.</p>
-        <div class="band">
-          <a class="glass b" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12343573/" target="_blank" rel="noopener"><div class="n">2026→30</div><div class="l">horizon of the CDC's first-ever AI strategy for public health</div></a>
-          <a class="glass b" href="https://doi.org/10.1080/13696998.2026.2682681" target="_blank" rel="noopener"><div class="n">~24,763</div><div class="l">lung-cancer deaths a five-country model says AI chest X-ray screening could avoid over five years</div></a>
-          <a class="glass b" href="https://www.auntminnie.com/clinical-news/digital-x-ray/article/15705023/cdc-considers-chest-xray-ai-for-tb-screening-program" target="_blank" rel="noopener"><div class="n">3</div><div class="l">national TB and lung screening programs (Ethiopia, Philippines, Vietnam) running AI chest X-ray</div></a>
-        </div>
-      </section>
-
-      <section id="d30-methods">
-        <h2><span class="hn">04</span> How this was built</h2>
-        <div class="glass panel">
-          <div class="kv"><b>Scope</b><span>Public health and AI only. Sepsis, imaging, ambient-scribe and readmission items from the original 30 June edition were removed in the 03 July re-clean.</span></div>
-          <div class="kv"><b>Sources</b><span>PMC, AuntMinnie, plus PubMed and WHO and CDC feeds</span></div>
-          <div class="kv"><b>Window</b><span>Rolling 24 to 72 hours, multi-query (English and Russian)</span></div>
-          <div class="kv"><b>Gathered</b><span>30 June 2026 · 08:00</span></div>
-          <div class="kv"><b>Verification</b><span>Each item traced to original reporting. Every claim links to source</span></div>
-          <div class="kv"><b>Prepared for</b><span>A public-health professor, by an AI research assistant. Regenerated daily at 08:00</span></div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ===================== DIVIDER 30 / 28 ===================== -->
-    <div class="day-divider" role="separator" aria-label="Edition boundary">
-      <div class="pill"><span class="up">↑ 30 June 2026 · Earlier</span><span class="prev">28 June 2026 · Earlier ↓</span></div>
-    </div>
-
-    <!-- ===================== DAY BLOCK · 28 JUNE 2026 ===================== -->
-    <div class="day-block" id="day-d28" data-day="d28">
-      <div class="glass day-head">
-        <span class="day-eyebrow"><span class="dot"></span>Earlier edition · 28 June 2026</span>
-        <span class="gathered">Gathered 28 Jun 2026 · 08:00</span>
-        <button class="listen" id="listen-d28" type="button" aria-pressed="false" hidden>🔊 Listen / Слушать</button>
-      </div>
-
-      <div class="glass contents">
-        <span class="clabel">Contents</span>
-        <a href="#d28-lead"><span class="cn">01</span>Lead</a>
-        <a href="#d28-numbers"><span class="cn">02</span>By the numbers</a>
-        <a href="#d28-methods"><span class="cn">03</span>Methods</a>
-      </div>
-
-      <section id="d28-lead">
-        <h2><span class="hn">01</span> Lead story</h2>
-        <div class="glass lead-story">
-          <span class="tag">Public health · early warning</span>
-          <h3>EPIWATCH spots epidemics before officials confirm them</h3>
-          <p>EPIWATCH is an AI-driven open-source-intelligence system that picks up outbreak signals before any official confirmation, reading across all sorts of public data with natural-language processing. Pilots run from early 2026 with a staged rollout through 2027. It's another concrete step from reacting to outbreaks toward predicting them, and it's the public-health signal at the heart of this edition.</p>
-          <div class="tags">
-            <a class="htag">EarlyWarning</a><a class="htag">OSINT</a><a class="htag">OutbreakDetection</a>
-          </div>
-          <a class="src" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12343573/" target="_blank" rel="noopener">PMC · AI-driven epidemic intelligence</a>
-        </div>
-      </section>
-
-      <section id="d28-numbers">
-        <h2><span class="hn">02</span> By the numbers</h2>
-        <p class="lead">Public-health and data signals from this edition. Each figure links to its source.</p>
-        <div class="band">
-          <a class="glass b" href="https://www.aha.org/aha-center-health-innovation-market-scan/2026-05-12-4-health-systems-transforming-care-ai" target="_blank" rel="noopener"><div class="n">71%</div><div class="l">of hospitals run predictive AI in their EHR (2024, up from 66%), a population-adoption landscape signal</div></a>
-          <a class="glass b" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12343573/" target="_blank" rel="noopener"><div class="n">2026→27</div><div class="l">EPIWATCH staged rollout window for AI open-source outbreak detection</div></a>
-        </div>
-      </section>
-
-      <section id="d28-methods">
-        <h2><span class="hn">03</span> How this was built</h2>
-        <div class="glass panel">
-          <div class="kv"><b>Scope</b><span>Public health and AI only. Sepsis, neuro-triage, imaging, fall-monitoring, and cardiovascular-agent items from the original 28 June edition were removed in the 03 July re-clean.</span></div>
-          <div class="kv"><b>Sources</b><span>PMC and Frontiers, American Hospital Association, plus Reuters, STAT, Nature News, and WHO scanned daily</span></div>
-          <div class="kv"><b>Window</b><span>Rolling 24 to 48 hours, multi-query (English and Russian)</span></div>
-          <div class="kv"><b>Gathered</b><span>28 June 2026 · 08:00</span></div>
-          <div class="kv"><b>Verification</b><span>Each item traced to original reporting. Every claim links to source</span></div>
-          <div class="kv"><b>Prepared for</b><span>A public-health professor, by an AI research assistant. Regenerated daily at 08:00</span></div>
-        </div>
-      </section>
-    </div>
-
-    <footer class="glass">
+    <footer>
       Part 03 of 3 · News · <code>daily-ai-public-health-digest</code><br>
       Back to <a class="f" href="01-research-literature.html">01 · Research</a> and <a class="f" href="02-clinical-trials.html">02 · Trials</a>.
+      <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-faint);">
+        <a href="privacy.html" style="color:var(--ink-faint);">Privacy Policy</a> ·
+        <a href="terms.html" style="color:var(--ink-faint);">Terms of Use</a> ·
+        © 2026 Lakes Linked · Sergey Soshnikov, MD PhD
+      </div>
     </footer>
   </main>
 
 </div>
 </div>
-
-<script>
-(function(){
-  "use strict";
-
-  /* ---------- Per-day scroll-spy TOC swap ---------- */
-  var tocs = {
-    d03: document.getElementById('toc-d03'),
-    d02: document.getElementById('toc-d02'),
-    d30: document.getElementById('toc-d30'),
-    d28: document.getElementById('toc-d28')
-  };
-  var dayBlocks = Array.prototype.slice.call(document.querySelectorAll('.day-block'));
-  var currentDay = 'd03';
-
-  function showToc(day){
-    if(day === currentDay) return;
-    var outgoing = tocs[currentDay];
-    var incoming = tocs[day];
-    if(!incoming) return;
-    currentDay = day;
-    if(outgoing) outgoing.hidden = true;
-    incoming.hidden = false;
-    incoming.classList.add('fade');
-    void incoming.offsetWidth;
-    incoming.classList.remove('fade');
-    updateActiveLink();
-  }
-
-  function readingLine(){ return Math.min(window.innerHeight * 0.33, 90 + 96); }
-  function pickActiveDay(){
-    var line = readingLine();
-    var active = dayBlocks.length ? dayBlocks[0] : null;
-    dayBlocks.forEach(function(b){
-      if(b.getBoundingClientRect().top <= line){ active = b; }
-    });
-    if(active){ showToc(active.getAttribute('data-day')); }
-  }
-
-  var dayTicking = false;
-  function onDayScroll(){
-    if(dayTicking) return;
-    dayTicking = true;
-    window.requestAnimationFrame(function(){ dayTicking = false; pickActiveDay(); });
-  }
-  window.addEventListener('scroll', onDayScroll, { passive:true });
-  window.addEventListener('resize', onDayScroll);
-
-  /* ---------- Active section link within current day ---------- */
-  function tocLinks(){
-    var t = tocs[currentDay];
-    return t ? Array.prototype.slice.call(t.querySelectorAll('.toc a')) : [];
-  }
-  var activeSectionId = null;
-  function setActive(id){ activeSectionId = id; updateActiveLink(); }
-  function updateActiveLink(){
-    tocLinks().forEach(function(a){
-      var href = a.getAttribute('href') || '';
-      a.classList.toggle('active', href === '#' + activeSectionId);
-    });
-  }
-
-  if('IntersectionObserver' in window){
-    var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
-    var secObserver = new IntersectionObserver(function(entries){
-      var candidate = null, candidateTop = Infinity;
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var top = e.boundingClientRect.top;
-          if(top < candidateTop){ candidateTop = top; candidate = e.target; }
-        }
-      });
-      if(candidate){ setActive(candidate.id); }
-    }, { rootMargin: '-96px 0px -55% 0px', threshold:0 });
-    sections.forEach(function(s){ secObserver.observe(s); });
-  }
-
-  Object.keys(tocs).forEach(function(day){
-    if(tocs[day] && day !== currentDay){ tocs[day].hidden = true; }
-  });
-  pickActiveDay();
-  updateActiveLink();
-
-  /* ---------- Share + external buttons ----------
-     ONE place to configure. Set SITE_URL to your public address once it is live.
-     If this page is itself served over http(s), that live URL is shared instead. */
-  (function(){
-    var SITE_URL = 'https://lakeslinked.com';
-    var FOUNDER_URL = 'https://lakeslinked.com/founder.html';
-    var here = window.location.href || '';
-    var shareUrl = here.indexOf('http') === 0 ? here : SITE_URL;
-    var blurb = 'AI has moved into public health. Newest edition of the daily digest: ' +
-                shareUrl + ' #PublicHealth #DiseaseSurveillance #HealthData #CDC';
-
-    var li = document.getElementById('share-li');
-    var fb = document.getElementById('share-fb');
-    var site = document.getElementById('link-site');
-    var founder = document.getElementById('link-founder');
-
-    // LinkedIn: open the post composer prefilled (works even without a scrapeable URL)
-    if(li) li.href = 'https://www.linkedin.com/feed/?shareActive=true&text=' + encodeURIComponent(blurb);
-    // Facebook: sharer needs a URL to build a preview
-    if(fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(shareUrl);
-    if(site) site.href = SITE_URL;
-    if(founder) founder.href = FOUNDER_URL;
-  })();
-
-  /* ---------- Voice read-aloud ---------- */
-  var synth = window.speechSynthesis;
-  if(synth && typeof window.SpeechSynthesisUtterance === 'function'){
-    var IDLE = '🔊 Listen / Слушать';
-    var SPEAKING = '⏸ Stop / Стоп';
-    var activeBtn = null;
-
-    function buildSpeech(dayId){
-      var block = document.getElementById('day-' + dayId);
-      if(!block) return '';
-      var parts = [];
-      var label = block.querySelector('.day-eyebrow');
-      if(label){ parts.push(label.textContent.replace(/·/g,'').trim() + '.'); }
-      var stories = block.querySelectorAll('section h3');
-      stories.forEach(function(h3){
-        var title = h3.textContent.trim();
-        var p = h3.parentElement ? h3.parentElement.querySelector('p') : null;
-        var first = '';
-        if(p){
-          var m = p.textContent.trim().match(/[^.!?]+[.!?]*/);
-          first = m ? m[0].trim() : '';
-        }
-        parts.push(title + (first ? '. ' + first : '.'));
-      });
-      return parts.join(' ');
-    }
-
-    function resetBtn(btn){ btn.textContent = IDLE; btn.setAttribute('aria-pressed','false'); }
-    function stopAll(){ synth.cancel(); if(activeBtn){ resetBtn(activeBtn); activeBtn = null; } }
-
-    function wire(btnId, dayId){
-      var btn = document.getElementById(btnId);
-      if(!btn) return;
-      btn.hidden = false;
-      btn.addEventListener('click', function(){
-        var wasActive = (activeBtn === btn);
-        stopAll();
-        if(wasActive){ return; }
-        var text = buildSpeech(dayId);
-        if(!text) return;
-        var u = new SpeechSynthesisUtterance(text);
-        u.lang = 'en-US'; u.rate = 1;
-        u.onend = function(){ if(activeBtn === btn){ resetBtn(btn); activeBtn = null; } };
-        u.onerror = function(){ if(activeBtn === btn){ resetBtn(btn); activeBtn = null; } };
-        activeBtn = btn;
-        btn.textContent = SPEAKING;
-        btn.setAttribute('aria-pressed','true');
-        synth.speak(u);
-      });
-    }
-
-    wire('listen-d03','d03');
-    wire('listen-d02','d02');
-    wire('listen-d30','d30');
-    wire('listen-d28','d28');
-
-    window.addEventListener('beforeunload', function(){ try{ synth.cancel(); }catch(e){} });
-  }
-})();
-</script>
 </body>
 </html>
