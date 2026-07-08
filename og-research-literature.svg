@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f4f2ec"/>
+  <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#d8d3c6" stroke-width="2"/>
+
+  <!-- faded "text lines" motif, lower-right (clear of headline) -->
+  <g stroke="#2f5fd0" stroke-opacity="0.09" stroke-width="9" stroke-linecap="round">
+    <line x1="928" y1="430" x2="1090" y2="430"/>
+    <line x1="928" y1="462" x2="1060" y2="462"/>
+    <line x1="928" y1="494" x2="1090" y2="494"/>
+  </g>
+
+  <!-- accent rule -->
+  <rect x="110" y="150" width="72" height="6" rx="3" fill="#2f5fd0"/>
+
+  <text x="110" y="212" font-family="DejaVu Sans Mono, monospace" font-size="22" letter-spacing="3" fill="#2f5fd0">PART 01 · RESEARCH LITERATURE</text>
+
+  <text x="106" y="308" font-family="DejaVu Serif, Georgia, serif" font-weight="bold" font-size="78" fill="#192322">What the Literature</text>
+  <text x="106" y="392" font-family="DejaVu Serif, Georgia, serif" font-weight="bold" font-size="78" fill="#192322">Says About AI in Care</text>
+
+  <text x="110" y="452" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#4d5a58">PubMed signals, preprint servers and a curated</text>
+  <text x="110" y="494" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#4d5a58">reading list — filtered for public health.</text>
+
+  <line x1="110" y1="548" x2="1090" y2="548" stroke="#d8d3c6" stroke-width="2"/>
+  <text x="110" y="586" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#4d5a58">Lakes Linked · Dr. Sergey Soshnikov, MD PhD</text>
+  <text x="1090" y="586" text-anchor="end" font-family="DejaVu Sans Mono, monospace" font-size="23" fill="#2f5fd0">lakeslinked.com</text>
+</svg>

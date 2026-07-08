@@ -1,138 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Replace https://lakeslinked.com/ with the real production URL where these pages deploy. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://lakeslinked.com/</loc>
+    <loc>https://lakeslinked.com/03-news-digest.html</loc>
     <lastmod>2026-07-08</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/isabella.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/isabella_methods.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/isabella_roi.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/isabella_interventions.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/isabella_trends.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/clare.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/clare_methods.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/clare_roi.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/clare_ai_solutions.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/midland.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/midland_methods.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/midland_roi.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/gratiot.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/gratiot_methods.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/gratiot_roi.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/michigan_map.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/methods_supplement.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/articles.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/news.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/founder.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/price-transparency.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://lakeslinked.com/og-ai-public-health.png</image:loc>
+      <image:title>AI for Public Health — daily digest cover</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://lakeslinked.com/01-research-literature.html</loc>
     <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lakeslinked.com/og-research-literature.png</image:loc>
+      <image:title>AI in Care — research literature digest cover</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://lakeslinked.com/02-clinical-trials.html</loc>
     <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/03-news-digest.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/privacy.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://lakeslinked.com/terms.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.3</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lakeslinked.com/og-clinical-trials.png</image:loc>
+      <image:title>154 New AI Clinical Trials — from accuracy to outcomes</image:title>
+    </image:image>
   </url>
 </urlset>

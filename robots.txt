@@ -1,4 +1,9 @@
+# robots.txt — AI · Public Health Feed
+# Replace lakeslinked.com below with the real production host if it differs.
 User-agent: *
 Allow: /
+
+# Block nothing by default. Add Disallow: lines here for drafts/backups if needed, e.g.:
+# Disallow: /03-news-digest-backup-0628.html
 
 Sitemap: https://lakeslinked.com/sitemap.xml
