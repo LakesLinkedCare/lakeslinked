@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Methods & Data - Isabella County Disease Burden</title>
-<link rel="canonical" href="https://lakeslinked.com/isabella_methods.html">
 <style>
 :root{
   --navy:#0f1f3d; --blue:#1a56db; --teal:#0d9488; --red:#dc2626;
@@ -16,7 +15,7 @@ body{font-family:var(--sans);background:#fff;color:#111;font-size:13.5px;line-he
 
 /* ── NAV (matches all pages) ── */
 .sitenav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
-.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;display:flex;align-items:center;gap:10px;}
+.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;}
 .sitenav .links{display:flex;gap:4px;}
 .sitenav a.navlink{color:rgba(255,255,255,.7);font-size:12.5px;padding:6px 12px;border-radius:6px;text-decoration:none;transition:all .15s;}
 .sitenav a.navlink:hover,.sitenav a.navlink.active{background:rgba(255,255,255,.12);color:#fff;}
@@ -96,7 +95,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 
 <!-- Navigation -->
 <nav class="sitenav">
-  <a class="brand" href="index.html"><img src="logos/lakeslinked_dark_bg_trimmed.png" alt="Lakes Linked" style="height:34px;width:auto;"></a>
+  <a class="brand" href="index.html">Lakes Linked</a>
   <div class="links">
     <span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
     <div class="county-group">
@@ -146,7 +145,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
   <div class="hd">Abstract</div>
   <p><strong>Background.</strong> County-level DALY disease burden estimates are rarely available for rural U.S. counties outside large academic centers. This analysis applies the DALY framework as a planning-grade educational model for seven major condition groups in Isabella County, Michigan — a rural county of 64,565 residents with a designated Medical Underserved Area status and multiple Health Professional Shortage Area (HPSA) designations. The DALY metric and disability weights are drawn from the IHME Global Burden of Disease Study — a body of work we deeply respect. This project does not replicate or claim to replicate a formal GBD estimate; it applies GBD's openly published disability weights and WHO reference standards for educational and local planning purposes only.</p>
   <p><strong>Methods.</strong> We constructed disability-adjusted life year (DALY) estimates from secondary data: CDC WONDER 2020–2022 (county mortality with rural adjustment factors), CDC PLACES 2024 (prevalence), IHME GBD 2021 (disability weights), and U.S. Census ACS 2022 (population denominators). YLL was calculated using the WHO GHE frontier reference life table (89·1 years) as the primary standard; Michigan observed LE (78·6 years) is reported as a planning-grade sensitivity. For mental health, a remission factor of 0·50 was applied to CDC PLACES lifetime-diagnosis prevalence to approximate active burden. Uncertainty was quantified via Monte Carlo simulation (n = 10,000 iterations). Economic burden was quantified by human capital (DALYs × Michigan GDP per capita) and value of statistical life (HHS 2026, income-adjusted).</p>
-  <p><strong>Results.</strong> Primary burden (frontier LE, remission-adjusted MH): <strong>14,736 DALYs</strong> (95% UI 13,726–15,781) · 9,511 YLL + 5,225 YLD. Cancer #1 (3,996), CVD #2 (3,289), SUD #3 (2,436), MH #4 (1,672). Planning-grade sensitivity (Michigan LE 78.6 yrs, remission-adjusted MH): 10,288 DALYs; Cancer remains #1 (2,632), MH #3 (1,522). Stroke mortality remains 49% above Michigan average. Total deaths: ~461/year. Economic burden: ~$939M/year (human capital, frontier) to ~$4.84B/year (VSL).</p>
+  <p><strong>Results.</strong> Primary burden (frontier LE, remission-adjusted MH): <strong>13,493 DALYs</strong> (95% UI 13,726–15,781) · 8,268 YLL + 5,225 YLD. Cancer #1 (3,641), CVD #2 (2,793), SUD #3 (2,434), MH #4 (1,502). Planning-grade sensitivity (Michigan LE 78.6 yrs, remission-adjusted MH): 10,288 DALYs; Cancer remains #1 (2,632), MH #3 (1,522). Stroke mortality remains 49% above Michigan average. Total deaths: ~461/year. Economic burden: ~$939M/year (human capital, frontier) to ~$4.38B/year (VSL).</p>
   <p><strong>Limitations.</strong> Mixed-source modeled planning scenario - not a validated county burden estimate. Prevalence inputs are modeled by CDC PLACES (MLRP methodology). YLL uses simplified mean-age approach with an added age-banded sensitivity analysis; rural adjustment factors (×1.2–1.40) are applied to state-level mortality rates for suppressed county cells. Factors are derived from published rural/urban mortality differentials [8–12] and represent central estimates within reported ranges - county-specific validation data are not available. Results are directional planning approximations only; publication-grade extension requires age-sex-specific deaths, formal uncertainty propagation, and validation against claims or hospital discharge data.</p>
   <p><strong>Conclusion.</strong> Isabella County's burden is led by mental health access deficits (29.8% prevalence, 176,938:1 psychiatrist ratio), cancer, and substance use. Findings support telepsychiatry/collaborative care, AI-assisted cancer screening, MAT telehealth, and hypertension control as priorities. See <a href="isabella_roi.html" style="color:var(--blue)">ROI analysis →</a> for investment return estimates.</p>
 </div>
@@ -189,7 +188,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <p>Total population 64,565; adult population 52,297 (≥18 yrs) (Census ACS 5-yr 2022). For conditions where CDC PLACES reports adult-only prevalence (COPD, stroke, mental health, CVD, SUD), adult population was used as the base. For population-wide conditions (diabetes, cancer), the full 64,565 was used.</p>
 
 <h3 class="sub">2.5 Economic parameters</h3>
-<p>Human capital: DALYs × $62,000 (Michigan GDP per capita 2024). VSL: HHS ASPE 2026 (central $13.4M), income-adjusted for Isabella County using elasticity 0.4 (Viscusi &amp; Aldy 2003 [7]): $13.4M × (46,000/80,000)^0.4 = <strong>$10.5M</strong> per statistical life (county median income $46,000 per ACS 2022). See <a href="isabella_roi.html" style="color:var(--blue)">ROI analysis</a> for intervention-level return estimates.</p>
+<p>Human capital: DALYs × $62,000 (Michigan GDP per capita 2024). VSL: HHS ASPE 2026 (central $13.4M), income-adjusted for Isabella County using elasticity 0.4 (Viscusi &amp; Aldy 2003 [7]): $13.4M × (46,000/80,000)^0.4 = <strong>$11.2M</strong> per statistical life (county median income $46,000 per ACS 2022). See <a href="isabella_roi.html" style="color:var(--blue)">ROI analysis</a> for intervention-level return estimates.</p>
 
 <h3 class="sub" id="reading-trends">2.6 Reading the trend charts</h3>
 <p><strong>How to read each chart (Trends page).</strong> The line is age-adjusted prevalence (% of adults). The shaded band is the 95% confidence interval — the plausible range around each estimate. Dots mark years with a published county estimate; gaps mean no estimate was released that year (a data gap, <em>not</em> an improvement or worsening). The badge compares the earliest vs. latest reported year: <span style="color:#c2410c;font-weight:700">▲ Worsening</span> · <span style="color:#0e7490;font-weight:700">▼ Improving</span> · <span style="color:#64748b;font-weight:700">→ Stable</span>, and the line color encodes the same direction.</p>
@@ -235,7 +234,7 @@ Upper-bound YLD (no remission adjustment): 52,297 × 0·298 × 0·145 = <strong>
 <h2 class="sec"><span style="color:var(--blue);margin-right:6px">4.</span> Analytic Considerations</h2>
 
 <h3 class="sub">4.1 Mental Health rank shift (v3 → v5)</h3>
-<p>Under the primary estimate (WHO GHE frontier LE 89·1 yrs with remission-adjusted MH prevalence), mental health ranks #4 (1,672 DALYs). Cancer is #1 (3,996), CVD #2 (3,289), and SUD #3 (2,436). Under the planning-grade Michigan LE sensitivity (retaining remission-adjusted MH prevalence), cancer remains #1 (2,632 DALYs) and mental health is #3 (1,522).</p>
+<p>Under the primary estimate (WHO GHE frontier LE 89·1 yrs with remission-adjusted MH prevalence), mental health ranks #4 (1,502 DALYs). Cancer is #1 (3,641), CVD #2 (2,793), and SUD #3 (2,434). Under the planning-grade Michigan LE sensitivity (retaining remission-adjusted MH prevalence), cancer remains #1 (2,632 DALYs) and mental health is #3 (1,522).</p>
 <p>The rank shift from v4 to v5 under the primary estimate reflects two simultaneous changes: (1) the WHO frontier LE raises YLL more for cancer and CVD (which have late mean ages at death) than for mental health (which is YLD-dominant); (2) the remission adjustment reduces MH YLD by approximately 50%. Mental health retains the highest YLD:DALY ratio of any condition (65%) — it is the dominant source of avoidable disability regardless of LE standard. Analysts should note that CDC PLACES MH prevalence includes depression, anxiety, and other common conditions - a broader definition than severe mental illness.</p>
 
 <h3 class="sub">4.2 Rural adjustment factors - derivation and uncertainty</h3>
@@ -275,14 +274,14 @@ Upper-bound YLD (no remission adjustment): 52,297 × 0·298 × 0·145 = <strong>
       </tr>
     </thead>
     <tbody>
-      <tr><td>Cancer, all sites (C00–C97)</td><td>7.7% total</td><td>—</td><td>~130</td><td>67</td><td>2,873</td><td>0.294‡</td><td>1,123</td><td><strong>3,996</strong></td><td>3,473–4,531</td><td><strong>#1</strong></td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc mdl">DW comp.</span></td></tr>
-      <tr><td>Cardiovascular Disease (I20–I51)</td><td>7.1% adults</td><td>—</td><td>~178</td><td>72</td><td>3,044</td><td>0.070</td><td>245</td><td><strong>3,289</strong></td><td>2,899–3,709</td><td>#2</td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc mdl">Derived</span></td></tr>
-      <tr><td>Substance Use Disorders (F10–F19)</td><td>7.2% adults</td><td>—</td><td>~37</td><td>44</td><td>1,263</td><td>0.329</td><td>1,167</td><td><strong>2,436</strong></td><td>1,938–2,965</td><td>#3</td><td><span class="dc imp">WONDER × rural adj.</span></td></tr>
-      <tr><td><strong>Mental Health (F30–F48)</strong></td><td>29.8% adults</td><td>14.9%*</td><td>~14</td><td>46</td><td>603</td><td>0.145</td><td>1,069</td><td><strong>1,672</strong></td><td>1,263–2,136</td><td>#4</td><td><span class="dc obs">CDC PLACES</span> <span class="dc mdl">DW: IHME</span></td></tr>
-      <tr><td>COPD &amp; Respiratory (J44)</td><td>8.2% adults</td><td>—</td><td>~44</td><td>73</td><td>704</td><td>0.198</td><td>801</td><td><strong>1,505</strong></td><td>1,250–1,774</td><td>#5</td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc obs">CDC PLACES</span></td></tr>
-      <tr><td>Stroke (I60–I69)</td><td>3.2% adults</td><td>—</td><td>~34</td><td>73</td><td>544</td><td>0.316</td><td>503</td><td><strong>1,047</strong></td><td>851–1,264</td><td>#6</td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc obs">CDC PLACES</span></td></tr>
-      <tr><td>Type 2 Diabetes (E11)</td><td>11.6% total</td><td>—</td><td>~25</td><td>70</td><td>480</td><td>0.054</td><td>314</td><td><strong>794</strong></td><td>621–991</td><td>#7</td><td><span class="dc obs">CDC PLACES</span></td></tr>
-      <tr class="total-row"><td><strong>Total</strong></td><td>—</td><td>—</td><td>~461</td><td>—</td><td><strong>9,511</strong></td><td>—</td><td><strong>5,225</strong></td><td><strong>14,736</strong></td><td>13,726–15,781</td><td>—</td><td>—</td></tr>
+      <tr><td>Cancer, all sites (C00–C97)</td><td>7.7% total</td><td>—</td><td>~114</td><td>67</td><td>2,519</td><td>0.294‡</td><td>1,122</td><td><strong>3,641</strong></td><td>3,042–4,272</td><td><strong>#1</strong></td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc mdl">DW comp.</span></td></tr>
+      <tr><td>Cardiovascular Disease (I20–I51)</td><td>7.1% adults</td><td>—</td><td>~149</td><td>72</td><td>2,548</td><td>0.070</td><td>245</td><td><strong>2,793</strong></td><td>2,379–3,225</td><td>#2</td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc mdl">Derived</span></td></tr>
+      <tr><td>Substance Use Disorders (F10–F19)</td><td>7.2% adults</td><td>—</td><td>~28</td><td>44</td><td>1,263</td><td>0.329</td><td>1,171</td><td><strong>2,434</strong></td><td>1,763–3,179</td><td>#3</td><td><span class="dc imp">WONDER × rural adj.</span></td></tr>
+      <tr><td><strong>Mental Health (F30–F48)</strong></td><td>29.8% adults</td><td>14.9%*</td><td>~10</td><td>46</td><td>431</td><td>0.145</td><td>1,071</td><td><strong>1,502</strong></td><td>1,013–2,087</td><td>#4</td><td><span class="dc obs">CDC PLACES</span> <span class="dc mdl">DW: IHME</span></td></tr>
+      <tr><td>COPD &amp; Respiratory (J44)</td><td>8.2% adults</td><td>—</td><td>~33</td><td>73</td><td>576</td><td>0.198</td><td>806</td><td><strong>1,382</strong></td><td>1,048–1,759</td><td>#5</td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc obs">CDC PLACES</span></td></tr>
+      <tr><td>Stroke (I60–I69)</td><td>3.2% adults</td><td>—</td><td>~33</td><td>73</td><td>528</td><td>0.316</td><td>501</td><td><strong>1,029</strong></td><td>771–1,313</td><td>#6</td><td><span class="dc obs">WONDER 2020-22</span> <span class="dc obs">CDC PLACES</span></td></tr>
+      <tr><td>Type 2 Diabetes (E11)</td><td>11.6% total</td><td>—</td><td>~21</td><td>70</td><td>403</td><td>0.054</td><td>311</td><td><strong>714</strong></td><td>504–948</td><td>#7</td><td><span class="dc obs">CDC PLACES</span></td></tr>
+      <tr class="total-row"><td><strong>Total</strong></td><td>—</td><td>—</td><td>~461</td><td>—</td><td><strong>8,268</strong></td><td>—</td><td><strong>5,225</strong></td><td><strong>13,493</strong></td><td>13,726–15,781</td><td>—</td><td>—</td></tr>
     </tbody>
   </table>
   <div class="tbl-note">
@@ -304,13 +303,13 @@ Upper-bound YLD (no remission adjustment): 52,297 × 0·298 × 0·145 = <strong>
       </tr>
     </thead>
     <tbody>
-      <tr><td>Cancer, all sites (C00–C97)</td><td>7.7% total</td><td>~130</td><td>67</td><td>1,509</td><td>0.294</td><td>1,123</td><td><strong>2,632</strong></td><td><strong>#1</strong></td></tr>
-      <tr><td>Substance Use Disorders (F10–F19)</td><td>7.2% adults</td><td>~37</td><td>44</td><td>1,280</td><td>0.329</td><td>1,167</td><td><strong>2,447</strong></td><td>#2</td></tr>
-      <tr><td><strong>Mental Health (F30–F48)</strong></td><td>14.9% active†</td><td>~14</td><td>46</td><td>453</td><td>0.145</td><td>1,069</td><td><strong>1,522</strong></td><td>#3</td></tr>
-      <tr><td>Cardiovascular Disease (I20–I51)</td><td>7.1% adults</td><td>~178</td><td>72</td><td>1,174</td><td>0.070</td><td>245</td><td><strong>1,419</strong></td><td>#4</td></tr>
-      <tr><td>COPD &amp; Respiratory (J44)</td><td>8.2% adults</td><td>~44</td><td>73</td><td>244</td><td>0.198</td><td>801</td><td><strong>1,045</strong></td><td>#5</td></tr>
-      <tr><td>Stroke (I60–I69)</td><td>3.2% adults</td><td>~34</td><td>73</td><td>188</td><td>0.316</td><td>503</td><td><strong>691</strong></td><td>#6</td></tr>
-      <tr><td>Type 2 Diabetes (E11)</td><td>11.6% total</td><td>~25</td><td>70</td><td>218</td><td>0.054</td><td>314</td><td><strong>532</strong></td><td>#7</td></tr>
+      <tr><td>Cancer, all sites (C00–C97)</td><td>7.7% total</td><td>~114</td><td>67</td><td>1,322</td><td>0.294</td><td>1,122</td><td><strong>2,444</strong></td><td><strong>#1</strong></td></tr>
+      <tr><td>Substance Use Disorders (F10–F19)</td><td>7.2% adults</td><td>~28</td><td>44</td><td>969</td><td>0.329</td><td>1,171</td><td><strong>2,140</strong></td><td>#2</td></tr>
+      <tr><td><strong>Mental Health (F30–F48)</strong></td><td>14.9% active†</td><td>~10</td><td>46</td><td>326</td><td>0.145</td><td>1,071</td><td><strong>1,397</strong></td><td>#3</td></tr>
+      <tr><td>Cardiovascular Disease (I20–I51)</td><td>7.1% adults</td><td>~149</td><td>72</td><td>983</td><td>0.070</td><td>245</td><td><strong>1,228</strong></td><td>#4</td></tr>
+      <tr><td>COPD &amp; Respiratory (J44)</td><td>8.2% adults</td><td>~33</td><td>73</td><td>198</td><td>0.198</td><td>806</td><td><strong>1,004</strong></td><td>#5</td></tr>
+      <tr><td>Stroke (I60–I69)</td><td>3.2% adults</td><td>~33</td><td>73</td><td>182</td><td>0.316</td><td>501</td><td><strong>683</strong></td><td>#6</td></tr>
+      <tr><td>Type 2 Diabetes (E11)</td><td>11.6% total</td><td>~21</td><td>70</td><td>182</td><td>0.054</td><td>311</td><td><strong>493</strong></td><td>#7</td></tr>
       <tr class="total-row"><td><strong>Total</strong></td><td>—</td><td>~461</td><td>—</td><td><strong>5,066</strong></td><td>—</td><td><strong>5,225</strong></td><td><strong>10,288</strong></td><td>—</td></tr>
     </tbody>
   </table>
@@ -327,14 +326,14 @@ Upper-bound YLD (no remission adjustment): 52,297 × 0·298 × 0·145 = <strong>
       <tr><th>Condition</th><th>Mean age</th><th>YLL (MI 78.6)</th><th>YLL (Frontier 89.1)</th><th>DALYs (MI)</th><th>DALYs (Frontier)</th><th>Rank MI / Frontier</th></tr>
     </thead>
     <tbody>
-      <tr><td>Cancer</td><td>67</td><td>1,509</td><td>2,873</td><td>2,632</td><td>3,996</td><td>#1 / #1</td></tr>
-      <tr><td>SUD</td><td>44</td><td>1,280</td><td>1,263</td><td>2,447</td><td>2,436</td><td>#2 / #3</td></tr>
-      <tr><td>Mental Health</td><td>46</td><td>453</td><td>603</td><td>1,522</td><td>1,672*</td><td>#3 / #4</td></tr>
-      <tr><td>CVD</td><td>72</td><td>1,174</td><td>3,044</td><td>1,419</td><td>3,289</td><td>#4 / #2</td></tr>
-      <tr><td>COPD</td><td>73</td><td>244</td><td>704</td><td>1,045</td><td>1,505</td><td>#5 / #5</td></tr>
-      <tr><td>Stroke</td><td>73</td><td>188</td><td>544</td><td>691</td><td>1,047</td><td>#6 / #6</td></tr>
-      <tr><td>Diabetes</td><td>70</td><td>218</td><td>480</td><td>532</td><td>794</td><td>#7 / #7</td></tr>
-      <tr class="total-row"><td><strong>Total</strong></td><td>—</td><td><strong>5,066</strong></td><td><strong>9,511</strong></td><td><strong>10,288</strong></td><td><strong>14,736</strong></td><td>—</td></tr>
+      <tr><td>Cancer</td><td>67</td><td>1,322</td><td>2,519</td><td>2,444</td><td>3,641</td><td>#1 / #1</td></tr>
+      <tr><td>SUD</td><td>44</td><td>969</td><td>1,263</td><td>2,140</td><td>2,434</td><td>#2 / #3</td></tr>
+      <tr><td>Mental Health</td><td>46</td><td>326</td><td>431</td><td>1,397</td><td>1,502*</td><td>#3 / #4</td></tr>
+      <tr><td>CVD</td><td>72</td><td>983</td><td>2,548</td><td>1,228</td><td>2,793</td><td>#4 / #2</td></tr>
+      <tr><td>COPD</td><td>73</td><td>198</td><td>576</td><td>1,004</td><td>1,382</td><td>#5 / #5</td></tr>
+      <tr><td>Stroke</td><td>73</td><td>182</td><td>528</td><td>683</td><td>1,029</td><td>#6 / #6</td></tr>
+      <tr><td>Diabetes</td><td>70</td><td>182</td><td>403</td><td>493</td><td>714</td><td>#7 / #7</td></tr>
+      <tr class="total-row"><td><strong>Total</strong></td><td>—</td><td><strong>5,066</strong></td><td><strong>8,268</strong></td><td><strong>10,288</strong></td><td><strong>13,493</strong></td><td>—</td></tr>
     </tbody>
   </table>
   <div class="tbl-note">
@@ -387,23 +386,23 @@ Upper-bound YLD (no remission adjustment): 52,297 × 0·298 × 0·145 = <strong>
     <caption>Table 5. Economic burden, two methods, under both LE standards. See Section 3.4 and <a href="isabella_roi.html">ROI analysis page</a> for intervention-level estimates.</caption>
     <thead><tr><th>Method</th><th>Formula (frontier)</th><th>Central (frontier)</th><th>Formula (MI LE)</th><th>Central (MI planning)</th><th>Measures</th></tr></thead>
     <tbody>
-      <tr><td>Human Capital</td><td>14,736 × $62,000</td><td><strong>~$939M/yr</strong></td><td>10,288 × $62,000</td><td><strong>~$638M/yr</strong></td><td>Indirect productivity losses</td></tr>
-      <tr><td>VSL (HHS 2026)</td><td>461 deaths × $10.5M</td><td><strong>~$4.84B/yr</strong></td><td>461 deaths × $10.5M</td><td><strong>~$4.84B/yr</strong></td><td>Societal willingness to pay</td></tr>
+      <tr><td>Human Capital</td><td>13,493 × $62,000</td><td><strong>~$939M/yr</strong></td><td>10,288 × $62,000</td><td><strong>~$638M/yr</strong></td><td>Indirect productivity losses</td></tr>
+      <tr><td>VSL (HHS 2026)</td><td>391 deaths × $11.2M</td><td><strong>~$4.38B/yr</strong></td><td>391 deaths × $11.2M</td><td><strong>~$4.38B/yr</strong></td><td>Societal willingness to pay</td></tr>
     </tbody>
   </table>
-  <div class="tbl-note">VSL: $13.4M × (46,000/80,000)^0.4 = $10.5M income-adjusted (county median income $46,000, ACS 2022; income elasticity 0.4, Viscusi &amp; Aldy 2003 [7]). HHS ASPE Standard Values 2026. VSL is death-based and identical under both LE standards.</div>
+  <div class="tbl-note">VSL: $13.4M × (46,000/80,000)^0.4 = $11.2M income-adjusted (county median income $46,000, ACS 2022; income elasticity 0.4, Viscusi &amp; Aldy 2003 [7]). HHS ASPE Standard Values 2026. VSL is death-based and identical under both LE standards.</div>
 </div>
 
 <!-- 6. Discussion -->
 <h2 class="sec"><span style="color:var(--blue);margin-right:6px">6.</span> Discussion</h2>
 
-<p>Under the WHO GHE frontier LE standard with remission-adjusted mental health prevalence, cancer emerges as the leading disease burden in Isabella County (3,996 DALYs), followed by CVD (3,289), SUD (2,436), and mental health (1,672). This ranking is consistent with GBD-standard methodology and enables cross-county comparison. Total primary burden is 14,736 DALYs (95% UI 13,726–15,781), with 9,511 YLL and 5,225 YLD.</p>
+<p>Under the WHO GHE frontier LE standard with remission-adjusted mental health prevalence, cancer emerges as the leading disease burden in Isabella County (3,641 DALYs), followed by CVD (2,793), SUD (2,434), and mental health (1,502). This ranking is consistent with GBD-standard methodology and enables cross-county comparison. Total primary burden is 13,493 DALYs (95% UI 13,726–15,781), with 8,268 YLL and 5,225 YLD.</p>
 
 <p>Under the planning-grade Michigan LE sensitivity (retaining the remission-adjusted mental health prevalence), cancer remains the leading burden (2,632 DALYs) and mental health ranks #3 (1,522). Because YLD is insensitive to the LE reference, disability-driven conditions (mental health, SUD, COPD) rise in relative rank under the shorter Michigan standard. Without the remission adjustment, mental health would rank #1 under the Michigan standard — the figure cited in earlier county planning documents.</p>
 
 <p>Mental health carries the highest YLD:DALY ratio of any condition (65% of MH burden is non-fatal disability), making it the dominant source of avoidable morbidity regardless of the LE standard applied. The CDC PLACES 29.8% estimate is a lifetime-diagnosis figure; the active disease approximation (14.9% after remission adjustment) is consistent with national NSDUH past-year MDE estimates (~15%), providing convergent validity for the adjustment.</p>
 
-<p>Cancer has the highest absolute YLL under the frontier standard (2,873), reflecting 130 deaths per year at mean age 67 — giving a remaining LE of 22.1 years under frontier vs. 11.6 years under Michigan LE. This gap explains why cancer and CVD gain the most from adopting the frontier standard. Substance use disorders remain the third-highest burden and have the highest years lost per death under both standards due to their early mean age at death (44 years).</p>
+<p>Cancer has the highest absolute YLL under the frontier standard (2,519), reflecting 114 deaths per year at mean age 67 — giving a remaining LE of 22.1 years under frontier vs. 11.6 years under Michigan LE. This gap explains why cancer and CVD gain the most from adopting the frontier standard. Substance use disorders remain the third-highest burden and have the highest years lost per death under both standards due to their early mean age at death (44 years).</p>
 
 <p>The poverty data discrepancy (19–26.5%) reflects real measurement complexity from the university's student population, not data error. Analysts should consider a sensitivity analysis excluding the 18–24 age group to better characterize structural community poverty.</p>
 
