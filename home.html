@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Isabella County Health Burden Dashboard | Lakes Linked</title>
 <link rel="canonical" href="https://lakeslinked.com/home.html">
-<meta name="description" content="Isabella County, Michigan health burden analysis: 15,140 DALYs/year. Planning-grade DALY estimates using CDC PLACES 2024, CDC WONDER 2020–22, and IHME GBD 2021. Dr. Sergey Soshnikov, MD PhD.">
+<meta name="description" content="Isabella County, Michigan health burden analysis: 13,493 DALYs/year. Planning-grade DALY estimates using CDC PLACES 2024, CDC WONDER 2020–22, and IHME GBD 2021. Dr. Sergey Soshnikov, MD PhD.">
 <meta property="og:title" content="Isabella County Health Burden Dashboard | Lakes Linked">
-<meta property="og:description" content="15,140 DALYs/yr · Cancer #1, CVD #2, SUD #3. County-level disease burden analysis for grant applications and CHNA planning.">
+<meta property="og:description" content="13,493 DALYs/yr · Cancer #1, CVD #2, SUD #3. County-level disease burden analysis for grant applications and CHNA planning.">
 <meta property="og:url" content="https://lakeslinked.com/home.html">
 <meta property="og:type" content="website">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -164,14 +164,18 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
     <div class="county-group">
       <a class="navlink active" href="home.html">📊 Isabella</a>
       <a class="navlink" href="clare.html">🚨 Clare</a>
+      <a class="navlink" href="midland.html">🏭 Midland</a>
+      <a class="navlink" href="gratiot.html">🌾 Gratiot</a>
+      <a class="navlink" href="washtenaw.html">🎓 Washtenaw</a>
+      <a class="navlink" href="wayne.html">🏙️ Wayne</a>
     </div>
     <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
     <a class="navlink" href="index.html">🏠 Portal</a>
     <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
-    <a class="navlink" href="roi.html">💰 Economic Impact</a>
-    <a class="navlink" href="Isabella_County_AI_Solutions.html">🤖 Interventions</a>
-    <a class="navlink" href="Isabella_County_Methods_Supplement.html">📋 Methods</a>
-    <a class="navlink" href="trends.html">📈 Trends</a>
+    <a class="navlink" href="isabella_roi.html">💰 Economic Impact</a>
+    <a class="navlink" href="isabella_interventions.html">🤖 Interventions</a>
+    <a class="navlink" href="isabella_methods.html">📋 Methods</a>
+    <a class="navlink" href="isabella_trends.html">📈 Trends</a>
   </div>
 </nav>
 
@@ -180,7 +184,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
   <div class="ccb-inner">
     <div class="ccb-county active">
       <span class="ccb-name">📊 Isabella County</span>
-      <span class="ccb-stat">15,140 DALYs/yr</span>
+      <span class="ccb-stat">13,493 DALYs/yr</span>
       <span class="ccb-pop">Pop. 64,565 · FIPS 26073</span>
     </div>
     <a class="ccb-county" href="clare.html">
@@ -213,13 +217,13 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
     <h1>Isabella County, Michigan - Health Burden Analysis</h1>
     <p class="sub">Planning-grade DALY framework using public county health data · 2026</p>
     <div class="hero-stats">
-      <div class="hstat"><div class="num" id="h-dalys-gbd">15,140</div><div class="lbl">DALYs/yr (Primary · frontier LE)</div><div class="cmp neu">Frontier LE 89.1 yrs · YLL 9,917 + YLD 5,223 · 95% UI 14,032–16,206</div></div>
+      <div class="hstat"><div class="num" id="h-dalys-gbd">13,493</div><div class="lbl">DALYs/yr (Primary · frontier LE)</div><div class="cmp neu">Frontier LE 89.1 yrs · YLL 9,917 + YLD 5,223 · 95% UI 12,266–14,803</div></div>
       <div class="hdiv"></div>
       <div class="hstat"><div class="num">10,288</div><div class="lbl">DALYs/yr (Sensitivity · MI LE, remission-adj)</div><div class="cmp neu">Michigan LE 78.6 yrs · YLL 5,067 + YLD 5,223</div></div>
       <div class="hdiv"></div>
       <div class="hstat"><div class="num">819.9</div><div class="lbl">Mortality rate per 100k</div><div class="cmp bad">▲ 4.7% above MI · ▲ 13.3% above US</div></div>
       <div class="hdiv"></div>
-      <div class="hstat"><div class="num" id="h-econ">$939M</div><div class="lbl">Economic burden/year (Primary · frontier LE)</div><div class="cmp neu" id="h-econ-sub">Human capital · Primary 15,140 DALYs</div></div>
+      <div class="hstat"><div class="num" id="h-econ">$939M</div><div class="lbl">Economic burden/year (Primary · frontier LE)</div><div class="cmp neu" id="h-econ-sub">Human capital · Primary 13,493 DALYs</div></div>
       <div class="hdiv"></div>
       <div class="hstat"><div class="num">64,565</div><div class="lbl">County population</div><div class="cmp neu">Census ACS 2024 · Mount Pleasant</div></div>
     </div>
@@ -229,8 +233,8 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
 <!-- Notice -->
 <div class="notice">
   <span>⚠</span>
-  <span><strong>Planning model — not a validated county burden estimate.</strong> Primary: WHO/GBD Frontier LE 89.1 yrs + mental health remission adjustment (×0.50) = 15,140 DALYs (95% UI 14,032–16,206). Sensitivity (Michigan LE 78.6 yrs) = 10,288 DALYs. Monte Carlo n=10,000. Mixed-source: CDC PLACES 2024, CDC WONDER 2020–22, IHME GBD 2021 disability weights.
-  <a href="Isabella_County_Methods_Supplement.html" style="color:#92400e;font-weight:700;">→ Full methods & data quality notes</a></span>
+  <span><strong>Planning model — not a validated county burden estimate.</strong> Primary: WHO/GBD Frontier LE 89.1 yrs + mental health remission adjustment (×0.50) = 13,493 DALYs (95% UI 12,266–14,803). Sensitivity (Michigan LE 78.6 yrs) = 10,288 DALYs. Monte Carlo n=10,000. Mixed-source: CDC PLACES 2024, CDC WONDER 2020–22, IHME GBD 2021 disability weights.
+  <a href="isabella_methods.html" style="color:#92400e;font-weight:700;">→ Full methods & data quality notes</a></span>
 </div>
 
 <!-- Controls -->
@@ -253,7 +257,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
     <label>Show Conditions</label>
     <div class="cond-checks" id="cond-checks"></div>
   </div>
-  <div class="ctrl-info" id="ctrl-info">Primary standard: Frontier LE 89.1 yrs + MH remission adjustment = 15,140 DALYs. Sensitivity: Michigan LE 78.6 yrs = 10,288 DALYs. YLD varies with MH prevalence toggle (29.8% raw vs. 14.9% remission-adj).</div>
+  <div class="ctrl-info" id="ctrl-info">Primary standard: Frontier LE 89.1 yrs + MH remission adjustment = 13,493 DALYs. Sensitivity: Michigan LE 78.6 yrs = 10,288 DALYs. YLD varies with MH prevalence toggle (29.8% raw vs. 14.9% remission-adj).</div>
 </div>
 
 <!-- Jump Bar -->
@@ -291,7 +295,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
     <div class="kpi" style="--accent:var(--red)">
       <div style="display:flex;gap:16px;align-items:baseline">
         <div>
-          <div class="kpi-num" style="font-size:20px">15,140</div>
+          <div class="kpi-num" style="font-size:20px">13,493</div>
           <div style="font-size:10px;color:var(--muted);font-weight:600">MI Planning</div>
         </div>
         <div style="color:#cbd5e1;font-size:18px">|</div>
@@ -321,7 +325,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
       <h3>DALYs by Condition</h3>
       <p class="sub">Disability-Adjusted Life Years · <span id="chart1-sub">Michigan LE 78.6 · sorted by burden</span></p>
       <canvas id="dalyChart" height="270"></canvas>
-      <p style="font-size:11px;color:var(--muted);margin-top:8px">Interactive charts use Michigan LE planning standard. Hero stats reflect primary (frontier LE + remission-adj = 15,140 DALYs). Use MH prevalence toggle above to apply remission adjustment.</p>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px">Interactive charts use Michigan LE planning standard. Hero stats reflect primary (frontier LE + remission-adj = 13,493 DALYs). Use MH prevalence toggle above to apply remission adjustment.</p>
     </div>
     <div class="card">
       <h3>Disability Share by Condition</h3>
@@ -385,7 +389,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
         <div style="display:flex;gap:20px;align-items:baseline;flex-wrap:wrap">
           <div>
             <div class="econ-big" style="color:var(--navy)">$726M</div>
-            <div style="font-size:11px;color:var(--muted)">Primary (15,140 DALYs)</div>
+            <div style="font-size:11px;color:var(--muted)">Primary (13,493 DALYs)</div>
           </div>
           <div style="color:#cbd5e1;font-size:24px">|</div>
           <div>
@@ -431,7 +435,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
       </table>
     </div>
     <p style="font-size:11px;color:var(--muted);margin-top:10px">† Poverty: MDHHS 2020 PCNA 26.5% below 100% FPL; Census ACS 5-yr 2024: 21.9%; QuickFacts 2020–24: 19.0% - different ACS products, years, and student-population treatment. Not directly comparable. &nbsp;‡ HRSA HPSA ratio is FTE-weighted for Central Michigan Service Area - not a simple county headcount against 64,565 residents. &nbsp;
-    <a href="Isabella_County_Methods_Supplement.html" style="color:var(--blue)">Full methodology notes →</a>
+    <a href="isabella_methods.html" style="color:var(--blue)">Full methodology notes →</a>
     <span id="remission-footnote" style="display:none"> &nbsp;* MH YLD uses active disease prevalence (14.9% = 29.8% × 0.50 remission factor) when remission-adjusted mode is selected.</span></p>
   </div>
 
@@ -493,8 +497,8 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
           <div style="width:24px;height:24px;border-radius:50%;background:#0d9488;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</div>
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.55);">Final · v5 primary</div>
         </div>
-        <div style="font-size:26px;font-weight:800;color:#34d399;letter-spacing:-.02em;line-height:1;">15,140</div>
-        <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5;">Frontier LE + remission adj. · Monte Carlo n=10,000 · 95% UI 14,032–16,206 · Cancer #1</div>
+        <div style="font-size:26px;font-weight:800;color:#34d399;letter-spacing:-.02em;line-height:1;">13,493</div>
+        <div style="font-size:10.5px;color:rgba(255,255,255,.7);margin-top:4px;line-height:1.5;">Frontier LE + remission adj. · Monte Carlo n=10,000 · 95% UI 12,266–14,803 · Cancer #1</div>
         <div style="font-size:10.5px;color:#34d399;margin-top:6px;font-weight:600;">Cancer #1 · CVD #2 · SUD #3 · MH #4</div>
       </div>
 
@@ -504,7 +508,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
       <strong style="color:rgba(255,255,255,.6);">Note:</strong>
       11,710 (Michigan LE · no remission adjustment) remains valid as a local planning-grade sensitivity and for comparison with prior county documents.
       The 16,558 figure reflects frontier LE before the remission correction.
-      15,140 is the methodologically preferred primary estimate for cross-county and cross-country GBD comparison.
+      13,493 is the methodologically preferred primary estimate for cross-county and cross-country GBD comparison.
     </div>
   </div>
 
@@ -513,23 +517,23 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
   <div class="findings">
     <div class="finding" style="--accent:var(--purple)">
       <h4>🚨 Mental Health — <span id="finding-mh-rank">#3 (MI)</span> / #4 (Primary) · <span id="finding-mh-daly">1,672</span> DALYs</h4>
-      <p>CDC PLACES 29.8% adult prevalence (lifetime-diagnosed). Remission-adjusted active burden: 7,792 cases / 1,672 DALYs → #4 under primary standard. Under MI LE without remission adjustment, MH is #1 (2,713 DALYs). Under primary (frontier LE + remission-adj): Cancer #1, CVD #2, SUD #3. Mental health access crisis remains regardless: HRSA ratio 176,938:1 — 18.9× worse than state average. <a href="Isabella_County_AI_Solutions.html#mental" style="color:var(--purple)">→ interventions</a></p>
+      <p>CDC PLACES 29.8% adult prevalence (lifetime-diagnosed). Remission-adjusted active burden: 7,792 cases / 1,672 DALYs → #4 under primary standard. Under MI LE without remission adjustment, MH is #1 (2,713 DALYs). Under primary (frontier LE + remission-adj): Cancer #1, CVD #2, SUD #3. Mental health access crisis remains regardless: HRSA ratio 176,938:1 — 18.9× worse than state average. <a href="isabella_interventions.html#mental" style="color:var(--purple)">→ interventions</a></p>
     </div>
     <div class="finding" style="--accent:var(--blue)">
       <h4>📊 GBD/WHO Standard Ranking</h4>
-      <p>Primary (frontier LE + MH remission-adj): Cancer #1 (3,996), CVD #2 (3,289), SUD #3 (2,836), MH #4 (1,672). Total primary burden: 15,140 DALYs (95% UI 14,032–16,206). Planning sensitivity (MI LE): 10,288 DALYs. Monte Carlo n=10,000 propagates uncertainty from mortality (Poisson), prevalence (beta), and disability weights (±15–25%).</p>
+      <p>Primary (frontier LE + MH remission-adj): Cancer #1 (3,996), CVD #2 (3,289), SUD #3 (2,836), MH #4 (1,672). Total primary burden: 13,493 DALYs (95% UI 12,266–14,803). Planning sensitivity (MI LE): 10,288 DALYs. Monte Carlo n=10,000 propagates uncertainty from mortality (Poisson), prevalence (beta), and disability weights (±15–25%).</p>
     </div>
     <div class="finding" style="--accent:var(--red)">
       <h4>🚨 Cancer - #2 Burden (2,693 DALYs)</h4>
-      <p>130 deaths/year at mean age 67 (11.6 yrs remaining). 7.7% county prevalence. Both YLL (1,509) and YLD (1,184) components are substantial. Mortality rate 175.1/100k - 8.7% above Michigan. <a href="Isabella_County_AI_Solutions.html" style="color:var(--red)">→ interventions</a></p>
+      <p>130 deaths/year at mean age 67 (11.6 yrs remaining). 7.7% county prevalence. Both YLL (1,509) and YLD (1,184) components are substantial. Mortality rate 175.1/100k - 8.7% above Michigan. <a href="isabella_interventions.html" style="color:var(--red)">→ interventions</a></p>
     </div>
     <div class="finding" style="--accent:var(--amber)">
       <h4>🚨 SUD - #3 Burden (2,516 DALYs)</h4>
-      <p>Kills at age ~44 (34.6 years remaining) - highest YLL per death of any condition. 37 deaths/year. NAS rate 583/100k births. Maternal tobacco 22% = 3.4× US avg. <a href="Isabella_County_AI_Solutions.html#sud" style="color:var(--amber)">→ interventions</a></p>
+      <p>Kills at age ~44 (34.6 years remaining) - highest YLL per death of any condition. 37 deaths/year. NAS rate 583/100k births. Maternal tobacco 22% = 3.4× US avg. <a href="isabella_interventions.html#sud" style="color:var(--amber)">→ interventions</a></p>
     </div>
     <div class="finding" style="--accent:var(--red)">
       <h4>🚨 Stroke Mortality 49% Above State</h4>
-      <p>59.4 vs Michigan 39.9/100k - largest relative gap. Associated with hypertension, poverty-related access barriers, limited neurology. Each prevented death: ~$10.5M societal cost (VSL). <a href="Isabella_County_AI_Solutions.html#cvd" style="color:var(--red)">→ interventions</a></p>
+      <p>59.4 vs Michigan 39.9/100k - largest relative gap. Associated with hypertension, poverty-related access barriers, limited neurology. Each prevented death: ~$10.5M societal cost (VSL). <a href="isabella_interventions.html#cvd" style="color:var(--red)">→ interventions</a></p>
     </div>
     <div class="finding" style="--accent:var(--amber)">
       <h4>⚠ Poverty as Root Driver</h4>
@@ -544,7 +548,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
   <!-- Recommendations -->
   <div class="card" id="sec-recs" style="margin-bottom:24px">
     <h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
-    <p class="sub" style="margin-bottom:16px">Prioritized by DALY impact · <a href="Isabella_County_AI_Solutions.html" style="color:var(--blue)">See AI implementation roadmap →</a></p>
+    <p class="sub" style="margin-bottom:16px">Prioritized by DALY impact · <a href="isabella_interventions.html" style="color:var(--blue)">See AI implementation roadmap →</a></p>
     <div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>Telepsychiatry + collaborative care support in primary care</h5><p>Mental health, SUD · adults ≥18 with MH/SUD · evidence mixed for severe mental illness; use local evaluation before scaling</p></div><span class="rec-ev">Moderate / evaluate</span></div>
     <div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>AI-assisted cancer screening + navigation</h5><p>Cancer · 7.7% prevalence · 130 deaths/yr · Stage-shift intervention at age ~67</p></div><span class="rec-ev">Strong</span></div>
     <div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>MAT telehealth for opioid use disorder in prenatal care</h5><p>SUD, NAS · Pregnant women with OUD · NAS rate 583/100k births · 37 deaths/yr age 44</p></div><span class="rec-ev">Moderate–Strong</span></div>
@@ -598,7 +602,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
       <canvas id="tr-unins" height="130"></canvas>
     </div>
   </div>
-  <p style="font-size:11px;color:var(--muted);margin-bottom:24px;">Source: CDC PLACES 2020, 2022, 2023, 2025 releases (data years 2017–2023). BRFSS-based model estimates, FIPS 26073. <a href="trends.html" style="color:var(--blue);">View all 16 indicators →</a></p>
+  <p style="font-size:11px;color:var(--muted);margin-bottom:24px;">Source: CDC PLACES 2020, 2022, 2023, 2025 releases (data years 2017–2023). BRFSS-based model estimates, FIPS 26073. <a href="isabella_trends.html" style="color:var(--blue);">View all 16 indicators →</a></p>
 
 </div><!-- end .page -->
 
@@ -720,7 +724,7 @@ function updateAll() {
 
   // Hero econ (LE-toggle removed; shows MI planning standard)
   animVal('h-econ', fmtMoney(ev));
-  document.getElementById('h-econ-sub').textContent = econLabel === 'human capital' ? 'Human capital · Primary (frontier LE) 15,140 DALYs' : econLabel;
+  document.getElementById('h-econ-sub').textContent = econLabel === 'human capital' ? 'Human capital · Primary (frontier LE) 13,493 DALYs' : econLabel;
 
   // KPIs
   animVal('kpi-econ', fmtMoney(ev));

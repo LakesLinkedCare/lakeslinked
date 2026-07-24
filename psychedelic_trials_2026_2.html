@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Психоделики в клинике: 49 исследований 2026 | Lakes Linked</title>
+<meta name="description" content="Двуязычный научпоп-разбор всех клинических исследований психоделической терапии (псилоцибин, LSD, DMT, 5-MeO-DMT, аяуаска, MDMA), зарегистрированных на ClinicalTrials.gov в 2026 году.">
+<meta property="og:title" content="Psychedelics enter the clinic: 49 new trials in 2026">
+<meta property="og:description" content="A bilingual data story on every psychedelic-therapy trial registered on ClinicalTrials.gov in 2026. Charts and table inside.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lakeslinked.com">
+<style>
+  :root{
+    --bg:#101418; --panel:#171d24; --panel2:#1e2630; --line:#2a333f;
+    --ink:#eef3f8; --muted:#9fadbb; --brand:#43c6ac; --brand2:#8b7cf6;
+    --psilo:#8b7cf6; --mdma:#f2765f; --dmt:#43c6ac; --meo:#3aa0ff;
+    --aya:#f2b705; --lsd:#e368c8; --novel:#a0aec0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;font-size:16px}
+  a{color:var(--brand)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  nav.bar{position:sticky;top:0;z-index:50;background:rgba(16,20,24,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.bar .inner{max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;
+    align-items:center;gap:6px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:9px;margin-right:auto;text-decoration:none;color:var(--ink)}
+  .logo .wm{font-weight:800;letter-spacing:.02em;font-size:16px}
+  .logo .wm b{color:var(--brand);font-weight:800}
+  nav.bar a.nl{color:var(--muted);text-decoration:none;font-size:13px;padding:5px 9px;border-radius:7px}
+  nav.bar a.nl:hover{color:var(--ink);background:var(--panel2)}
+  .langtog{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-left:4px}
+  .langtog button{background:transparent;border:0;color:var(--muted);font-family:inherit;
+    font-size:12.5px;font-weight:700;padding:6px 10px;cursor:pointer}
+  .langtog button.on{background:var(--brand2);color:#fff}
+  nav.bar a.cta{background:var(--brand);color:#06110e;font-weight:700;font-size:13px;
+    padding:6px 12px;border-radius:8px;text-decoration:none;margin-left:4px}
+  header.hero{padding:52px 0 30px;border-bottom:1px solid var(--line)}
+  .kick{color:var(--brand);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+  h1{font-size:38px;line-height:1.15;margin:12px 0 14px;letter-spacing:-.01em}
+  .lead{font-size:18px;color:#cdd7e1;max-width:770px}
+  .tags{margin:18px 0 2px;display:flex;flex-wrap:wrap;gap:8px}
+  .tags a{background:var(--panel2);border:1px solid var(--line);color:var(--muted);
+    font-size:12.5px;padding:4px 10px;border-radius:999px;text-decoration:none}
+  .tags a:hover{color:var(--ink);border-color:var(--brand)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:30px 0}
+  .toc h2{margin:0 0 12px;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:0 0 9px;break-inside:avoid}
+  .toc a{text-decoration:none;font-weight:600}
+  .toc span{display:block;color:var(--muted);font-size:13px;font-weight:400}
+  @media(max-width:640px){.toc ol{columns:1}h1{font-size:28px}}
+  section{padding:34px 0;border-bottom:1px solid var(--line)}
+  h2.sec{font-size:26px;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 18px;font-size:15px}
+  p{color:#d6dee7}
+  h3{font-size:18px;margin:26px 0 8px;color:#fff}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:8px 0 22px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .stat .n{font-size:28px;font-weight:800}
+  .stat .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+  .callout{background:linear-gradient(135deg,rgba(67,198,172,.10),rgba(139,124,246,.10));
+    border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 18px;margin:18px 0;font-size:15px}
+  .chart{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:18px 0}
+  .chart h3{margin:0 0 4px}
+  .chart .ct{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .row{display:flex;align-items:center;gap:10px;margin:7px 0}
+  .row .lab{width:220px;min-width:220px;font-size:13.5px;text-align:right;color:#e7edf3}
+  .row .track{flex:1;background:var(--panel2);border-radius:6px;height:22px;position:relative;overflow:hidden}
+  .row .fill{height:100%;border-radius:6px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+  .row .val{width:44px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+  @media(max-width:640px){.row .lab{width:135px;min-width:135px;font-size:12px}}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:10px 2px 0;font-size:12.5px;color:var(--muted)}
+  .dot{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:middle}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px;align-items:center}
+  .chip{background:var(--panel2);border:1px solid var(--line);color:var(--muted);
+    padding:6px 12px;border-radius:999px;cursor:pointer;font-size:13px;user-select:none}
+  .chip.active{background:var(--brand2);border-color:var(--brand2);color:#fff}
+  input#q{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:9px 12px;border-radius:8px;min-width:240px;font-size:14px}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:820px}
+  th,td{text-align:left;padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;cursor:pointer;white-space:nowrap;background:var(--panel)}
+  th:hover{color:var(--ink)}
+  tr:hover td{background:var(--panel)}
+  td a{color:var(--brand);text-decoration:none}
+  td a:hover{text-decoration:underline}
+  .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap;color:#0d1117}
+  .badge{font-size:11.5px;color:var(--muted)}
+  .flag{color:var(--aya);font-size:11px}
+  .share{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 4px}
+  .share a,.share button{display:inline-flex;align-items:center;gap:7px;background:var(--panel2);
+    border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px;padding:9px 15px;border-radius:9px;cursor:pointer;font-family:inherit}
+  .share a:hover,.share button:hover{border-color:var(--brand)}
+  .lakes{background:linear-gradient(135deg,rgba(67,198,172,.14),rgba(139,124,246,.12));
+    border:1px solid var(--line);border-radius:16px;padding:26px;margin:24px 0;text-align:center}
+  .lakes .logo{justify-content:center;margin:0 0 12px}
+  .lakes h3{margin:0 0 8px;font-size:22px}
+  .lakes p{margin:0 auto 16px;max-width:580px;color:#cdd7e1}
+  .lakes a.big{display:inline-block;background:var(--brand);color:#06110e;font-weight:800;padding:12px 26px;border-radius:10px;text-decoration:none;font-size:15px}
+  .lakes .mail{display:block;margin-top:12px;color:var(--muted);font-size:14px}
+  footer{padding:32px 0 70px;color:var(--muted);font-size:13px;text-align:center}
+  footer .logo{justify-content:center;margin:0 0 14px}
+  footer .tags{justify-content:center}
+  footer a{color:var(--brand)}
+  .tip{position:fixed;background:#000;border:1px solid var(--brand);color:#fff;font-size:12px;padding:6px 9px;border-radius:6px;pointer-events:none;opacity:0;transition:opacity .12s;z-index:99;max-width:250px}
+</style>
+</head>
+<body data-palette="#8b7cf6,#f2765f,#43c6ac,#3aa0ff,#f2b705,#e368c8,#a0aec0">
+
+<nav class="bar"><div class="inner">
+  <a class="logo" href="https://lakeslinked.com" target="_blank" rel="noopener" aria-label="Lakes Linked">
+    <svg class="mark" viewBox="0 0 36 30" width="28" height="23" aria-hidden="true">
+      <circle cx="13" cy="15" r="8.5" fill="none" stroke="#43c6ac" stroke-width="3"/>
+      <circle cx="23" cy="15" r="8.5" fill="none" stroke="#8b7cf6" stroke-width="3"/>
+    </svg>
+    <span class="wm">Lakes<b>Linked</b></span>
+  </a>
+  <a class="nl" href="#kratko" data-i18n="n_short">Коротко</a>
+  <a class="nl" href="#dannye" data-i18n="n_data">Данные</a>
+  <a class="nl" href="#grafiki" data-i18n="n_charts">Графики</a>
+  <a class="nl" href="#tablica" data-i18n="n_table">Таблица</a>
+  <a class="nl" href="#nauka" data-i18n="n_science">Наука</a>
+  <div class="langtog">
+    <button id="lg_ru" onclick="setLang('ru')">RU</button>
+    <button id="lg_en" onclick="setLang('en')">EN</button>
+  </div>
+  <a class="cta" href="https://lakeslinked.com" target="_blank" rel="noopener" data-i18n="n_cta">Ещё на Lakes Linked</a>
+</div></nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kick" data-i18n="h_kick">Научпоп-разбор · ClinicalTrials.gov · 2026</div>
+  <h1 data-i18n="h_title">Психоделики выходят из подполья в клинику: 49 новых исследований за полгода</h1>
+  <p class="lead" data-i18n="h_lead"></p>
+  <div class="tags">
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#психоделики</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#psilocybin</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#нейронаука</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#MDMA</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#mentalhealth</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#ClinicalTrials2026</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#научпоп</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#LakesLinked</a>
+  </div>
+</header>
+
+<div class="toc">
+  <h2 data-i18n="toc_title">Оглавление</h2>
+  <ol>
+    <li><a href="#kratko" data-i18n="toc1t">Коротко о главном</a><span data-i18n="toc1d">Цифры, которые задают тон</span></li>
+    <li><a href="#dannye" data-i18n="toc2t">Откуда данные</a><span data-i18n="toc2d">Как мы искали и что отсеяли</span></li>
+    <li><a href="#grafiki" data-i18n="toc3t">Графики</a><span data-i18n="toc3d">Препараты, показания, фазы, страны, сроки</span></li>
+    <li><a href="#tablica" data-i18n="toc4t">Таблица исследований</a><span data-i18n="toc4d">Все 49, с сортировкой и фильтрами</span></li>
+    <li><a href="#nauka" data-i18n="toc5t">Взгляд науки</a><span data-i18n="toc5d">Простыми словами, без хайпа</span></li>
+    <li><a href="#ogovorki" data-i18n="toc6t">Оговорки и границы</a><span data-i18n="toc6d">Где нужна осторожность</span></li>
+  </ol>
+</div>
+
+<section id="kratko">
+  <h2 class="sec" data-i18n="s1_h">Коротко о главном</h2>
+  <p class="sub" data-i18n="s1_sub">Если у вас есть тридцать секунд, вот вся суть.</p>
+  <div class="stats" id="statcards"></div>
+  <p data-i18n-html="s1_p"></p>
+  <div class="callout" data-i18n="s1_call"></div>
+</section>
+
+<section id="dannye">
+  <h2 class="sec" data-i18n="s2_h">Откуда данные и как мы их чистили</h2>
+  <p class="sub" data-i18n="s2_sub">Прозрачность прежде всего.</p>
+  <p data-i18n-html="s2_p1"></p>
+  <p data-i18n-html="s2_p2"></p>
+</section>
+
+<section id="grafiki">
+  <h2 class="sec" data-i18n="s3_h">Пять графиков, чтобы всё уложилось в голове</h2>
+  <p class="sub" data-i18n="s3_sub">Наведите курсор на столбец, чтобы увидеть точные числа.</p>
+  <div class="chart"><h3 data-i18n="ch1_h"></h3><p class="ct" data-i18n="ch1_t"></p><div id="ch_comp"></div></div>
+  <div class="chart"><h3 data-i18n="ch2_h"></h3><p class="ct" data-i18n="ch2_t"></p><div id="ch_ind"></div><div class="legend" id="ind_leg"></div></div>
+  <div class="chart"><h3 data-i18n="ch3_h"></h3><p class="ct" data-i18n="ch3_t"></p><div id="ch_phase"></div></div>
+  <div class="chart"><h3 data-i18n="ch4_h"></h3><p class="ct" data-i18n="ch4_t"></p><div id="ch_country"></div></div>
+  <div class="chart"><h3 data-i18n="ch5_h"></h3><p class="ct" data-i18n="ch5_t"></p><div id="ch_time"></div></div>
+</section>
+
+<div class="lakes">
+  <div class="logo"><svg viewBox="0 0 36 30" width="34" height="28" aria-hidden="true">
+    <circle cx="13" cy="15" r="8.5" fill="none" stroke="#43c6ac" stroke-width="3"/>
+    <circle cx="23" cy="15" r="8.5" fill="none" stroke="#8b7cf6" stroke-width="3"/></svg>
+    <span class="wm" style="font-size:19px">Lakes<b style="color:var(--brand)">Linked</b></span></div>
+  <h3 data-i18n="lk_h">Нравится такой разбор?</h3>
+  <p data-i18n="lk_p"></p>
+  <a class="big" href="https://lakeslinked.com" target="_blank" rel="noopener" data-i18n="lk_btn">Открыть Lakes Linked →</a>
+  <a class="mail" href="mailto:contact@lakeslinked.com">contact@lakeslinked.com</a>
+</div>
+
+<section id="tablica">
+  <h2 class="sec" data-i18n="s4_h">Таблица всех 49 исследований</h2>
+  <p class="sub" data-i18n="s4_sub"></p>
+  <div class="controls" id="filters"><input id="q" data-i18n-ph="q_ph" placeholder="Поиск..." /></div>
+  <div class="tablewrap"><table id="tbl"><thead><tr>
+    <th data-k="compound" data-i18n="th_compound">Препарат</th>
+    <th data-k="nct" data-i18n="th_nct">NCT</th>
+    <th data-k="title" data-i18n="th_title">Исследование</th>
+    <th data-k="condition" data-i18n="th_cond">Показание</th>
+    <th data-k="phase" data-i18n="th_phase">Фаза</th>
+    <th data-k="status" data-i18n="th_status">Статус</th>
+    <th data-k="n" data-i18n="th_n">N</th>
+    <th data-k="sponsor" data-i18n="th_sponsor">Спонсор</th>
+    <th data-k="country" data-i18n="th_country">Страна</th>
+    <th data-k="start" data-i18n="th_start">Старт</th>
+  </tr></thead><tbody></tbody></table></div>
+</section>
+
+<section id="nauka">
+  <h2 class="sec" data-i18n="s5_h">Что это значит: взгляд науки, без хайпа</h2>
+  <p class="sub" data-i18n="s5_sub"></p>
+  <h3 data-i18n="sc1_h"></h3><p data-i18n="sc1_p"></p>
+  <h3 data-i18n="sc2_h"></h3><p data-i18n="sc2_p"></p>
+  <h3 data-i18n="sc3_h"></h3><p data-i18n="sc3_p"></p>
+  <h3 data-i18n="sc4_h"></h3><p data-i18n="sc4_p"></p>
+  <div class="callout" data-i18n-html="sc_call"></div>
+</section>
+
+<section id="ogovorki">
+  <h2 class="sec" data-i18n="s6_h">Оговорки и границы, без которых нельзя</h2>
+  <p class="sub" data-i18n="s6_sub"></p>
+  <p data-i18n="s6_p1"></p>
+  <p data-i18n="s6_p2"></p>
+</section>
+
+<section>
+  <h3 data-i18n="sh_h">Понравилось? Поделитесь</h3>
+  <div class="share">
+    <a id="sh_x" href="#" target="_blank" rel="noopener" data-i18n="sh_x">Поделиться в X</a>
+    <a id="sh_tg" href="#" target="_blank" rel="noopener" data-i18n="sh_tg">В Telegram</a>
+    <button id="sh_copy" type="button" data-i18n="sh_copy">Копировать ссылку</button>
+    <a href="mailto:contact@lakeslinked.com" data-i18n="sh_mail">Написать нам</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener" data-i18n="sh_more">Больше на Lakes Linked</a>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><svg viewBox="0 0 36 30" width="30" height="25" aria-hidden="true">
+    <circle cx="13" cy="15" r="8.5" fill="none" stroke="#43c6ac" stroke-width="3"/>
+    <circle cx="23" cy="15" r="8.5" fill="none" stroke="#8b7cf6" stroke-width="3"/></svg>
+    <span class="wm">Lakes<b style="color:var(--brand)">Linked</b></span></div>
+  <p data-i18n="ft_src"></p>
+  <p><a href="mailto:contact@lakeslinked.com">contact@lakeslinked.com</a> · <a href="https://lakeslinked.com" target="_blank" rel="noopener">lakeslinked.com</a></p>
+  <div class="tags">
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#психоделики</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#psilocybin</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#нейронаука</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#научпоп</a>
+    <a href="https://lakeslinked.com" target="_blank" rel="noopener">#LakesLinked</a>
+  </div>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+// [compound, nct, title_ru, title_en, cond_ru, cond_en, phase, status, n, sponsor, countryCode, start, flag_ru, flag_en]
+const DATA=[
+["Psilocybin","NCT07336238","Групповой ретрит с псилоцибином при тревоге и депрессии на фоне рака","Group-retreat psilocybin therapy for cancer-related anxiety & depression","Тревога/депрессия (онко)","Cancer anxiety / depression","PHASE2","RECRUITING",18,"University of Washington","US","2026-05","",""],
+["Psilocybin","NCT07391332","Псилоцибин-терапия игровой зависимости (пилот)","Psilocybin-assisted psychotherapy for gambling disorder (pilot)","Игровая зависимость","Gambling disorder","PHASE2","NOT_YET_RECRUITING",30,"Nantes University Hospital","FR","2026-04","",""],
+["Psilocybin","NCT07582120","Механистическое исследование псилоцибина при депрессии","Mechanistic study of psilocybin-assisted therapy for depression","Депрессия","Depression","PHASE2","NOT_YET_RECRUITING",50,"Washington Univ. School of Medicine","US","2026-06","",""],
+["Psilocybin","NCT07693153","Влияние псилоцибина на чувство социальной связанности","Effects of psilocybin on social connectedness","Одиночество/горе","Loneliness / grief","PHASE1","NOT_YET_RECRUITING",51,"Yale University","US","2026-08","",""],
+["Psilocybin","NCT07449351","Микродозинг псилоцибина: когниция, настроение, качество жизни","Psilocybin microdosing on cognition, mood & QoL (pilot)","Микродозинг/настроение","Microdosing / mood","EARLY_PHASE1","NOT_YET_RECRUITING",20,"Yale University","US","2026-08","",""],
+["Psilocybin","NCT07610369","Псилоцибин при депрессии на фоне болезни Паркинсона","Psilocybin therapy for depression in Parkinson's disease","Депрессия (Паркинсон)","Parkinson's depression","PHASE2","RECRUITING",40,"Yale University","US","2026-07","",""],
+["Psilocybin","NCT07703722","Псилоцибин плюс структурированная терапия при травматической депрессии","Psilocybin + structured reframing therapy in trauma-related MDD","Травматическая депрессия","Trauma-related MDD","PHASE3","RECRUITING",60,"Khyber Medical University Peshawar","PK","2026-04","",""],
+["Psilocybin","NCT07565493","Псилоцибин на фоне блокады 5-HT1a (пиндолол)","Psilocybin administration with 5-HT1a blockade (pindolol)","Здоровые добровольцы","Healthy volunteers","EARLY_PHASE1","RECRUITING",18,"Johns Hopkins University","US","2026-08","",""],
+["Psilocybin","NCT07405606","Псилоцибин при сочетании депрессии и алкогольной зависимости","Psilocybin therapy for comorbid MDD + alcohol use disorder","Депрессия + алкоголь","MDD + alcohol use","PHASE2","NOT_YET_RECRUITING",30,"Centre for Addiction & Mental Health","CA","2026-03","",""],
+["Psilocybin","NCT07360301","CoPEWell: псилоцибин и субъективное благополучие","CoPEWell: psilocybin effects on well-being","Благополучие","Well-being","PHASE1","NOT_YET_RECRUITING",120,"University of Wisconsin, Madison","US","2026-09","",""],
+["Psilocybin","NCT07565909","Псилоцибин для врачей с выгоранием и депрессией","Group psilocybin for clinicians with burnout & depression","Депрессия/выгорание","Depression / burnout","PHASE2","NOT_YET_RECRUITING",72,"University of Washington","US","2026-06","",""],
+["Psilocybin","NCT07479550","Псилоцибин под общим наркозом при депрессии","Masking psilocybin therapy with general anesthesia in MDD","Тяжёлая депрессия","Major depression","PHASE2","NOT_YET_RECRUITING",10,"Stanford University","US","2026-07","",""],
+["Psilocybin","NCT07719088","Псилоцибин и биомаркеры долголетия и здорового старения","Psilocybin effects on biomarkers of longevity & healthy aging","Старение/долголетие","Aging / longevity","PHASE1","NOT_YET_RECRUITING",50,"Charles Raison","US","2026-12","",""],
+["Psilocybin","NCT07638553","Псилоцибин при алкогольной зависимости с депрессией","Psilocybin in alcohol use disorder with depressive symptoms","Алкогольная зависимость","Alcohol use disorder","PHASE3","RECRUITING",172,"CHU de Nîmes","FR","2026-06","",""],
+["Psilocybin","NCT07484906","Психоделики и электромагнитная терапия при суицидальных мыслях","Precision phenotyping: electromagnetic & psychedelic therapies","Суицидальные мысли","Suicidal ideation","PHASE2","WITHDRAWN",0,"University of New Mexico","US","2026-05","отозвано","withdrawn"],
+["Psilocybin","NCT07347405","Повторные дозы цельногрибного псилоцибина при ОКР","Repeated whole-mushroom psilocybin dosing for OCD","ОКР","OCD","PHASE1","RECRUITING",30,"Francisco A. Moreno (U Arizona)","US","2026-05","",""],
+["Psilocybin","NCT07721467","NECTAR: когнитивный тренинг с псилоцибином при старении и Альцгеймере","NECTAR: cognitive training reinforced by psilocybin in Alzheimer's","Болезнь Альцгеймера","Alzheimer's disease","PHASE2","NOT_YET_RECRUITING",200,"National Institute on Aging","US","2026-10","",""],
+["Psilocybin","NCT07506395","Групповая псилоцибин-терапия при ПТСР","Group psilocybin-assisted therapy for PTSD","ПТСР","PTSD","PHASE1","RECRUITING",36,"University of New Mexico","US","2026-05","",""],
+["Psilocybin","NCT07516405","Безопасность псилоцибина у здоровых пожилых","Phase 1 safety & tolerability of psilocybin in healthy older adults","Здоровые пожилые","Healthy older adults","PHASE1","RECRUITING",40,"University of Colorado, Denver","US","2026-04","",""],
+["Psilocybin","NCT07570654","COMP360 псилоцибин, фаза 2b/3 при ПТСР","COMP360 psilocybin Phase 2b/3 in PTSD","ПТСР","PTSD","PHASE2/PHASE3","NOT_YET_RECRUITING",300,"COMPASS Pathways","GB","2026-09","",""],
+["Psilocybin","NCT07373535","Музыка против осознанности в псилоцибин-терапии резистентной депрессии","Music vs mindfulness in psilocybin therapy for TRD","Резистентная депрессия","Treatment-resistant depression","PHASE2","NOT_YET_RECRUITING",16,"Kyle Greenway (McGill)","CA","2026-05","",""],
+["Psilocybin","NCT07332143","Псилоцибин с поддержкой и экспозиционной терапией при ПТСР","Psilocybin with support & prolonged exposure for PTSD","ПТСР","PTSD","PHASE2","NOT_YET_RECRUITING",150,"Emory University","US","2026-06","",""],
+["Psilocybin","NCT07433452","Псилоцибин у здоровых: психо-, био- и ЭЭГ-биомаркеры","Psilocybin in healthy volunteers: psych/biochem/EEG biomarkers","Здоровые добровольцы","Healthy volunteers","PHASE1","NOT_YET_RECRUITING",50,"Gabriella Gobbi (McGill)","CA","2026-09","",""],
+["Psilocybin","NCT07566104","Групповая КПТ с псилоцибином при депрессии","Group psilocybin-assisted CBT for MDD","Депрессия","Major depression","PHASE2","NOT_YET_RECRUITING",30,"University of California, Los Angeles","US","2027-01","",""],
+["Psilocybin","NCT07406828","Однократный псилоцибин у пациентов после операции: боль и опиоиды","Single-dose psilocybin after surgery: pain, mood & opioid use","Послеоперационная боль","Postoperative pain","PHASE1","NOT_YET_RECRUITING",70,"Trent Emerick (U Pittsburgh)","US","2026-07","",""],
+["Psilocybin","NCT07386730","Психоделики у здоровых пожилых с биомаркерами преклинического Альцгеймера","Psychedelics in healthy older adults with preclinical Alzheimer's biomarkers","Ангедония/старение","Anhedonia / aging","PHASE1","RECRUITING",80,"Jennifer Mitchell (UCSF)","US","2026-06","",""],
+["Psilocybin","NCT07610135","PRISMatic: псилоцибин с предобработкой пимавансерином или без","PRISMatic: psilocybin with or without pimavanserin pretreatment","Настроение/благополучие","Mood / well-being","PHASE1/PHASE2","RECRUITING",20,"Johns Hopkins University","US","2026-07","",""],
+["Psilocybin","NCT07607938","Псилоцибин против остаточной ангедонии","Psilocybin for residual anhedonia","Ангедония","Anhedonia","PHASE1","NOT_YET_RECRUITING",90,"NYU Langone Health","US","2026-07","",""],
+["Psilocybin","NCT07490353","Роль психоделического переживания в анти-ангедоническом эффекте (фМРТ)","Role of the psychedelic experience in psilocybin's anti-anhedonic effect (fMRI)","Депрессия/ангедония","MDD / anhedonia","PHASE1","RECRUITING",85,"Medical University of Vienna","AT","2025-11","",""],
+["Psilocybin","NCT07345858","Слюнный окситоцин как биомаркер психоделик-терапии при депрессии","Salivary oxytocin as a biomarker of psychedelic therapy in MDD","Депрессия (наблюдат.)","MDD (observational)","NA","ENROLLING_BY_INVITATION",80,"University of Geneva","CH","2026-01","наблюдательное","observational"],
+["Psilocybin","NCT07499583","Псилоцибин при резистентной депрессии с зависимостью","Psilocybin for TRD with co-occurring substance use","Депрессия + зависимость","TRD + substance use","PHASE1/PHASE2","NOT_YET_RECRUITING",50,"Indiana University","US","2026-08","",""],
+["Psilocybin","NCT07710027","Поиск безопасной непсиходелической дозы псилоцибина","Finding a safe non-psychedelic dose of psilocybin","Здоровые добровольцы","Healthy controls","PHASE1","COMPLETED",56,"Diamond Therapeutics Inc.","CA","2021-10","поздняя регистрация","late registration"],
+["LSD","NCT07503002","Укороченная LSD-интервенция при тяжёлой депрессии","Shortened LSD intervention for major depressive disorder","Тяжёлая депрессия","Major depression","PHASE1","NOT_YET_RECRUITING",10,"Johns Hopkins University","US","2026-07","",""],
+["DMT","NCT07562191","Ингаляционный N,N-DMT при большой депрессии (фаза IIb)","Inhaled N,N-DMT for major depressive disorder (Phase IIb)","Депрессия/суицид","MDD / suicidal ideation","PHASE2","RECRUITING",140,"Univ. Federal do Rio Grande do Norte","BR","2026-08","",""],
+["DMT","NCT07693257","Нейроэффекты непрерывной внутривенной инфузии DMT","Neural effects of continuous IV N,N-DMT infusion","Здоровые добровольцы","Healthy participants","PHASE1","NOT_YET_RECRUITING",20,"Jon Dean","US","2026-09","",""],
+["5-MeO-DMT","NCT07444788","Острые эффекты и фармакокинетика внутривенного 5-MeO-DMT","Acute effects & pharmacokinetics of IV 5-MeO-DMT","Здоровые добровольцы","Healthy participants","PHASE1","RECRUITING",40,"University Hospital Basel","CH","2026-03","",""],
+["5-MeO-DMT","NCT07540494","GH001 (5-MeO-DMT), аэрозоль: безопасность и фармакокинетика","GH001 (5-MeO-DMT) aerosol: safety & pharmacokinetics","Здоровые добровольцы","Healthy adults","PHASE1","NOT_YET_RECRUITING",12,"GH Research Ireland Limited","IE","2026-04","",""],
+["5-MeO-DMT","NCT07717866","Trifecta: ибогаин, 5-MeO-DMT и MeRT у ветеранов спецназа","Trifecta: ibogaine, 5-MeO-DMT & MeRT in special-operations veterans","ПТСР/ЧМТ (ветераны)","PTSD / TBI (veterans)","NA","ACTIVE_NOT_RECRUITING",52,"Axial Therapeutic Research","US","2022-08","наблюд.; поздняя рег.","observational; late reg."],
+["Ayahuasca","NCT07317206","Аяуаска против эскетамина при ПТСР","Ayahuasca vs esketamine for PTSD","ПТСР","PTSD","PHASE2","RECRUITING",10,"University of São Paulo","BR","2025-12","",""],
+["Ayahuasca","NCT07317219","Аяуаска против эскетамина и восприятие образа тела","Ayahuasca vs esketamine and body-image perception","Здоровые женщины","Healthy women","NA","RECRUITING",20,"University of São Paulo","BR","2025-12","",""],
+["Ayahuasca","NCT07317232","Аяуаска против эскетамина, менструальный цикл и ПМС","Ayahuasca vs esketamine, menstrual cycle & PMS","Здоровые женщины","Healthy women","NA","RECRUITING",20,"University of São Paulo","BR","2025-12","",""],
+["MDMA","NCT07569159","Открытое исследование MDMA-терапии у ветеранов с ПТСР","Open-label MDMA therapy in veterans with PTSD","ПТСР (ветераны)","PTSD (veterans)","PHASE2","RECRUITING",52,"Sunstone Medical","US","2026-06","",""],
+["MDMA","NCT07542145","MDMA-терапия при булимии (разработка протокола)","MDMA therapy for bulimia nervosa (protocol development)","Булимия","Bulimia nervosa","PHASE1","RECRUITING",40,"Icahn School of Medicine at Mount Sinai","US","2026-05","",""],
+["MDMA","NCT07469098","Групповая против индивидуальной MDMA-терапии при ПТСР","Group vs individual MDMA therapy for PTSD","ПТСР","PTSD","PHASE2","RECRUITING",168,"Sheba Medical Center","IL","2025-12","",""],
+["MDMA","NCT07584720","Мидомафетамин: фармакокинетика при терапевтических и высоких дозах","Midomafetamine pharmacokinetics at therapeutic & high doses","Здоровые добровольцы","Healthy volunteers","PHASE1","ACTIVE_NOT_RECRUITING",32,"Resilient Pharmaceuticals","US","2026-04","",""],
+["MDMA","NCT07704762","MDMA-терапия для военнослужащих с ПТСР","MDMA therapy for military service members with PTSD","ПТСР (военные)","PTSD (military)","PHASE2","NOT_YET_RECRUITING",86,"U.S. Army Medical Research & Dev. Cmd","US","2026-10","",""],
+["MDMA","NCT07494214","Острый обезболивающий эффект MDMA на экспериментальную боль","Acute analgesic effect of MDMA on experimental pain","Здоровые/боль","Healthy / pain","PHASE1","RECRUITING",20,"University Hospital Basel","CH","2026-03","",""],
+["MDMA","NCT07555132","Окситоцин в ответ на MDMA при аутизме и в контроле","Oxytocin response to MDMA in autism and controls","Аутизм","Autism spectrum disorder","NA","NOT_YET_RECRUITING",40,"University Hospital Basel","CH","2026-06","",""],
+["Novel 5-HT2A","NCT07592689","DT120 против плацебо, фаза 3 при депрессии (Ascend)","DT120 vs placebo, Phase 3 in depression (Ascend)","Депрессия","Major depressive disorder","PHASE3","RECRUITING",165,"Definium Therapeutics US, Inc.","US","2026-05","",""]
+];
+const F=["compound","nct","title_ru","title_en","cond_ru","cond_en","phase","status","n","sponsor","cc","start","flag_ru","flag_en"];
+let rows=DATA.map(r=>{let o={};F.forEach((k,i)=>o[k]=r[i]);return o;});
+
+const HEX={"Psilocybin":"#8b7cf6","MDMA":"#f2765f","DMT":"#43c6ac","5-MeO-DMT":"#3aa0ff","Ayahuasca":"#f2b705","LSD":"#e368c8","Novel 5-HT2A":"#a0aec0"};
+const NB={"NCT07336238":"A","NCT07391332":"C","NCT07582120":"A","NCT07693153":"D","NCT07449351":"D","NCT07610369":"A","NCT07703722":"A","NCT07565493":"D","NCT07405606":"C","NCT07360301":"D","NCT07565909":"A","NCT07479550":"A","NCT07719088":"E","NCT07638553":"C","NCT07484906":"A","NCT07347405":"F","NCT07721467":"E","NCT07506395":"B","NCT07516405":"D","NCT07570654":"B","NCT07373535":"A","NCT07332143":"B","NCT07433452":"D","NCT07566104":"A","NCT07406828":"F","NCT07386730":"D","NCT07610135":"D","NCT07607938":"A","NCT07490353":"A","NCT07345858":"A","NCT07499583":"C","NCT07710027":"D","NCT07503002":"A","NCT07562191":"A","NCT07693257":"D","NCT07444788":"D","NCT07540494":"D","NCT07717866":"B","NCT07317206":"B","NCT07317219":"D","NCT07317232":"D","NCT07569159":"B","NCT07542145":"F","NCT07469098":"B","NCT07584720":"D","NCT07704762":"B","NCT07494214":"D","NCT07555132":"F","NCT07592689":"A"};
+
+const L={
+ ru:{
+  n_short:"Коротко",n_data:"Данные",n_charts:"Графики",n_table:"Таблица",n_science:"Наука",n_cta:"Ещё на Lakes Linked",
+  h_kick:"Научпоп-разбор · ClinicalTrials.gov · 2026",
+  h_title:"Психоделики выходят из подполья в клинику: 49 новых исследований за полгода",
+  h_lead:"Пристегнитесь, будет интересно. Пока одни спорят, грибы это или лекарство, учёные по всему миру уже запускают десятки строгих клинических испытаний. Мы собрали все исследования псилоцибина, LSD, DMT, 5-MeO-DMT, аяуаски и MDMA, которые официально стартовали в реестре в 2026 году, и разложили по полочкам: с графиками, таблицей и разбором простыми словами. Погнали.",
+  toc_title:"Оглавление",
+  toc1t:"Коротко о главном",toc1d:"Цифры, которые задают тон",toc2t:"Откуда данные",toc2d:"Как мы искали и что отсеяли",
+  toc3t:"Графики",toc3d:"Препараты, показания, фазы, страны, сроки",toc4t:"Таблица исследований",toc4d:"Все 49, с сортировкой и фильтрами",
+  toc5t:"Взгляд науки",toc5d:"Простыми словами, без хайпа",toc6t:"Оговорки и границы",toc6d:"Где нужна осторожность",
+  s1_h:"Коротко о главном",s1_sub:"Если у вас есть тридцать секунд, вот вся суть.",
+  s1_p:"За неполные семь месяцев 2026 года в крупнейший мировой реестр клинических испытаний добавили <strong>49 новых исследований</strong> психоделической терапии. Это не микродозы энтузиазма, а полноценные протоколы в университетах и компаниях от США и Швейцарии до Бразилии и Пакистана. Королём поля остаётся псилоцибин (две трети всех работ), а список показаний давно перерос классическую пару депрессия плюс ПТСР.",
+  s1_call:"Хорошая новость для тех, кто следит за темой: поле не просто растёт, оно взрослеет. Всё больше исследований задают взрослые вопросы вроде того, обязательно ли человеку переживать яркий трип, чтобы получить лечебный эффект.",
+  s2_h:"Откуда данные и как мы их чистили",s2_sub:"Прозрачность прежде всего.",
+  s2_p1:"Мы обратились напрямую к API ClinicalTrials.gov (это официальный реестр Национальных институтов здоровья США) и выбрали все исследования, впервые опубликованные в реестре начиная с 1 января 2026 года, где в качестве вмешательства заявлены классические серотониновые психоделики (агонисты рецептора 5-HT<sub>2A</sub>): псилоцибин, LSD, DMT, 5-MeO-DMT, аяуаска, а также энтактоген MDMA и новые молекулы того же класса. Дата обращения к базе: 23 июля 2026 года.",
+  s2_p2:"Поиск по ключевым словам всегда ловит лишнее, поэтому руками отсеяли забавные ложные совпадения. Например, аббревиатура DMT в неврологии означает disease-modifying therapy (болезнь-модифицирующая терапия), а LSD в хирургии это лапароскопическая спленэктомия. Такие записи в подборку не попали. Осталось 49 честных исследований. Несколько из них имеют старые даты старта, но были официально зарегистрированы только в 2026 году, и они помечены флажком в таблице.",
+  s3_h:"Пять графиков, чтобы всё уложилось в голове",s3_sub:"Наведите курсор на столбец, чтобы увидеть точные числа.",
+  ch1_h:"Кто в лидерах по молекулам",ch1_t:"Число исследований по каждому препарату. Спойлер: псилоцибин вне конкуренции.",
+  ch2_h:"Зачем это всё: показания",ch2_t:"Мы сгруппировали болезни и цели в крупные семейства.",
+  ch3_h:"Насколько всё серьёзно: фазы разработки",ch3_t:"Фаза 1 это в основном безопасность, фаза 3 это большие подтверждающие испытания. Поле пока молодое и в основном сидит в ранних фазах.",
+  ch4_h:"География: где кипит работа",ch4_t:"США держат половину, но карта получилась по-настоящему мировой.",
+  ch5_h:"Когда стартуют: помесячно",ch5_t:"Даты старта исследований. Пик приходится на середину 2026 года.",
+  lk_h:"Нравится такой разбор?",lk_p:"На Lakes Linked мы регулярно превращаем свежую науку в понятные истории: нейронаука, психофармакология, доказательная медицина и немного здорового скепсиса.",lk_btn:"Открыть Lakes Linked →",
+  s4_h:"Таблица всех 49 исследований",s4_sub:"Нажмите на заголовок колонки, чтобы отсортировать. Чипы фильтруют по препарату. Каждый NCT ведёт на официальную страницу исследования.",
+  q_ph:"Поиск: болезнь, спонсор, страна, NCT...",
+  th_compound:"Препарат",th_nct:"NCT",th_title:"Исследование",th_cond:"Показание",th_phase:"Фаза",th_status:"Статус",th_n:"N",th_sponsor:"Спонсор",th_country:"Страна",th_start:"Старт",
+  s5_h:"Что это значит: взгляд науки, без хайпа",s5_sub:"Немного контекста, чтобы за цифрами увидеть смысл.",
+  sc1_h:"Почему псилоцибин съедает две трети поля",
+  sc1_p:"Псилоцибин это действующее вещество тех самых грибов, и у него сегодня самое удобное сочетание для науки: относительно предсказуемая длительность действия несколько часов, накопленный опыт безопасности и наличие фармацевтически чистых препаратов у нескольких производителей. Проще говоря, с ним легче построить строгий эксперимент, чем с аяуаской, которую надо заваривать, или с DMT, который действует считанные минуты. Отсюда и перекос.",
+  sc2_h:"Главный научный сюжет года: нужен ли вообще трип",
+  sc2_p:"Обратите внимание на россыпь исследований, где психоделик дают вместе с блокатором рецепторов (в списке мелькают пиндолол, рисперидон, пимавансерин), а одно испытание вообще прячет действие псилоцибина под общим наркозом. Смысл в том, чтобы разделить два эффекта: субъективное переживание и биологический ремонт нейронных связей. Если лечебный результат сохранится без яркого переживания, это перевернёт всю область и откроет дорогу к таблетке, которую можно принимать дома. Если нет, значит сам опыт и есть лекарство. Это один из самых интересных вопросов современной психиатрии, и ответ на него начинают искать прямо сейчас.",
+  sc3_h:"От депрессии к неожиданным адресам",
+  sc3_p:"Депрессия и ПТСР остаются ядром, но 2026 год смело шагнул в сторону. В списке есть игровая зависимость, обсессивно-компульсивное расстройство, булимия, расстройства аутистического спектра, депрессия при болезни Паркинсона, болезнь Альцгеймера и даже биомаркеры долголетия и чувства одиночества. Это классический признак взросления области: сначала пробуют на самом очевидном, потом расширяют круг. Важно не переоценивать: почти всё это ранние пилоты на десятках людей, а не готовые рецепты.",
+  sc4_h:"Кто платит за музыку",
+  sc4_p:"Финансируют в основном университеты: Йель, Джонс Хопкинс, Стэнфорд, UCLA, NYU и десятки других центров по всему миру. Коммерческий хвост поменьше, но именно он тащит самые крупные подтверждающие испытания третьей фазы. Это здоровая расстановка сил: академия проверяет смелые идеи, а компании доводят самые перспективные до регуляторного финиша.",
+  sc_call:"Ложка научной честности. Про MDMA важно помнить, что это не прямой агонист 5-HT<sub>2A</sub>, а вещество, выбрасывающее серотонин, то есть скорее эмпатоген. Мы включили его, потому что клинически он идёт в той же волне психоделической терапии, но с точки зрения молекулярной биологии это отдельная история.",
+  s6_h:"Оговорки и границы, без которых нельзя",s6_sub:"Ответственный научпоп всегда говорит, чего он не говорит.",
+  s6_p1:"Регистрация исследования это обещание проверить гипотезу, а не доказательство того, что метод работает. Многие протоколы ещё даже не начали набор участников. У психоделических испытаний есть и своя фирменная головная боль: людям трудно оставаться слепыми, ведь участник обычно понимает, досталось ему активное вещество или пустышка, и это может раздувать эффект плацебо. Поэтому к громким выводам стоит относиться спокойно и дожидаться результатов, а не только красивых заголовков.",
+  s6_p2:"Наша подборка это обзорный срез, а не полный систематический обзор с формальной оценкой риска систематических ошибок. Мы сознательно оставили за скобками чистые исследования кетамина и эскетамина, потому что это другой фармакологический класс. Если захотите более широкую сеть или строгую методологическую оценку каждого протокола, это следующий логичный шаг.",
+  sh_h:"Понравилось? Поделитесь",sh_x:"Поделиться в X",sh_tg:"В Telegram",sh_copy:"Копировать ссылку",sh_mail:"Написать нам",sh_more:"Больше на Lakes Linked",sh_copied:"Скопировано!",
+  ft_src:"Источник данных: ClinicalTrials.gov (NIH/NLM), API v2, обращение 23 июля 2026 года. Каждый NCT ведёт на официальную запись. Материал носит образовательный характер и не является медицинской рекомендацией.",
+  shareText:"Психоделики выходят в клинику: 49 новых клинических исследований 2026 года. Разбор с графиками и таблицей:",
+  statL:["исследований за 2026","запланированных участников","классов препаратов","программы фазы 3","уже набирают участников","стран"],
+  co:{US:"США",FR:"Франция",PK:"Пакистан",CA:"Канада",GB:"Великобритания",AT:"Австрия",CH:"Швейцария",BR:"Бразилия",IE:"Ирландия",IL:"Израиль"},
+  comp:{"Psilocybin":"Псилоцибин","MDMA":"MDMA","5-MeO-DMT":"5-MeO-DMT","Ayahuasca":"Аяуаска","DMT":"DMT","LSD":"LSD","Novel 5-HT2A":"Новый 5-HT2A"},
+  ph:{"EARLY_PHASE1":"Ранняя фаза 1","PHASE1":"Фаза 1","PHASE1/PHASE2":"Фаза 1/2","PHASE2":"Фаза 2","PHASE2/PHASE3":"Фаза 2b/3","PHASE3":"Фаза 3","NA":"Наблюдат. / без фазы"},
+  phS:{"EARLY_PHASE1":"ранняя Ф1","PHASE1":"Ф1","PHASE1/PHASE2":"Ф1/2","PHASE2":"Ф2","PHASE2/PHASE3":"Ф2b/3","PHASE3":"Ф3","NA":"набл."},
+  st:{"RECRUITING":"набирает","NOT_YET_RECRUITING":"ещё не набирает","ENROLLING_BY_INVITATION":"набор по приглашению","ACTIVE_NOT_RECRUITING":"идёт, без набора","COMPLETED":"завершено","WITHDRAWN":"отозвано"},
+  bk:{A:"Депрессия и настроение",B:"ПТСР и травма",C:"Зависимости",D:"Здоровые и механизм",E:"Старение и нейродегенерация",F:"Другое"},
+  preY:"до 2025"
+ },
+ en:{
+  n_short:"Summary",n_data:"Data",n_charts:"Charts",n_table:"Table",n_science:"Science",n_cta:"More on Lakes Linked",
+  h_kick:"Science story · ClinicalTrials.gov · 2026",
+  h_title:"Psychedelics step out of the underground and into the clinic: 49 new trials in half a year",
+  h_lead:"Buckle up, this is a good one. While some are still arguing whether it is a mushroom or a medicine, researchers around the world are already launching dozens of rigorous clinical trials. We gathered every study of psilocybin, LSD, DMT, 5-MeO-DMT, ayahuasca and MDMA that was officially registered in 2026, and laid it all out with charts, a table and a plain-language explainer. Let's go.",
+  toc_title:"Contents",
+  toc1t:"The short version",toc1d:"The numbers that set the tone",toc2t:"Where the data comes from",toc2d:"How we searched and what we cut",
+  toc3t:"Charts",toc3d:"Drugs, indications, phases, countries, timing",toc4t:"Trial table",toc4d:"All 49, sortable and filterable",
+  toc5t:"The science view",toc5d:"Plain language, no hype",toc6t:"Caveats and limits",toc6d:"Where to stay careful",
+  s1_h:"The short version",s1_sub:"If you have thirty seconds, here is the gist.",
+  s1_p:"In under seven months of 2026, the world's largest clinical-trial registry gained <strong>49 new studies</strong> of psychedelic therapy. These are not microdoses of enthusiasm but full protocols at universities and companies from the US and Switzerland to Brazil and Pakistan. Psilocybin still rules the field (about two thirds of everything), and the list of target conditions has long outgrown the classic depression-plus-PTSD pair.",
+  s1_call:"Good news if you follow the topic: the field is not just growing, it is maturing. More and more studies are asking grown-up questions, such as whether a person really needs to experience a vivid trip to get the therapeutic effect.",
+  s2_h:"Where the data comes from and how we cleaned it",s2_sub:"Transparency first.",
+  s2_p1:"We queried the ClinicalTrials.gov API directly (the official registry of the US National Institutes of Health) and selected every study first posted on or after 1 January 2026 whose intervention is a classic serotonergic psychedelic (a 5-HT<sub>2A</sub> receptor agonist): psilocybin, LSD, DMT, 5-MeO-DMT, ayahuasca, plus the entactogen MDMA and new molecules of the same class. Data pulled on 23 July 2026.",
+  s2_p2:"Keyword search always catches noise, so we manually removed the funny false matches. For example, in neurology the abbreviation DMT means disease-modifying therapy, and in surgery LSD stands for laparoscopic splenectomy. Those records did not make the cut. That leaves 49 genuine studies. A few carry older start dates but were only officially registered in 2026, and those are flagged in the table.",
+  s3_h:"Five charts to make it all click",s3_sub:"Hover over a bar to see the exact numbers.",
+  ch1_h:"Which molecules lead",ch1_t:"Number of studies per drug. Spoiler: psilocybin is in a league of its own.",
+  ch2_h:"What it is all for: indications",ch2_t:"We grouped the diseases and goals into broad families.",
+  ch3_h:"How serious it gets: development phases",ch3_t:"Phase 1 is mostly safety, Phase 3 is the big confirmatory trials. The field is still young and mostly sits in the early phases.",
+  ch4_h:"Geography: where the work is happening",ch4_t:"The US holds half of it, but the map turned out genuinely global.",
+  ch5_h:"When they start: by month",ch5_t:"Study start dates. The peak falls in mid-2026.",
+  lk_h:"Enjoy this kind of breakdown?",lk_p:"At Lakes Linked we regularly turn fresh science into clear stories: neuroscience, psychopharmacology, evidence-based medicine and a healthy dose of skepticism.",lk_btn:"Open Lakes Linked →",
+  s4_h:"Table of all 49 studies",s4_sub:"Click a column header to sort. The chips filter by drug. Each NCT links to the official study page.",
+  q_ph:"Search: condition, sponsor, country, NCT...",
+  th_compound:"Drug",th_nct:"NCT",th_title:"Study",th_cond:"Indication",th_phase:"Phase",th_status:"Status",th_n:"N",th_sponsor:"Sponsor",th_country:"Country",th_start:"Start",
+  s5_h:"What it means: the science view, no hype",s5_sub:"A little context so the numbers actually mean something.",
+  sc1_h:"Why psilocybin takes two thirds of the field",
+  sc1_p:"Psilocybin is the active compound in those famous mushrooms, and today it has the most convenient mix for research: a fairly predictable duration of a few hours, a growing safety record, and pharmaceutical-grade material available from several makers. Put simply, it is easier to build a rigorous experiment around it than around ayahuasca, which has to be brewed, or DMT, which lasts only minutes. Hence the skew.",
+  sc2_h:"The science story of the year: is the trip even needed",
+  sc2_p:"Notice the cluster of studies that give a psychedelic together with a receptor blocker (pindolol, risperidone and pimavanserin all show up), while one trial hides psilocybin's action under general anesthesia entirely. The point is to separate two effects: the subjective experience and the biological repair of neural connections. If the therapeutic result survives without a vivid experience, it would upend the whole field and open the door to a pill you could take at home. If not, then the experience itself is the medicine. This is one of the most interesting questions in modern psychiatry, and the search for an answer is starting right now.",
+  sc3_h:"From depression to unexpected destinations",
+  sc3_p:"Depression and PTSD remain the core, but 2026 stepped boldly sideways. The list includes gambling disorder, obsessive-compulsive disorder, bulimia, autism spectrum conditions, depression in Parkinson's disease, Alzheimer's disease and even biomarkers of longevity and loneliness. That is a classic sign of a maturing field: try the obvious first, then widen the circle. Do not overread it, though: almost all of this is early pilots on dozens of people, not finished prescriptions.",
+  sc4_h:"Who pays for the music",
+  sc4_p:"Funding comes mostly from universities: Yale, Johns Hopkins, Stanford, UCLA, NYU and dozens of other centers worldwide. The commercial tail is smaller, but it is exactly the one carrying the largest confirmatory Phase 3 trials. It is a healthy division of labor: academia tests bold ideas, and companies push the most promising ones to the regulatory finish line.",
+  sc_call:"A spoonful of scientific honesty. About MDMA, keep in mind that it is not a direct 5-HT<sub>2A</sub> agonist but a serotonin releaser, more of an empathogen. We included it because clinically it rides the same psychedelic-therapy wave, yet at the molecular-biology level it is a separate story.",
+  s6_h:"Caveats and limits we cannot skip",s6_sub:"Responsible science communication always says what it does not say.",
+  s6_p1:"Registering a study is a promise to test a hypothesis, not proof that the method works. Many protocols have not even started enrolling. Psychedelic trials also have their signature headache: it is hard to keep people blinded, since a participant usually can tell whether they got the active drug or a placebo, and that can inflate the placebo effect. So treat loud conclusions calmly and wait for results, not just nice headlines.",
+  s6_p2:"Our selection is a scoping snapshot, not a full systematic review with formal risk-of-bias appraisal. We deliberately left out pure ketamine and esketamine studies, because that is a different pharmacological class. If you want a wider net or a rigorous methodological appraisal of each protocol, that is the logical next step.",
+  sh_h:"Liked it? Share it",sh_x:"Share on X",sh_tg:"On Telegram",sh_copy:"Copy link",sh_mail:"Email us",sh_more:"More on Lakes Linked",sh_copied:"Copied!",
+  ft_src:"Data source: ClinicalTrials.gov (NIH/NLM), API v2, accessed 23 July 2026. Each NCT links to the official record. This material is educational and is not medical advice.",
+  shareText:"Psychedelics enter the clinic: 49 new clinical trials in 2026. A breakdown with charts and a table:",
+  statL:["trials registered in 2026","planned participants","drug classes","Phase 3 programs","currently recruiting","countries"],
+  co:{US:"USA",FR:"France",PK:"Pakistan",CA:"Canada",GB:"UK",AT:"Austria",CH:"Switzerland",BR:"Brazil",IE:"Ireland",IL:"Israel"},
+  comp:{"Psilocybin":"Psilocybin","MDMA":"MDMA","5-MeO-DMT":"5-MeO-DMT","Ayahuasca":"Ayahuasca","DMT":"DMT","LSD":"LSD","Novel 5-HT2A":"Novel 5-HT2A"},
+  ph:{"EARLY_PHASE1":"Early Phase 1","PHASE1":"Phase 1","PHASE1/PHASE2":"Phase 1/2","PHASE2":"Phase 2","PHASE2/PHASE3":"Phase 2b/3","PHASE3":"Phase 3","NA":"Observational / N/A"},
+  phS:{"EARLY_PHASE1":"early P1","PHASE1":"P1","PHASE1/PHASE2":"P1/2","PHASE2":"P2","PHASE2/PHASE3":"P2b/3","PHASE3":"P3","NA":"obs."},
+  st:{"RECRUITING":"recruiting","NOT_YET_RECRUITING":"not yet recruiting","ENROLLING_BY_INVITATION":"enrolling by invitation","ACTIVE_NOT_RECRUITING":"active, not recruiting","COMPLETED":"completed","WITHDRAWN":"withdrawn"},
+  bk:{A:"Depression & mood",B:"PTSD & trauma",C:"Addictions",D:"Healthy & mechanism",E:"Aging & neurodegeneration",F:"Other"},
+  preY:"pre-2025"
+ }
+};
+
+let lang="en";
+const compOrder=["Psilocybin","MDMA","5-MeO-DMT","Ayahuasca","DMT","LSD","Novel 5-HT2A"];
+const phOrder=["EARLY_PHASE1","PHASE1","PHASE1/PHASE2","PHASE2","PHASE2/PHASE3","PHASE3","NA"];
+const bOrderFixed=["A","B","C","D","E","F"];
+let sortK="compound",sortDir=1,filterC=null;
+
+const tip=document.getElementById("tip");
+function bind(el,html){
+  el.addEventListener("mousemove",e=>{tip.innerHTML=html;tip.style.opacity=1;
+    tip.style.left=Math.min(e.clientX+14,window.innerWidth-260)+"px";tip.style.top=(e.clientY+14)+"px";});
+  el.addEventListener("mouseleave",()=>tip.style.opacity=0);
+}
+function tally(fn){const m={};rows.forEach(r=>{const k=fn(r);m[k]=(m[k]||0)+1;});return m;}
+function bars(elId,items,fmtTip){
+  const max=Math.max(...items.map(i=>i.value),1);
+  const el=document.getElementById(elId);el.innerHTML="";
+  items.forEach(it=>{
+    const r=document.createElement("div");r.className="row";
+    r.innerHTML=`<div class="lab">${it.label}</div><div class="track"><div class="fill" style="width:0;background:${it.color}"></div></div><div class="val">${it.value}</div>`;
+    el.appendChild(r);
+    const fill=r.querySelector(".fill");requestAnimationFrame(()=>fill.style.width=(it.value/max*100)+"%");
+    bind(r,fmtTip(it));
+  });
+}
+function nf(x){return (+x).toLocaleString(lang==="ru"?"ru-RU":"en-US");}
+
+function renderStats(){
+  const T=L[lang];
+  const totalN=rows.reduce((a,r)=>a+(+r.n||0),0);
+  const ph3=rows.filter(r=>/PHASE3/.test(r.phase)).length;
+  const recruiting=rows.filter(r=>r.status==="RECRUITING").length;
+  const countries=new Set(rows.map(r=>r.cc)).size;
+  const vals=["49",nf(totalN),"7",String(ph3),String(recruiting),String(countries)];
+  document.getElementById("statcards").innerHTML=vals.map((v,i)=>
+   `<div class="stat"><div class="n">${v}</div><div class="l">${T.statL[i]}</div></div>`).join("");
+}
+function renderCharts(){
+  const T=L[lang];
+  const of=lang==="ru"?"из 49":"of 49";
+  const studies=lang==="ru"?"исследований":"studies";
+  const starts=lang==="ru"?"стартует":"starting";
+  const cT=tally(r=>r.compound);
+  bars("ch_comp",compOrder.map(c=>({label:T.comp[c],value:cT[c]||0,color:HEX[c]})),
+    it=>`<b>${it.label}</b><br>${it.value} ${of}`);
+  const iT=tally(r=>NB[r.nct]);
+  const bOrder=[...bOrderFixed].sort((a,b)=>(iT[b]||0)-(iT[a]||0));
+  bars("ch_ind",bOrder.map(b=>({label:T.bk[b],value:iT[b]||0,color:BHEX(b)})),it=>`<b>${it.label}</b><br>${it.value} ${studies}`);
+  document.getElementById("ind_leg").innerHTML=bOrder.map(b=>`<span><span class="dot" style="background:${BHEX(b)}"></span>${T.bk[b]}</span>`).join("");
+  const pT=tally(r=>r.phase);
+  bars("ch_phase",phOrder.map(p=>({label:T.ph[p],value:pT[p]||0,color:"#8b7cf6"})),it=>`<b>${it.label}</b><br>${it.value} ${studies}`);
+  const coT=tally(r=>r.cc);
+  const coOrder=Object.keys(coT).sort((a,b)=>coT[b]-coT[a]);
+  bars("ch_country",coOrder.map(c=>({label:T.co[c],value:coT[c],color:"#43c6ac"})),it=>`<b>${it.label}</b><br>${it.value} ${studies}`);
+  const mT={};rows.forEach(r=>{let m=r.start;if(m<"2025-01")m=T.preY;mT[m]=(mT[m]||0)+1;});
+  const mOrder=Object.keys(mT).sort((a,b)=>a===T.preY?-1:b===T.preY?1:a<b?-1:1);
+  bars("ch_time",mOrder.map(m=>({label:m,value:mT[m],color:"#3aa0ff"})),it=>`<b>${it.label}</b><br>${starts} ${it.value}`);
+}
+function BHEX(b){return {A:"#8b7cf6",B:"#f2765f",C:"#f2b705",D:"#43c6ac",E:"#3aa0ff",F:"#e368c8"}[b];}
+function renderChips(){
+  const T=L[lang];
+  const fdiv=document.getElementById("filters");
+  [...fdiv.querySelectorAll(".chip")].forEach(c=>c.remove());
+  const byC=tally(r=>r.compound);
+  compOrder.forEach(c=>{const s=document.createElement("span");s.className="chip"+(filterC===c?" active":"");
+   s.textContent=`${T.comp[c]} (${byC[c]||0})`;
+   s.onclick=()=>{filterC=filterC===c?null:c;renderChips();render();};
+   fdiv.appendChild(s);});
+}
+function render(){
+  const T=L[lang];
+  const q=document.getElementById("q").value.toLowerCase();
+  const titleK=lang==="ru"?"title_ru":"title_en", condK=lang==="ru"?"cond_ru":"cond_en", flagK=lang==="ru"?"flag_ru":"flag_en";
+  let r=rows.filter(x=>(!filterC||x.compound===filterC)&&
+    (!q||((x[titleK]+x[condK]+x.sponsor+x.nct+T.co[x.cc]).toLowerCase().includes(q))));
+  r.sort((a,b)=>{let va,vb;
+    if(sortK==="title"){va=a[titleK];vb=b[titleK];}
+    else if(sortK==="condition"){va=a[condK];vb=b[condK];}
+    else if(sortK==="country"){va=T.co[a.cc];vb=T.co[b.cc];}
+    else if(sortK==="n"){va=+a.n;vb=+b.n;}
+    else{va=a[sortK];vb=b[sortK];}
+    return(va>vb?1:va<vb?-1:0)*sortDir;});
+  document.querySelector("#tbl tbody").innerHTML=r.map(x=>`<tr>
+    <td><span class="tag" style="background:${HEX[x.compound]}">${T.comp[x.compound]}</span></td>
+    <td><a href="https://clinicaltrials.gov/study/${x.nct}" target="_blank" rel="noopener">${x.nct}</a></td>
+    <td>${x[titleK]}${x[flagK]?` <span class="flag">▲ ${x[flagK]}</span>`:""}</td>
+    <td>${x[condK]}</td>
+    <td><span class="badge">${T.phS[x.phase]}</span></td>
+    <td><span class="badge">${T.st[x.status]||x.status}</span></td>
+    <td>${x.n}</td><td>${x.sponsor}</td><td>${T.co[x.cc]}</td><td>${x.start}</td></tr>`).join("");
+}
+function renderShare(){
+  const T=L[lang], url="https://lakeslinked.com";
+  document.getElementById("sh_x").href="https://twitter.com/intent/tweet?text="+encodeURIComponent(T.shareText)+"&url="+encodeURIComponent(url);
+  document.getElementById("sh_tg").href="https://t.me/share/url?url="+encodeURIComponent(url)+"&text="+encodeURIComponent(T.shareText);
+}
+document.getElementById("sh_copy").onclick=()=>{
+  const b=document.getElementById("sh_copy");
+  navigator.clipboard.writeText("https://lakeslinked.com").then(()=>{b.textContent=L[lang].sh_copied;setTimeout(()=>b.textContent=L[lang].sh_copy,1600);}).catch(()=>{b.textContent="https://lakeslinked.com";});
+};
+document.querySelectorAll("#tbl th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=1;}render();});
+document.getElementById("q").oninput=render;
+
+function setLang(l){
+  lang=l;const T=L[l];
+  document.documentElement.lang=l;
+  document.getElementById("lg_ru").classList.toggle("on",l==="ru");
+  document.getElementById("lg_en").classList.toggle("on",l==="en");
+  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[e.dataset.i18n];if(v!==undefined)e.textContent=v;});
+  document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=T[e.dataset.i18nHtml];if(v!==undefined)e.innerHTML=v;});
+  document.querySelectorAll("[data-i18n-ph]").forEach(e=>{const v=T[e.dataset.i18nPh];if(v!==undefined)e.placeholder=v;});
+  document.title=(l==="ru"?"Психоделики в клинике: 49 исследований 2026":"Psychedelics in the clinic: 49 trials in 2026")+" | Lakes Linked";
+  renderStats();renderCharts();renderChips();render();renderShare();
+}
+setLang("en");
+</script>
+</body>
+</html>

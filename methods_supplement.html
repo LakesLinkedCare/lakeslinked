@@ -163,6 +163,8 @@ h2.sec{scroll-margin-top:68px}
       <a class="navlink" href="clare.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare</a>
       <a class="navlink" href="midland.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland</a>
       <a class="navlink" href="gratiot.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot</a>
+<a class="navlink" href="washtenaw.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Washtenaw</a>
+<a class="navlink" href="wayne.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Wayne</a>
     </div>
     <span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
     <a class="navlink" href="index.html"><svg class="nico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Portal</a>
@@ -211,7 +213,7 @@ h2.sec{scroll-margin-top:68px}
   <div class="hd">Abstract</div>
   <p><strong>Background.</strong> County-level DALY disease burden estimates are rarely available for rural U.S. counties. This document describes a reproducible Python workflow for computing planning-grade Disability-Adjusted Life Year (DALY) estimates for rural Michigan counties using exclusively open public data. The DALY framework was developed by IHME for the Global Burden of Disease Study — a body of work we deeply respect and do not attempt to replicate. This project applies GBD's openly published disability weights and WHO reference standards for educational and local health planning purposes only. The workflow is designed to scale to all 83 Michigan counties with minimal per-county configuration changes.</p>
   <p><strong>Methods.</strong> We constructed DALY estimates from five open data sources: CDC WONDER 2020–2022 (mortality), CDC PLACES 2024 (prevalence), IHME GBD 2021 (disability weights), County Health Rankings 2010–2024 (years of potential life lost), and U.S. Census ACS 2022 (population denominators). YLL uses the WHO GHE frontier reference life table (89.1 years) as primary; Michigan observed LE (78.6 years) is reported as a planning sensitivity. Uncertainty was quantified via Monte Carlo simulation (n = 10,000). Analyses were implemented in Python 3.10 using NumPy, Pandas, SciPy, and Matplotlib; working code, configuration files, derived tables, and validation reports can be shared by the author on reasonable request.</p>
-  <p><strong>Completed counties (June 2026).</strong> Isabella County (FIPS 26073): 15,140 DALYs/yr (95% UI 14,032–16,206), frontier LE primary. Clare County (FIPS 26035): 8,198 DALYs/yr (±20% uncertainty), frontier LE primary. Midland County (FIPS 26111): 14,335 DALYs/yr (MI LE) / ~20,400 (frontier LE) — CDC PLACES 2023 observed county-level prevalence. Three counties in pipeline: Gratiot (Q3 2026), Mecosta (Q4 2026), Washtenaw (Q4 2026, urban reference).</p>
+  <p><strong>Completed counties (June 2026).</strong> Isabella County (FIPS 26073): 13,493 DALYs/yr (95% UI 12,266–14,803), frontier LE primary. Clare County (FIPS 26035): 8,198 DALYs/yr (±20% uncertainty), frontier LE primary. Midland County (FIPS 26111): 14,335 DALYs/yr (MI LE) / ~20,400 (frontier LE); Gratiot County (FIPS 26057): 7,533 DALYs/yr — all v1 crude method, CDC PLACES observed county-level prevalence. Two urban counties added on the v2 age-standardized method: Washtenaw / Ann Arbor (FIPS 26161): 63,379 DALYs/yr; Wayne / Detroit (FIPS 26163): 442,251 DALYs/yr. Rates are compared within a method group only — see the <a href="rural_vs_urban.html">Rural vs Urban</a> page. One county in pipeline: Mecosta (Q4 2026).</p>
   <p><strong>Limitations.</strong> Mixed-source modeled planning scenario — not a validated GBD-standard county burden estimate. Prevalence inputs are model-based (CDC PLACES MLRP). Mortality uses mean-age-at-death simplification for YLL; rural adjustment factors (×1.2–1.85) proxy suppressed CDC WONDER cells. Results are directional planning approximations for grant writing, CHNA processes, and county health planning.</p>
 </div>
 
@@ -563,9 +565,10 @@ python3 director.py --county midland --dry-run</div>
   <a class="cs-btn isabella" href="isabella_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Isabella County — v5.0</a>
   <a class="cs-btn clare" href="clare_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Clare County — v1.0</a>
   <a class="cs-btn" style="background:#dcfce7;color:#065f46;border-color:#86efac;" href="midland_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Midland County — v1.0</a>
-  <span class="cs-btn pipeline">🌾 Gratiot — Q3 2026</span>
+  <a class="cs-btn" style="background:#dcfce7;color:#065f46;border-color:#86efac;" href="gratiot_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Gratiot County — v1.0</a>
+  <a class="cs-btn" style="background:#f3e8ff;color:#6b21a8;border-color:#d8b4fe;" href="washtenaw_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Washtenaw (Ann Arbor) — v2 age-std</a>
+  <a class="cs-btn" style="background:#f3e8ff;color:#6b21a8;border-color:#d8b4fe;" href="wayne_methods.html"><svg class="nico" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Wayne (Detroit) — v2 age-std</a>
   <span class="cs-btn pipeline">🎓 Mecosta — Q4 2026</span>
-  <span class="cs-btn pipeline">🏙️ Washtenaw — Q4 2026</span>
 </div>
 
 <div class="tbl-wrap">
@@ -579,7 +582,7 @@ python3 director.py --county midland --dry-run</div>
     <tbody>
       <tr style="background:#f0f7ff;">
         <td><strong>Isabella</strong></td><td>26073</td><td>64,565</td>
-        <td><strong>15,140</strong><br><span style="font-size:10.5px;color:#64748b">95% UI 14,032–16,206</span></td>
+        <td><strong>13,493</strong><br><span style="font-size:10.5px;color:#64748b">95% UI 12,266–14,803</span></td>
         <td>10,288</td>
         <td>Cancer #1 · CVD #2 · SUD #3</td>
         <td>the university university pop; MH HPSA 176,938:1</td>
@@ -602,16 +605,20 @@ python3 director.py --county midland --dry-run</div>
         <td><span class="dc obs">Complete v1.0</span></td>
       </tr>
       <tr>
-        <td>Gratiot</td><td>26057</td><td>~40,000</td>
-        <td colspan="5" style="color:#94a3b8;font-style:italic;">Analysis planned Q3 2026 — agricultural economy, no university anchor, Gratiot County CMH</td>
+        <td>Gratiot</td><td>26057</td><td>~41,000</td>
+        <td colspan="5">Completed (v1 crude) — 7,533 DALYs/yr · agricultural economy · <a href="gratiot_methods.html">methods</a></td>
+      </tr>
+      <tr>
+        <td>Washtenaw (Ann Arbor)</td><td>26161</td><td>~368,000</td>
+        <td colspan="5">Completed (v2 age-standardized) — 63,379 DALYs/yr · urban college county · <a href="washtenaw_methods.html">methods</a></td>
+      </tr>
+      <tr>
+        <td>Wayne (Detroit)</td><td>26163</td><td>~1,773,000</td>
+        <td colspan="5">Completed (v2 age-standardized) — 442,251 DALYs/yr · large urban county · <a href="wayne_methods.html">methods</a></td>
       </tr>
       <tr>
         <td>Mecosta</td><td>26107</td><td>~43,000</td>
         <td colspan="5" style="color:#94a3b8;font-style:italic;">Analysis planned Q4 2026 — Ferris State University, rural health desert designation</td>
-      </tr>
-      <tr>
-        <td>Washtenaw</td><td>26161</td><td>~374,000</td>
-        <td colspan="5" style="color:#94a3b8;font-style:italic;">Analysis planned Q4 2026 — Urban reference county (U-M Ann Arbor), rural/urban comparison benchmark</td>
       </tr>
     </tbody>
   </table>

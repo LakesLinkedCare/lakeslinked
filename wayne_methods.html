@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wayne County (Detroit) — Methods &amp; Data Quality | Lakes Linked</title>
+<meta content="Full methodology for the Wayne County (Detroit) age-standardized YLL analysis (YLD reported crude): data sources, YLL/YLD formulas, US-2000 standardization, suppression handling, limitations. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="https://lakeslinked.com/wayne_methods.html" property="og:url"/>
+<style>
+:root{--navy:#0f1f3d;--blue:#1a56db;--teal:#0d9488;--red:#dc2626;--amber:#d97706;--purple:#7c3aed;--green:#059669;--slate:#64748b;--bg:#f8fafc;--surface:#fff;--border:#e2e8f0;--muted:#64748b;--radius:10px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#0f172a;line-height:1.6;}
+.sitenav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
+.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;display:flex;align-items:center;gap:10px;}
+.sitenav a.navlink{color:rgba(255,255,255,.7);font-size:12.5px;padding:6px 12px;border-radius:6px;text-decoration:none;}
+.sitenav a.navlink:hover,.sitenav a.navlink.active{background:rgba(255,255,255,.12);color:#fff;}
+.nico{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;margin-right:5px;}
+.county-group{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:3px;}
+.county-group .navlink{border-radius:5px;}
+.doc{max-width:860px;margin:0 auto;padding:34px 22px 70px;}
+.doc h1{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;line-height:1.25;}
+.doc .lead{color:var(--muted);font-size:13.5px;margin-bottom:8px;}
+.doc h2{font-size:18px;font-weight:800;margin:30px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--border);color:var(--navy);}
+.doc h3{font-size:14.5px;font-weight:700;margin:20px 0 5px;color:#1e293b;}
+.doc p{font-size:13.5px;color:#334155;margin:8px 0;}
+.doc li{font-size:13.5px;color:#334155;margin:5px 0 5px 20px;line-height:1.6;}
+.doc code{background:#f1f5f9;border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:ui-monospace,Menlo,Consolas,monospace;}
+.formula{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:14px 16px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;margin:12px 0;overflow-x:auto;line-height:1.7;}
+.callout{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid var(--amber);border-radius:8px;padding:13px 16px;margin:14px 0;font-size:12.5px;color:#78350f;line-height:1.6;}
+.callout.blue{background:#eff6ff;border-color:#bfdbfe;border-left-color:var(--blue);color:#1e3a5f;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:12px 0;}
+thead th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-size:11px;font-weight:600;}
+tbody td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+tbody tr:nth-child(even){background:#f8fafc;}
+.src{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;color:var(--muted);}
+a{color:var(--blue);}
+</style>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><link href="https://lakeslinked.com/wayne_methods.html" rel="canonical"/></head>
+<body>
+<nav class="sitenav">
+<a class="brand" href="index.html"><img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:34px;width:auto;"/></a>
+<div class="links" style="display:flex;gap:4px;align-items:center;">
+<span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Wayne:</span>
+<div class="county-group">
+<a class="navlink" href="wayne.html"><svg class="nico" viewbox="0 0 24 24"><path d="M3 13h2l2 5 4-13 3 8h2"></path></svg>Dashboard</a>
+<a class="navlink active" href="wayne_methods.html"><svg class="nico" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg>Methods</a>
+<a class="navlink" href="wayne_roi.html"><svg class="nico" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"></path></svg>Economic Impact</a>
+</div>
+<span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+<a class="navlink" href="index.html">Portal</a>
+<a class="navlink" href="rural_vs_urban.html">Rural vs Urban</a>
+</div>
+</nav>
+<div class="doc">
+<h1>Health Burden in Wayne County (Detroit), Michigan: Age-Standardized DALY Methodology</h1>
+<p class="lead">Method generation v2 · CDC WONDER 2020–2022 · CDC PLACES 2024 · IHME GBD 2021 · US-2000 standard population · Sergey Soshnikov, MD PhD</p>
+<div class="callout">This is a <strong>planning-grade decision-support estimate</strong>, not a peer-reviewed study or an official GBD/IHME county estimate. It is intended to help public-health planners, grant writers, and community stakeholders prioritize. Every input is a public dataset; every step is reproducible.</div>
+
+<h2>1. Overview</h2>
+<p>This analysis quantifies the disease burden of Wayne County (which contains Detroit) as <strong>Disability-Adjusted Life Years (DALYs)</strong> across seven condition groups: cancer, cardiovascular disease, chronic lower respiratory disease (COPD), stroke, diabetes, substance-use disorder, and a mental-health group. A DALY is one lost year of healthy life; it is the sum of <strong>Years of Life Lost</strong> to premature death (YLL) and <strong>Years Lived with Disability</strong> (YLD).</p>
+<p>It uses the <strong>v2 age-standardized method</strong>, an upgrade over the crude method used for this site's smaller rural counties. The three upgrades: (a) YLL is computed <em>age-specifically</em> from a GBD reference life table rather than against one fixed benchmark age; (b) rates are <em>age-standardized</em> to the US-2000 population so counties with very different age structures can be compared fairly; (c) substance-use and mental-health mortality are <em>directly observed</em> by age, because Wayne is large enough that these counts are not statistically suppressed.</p>
+
+<h2>2. Data sources</h2>
+<h3>2.1 Mortality — CDC WONDER</h3>
+<p>Deaths by cause × ten-year age group, Wayne County (FIPS 26163), 2020–2022 pooled, from the CDC WONDER <em>Underlying Cause of Death, 2018–2024, Single Race</em> database. The five chronic causes are the aggregate 113-cause-list rows: malignant neoplasms (C00–C97), diseases of heart (I00–I09, I11, I13, I20–I51), chronic lower respiratory (J40–J47), cerebrovascular (I60–I69), and diabetes (E10–E14). Substance use is the sum of drug-induced and alcohol-induced causes; the mental-health mortality proxy is intentional self-harm/suicide (X60–X84).</p>
+<h3>2.2 Prevalence — CDC PLACES 2024</h3>
+<p>Age-adjusted adult prevalence for each condition from the CDC PLACES county dataset (Socrata <code>swc5-untb</code>), which also supplies the adult (18+) population denominator. PLACES has no substance-use measure (see §4).</p>
+<h3>2.3 Disability weights &amp; reference life expectancy</h3>
+<p>Disability weights are the IHME GBD 2021 values, reused unchanged across all counties (they are population-independent). Age-specific remaining life expectancy for YLL comes from the <strong>GBD 2019 reference life table</strong> (the same standard IHME uses), interpolated to each age group's midpoint.</p>
+<h3>2.4 Population denominators — Census PEP via CDC WONDER</h3>
+<p>Population by county × age group is drawn from the <strong>CDC WONDER Single-Race Population Estimates 2020–2022</strong> (the Census Bureau's Population Estimates Program — the same denominators CDC uses for official age-adjusted death rates). We sum 2020, 2021 and 2022 to obtain person-years matching the 3-year pooled deaths, then annualize. Five-year population bands are collapsed to the ten-year mortality bands.</p>
+<h3>2.5 Economic parameters</h3>
+<p>Michigan GDP per capita $62,000 (BEA) for the human-capital method; income-adjusted HHS value of a statistical life $10.5M for the VSL method. Comorbidity correction factor 0.949 (Gaussian-copula net-YLD correction), reused from the Isabella pipeline.</p>
+
+<h2>3. Methods</h2>
+<h3>3.1 DALY framework</h3>
+<p>DALY = YLL + YLD, no age-weighting and no time discounting, following the WHO Global Health Estimates convention.</p>
+<h3>3.2 Age-specific YLL</h3>
+<p>For each cause <em>i</em> and ten-year age group <em>a</em> with midpoint age <em>m<sub>a</sub></em>:</p>
+<div class="formula">YLL(i,a) = deaths(i,a) × RLE(m_a)</div>
+<p>where <code>RLE(m_a)</code> is the remaining life expectancy at age <em>m<sub>a</sub></em> interpolated from the GBD 2019 reference table. Pooled deaths are annualized (÷3). This replaces the crude method's single fixed 89.1-year benchmark, so a death at 40 and a death at 80 correctly lose different amounts of life.</p>
+<h3>3.3 YLD</h3>
+<div class="formula">YLD(i) = prevalence_ageadj(i) × adult_pop × DW(i) × CF</div>
+<p>Prevalence is the PLACES age-adjusted value; <code>DW</code> the IHME disability weight; <code>CF</code> the 0.949 comorbidity factor. For the mental-health group, prevalence is PLACES depression × 0.50 (remission adjustment). PLACES provides no age-specific prevalence, so YLD carries no age structure (see §4).</p>
+<h3>3.4 Age-standardization (US-2000)</h3>
+<p>The cross-county comparison metric is the <strong>age-standardized YLL rate</strong>: the age-specific YLL rate per 100,000 in each band, weighted by the US-2000 standard population.</p>
+<div class="formula">ASR_YLL = Σ_a [ YLL(a) / pop(a) × 100000 ] × w2000(a)</div>
+<p>Standard weights are normalized over the ten age bands present (the <code>&lt;1</code> band is folded into <code>1–4</code> to match the population banding, and weights re-sum to 1). Wayne's age-standardized YLL rate is <strong>14,177 per 100,000</strong> — about 1.7× Ann Arbor's 8,251.</p>
+<h3>3.5 Substance-use &amp; mental-health mortality</h3>
+<p>Unlike small rural counties, Wayne's substance-use and suicide deaths are numerous enough to be reported by age rather than suppressed, so both are observed directly rather than modeled from proxies. Wayne's substance-use mortality (1,107 deaths/yr) is a defining feature of its burden.</p>
+<h3>3.6 Suppression handling</h3>
+<p>CDC WONDER suppresses cell counts of 1–9. Suppressed chronic-disease cells at young ages (&lt;45), where the true count is near zero, are imputed at 1; suppressed substance-use/suicide cells are imputed at the midpoint 5. A 0-to-9 sensitivity band brackets the choice; in a county this large the swing on the total is well under ±1%.</p>
+<h3>3.7 Economic burden</h3>
+<p>Human-capital: DALYs × $62,000. VSL: annual deaths × $10.5M (mortality only). Both are planning-grade, not audited fiscal figures.</p>
+
+<h2>4. Limitations &amp; comparability</h2>
+<div class="callout blue"><strong>Comparability with this site's rural counties.</strong> Wayne and Washtenaw use the v2 age-standardized method; Isabella, Clare, Midland and Gratiot use the earlier v1 crude method (fixed reference life expectancy; substance-use and mental-health mortality suppressed and excluded). <strong>Rates across the two groups are not directly comparable and must not be ranked against one another.</strong> Compare within a method group only, or see the dedicated <a href="rural_vs_urban.html">Rural vs Urban</a> page, which discusses the seam explicitly.</div>
+<ul>
+<li><strong>"Age-standardized" applies to YLL only.</strong> Because PLACES gives no age-specific prevalence, YLD is reported as a crude rate (8,738/100k) and shown separately rather than blended into a single "age-standardized DALY rate."</li>
+<li><strong>Substance-use YLD prevalence is indicative.</strong> With no PLACES SUD measure, the SUD disability component uses a Michigan-derived rate applied uniformly; it likely <em>understates</em> a high-burden county like Wayne. SUD mortality (YLL) is directly observed.</li>
+<li><strong>SUD/suicide overlap.</strong> Drug-poisoning suicides (X60–X64) fall in both the substance-use and suicide categories, so the sum of those two causes' YLL is a modest upper bound.</li>
+<li><strong>Prevalence basis.</strong> An age-adjusted prevalence is multiplied by an actual adult count — a standard but internally mixed convention.</li>
+<li><strong>Geography.</strong> Mortality is county-resolution only; Detroit (about a third of the county) is described as part of Wayne County.</li>
+</ul>
+
+<h2>5. Results summary</h2>
+<table>
+<thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th></tr></thead>
+<tbody>
+<tr><td>CVD (heart disease)</td><td>5,531</td><td>111,087</td><td>33,017</td><td>144,104</td></tr>
+<tr><td>Cancer</td><td>3,502</td><td>75,346</td><td>24,296</td><td>99,641</td></tr>
+<tr><td>Substance use</td><td>1,107</td><td>46,729</td><td>30,032</td><td>76,762</td></tr>
+<tr><td>COPD</td><td>736</td><td>13,460</td><td>20,390</td><td>33,850</td></tr>
+<tr><td>Mental health</td><td>224</td><td>9,993</td><td>22,951</td><td>32,944</td></tr>
+<tr><td>Stroke</td><td>1,017</td><td>16,576</td><td>15,668</td><td>32,244</td></tr>
+<tr><td>Diabetes</td><td>642</td><td>14,124</td><td>8,582</td><td>22,706</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>12,759</strong></td><td><strong>287,315</strong></td><td><strong>154,936</strong></td><td><strong>442,251</strong></td></tr>
+</tbody>
+</table>
+<p class="src">Age-standardized YLL rate 14,177/100k · crude YLD rate 8,738/100k · crude DALY rate 24,943/100k · population 1,773,082 (2020–22 average). Rows use unrounded estimates, so YLL + YLD may differ from the DALY column by ±1.</p>
+
+<h2>6. Reproducibility &amp; verification</h2>
+<p>The pipeline (Python) parses the raw CDC WONDER exports, applies the formulas above, and writes a machine-readable results file. An independent agent re-parsed the raw death files and re-implemented the engine from scratch, reproducing all 56 cause × county × metric cells and every total to the integer. Two suppression-sensitivity runs (0 and 9) bracket the central estimate. Data vintages: CDC WONDER 2020–2022, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–2022, IHME GBD 2021.</p>
+</div>
+<footer>
+<span>Wayne County, Michigan (Detroit) · FIPS 26163 · Methods v2 age-standardized · July 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
+</footer>
+<script src="ll-features.js"></script></body>
+</html>

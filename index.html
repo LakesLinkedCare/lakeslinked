@@ -7,7 +7,7 @@
 <title>Michigan Rural Health Burden Analysis | Lakes Linked</title>
 <meta content="Educational disease burden analysis for rural Michigan counties — identifying top health conditions, quantifying economic impact, and supporting grant applications and health planning. Dr. Sergey Soshnikov, MD PhD." name="description"/>
 <meta content="Michigan Rural Health Burden Analysis | Lakes Linked" property="og:title"/>
-<meta content="4 counties complete · ~45,500 DALYs/yr · 2 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy." property="og:description"/>
+<meta content="6 Michigan counties analyzed — rural (crude) plus urban Washtenaw &amp; Wayne (age-standardized) · 1 in pipeline. Planning-grade burden analysis for county health departments, grant applications, and rural health policy." property="og:description"/>
 <meta content="https://lakeslinked.com/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="https://lakeslinked.com/og-image.png" property="og:image"/>
@@ -15,7 +15,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://lakeslinked.com/logo.png" name="twitter:image"/>
-<meta name="keywords" content="Michigan rural health, county health analysis, Isabella County health, Clare County health, Midland County health, public health analytics Michigan, county health planning, grant writing public health, rural health disparities, health department data, population health Michigan, rural Michigan communities, health data planning, community health assessment"/>
+<meta name="keywords" content="Michigan rural health, county health analysis, Isabella County health, Clare County health, Midland County health, Washtenaw County health, Ann Arbor health data, Wayne County health, Detroit health data, age-standardized DALY, public health analytics Michigan, county health planning, grant writing public health, rural health disparities, health department data, population health Michigan, rural Michigan communities, health data planning, community health assessment"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -29,7 +29,7 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type": "Question", "name": "What is Lakes Linked?", "acceptedAnswer": {"@type": "Answer", "text": "Lakes Linked is a public health analytics project that turns open population and health data into practical planning tools for rural Michigan communities, county health departments, and grant writers."}},
-      {"@type": "Question", "name": "Which Michigan counties have been analyzed?", "acceptedAnswer": {"@type": "Answer", "text": "Isabella, Clare, and Midland counties are complete. Gratiot county is in progress for Q3 2026. Mecosta and Washtenaw are planned for Q4 2026."}},
+      {"@type": "Question", "name": "Which Michigan counties have been analyzed?", "acceptedAnswer": {"@type": "Answer", "text": "Six counties are analyzed. Isabella, Clare, Midland and Gratiot use the crude method. Washtenaw (Ann Arbor) and Wayne (Detroit) add an age-standardized urban analysis. Mecosta is planned for Q4 2026. Rates are compared within a method group; see the Rural vs Urban page."}},
       {"@type": "Question", "name": "Who is Lakes Linked for?", "acceptedAnswer": {"@type": "Answer", "text": "Lakes Linked serves county health departments, community health planners, rural clinics, and grant writers who need clear, sourced health data for their county — without needing a research team to interpret it."}}
     ]
   }
@@ -673,11 +673,20 @@ html{scroll-behavior:smooth}
 <a href="gratiot.html">
 <span class="nav-dot" style="background:var(--amber);"></span>Gratiot
       </a>
+<a href="washtenaw.html">
+<span class="nav-dot" style="background:#7c3aed;"></span>Washtenaw
+      </a>
+<a href="wayne.html">
+<span class="nav-dot" style="background:#7c3aed;"></span>Wayne
+      </a>
 </div>
 <div class="nav-divider"></div>
-<span class="nav-pipeline">Pipeline: Mecosta · Washtenaw</span>
+<span class="nav-pipeline">Pipeline: Mecosta</span>
 <div class="nav-divider"></div>
 <div class="nav-group">
+<a href="rural_vs_urban.html">
+<span class="nav-dot" style="background:#7c3aed;"></span>Rural vs Urban
+      </a>
 <a href="articles.html">
 <span class="nav-dot" style="background:var(--teal);"></span>Articles
       </a>
@@ -700,9 +709,9 @@ html{scroll-behavior:smooth}
 <p class="hero-abstract">Disability-adjusted life year (DALY) burden analysis for rural Michigan counties — built for county health planning, CHNA reports, and grant applications (SAMHSA, HRSA, MDHHS). Open CDC and US Census data sources; disability weights adapted from IHME GBD 2021 and WHO reference standards.</p>
 <div class="hero-stats">
 <div class="hs">
-<div class="n">4</div>
+<div class="n">6</div>
 <div class="l">Counties analyzed</div>
-<div class="hs-sub">Isabella · Clare · Midland · Gratiot</div>
+<div class="hs-sub">Isabella · Clare · Midland · Gratiot · Washtenaw · Wayne</div>
 </div>
 <div class="hs">
 <div class="n">~45,500</div>
@@ -710,9 +719,9 @@ html{scroll-behavior:smooth}
 <div class="hs-sub">Primary estimates · frontier LE 89.1 yrs</div>
 </div>
 <div class="hs">
-<div class="n">2</div>
+<div class="n">1</div>
 <div class="l">In pipeline</div>
-<div class="hs-sub">Mecosta · Washtenaw</div>
+<div class="hs-sub">Mecosta</div>
 </div>
 </div>
 </div>
@@ -816,7 +825,7 @@ html{scroll-behavior:smooth}
 <div class="section-head">
 <h2 id="michigan-coverage-map">Michigan Coverage Map</h2>
 <div class="sh-line"></div>
-<span class="section-meta" id="mi-counter">4 of 83 counties analyzed</span>
+<span class="section-meta" id="mi-counter">6 of 83 counties analyzed</span>
 </div>
 <p style="font-size:13px;color:var(--text-secondary);max-width:760px;margin:-2px 0 12px;">Click a completed county (blue) to open its dashboard. Counties in grey aren't analyzed yet — available on request.</p>
 <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--text-secondary);margin-bottom:10px;align-items:center;">
@@ -830,12 +839,14 @@ html{scroll-behavior:smooth}
   (function(){
     if (typeof L === 'undefined') return;
     const DONE = {
-      '26073': { name:'Isabella', url:'isabella.html', dalys:'15,140', pop:'64,565' },
+      '26073': { name:'Isabella', url:'isabella.html', dalys:'13,493', pop:'64,565' },
       '26035': { name:'Clare',    url:'clare.html',    dalys:'8,198',  pop:'30,013' },
       '26111': { name:'Midland',  url:'midland.html',  dalys:'14,335', pop:'82,884' },
       '26057': { name:'Gratiot',  url:'gratiot.html',  dalys:'7,533',  pop:'41,368' },
+      '26161': { name:'Washtenaw (Ann Arbor)', url:'washtenaw.html', dalys:'63,379',  pop:'367,730',   v2:true },
+      '26163': { name:'Wayne (Detroit)',       url:'wayne.html',     dalys:'442,251', pop:'1,773,082', v2:true },
     };
-    const PIPELINE = { '26107':'Mecosta · Q4 2026', '26161':'Washtenaw · Q4 2026' };
+    const PIPELINE = { '26107':'Mecosta · Q4 2026' };
     function styleFor(fips){
       if (DONE[fips])     return { fillColor:'#1a56db', color:'#fff', weight:1, fillOpacity:.92 };
       if (PIPELINE[fips]) return { fillColor:'#bfdbfe', color:'#fff', weight:1, fillOpacity:.95 };
@@ -860,7 +871,7 @@ html{scroll-behavior:smooth}
           }
         }).addTo(m);
         m.fitBounds(layer.getBounds(), { padding:[10,10] });
-      }).catch(e=>{ document.getElementById('mi-counter').textContent='4 of 83 analyzed (map source unavailable)'; });
+      }).catch(e=>{ document.getElementById('mi-counter').textContent='6 of 83 analyzed (map source unavailable)'; });
   })();
   </script>
 </div>
@@ -870,7 +881,7 @@ html{scroll-behavior:smooth}
 <div class="section-head">
 <h2 id="completed-county-analyses">Completed County Analyses</h2>
 <div class="sh-line"></div>
-<span class="section-meta">4 counties · full DALY framework</span>
+<span class="section-meta">6 counties · full DALY framework</span>
 </div>
 <div class="county-grid">
 <!-- Isabella County -->
@@ -890,10 +901,10 @@ html{scroll-behavior:smooth}
 </div>
 <div class="cc-body">
 <div class="cc-title">Isabella County, Michigan</div>
-<div class="cc-desc">Population 64,565 · regional university county · 15,140 DALYs/yr (primary). Diverse burden profile: cancer #1, CVD #2, opioids, mental health. Multiple HPSA designations.</div>
+<div class="cc-desc">Population 64,565 · regional university county · 13,493 DALYs/yr (primary). Diverse burden profile: cancer #1, CVD #2, opioids, mental health. Multiple HPSA designations.</div>
 <div class="cc-stats">
 <div class="cc-stat">
-<div class="sv" style="color:var(--blue)">15,140</div>
+<div class="sv" style="color:var(--blue)">13,493</div>
 <div class="sl">DALYs/yr</div>
 </div>
 <div class="cc-stat">
@@ -907,7 +918,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 <div class="cc-chips">
-<span class="chip">15,140 DALYs</span>
+<span class="chip">13,493 DALYs</span>
 <span class="chip">5 tools</span>
 <span class="chip">Trends 2017–23</span>
 <span class="chip chip-fips">FIPS 26073</span>
@@ -1074,6 +1085,104 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 </div>
+<!-- Washtenaw County -->
+<div class="county-card" onclick="window.location='washtenaw.html'" style="--accent:#7c3aed;cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge status-complete">
+<span class="status-dot"></span>Completed
+          </span>
+<div class="version-tag">v2 · age-std</div>
+</div>
+<svg fill="none" height="36" style="flex-shrink:0;opacity:.18;" viewbox="0 0 36 36" width="36">
+<rect fill="#7c3aed" height="36" rx="8" width="36"></rect>
+<path d="M6 28 L12 14 L18 20 L22 10 L30 16" stroke="#7c3aed" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="12" cy="14" fill="#7c3aed" r="2"></circle>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">Washtenaw County (Ann Arbor)</div>
+<div class="cc-desc">Population 367,730 · urban college county · 63,379 DALYs/yr. Cancer #1, CVD #2, substance use #3. Age-standardized method; University of Michigan.</div>
+<div class="cc-stats">
+<div class="cc-stat">
+<div class="sv" style="color:#7c3aed">63,379</div>
+<div class="sl">DALYs/yr</div>
+</div>
+<div class="cc-stat">
+<div class="sv">367,730</div>
+<div class="sl">Population</div>
+</div>
+<div class="cc-stat">
+<div class="sv" style="color:var(--navy)">Cancer #1</div>
+<div class="sl">Top condition</div>
+</div>
+</div>
+</div>
+<div class="cc-chips">
+<span class="chip">8,251 age-std YLL/100k</span>
+<span class="chip">$3.93B burden</span>
+<span class="chip">Urban · age-std</span>
+<span class="chip chip-fips">FIPS 26161</span>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="washtenaw.html">View Dashboard</a>
+<div class="cc-secondary-links">
+<a href="washtenaw_methods.html">Methods</a>
+<span class="sep">·</span>
+<a href="washtenaw_roi.html">Economic Impact</a>
+</div>
+</div>
+</div>
+<!-- Wayne County -->
+<div class="county-card" onclick="window.location='wayne.html'" style="--accent:#7c3aed;cursor:pointer">
+<div class="county-card-top"></div>
+<div class="cc-head">
+<div>
+<span class="cc-status-badge status-complete">
+<span class="status-dot"></span>Completed
+          </span>
+<div class="version-tag">v2 · age-std</div>
+</div>
+<svg fill="none" height="36" style="flex-shrink:0;opacity:.18;" viewbox="0 0 36 36" width="36">
+<rect fill="#7c3aed" height="36" rx="8" width="36"></rect>
+<path d="M6 28 L12 14 L18 20 L22 10 L30 16" stroke="#7c3aed" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="12" cy="14" fill="#7c3aed" r="2"></circle>
+</svg>
+</div>
+<div class="cc-body">
+<div class="cc-title">Wayne County (Detroit)</div>
+<div class="cc-desc">Population 1,773,082 · Michigan's largest county · 442,251 DALYs/yr. CVD #1, cancer #2, substance use #3. Age-standardized method; Detroit metro.</div>
+<div class="cc-stats">
+<div class="cc-stat">
+<div class="sv" style="color:#7c3aed">442,251</div>
+<div class="sl">DALYs/yr</div>
+</div>
+<div class="cc-stat">
+<div class="sv">1.77M</div>
+<div class="sl">Population</div>
+</div>
+<div class="cc-stat">
+<div class="sv" style="color:var(--navy)">CVD #1</div>
+<div class="sl">Top condition</div>
+</div>
+</div>
+</div>
+<div class="cc-chips">
+<span class="chip">14,177 age-std YLL/100k</span>
+<span class="chip">$27.4B burden</span>
+<span class="chip">Urban · age-std</span>
+<span class="chip chip-fips">FIPS 26163</span>
+</div>
+<div class="cc-links" onclick="event.stopPropagation()">
+<a class="primary" href="wayne.html">View Dashboard</a>
+<div class="cc-secondary-links">
+<a href="wayne_methods.html">Methods</a>
+<span class="sep">·</span>
+<a href="wayne_roi.html">Economic Impact</a>
+</div>
+</div>
+</div>
 </div><!-- end county-grid -->
 <!-- Pipeline Counties -->
 <div class="section-head">
@@ -1096,21 +1205,6 @@ html{scroll-behavior:smooth}
 <h3>Mecosta County</h3>
 <div class="pipe-fips">FIPS 26107</div>
 <p>Ferris State University county; rural health desert designation. University demographic parallels Isabella for comparative analysis.</p>
-</div>
-<div class="pipe-card">
-<div class="pipe-card-top"></div>
-<span class="pipe-status-badge">
-<svg fill="none" height="8" viewbox="0 0 8 8" width="8"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"></circle></svg>
-        Q4 2026
-      </span>
-<div class="pipe-icon-wrap">
-<svg fill="none" height="16" stroke="#94a3b8" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="16">
-<circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
-</svg>
-</div>
-<h3>Washtenaw County</h3>
-<div class="pipe-fips">FIPS 26161</div>
-<p>Ann Arbor / University of Michigan. Urban reference for rural–urban health equity benchmarking across the Michigan series.</p>
 </div>
 </div><!-- end pipeline-grid -->
 <!-- ══ ARTICLES ══ -->

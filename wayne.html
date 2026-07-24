@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wayne County (Detroit) Health Burden Dashboard | Lakes Linked</title>
+<meta content="Wayne County, Michigan (Detroit) health burden analysis: 442,251 DALYs/year. Cardiovascular disease #1, cancer #2, substance use #3. Age-standardized method. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="Wayne County (Detroit) Health Burden Dashboard | Lakes Linked" property="og:title"/>
+<meta content="442,251 DALYs/yr · CVD #1, substance use #3. Large urban county. Age-standardized YLL analysis (crude DALY rate)." property="og:description"/>
+<meta content="https://lakeslinked.com/wayne.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy:#0f1f3d; --blue:#1a56db; --teal:#0d9488; --red:#dc2626;
+  --amber:#d97706; --purple:#7c3aed; --green:#059669; --slate:#64748b;
+  --bg:#f8fafc; --surface:#fff; --border:#e2e8f0; --muted:#64748b;
+  --radius:10px; --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#0f172a;line-height:1.5;}
+
+/* ── NAV ── */
+.sitenav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
+.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;display:flex;align-items:center;gap:10px;}
+.sitenav .links{display:flex;gap:4px;}
+.sitenav a.navlink{color:rgba(255,255,255,.7);font-size:12.5px;padding:6px 12px;border-radius:6px;text-decoration:none;transition:all .15s;}
+.sitenav a.navlink:hover,.sitenav a.navlink.active{background:rgba(255,255,255,.12);color:#fff;}
+.nico{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;margin-right:5px;flex-shrink:0;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(130deg,#1e1b4b 0%,#312e81 40%,#1e293b 100%);padding:36px 28px 30px;}
+.hero-inner{max-width:1200px;margin:auto;}
+.hero h1{font-size:28px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:4px;}
+.hero .sub{color:rgba(255,255,255,.6);font-size:13px;margin-bottom:20px;}
+.hero-stats{display:flex;flex-wrap:wrap;gap:20px;}
+.hstat .num{font-size:32px;font-weight:800;color:#fff;letter-spacing:-.02em;}
+.hstat .lbl{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+.hstat .cmp{font-size:12px;margin-top:3px;}
+.hstat .cmp.bad{color:#f87171;} .hstat .cmp.neu{color:rgba(255,255,255,.5);} .hstat .cmp.good{color:#86efac;}
+.hdiv{width:1px;background:rgba(255,255,255,.12);align-self:stretch;}
+
+/* ── NOTICE ── */
+.notice{background:#fffbeb;border-bottom:1px solid #fde68a;padding:9px 28px;font-size:12px;color:#92400e;display:flex;gap:8px;align-items:flex-start;}
+
+/* ── PAGE ── */
+.page{max-width:1200px;margin:0 auto;padding:24px 20px 60px;}
+
+/* ── KPI STRIP ── */
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px;}
+.kpi{background:var(--surface);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,var(--green));}
+.kpi-num{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:-.02em;line-height:1;}
+.kpi-label{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.4;}
+.kpi-delta{font-size:11px;margin-top:5px;font-weight:600;}
+.kpi-delta.up{color:var(--red);} .kpi-delta.neu{color:var(--muted);} .kpi-delta.good{color:var(--green);}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+@media(max-width:900px){.g2{grid-template-columns:1fr;}}
+.card{background:var(--surface);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+.card h3{font-size:14px;font-weight:700;margin-bottom:2px;}
+.card .sub{font-size:11.5px;color:var(--muted);margin-bottom:14px;}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+thead th{background:var(--navy);color:rgba(255,255,255,.9);padding:9px 11px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.03em;white-space:nowrap;}
+tbody tr{border-bottom:1px solid var(--border);}
+tbody tr:hover{background:var(--bg);}
+tbody tr.total{background:#f0f4f8;font-weight:700;border-top:2px solid var(--navy);}
+tbody td{padding:9px 11px;vertical-align:top;}
+.dc{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10.5px;font-weight:700;}
+.dc.obs{background:#dcfce7;color:#166534;} .dc.mdl{background:#fef9c3;color:#854d0e;}
+.dc.imp{background:#fee2e2;color:#991b1b;} .dc.sup{background:#f3e8ff;color:#6b21a8;}
+
+/* ── FINDINGS ── */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:24px;}
+.finding{background:var(--surface);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border-left:3px solid var(--accent,var(--purple));}
+.finding h4{font-size:13px;font-weight:700;margin-bottom:4px;}
+.finding p{font-size:12.5px;color:#475569;line-height:1.55;}
+
+/* ── CAVEATS ── */
+.caveats{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:18px;}
+.caveats h3{font-size:14px;font-weight:700;margin-bottom:10px;}
+.caveats li{font-size:12px;color:#475569;line-height:1.6;margin:6px 0 6px 18px;}
+
+footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+/* ── ECON ── */
+.econ-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:640px){.econ-split{grid-template-columns:1fr;}}
+.econ-m{background:var(--bg);border-radius:8px;padding:16px;}
+.econ-m h4{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:5px;}
+.econ-big{font-size:28px;font-weight:800;letter-spacing:-.02em;}
+.econ-rng{font-size:12px;color:var(--muted);margin:3px 0 6px;}
+.econ-desc{font-size:12px;color:#475569;line-height:1.5;}
+.econ-note{font-size:11px;color:var(--muted);margin-top:12px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6;}
+
+/* method-generation badge */
+.gen-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.3);border-radius:20px;padding:4px 12px;font-size:11.5px;font-weight:700;color:var(--purple);margin-bottom:16px;}
+
+/* ── COUNTY COMPARE BAR ── */
+.county-compare-bar{background:#f8fafc;border-bottom:1px solid #e2e8f0;}
+.ccb-inner{max-width:1200px;margin:0 auto;padding:8px 28px;display:flex;align-items:stretch;overflow-x:auto;gap:0;}
+.ccb-grouplbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;align-self:center;padding:0 14px 0 0;white-space:nowrap;}
+.ccb-county{display:flex;flex-direction:column;padding:6px 18px 6px 0;margin-right:18px;border-right:1px solid #e2e8f0;text-decoration:none;color:inherit;flex-shrink:0;border-bottom:3px solid transparent;}
+a.ccb-county:hover{border-bottom-color:var(--purple);}
+.ccb-name{font-size:11.5px;font-weight:700;}
+.ccb-stat{font-size:13px;font-weight:800;margin-top:2px;}
+.ccb-pop{font-size:10px;color:#64748b;margin-top:1px;}
+.ccb-sep{width:2px;background:#cbd5e1;margin:6px 18px 6px 0;flex-shrink:0;}
+
+/* ── COUNTY NAV PILL ── */
+.county-group{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:3px;}
+.county-group .navlink{border-radius:5px;}
+.jump-bar{background:#fff;border-bottom:1px solid var(--border);padding:7px 28px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;position:sticky;top:48px;z-index:90;}
+.jb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:4px;white-space:nowrap;}
+.jb-link{font-size:11.5px;font-weight:600;color:var(--slate);text-decoration:none;padding:3px 9px;border-radius:5px;border:1px solid var(--border);background:var(--bg);}
+.jb-link:hover,.jb-link.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.rec{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:start;padding:13px 0;border-bottom:1px solid var(--border);}
+.rec-n{width:28px;height:28px;border-radius:50%;background:var(--purple);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rec-b h5{font-size:13px;font-weight:700;margin-bottom:2px;}
+.rec-b p{font-size:12px;color:var(--muted);line-height:1.5;}
+.rec-ev{font-size:11px;font-weight:700;color:var(--teal);background:#f0fdfa;border-radius:6px;padding:3px 8px;white-space:nowrap;align-self:start;}
+</style>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><meta content="Sergey Soshnikov, MD PhD — Lakes Linked" name="author"/><link href="https://lakeslinked.com/wayne.html" rel="canonical"/><meta content="https://lakeslinked.com/og-ai-public-health.png" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://lakeslinked.com/og-ai-public-health.png" name="twitter:image"/></head>
+<body>
+<!-- Navigation -->
+<nav class="sitenav">
+<a class="brand" href="index.html"><img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:34px;width:auto;"/></a>
+<div class="links" style="display:flex;gap:4px;align-items:center;">
+<span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
+<div class="county-group">
+<a class="navlink" href="isabella.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Isabella</a>
+<a class="navlink" href="clare.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Clare</a>
+<a class="navlink" href="midland.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Midland</a>
+<a class="navlink" href="gratiot.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Gratiot</a>
+<a class="navlink" href="washtenaw.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Washtenaw</a>
+<a class="navlink active" href="wayne.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Wayne</a>
+</div>
+<span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+<a class="navlink" href="index.html"><svg class="nico" viewbox="0 0 24 24"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect><rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect></svg>Portal</a>
+<a class="navlink" href="rural_vs_urban.html"><svg class="nico" viewbox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg>Rural vs Urban</a>
+<a class="navlink" href="wayne_roi.html"><svg class="nico" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.2a2.6 2.6 0 0 0-5 .6c0 3 5 1.4 5 4.4a2.6 2.6 0 0 1-5 .6M12 6.3v11.4"></path></svg>Economic Impact</a>
+<a class="navlink" href="wayne_methods.html"><svg class="nico" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Methods</a>
+</div>
+</nav>
+<!-- Notice -->
+<div class="notice">
+<span>⚠</span>
+<span><strong>Planning model — not a validated county burden estimate.</strong> 442,251 DALYs/yr from CDC WONDER 2020–22 age-specific mortality, CDC PLACES 2024 prevalence and IHME GBD 2021 weights, on a US-2000 age-standardized basis. Method differs from this site's rural counties — see the comparability note. <a href="wayne_methods.html" style="color:#92400e;font-weight:700;">→ Full methods &amp; data quality notes</a></span>
+</div>
+<!-- County Compare Bar — two method generations, kept visually separate -->
+<div class="county-compare-bar">
+<div class="ccb-inner">
+<span class="ccb-grouplbl">Rural · v1 crude</span>
+<a class="ccb-county" href="isabella.html"><span class="ccb-name" style="color:#1a56db;">Isabella</span><span class="ccb-stat">13,493</span><span class="ccb-pop">DALYs · pop 64,565</span></a>
+<a class="ccb-county" href="clare.html"><span class="ccb-name" style="color:#1e40af;">Clare</span><span class="ccb-stat">8,198</span><span class="ccb-pop">DALYs · pop 30,013</span></a>
+<a class="ccb-county" href="midland.html"><span class="ccb-name" style="color:#3b82f6;">Midland</span><span class="ccb-stat">14,335</span><span class="ccb-pop">DALYs · pop 82,884</span></a>
+<a class="ccb-county" href="gratiot.html"><span class="ccb-name" style="color:#64748b;">Gratiot</span><span class="ccb-stat">7,533</span><span class="ccb-pop">DALYs · pop 41,368</span></a>
+<div class="ccb-sep" title="Two method generations — not directly comparable"></div>
+<span class="ccb-grouplbl">Urban · v2 age-std</span>
+<a class="ccb-county" href="washtenaw.html"><span class="ccb-name" style="color:#7c3aed;">Washtenaw</span><span class="ccb-stat">63,379</span><span class="ccb-pop">DALYs · pop 367,730</span></a>
+<div class="ccb-county" style="border-bottom:3px solid var(--purple);"><span class="ccb-name" style="color:var(--purple);">Wayne</span><span class="ccb-stat">442,251</span><span class="ccb-pop">DALYs · pop 1,773,082</span></div>
+</div>
+</div>
+<!-- Hero -->
+<div class="hero">
+<div class="hero-inner">
+<h1>Wayne County <span style="font-weight:600;color:rgba(255,255,255,.7);">(Detroit)</span> Health Burden Analysis</h1>
+<p class="sub">Population 1,773,082 · Large urban county · Age-standardized YLL · crude DALY rate · July 2026</p>
+<div class="hero-stats">
+<div class="hstat">
+<div class="num">442,251</div>
+<div class="lbl">DALYs / year</div>
+<div class="cmp neu">YLL 287,315 + YLD 154,936</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">14,177</div>
+<div class="lbl">Age-std YLL / 100k</div>
+<div class="cmp bad">Highest analyzed county — 1.7× Ann Arbor</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">CVD</div>
+<div class="lbl">#1 burden driver</div>
+<div class="cmp neu">144,104 DALYs · then cancer, substance use</div>
+</div>
+<div class="hdiv"></div>
+<div class="hstat">
+<div class="num">24,943</div>
+<div class="lbl">Crude DALYs / 100k</div>
+<div class="cmp bad">Highest of the analyzed counties</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jump-bar">
+<span class="jb-label">Jump to:</span>
+<a class="jb-link" href="#sec-kpi">KPIs</a>
+<a class="jb-link" href="#sec-charts">Charts</a>
+<a class="jb-link" href="#sec-findings">Key Findings</a>
+<a class="jb-link" href="#sec-econ">Economic Burden</a>
+<a class="jb-link" href="#sec-table">DALY Table</a>
+<a class="jb-link" href="#sec-recs">Recommendations</a>
+</div>
+<div class="page">
+<span class="gen-badge">🏙️ v2 age-standardized method · US-2000 standard · observed substance-use &amp; suicide mortality</span>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip" id="sec-kpi">
+<div class="kpi" style="--accent:var(--purple)">
+<div class="kpi-num">14,177<span style="font-size:13px;font-weight:600;color:var(--muted)">/100k</span></div>
+<div class="kpi-label">Age-standardized YLL rate — the cross-county comparison metric</div>
+<div class="kpi-delta up">Highest burden — 1.7× Ann Arbor's 8,251/100k</div>
+</div>
+<div class="kpi" style="--accent:var(--red)">
+<div class="kpi-num">5,531</div>
+<div class="kpi-label">Cardiovascular deaths/yr — #1 burden driver</div>
+<div class="kpi-delta up">311.9/100k · 144,104 DALYs</div>
+</div>
+<div class="kpi" style="--accent:var(--amber)">
+<div class="kpi-num">1,107</div>
+<div class="kpi-label">Substance-use deaths/yr (drug + alcohol) — #3 burden</div>
+<div class="kpi-delta up">62.4/100k · 76,762 DALYs · Detroit overdose crisis</div>
+</div>
+<div class="kpi" style="--accent:var(--teal)">
+<div class="kpi-num">224</div>
+<div class="kpi-label">Suicide deaths/yr (mental-health mortality proxy)</div>
+<div class="kpi-delta neu">32,944 DALYs incl. depression morbidity</div>
+</div>
+<div class="kpi" style="--accent:var(--green)">
+<div class="kpi-num">442,251</div>
+<div class="kpi-label">Total DALYs/year · YLL + YLD</div>
+<div class="kpi-delta neu">CDC WONDER 2020–22 · PLACES 2024</div>
+</div>
+<div class="kpi" style="--accent:var(--blue)">
+<div class="kpi-num">1.77M</div>
+<div class="kpi-label">Population (2020–22 avg, Census PEP)</div>
+<div class="kpi-delta up">Michigan's largest county · Detroit metro</div>
+</div>
+</div>
+
+<div class="ll-share-block" data-county="Wayne County (Detroit)" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/wayne.html" data-value="442,251" style="margin:20px 0;">
+<span class="ll-share-label">Share this dashboard:</span>
+<button class="ll-share-btn ll-share-btn--linkedin" type="button"><span class="ll-share-icon">in</span> LinkedIn</button>
+<button class="ll-share-btn ll-share-btn--x" type="button"><span class="ll-share-icon">𝕏</span> Post</button>
+<a class="ll-share-btn ll-share-btn--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flakeslinked.com%2Fwayne.html" target="_blank" rel="noopener" style="text-decoration:none;background:#1877f2;color:#fff;border-color:#1877f2"><span class="ll-share-icon">f</span> Facebook</a>
+<button class="ll-share-btn ll-share-btn--copy" type="button"><span class="ll-share-icon">📋</span> Copy insight</button>
+</div>
+<!-- Charts + findings -->
+<div class="g2" id="sec-charts">
+<div class="card">
+<h3>DALYs by Condition</h3>
+<p class="sub">Disability-Adjusted Life Years · ranked by burden · Wayne County 2020–22</p>
+<canvas height="270" id="dalyChart"></canvas>
+<p style="font-size:10.5px;color:#94a3b8;margin-top:8px"><strong>Abbreviations:</strong> DALY = disability-adjusted life year · YLL = years of life lost · YLD = years lived with disability · CVD = cardiovascular disease · SUD = substance use disorder · COPD = chronic obstructive pulmonary disease</p>
+</div>
+<div class="card" id="sec-findings">
+<h3>Key findings — why Detroit looks different</h3>
+<p class="sub">Large urban county profile vs Michigan's rural counties and Ann Arbor</p>
+<div class="findings" style="margin:0;">
+<div class="finding" style="--accent:var(--red)"><h4>Cardiovascular-led</h4><p>Heart disease is the dominant burden (144,104 DALYs, 5,531 deaths/yr) — a cardiovascular crisis on a scale distinct from cancer-led Ann Arbor.</p></div>
+<div class="finding" style="--accent:var(--amber)"><h4>Enormous substance-use burden</h4><p>1,107 drug + alcohol deaths/yr (76,762 DALYs) — the #3 cause, reflecting Detroit's overdose crisis. Directly observed, not suppressed.</p></div>
+<div class="finding"><h4>Deaths strike younger</h4><p>The age-standardized YLL rate (14,177/100k) is 1.7× Ann Arbor's, driven by deaths occurring further below the survival benchmark.</p></div>
+</div>
+</div>
+</div>
+
+<div aria-label="Download county brief" class="ll-brief-section">
+<div aria-hidden="true" class="ll-brief-icon">📄</div>
+<div class="ll-brief-body">
+<p class="ll-eyebrow">One-page county summary</p>
+<h3>Download the Wayne County Brief <span class="ll-badge-soon">Coming soon</span></h3>
+<p>A polished one-page PDF summary for public health leaders, grant writers, and community stakeholders. Includes top burden drivers, planning-grade DALY estimates, and practical implications.<br/><em>Planning-grade estimate. Not a peer-reviewed study or official GBD estimate.</em></p>
+<div class="ll-brief-actions">
+<a aria-label="Download Wayne County brief PDF" class="ll-btn-primary ll-btn-brief" href="#">⇩ Download 1-page brief</a>
+<a class="ll-btn-secondary" href="index.html#request-county">📬 Request this county's brief</a>
+</div>
+</div>
+</div>
+<!-- DALY Detail Table -->
+<div class="card" id="sec-table" style="margin-bottom:18px">
+<h3>Disease Burden Detail</h3>
+<p class="sub">Age-specific YLL (GBD 2019 reference life table) · YLD from CDC PLACES age-adjusted prevalence · no discounting (WHO standard) · population 1,773,082</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Condition</th><th>Deaths/yr</th><th>Mortality source</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>% of total</th></tr></thead>
+<tbody>
+<tr><td>CVD (heart disease)</td><td>5,531</td><td><span class="dc obs">observed</span></td><td>111,087</td><td>33,017</td><td>144,104</td><td>32.6%</td></tr>
+<tr><td>Cancer</td><td>3,502</td><td><span class="dc obs">observed</span></td><td>75,346</td><td>24,296</td><td>99,641</td><td>22.5%</td></tr>
+<tr><td>Substance use (drug+alcohol)</td><td>1,107</td><td><span class="dc obs">observed</span></td><td>46,729</td><td>30,032</td><td>76,762</td><td>17.4%</td></tr>
+<tr><td>COPD</td><td>736</td><td><span class="dc obs">observed</span></td><td>13,460</td><td>20,390</td><td>33,850</td><td>7.7%</td></tr>
+<tr><td>Mental health (suicide + depression)</td><td>224</td><td><span class="dc obs">observed</span></td><td>9,993</td><td>22,951</td><td>32,944</td><td>7.4%</td></tr>
+<tr><td>Stroke</td><td>1,017</td><td><span class="dc obs">observed</span></td><td>16,576</td><td>15,668</td><td>32,244</td><td>7.3%</td></tr>
+<tr><td>Diabetes</td><td>642</td><td><span class="dc obs">observed</span></td><td>14,124</td><td>8,582</td><td>22,706</td><td>5.1%</td></tr>
+<tr class="total"><td>TOTAL</td><td>12,759</td><td>—</td><td>287,315</td><td>154,936</td><td>442,251</td><td>100%</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:11px;color:var(--muted);margin-top:10px">All seven causes are directly observed by cause × ten-year age group (CDC WONDER, 2020–22 pooled, annualized). Only a handful of young-age cells were statistically suppressed and imputed conservatively; the effect on the total is well under ±1%. Rows use unrounded estimates, so YLL + YLD may differ from the DALY column by ±1.</p>
+</div>
+
+<!-- Economic burden -->
+<div class="card" id="sec-econ" style="margin-bottom:18px">
+<h3>Economic Burden</h3>
+<p class="sub">Human Capital + Value of Statistical Life · Wayne County pop. 1,773,082</p>
+<div class="econ-split">
+<div class="econ-m">
+<h4>Human Capital Method</h4>
+<div class="econ-big" style="color:var(--green)">$27.4B</div>
+<div class="econ-rng">442,251 DALYs × $62,000 GDP/capita (Michigan, BEA)</div>
+<div class="econ-desc">Annual lost economic productivity from premature death (YLL) and disability (YLD). CVD alone is ~$8.9B in human-capital terms.</div>
+</div>
+<div class="econ-m">
+<h4>Value of Statistical Life</h4>
+<div class="econ-big" style="color:var(--navy)">$134B</div>
+<div class="econ-rng">≈12,759 deaths/yr × $10.5M VSL (income-adjusted HHS)</div>
+<div class="econ-desc">Willingness-to-pay standard for federal cost-benefit analysis (HHS, EPA, DOT). Mortality only; morbidity adds the human-capital figure.</div>
+</div>
+</div>
+<div class="econ-note"><strong>Note:</strong> Human Capital ($27.4B) is the conservative productivity floor; VSL ($134B) reflects societal willingness-to-pay to prevent death. Both derive from observed CDC WONDER mortality and CDC PLACES 2024 prevalence. Figures are planning-grade, not audited fiscal estimates.</div>
+</div>
+
+<div class="card" id="sec-recs" style="margin-bottom:18px">
+<h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
+<p class="sub">Illustrative planning priorities from the burden profile · not prescriptive</p>
+<div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>Cardiovascular risk management at scale</h5><p>CVD · 144,104 DALYs · 5,531 deaths/yr · AI-supported hypertension control and statin adherence — the single largest burden pool.</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>Overdose prevention — naloxone + MOUD</h5><p>Substance use · 76,762 DALYs · 1,107 deaths/yr · naloxone saturation and MOUD expansion; the defining crisis of the county.</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>Community cancer screening equity</h5><p>Cancer · 99,641 DALYs · navigation + AI-triaged screening reminders in underserved Detroit neighborhoods.</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>COPD &amp; smoking cessation</h5><p>COPD · 33,850 DALYs · integrated cessation programs and spirometry screening for at-risk residents.</p></div><span class="rec-ev">Moderate–Strong</span></div>
+<div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>Mental-health access in high-need areas</h5><p>Mental health · 32,944 DALYs · community screening and crisis services targeted to highest-need ZIP codes.</p></div><span class="rec-ev">Moderate</span></div>
+</div>
+<!-- Caveats -->
+<div class="caveats">
+<h3>Method &amp; comparability notes (read before comparing counties)</h3>
+<ul>
+<li><strong>Two method generations.</strong> Wayne and Washtenaw use the v2 age-standardized method (age-specific life expectancy, US-2000 standardization, observed substance-use &amp; suicide mortality). The rural counties (Isabella, Clare, Midland, Gratiot) use the earlier v1 crude method. <strong>Rates across the two groups are not directly comparable and should not be ranked against each other</strong> — compare within a group only.</li>
+<li><strong>"Age-standardized" applies to YLL.</strong> Only the mortality (YLL) rate is genuinely age-standardized (14,177/100k). YLD has no age-specific prevalence in CDC PLACES, so it is reported as a crude rate (8,738/100k). We show them separately rather than blend them under one label.</li>
+<li><strong>Substance-use prevalence for YLD is indicative, not measured.</strong> CDC PLACES has no SUD measure, so the SUD disability component uses a Michigan-derived rate applied uniformly; it likely understates a high-burden county like Wayne. SUD mortality (the YLL part) is directly observed.</li>
+<li><strong>Substance-use and suicide mortality overlap slightly.</strong> Drug-poisoning deaths with suicidal intent (X60–X64) appear in both categories, so the sum of those two causes' YLL is a modest upper bound.</li>
+<li><strong>Detroit ⊆ Wayne County.</strong> Mortality is only available at county resolution; this page describes Wayne County, which contains Detroit (about a third of the county's population).</li>
+</ul>
+</div>
+
+</div>
+<footer>
+<span>Wayne County, Michigan (Detroit) · FIPS 26163 · Pipeline run July 2026 · Data: CDC WONDER 2020–22, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–22, IHME GBD 2021 · Age-standardized method</span>
+<span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
+<div class="ll-footer-trust" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.73rem;color:#64748b;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;">
+<span>🔒 Secure (HTTPS)</span>
+<a href="/privacy.html" style="color:#64748b;">Privacy Policy</a><span>·</span>
+<a href="/terms.html" style="color:#64748b;">Terms of Use</a><span>·</span>
+<span>© 2026 Lakes Linked · Sergey Soshnikov, MD PhD</span>
+</div></footer>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var ctx = document.getElementById('dalyChart');
+  if(!ctx || !window.Chart) return;
+  new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels:['CVD','Cancer','Substance use','COPD','Mental health','Stroke','Diabetes'],
+      datasets:[
+        {label:'YLL', data:[111087,75346,46729,13460,9993,16576,14124], backgroundColor:'#7c3aed'},
+        {label:'YLD', data:[33017,24296,30032,20390,22951,15668,8582], backgroundColor:'#c4b5fd'}
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{x:{stacked:true,ticks:{font:{size:10}}}, y:{stacked:true, title:{display:true,text:'DALYs / year'}}},
+      plugins:{legend:{position:'bottom'}, tooltip:{callbacks:{footer:function(items){var s=items.reduce(function(a,i){return a+i.parsed.y;},0);return 'Total: '+s.toLocaleString()+' DALYs';}}}}
+    }
+  });
+});
+</script>
+<script src="ll-features.js"></script></body>
+</html>
