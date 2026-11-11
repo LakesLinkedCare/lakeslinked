@@ -156,7 +156,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
   <div class="hd">Abstract</div>
   <p><strong>Background.</strong> County-level disease burden estimates are rarely available in the United States outside large academic centers. This analysis adapts the DALY framework as a planning-grade model for seven major condition groups in Clare County, Michigan — a rural county of 30,013 residents with Medically Underserved Area (MUA) designation, severe opioid crisis, and one of the oldest population age structures in mid-Michigan. It is not intended to replicate a full GBD-standard county burden estimate.</p>
   <p><strong>Methods.</strong> Disability-adjusted life year (DALY) estimates were constructed from secondary data: Michigan state CDC WONDER rates 2020–2022 with rural adjustment factors (Clare is too small for reliable direct WONDER counts — median suppression applies to the majority of cause-specific cells), CDC PLACES 2024 (prevalence), IHME GBD 2021 (disability weights), and U.S. Census ACS 2022 (population denominators). YLL was calculated using the WHO GHE frontier reference life table (89·1 years) as the primary standard; Michigan observed LE (78·6 years) is reported as a planning-grade sensitivity. For mental health, a remission factor of 0·50 was applied. Methodology is structurally identical to the Isabella County analysis (v5.0).</p>
-  <p><strong>Results.</strong> Primary burden (frontier LE, remission-adjusted MH): <strong>8,198 DALYs/yr</strong> (YLL 4,612 + YLD 3,586). SUD/Opioids and Cancer are co-leading conditions; COPD burden is the standout indicator — 12.7% prevalence, highest in the mid-Michigan comparison set. Planning-grade sensitivity (Michigan LE 78.6 yrs): <strong>5,943 DALYs</strong>. Total deaths: ~214/year (estimated). Economic burden: ~$508M/year (human capital, frontier).</p>
+  <p><strong>Results (v4, November 2026).</strong> Primary burden, age-specific YLL summed on the GBD 2019 reference life table: <strong>9,783 DALYs/yr</strong> (YLL 6,573 + YLD 3,210). Cancer (2,571) and CVD (2,252) lead, with COPD the standout indicator — 12.7% prevalence, highest in the mid-Michigan comparison set. Observed deaths (CDC WONDER 2020–22, seven cause groups): 332/year, replacing the ~214/year previously estimated from rural-adjusted state rates. Economic burden: ~$607M/year (human capital). The v1 planning figures (frontier 8,198 / Michigan LE 5,943 DALYs; ~214 deaths) are retained in the tables below for comparison.</p>
   <p><strong>Limitations.</strong> Clare County's small population (30,013) causes CDC WONDER cell suppression for nearly all cause-specific death counts. All mortality inputs use Michigan state rates with rural adjustment factors (×1.2–1.85), not direct CDC WONDER county counts. This introduces greater uncertainty than the Isabella County analysis, where some direct counts were available. Results are directional planning approximations only. ±20% uncertainty applies to all figures.</p>
   <p><strong>Conclusion.</strong> Clare County's primary burden is driven by opioid/SUD crisis, cancer, COPD (standout), CVD, and mental health access deficits under a severe MUA designation. See <a href="clare_roi.html" style="color:var(--blue)">ROI analysis →</a> for investment return estimates and <a href="clare_ai_solutions.html" style="color:var(--blue)">Interventions →</a> for priority interventions.</p>
 </div>
@@ -309,7 +309,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <h3 class="sub">5.2 Condition ranking summary</h3>
 <div class="tbl-wrap">
   <table>
-    <caption>Table 2. Condition rankings under both LE standards. Clare-specific note: Cancer and SUD share near-equal burden under both standards, with COPD as the distinctive Clare condition (highest in the mid-Michigan comparison set).</caption>
+    <caption>Table 2. <strong>v1 model (June 2026), retained for reference.</strong> Condition rankings under both LE standards. Clare-specific note: Cancer and SUD share near-equal burden under both standards, with COPD as the distinctive Clare condition (highest in the mid-Michigan comparison set).</caption>
     <thead>
       <tr><th>Condition</th><th>Mean age</th><th>DALYs (MI LE)</th><th>DALYs (Frontier)</th><th>Rank MI / Frontier</th></tr>
     </thead>
@@ -325,7 +325,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
     </tbody>
   </table>
   <div class="tbl-note">
-    * Under MI LE without remission adjustment, mental health ranks #1 due to high YLD driven by full 14.1% prevalence. The dashboard primary total of 8,198 DALYs uses the full Clare burden model including all YLD components as computed in the interactive dashboard.
+    * Under MI LE without remission adjustment, mental health ranks #1 due to high YLD driven by full 14.1% prevalence. The 8,198 DALY figure in this table is the v1 frontier total. The dashboard primary is now the v4 estimate of 9,783 DALYs (age-specific YLL, observed CDC WONDER deaths by age); see §Results.
   </div>
 </div>
 
@@ -353,10 +353,10 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <div class="tbl-wrap">
   <table>
     <caption>Table 4. Economic burden, two methods, under both LE standards. See <a href="clare_roi.html">ROI analysis page</a> for intervention-level estimates.</caption>
-    <thead><tr><th>Method</th><th>Formula (frontier)</th><th>Central (frontier)</th><th>Formula (MI LE)</th><th>Central (MI planning)</th><th>Measures</th></tr></thead>
+    <thead><tr><th>Method</th><th>Formula (v4, Nov 2026)</th><th>Central (v4)</th><th>Formula (v1, MI LE)</th><th>Central (v1, MI planning)</th><th>Measures</th></tr></thead>
     <tbody>
-      <tr><td>Human Capital</td><td>8,198 × $62,000</td><td><strong>~$508M/yr</strong></td><td>5,943 × $62,000</td><td><strong>~$368M/yr</strong></td><td>Indirect productivity losses</td></tr>
-      <tr><td>VSL (HHS 2026)</td><td>215 deaths × $9.2M</td><td><strong>~$1.98B/yr</strong></td><td>215 deaths × $9.2M</td><td><strong>~$1.98B/yr</strong></td><td>Societal willingness to pay</td></tr>
+      <tr><td>Human Capital</td><td>9,783 × $62,000</td><td><strong>~$607M/yr</strong></td><td>5,943 × $62,000</td><td><strong>~$368M/yr</strong></td><td>Indirect productivity losses</td></tr>
+      <tr><td>VSL (HHS 2026)</td><td>332 deaths × $9.2M</td><td><strong>~$3.05B/yr</strong></td><td>215 deaths × $9.2M</td><td><strong>~$1.98B/yr</strong></td><td>Societal willingness to pay</td></tr>
     </tbody>
   </table>
   <div class="tbl-note">VSL: $13.4M × (38,000/80,000)^0.4 ≈ $9.2M income-adjusted (Clare County median income ~$38,000 ACS 2022; income elasticity 0.4, Viscusi &amp; Aldy 2003 [7]).</div>

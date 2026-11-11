@@ -213,7 +213,7 @@ h2.sec{scroll-margin-top:68px}
   <div class="hd">Abstract</div>
   <p><strong>Background.</strong> County-level DALY disease burden estimates are rarely available for rural U.S. counties. This document describes a reproducible Python workflow for computing planning-grade Disability-Adjusted Life Year (DALY) estimates for rural Michigan counties using exclusively open public data. The DALY framework was developed by IHME for the Global Burden of Disease Study — a body of work we deeply respect and do not attempt to replicate. This project applies GBD's openly published disability weights and WHO reference standards for educational and local health planning purposes only. The workflow is designed to scale to all 83 Michigan counties with minimal per-county configuration changes.</p>
   <p><strong>Methods.</strong> We constructed DALY estimates from five open data sources: CDC WONDER 2020–2022 (mortality), CDC PLACES 2024 (prevalence), IHME GBD 2021 (disability weights), County Health Rankings 2010–2024 (years of potential life lost), and U.S. Census ACS 2022 (population denominators). YLL uses the WHO GHE frontier reference life table (89.1 years) as primary; Michigan observed LE (78.6 years) is reported as a planning sensitivity. Uncertainty was quantified via Monte Carlo simulation (n = 10,000). Analyses were implemented in Python 3.10 using NumPy, Pandas, SciPy, and Matplotlib; working code, configuration files, derived tables, and validation reports can be shared by the author on reasonable request.</p>
-  <p><strong>Completed counties (June 2026).</strong> Isabella County (FIPS 26073): 13,493 DALYs/yr (95% UI 12,266–14,803), frontier LE primary. Clare County (FIPS 26035): 8,198 DALYs/yr (±20% uncertainty), frontier LE primary. Midland County (FIPS 26111): 14,335 DALYs/yr (MI LE) / ~20,400 (frontier LE); Gratiot County (FIPS 26057): 7,533 DALYs/yr — all v1 crude method, CDC PLACES observed county-level prevalence. Two urban counties added on the v2 age-standardized method: Washtenaw / Ann Arbor (FIPS 26161): 63,379 DALYs/yr; Wayne / Detroit (FIPS 26163): 442,251 DALYs/yr. Rates are compared within a method group only — see the <a href="rural_vs_urban.html">Rural vs Urban</a> page. One county in pipeline: Mecosta (Q4 2026).</p>
+  <p><strong>Completed counties (v4, November 2026).</strong> All six counties below are now computed on one basis: age-specific YLL summed on the GBD 2019 reference life table, with observed CDC WONDER 2020–22 deaths by ten-year age group and CDC WONDER D191 person-year denominators. Isabella County (FIPS 26073): 13,313 DALYs/yr v4 — the published figure is 13,493 (95% UI 12,266–14,803; Soshnikov 2026), a 1.3% difference. Clare County (FIPS 26035): 9,783 DALYs/yr (v1: 8,198). Midland County (FIPS 26111): 17,907 DALYs/yr (v1: 14,335, MI LE). Gratiot County (FIPS 26057): 10,475 DALYs/yr (v1: 7,533). Two urban counties added on the v2 age-standardized method: Washtenaw / Ann Arbor (FIPS 26161): 63,379 DALYs/yr; Wayne / Detroit (FIPS 26163): 442,251 DALYs/yr. Rates are compared within a method group only — see the <a href="rural_vs_urban.html">Rural vs Urban</a> page. One county in pipeline: Mecosta (Q4 2026).</p>
   <p><strong>Limitations.</strong> Mixed-source modeled planning scenario — not a validated GBD-standard county burden estimate. Prevalence inputs are model-based (CDC PLACES MLRP). Mortality uses mean-age-at-death simplification for YLL; rural adjustment factors (×1.2–1.85) proxy suppressed CDC WONDER cells. Results are directional planning approximations for grant writing, CHNA processes, and county health planning.</p>
 </div>
 
@@ -261,9 +261,9 @@ h2.sec{scroll-margin-top:68px}
 <div class="eq-box">Economic burden (Human Capital) = DALYs × GDP_per_capita <span class="eq-label">(5)</span></div>
 <div class="eq-box">Economic burden (VSL) = Deaths × VSL_adjusted <span class="eq-label">(6)</span></div>
 
-<p>Human Capital uses Michigan GDP per capita ($62,000, 2024) and represents indirect productivity losses. VSL uses the HHS ASPE 2026 central estimate ($13.4M per statistical life), income-adjusted per county median household income using income elasticity 0.4 (Viscusi &amp; Aldy 2003):</p>
+<p>Human Capital uses Michigan GDP per capita ($62,000, 2024) and represents indirect productivity losses. VSL uses the HHS 2024 central estimate ($13.1M per statistical life), income-adjusted per county median household income using income elasticity 0.4 (Viscusi &amp; Aldy 2003):</p>
 
-<div class="eq-box">VSL_county = $13.4M × (county_median_income / $80,000) ^ 0.4 <span class="eq-label">(7)</span></div>
+<div class="eq-box">VSL_county = $13.1M × (county_median_income / $80,000) ^ 0.55 <span class="eq-label">(7)</span></div>
 
 <p>The ~5–7× difference between Human Capital and VSL central estimates is methodologically expected. For grant applications use VSL (aligned with HHS/OMB cost-benefit guidance); for academic GBD comparison use Human Capital.</p>
 
@@ -491,12 +491,12 @@ python3 director.py --county midland --dry-run</div>
 
 <div class="tbl-wrap">
   <table>
-    <caption>Table 3. Rural adjustment factors applied to Michigan state-level mortality rates for suppressed county cells. Factors represent central estimates within published rural/urban differential ranges.</caption>
+    <caption>Table 3. Rural adjustment factors applied to Michigan state-level mortality rates for suppressed county cells. Factors represent central estimates within published rural/urban differential ranges. <strong>Status:</strong> in the current Isabella estimate (v31) only substance use disorders retain a rural multiplier, at ×1.40; all other causes use observed CDC WONDER counts. The full factor set below still underlies the Clare, Midland and Gratiot pages, which are pending recomputation.</caption>
     <thead>
       <tr><th>Condition</th><th>Rural adj. factor</th><th>Source range</th><th>Primary reference</th></tr>
     </thead>
     <tbody>
-      <tr><td>SUD / Drug overdose</td><td>×1.85</td><td>1.6–2.0×</td><td>Hedegaard et al. (2021), Mack et al. (2017)</td></tr>
+      <tr><td>SUD / Drug overdose</td><td><strong>×1.40</strong> (Isabella v31) · ×1.85 (v1 county set)</td><td>1.25–1.55×</td><td>Hedegaard et al. (2021), Mack et al. (2017)</td></tr>
       <tr><td>Mental Health</td><td>×1.40</td><td>1.3–1.5×</td><td>Searight (2018); WWAMI Rural Health Research</td></tr>
       <tr><td>CVD</td><td>×1.30</td><td>1.2–1.4×</td><td>Moy et al. (2017), Garcia et al. (2017)</td></tr>
       <tr><td>COPD</td><td>×1.35</td><td>1.2–1.5×</td><td>Moy et al. (2017)</td></tr>
@@ -505,7 +505,7 @@ python3 director.py --county midland --dry-run</div>
       <tr><td>Cancer</td><td>×1.20</td><td>1.1–1.3×</td><td>Zahnd et al. (2021)</td></tr>
     </tbody>
   </table>
-  <div class="tbl-note">These factors introduce ±30% additional uncertainty for suppressed cells, propagated through Monte Carlo simulation (Section 4). County-specific CDC WONDER 5-year pooled data (2019–2023) may reduce suppression and should be used when available.</div>
+  <div class="tbl-note">These factors introduce ±30% additional uncertainty for suppressed cells, propagated through Monte Carlo simulation (Section 4). County-specific CDC WONDER 5-year pooled data (2019–2023) may reduce suppression and should be used when available. The SUD multiplier was revised from ×1.85 to ×1.40 in June 2026 after comparison with published rural/urban mortality differentials; mental-health and diabetes multipliers were removed when those causes were reclassified from proxy to observed.</div>
 </div>
 
 <!-- 4. Uncertainty Model -->
@@ -583,30 +583,30 @@ python3 director.py --county midland --dry-run</div>
       <tr style="background:#f0f7ff;">
         <td><strong>Isabella</strong></td><td>26073</td><td>64,565</td>
         <td><strong>13,493</strong><br><span style="font-size:10.5px;color:#64748b">95% UI 12,266–14,803</span></td>
-        <td>10,288</td>
+        <td>9,388</td>
         <td>Cancer #1 · CVD #2 · SUD #3</td>
-        <td>the university university pop; MH HPSA 176,938:1</td>
+        <td>the university population; MH HPSA 176,938:1</td>
         <td><span class="dc obs">Complete v5.0</span></td>
       </tr>
       <tr style="background:#fff5f5;">
         <td><strong>Clare</strong></td><td>26035</td><td>30,013</td>
-        <td><strong>8,198</strong><br><span style="font-size:10.5px;color:#64748b">±20% uncertainty</span></td>
-        <td>5,943 (remission-adj)</td>
-        <td>Cancer #1 · CVD #2 · SUD #3 (frontier)</td>
+        <td><strong>9,783</strong><br><span style="font-size:10.5px;color:#64748b">v4, Nov 2026</span></td>
+        <td>8,198 (v1 frontier)</td>
+        <td>Cancer #1 · CVD #2 · COPD #3 (v4)</td>
         <td>MUA-designated; opioid ~47/100k; COPD 12.7%; median age 46.8</td>
         <td><span class="dc obs">Complete v1.0</span></td>
       </tr>
       <tr style="background:#f0fdf4;">
         <td><strong>Midland</strong></td><td>26111</td><td>82,884</td>
-        <td><strong>~20,400</strong><br><span style="font-size:10.5px;color:#64748b">CDC PLACES 2023</span></td>
-        <td>14,335</td>
+        <td><strong>17,907</strong><br><span style="font-size:10.5px;color:#64748b">v4, Nov 2026</span></td>
+        <td>14,335 (v1, MI LE)</td>
         <td>Cancer #1 · SUD #2 · MH #3</td>
         <td>Dow Chemical HQ; higher income ($62k); industrial SDOH; CDC PLACES 2023 observed prevalence</td>
         <td><span class="dc obs">Complete v1.0</span></td>
       </tr>
       <tr>
         <td>Gratiot</td><td>26057</td><td>~41,000</td>
-        <td colspan="5">Completed (v1 crude) — 7,533 DALYs/yr · agricultural economy · <a href="gratiot_methods.html">methods</a></td>
+        <td colspan="5">Completed (v4, Nov 2026) — 10,475 DALYs/yr · agricultural economy · <a href="gratiot_methods.html">methods</a></td>
       </tr>
       <tr>
         <td>Washtenaw (Ann Arbor)</td><td>26161</td><td>~368,000</td>

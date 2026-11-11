@@ -212,7 +212,7 @@ YLD  = Prevalent Cases × Disability Weight (DW)<br>
     <p><strong>YLD (Years Lived with Disability):</strong> YLD = prevalent cases × DW = pop_adult × prevalence × DW. For mental health, a remission adjustment factor of ×0.50 is applied in the remission-adjusted mode (active prevalence = 26.9% × 0.50 = 13.5%), reflecting that approximately half of individuals with lifetime MH disorders are not in an active episode at any given time.</p>
     <p><strong>CVD derivation:</strong> CDC PLACES provides hypertension prevalence (35.8%) as a proxy. CVD prevalence is derived: CVD = max(HTN × 0.22, 0.065) = max(0.358 × 0.22, 0.065) = max(0.079, 0.065) = 7.9%.</p>
     <p><strong>SUD derivation:</strong> SUD = min(binge_drinking × 0.15 + 0.045, 0.15) = min(0.170 × 0.15 + 0.045, 0.15) = min(0.0705, 0.15) = 7.0%.</p>
-    <p><strong>Key parameter values:</strong></p>
+    <p><strong>Key parameter values</strong> — v1 model (June 2026), retained for reference; rows sum to the v1 total of 7,533 DALYs, not to the v4 primary of 10,475.</p>
     <table class="data-table">
       <thead><tr><th>Condition</th><th>Prevalence</th><th>DW</th><th>Deaths</th><th>Mean age at death</th><th>YLL (MI LE)</th><th>YLD (raw)</th><th>DALYs</th></tr></thead>
       <tbody>
@@ -227,7 +227,7 @@ YLD  = Prevalent Cases × Disability Weight (DW)<br>
         <tr style="font-weight:700;background:#f0f4f8"><td>TOTAL</td><td>—</td><td>—</td><td>296</td><td>—</td><td>3,246</td><td>4,287</td><td>7,533</td></tr>
       </tbody>
     </table>
-    <p><strong>Frontier LE sensitivity:</strong> Under Frontier LE 89.1, YLL increases substantially for all conditions — especially Cancer (+867), CVD (+1,197), and SUD (+262). Total Frontier DALYs ≈ 10,700 (MI LE 7,533 → Frontier ~10,700).</p>
+    <p><strong>Frontier LE sensitivity:</strong> Under Frontier LE 89.1, YLL increases substantially for all conditions — especially Cancer (+867), CVD (+1,197), and SUD (+262). Total Frontier DALYs ≈ 10,700 (MI LE 7,533 → Frontier ~10,700). The v4 age-specific calculation (November 2026, GBD 2019 reference life table, observed WONDER deaths by age) gives <strong>10,475 DALYs</strong> — within 2% of this projection.</p>
   </div>
 
   <!-- 4. Rural Mortality Adjustment -->
@@ -306,7 +306,7 @@ VSL_Gratiot = VSL_national × (Median_Income_Gratiot / Median_Income_US)^0.5<br>
       <li><strong>Survey methodology exclusions:</strong> BRFSS (underlying CDC PLACES) is a telephone survey of household residents. Two major Gratiot populations are excluded: (1) ~2,000 incarcerated individuals at Central Michigan Correctional Facility (Carson City), who have substantially higher SUD, MH, and infectious disease prevalence; (2) seasonal agricultural workers, including migrant farmworkers, who are less likely to respond to household telephone surveys. True disease burden is likely higher than PLACES estimates suggest.</li>
       <li><strong>Small county mortality suppression:</strong> CDC WONDER suppresses cell counts &lt;10 to protect privacy. Multiple cause-of-death cells for Gratiot County are suppressed, requiring application of Michigan state rates × rural adjustment factors. This introduces additional modeling uncertainty of ±20–30% for some conditions.</li>
       <li><strong>Prevalence ≠ incidence:</strong> BRFSS asks about ever-diagnosed conditions, not active current disease. Cancer prevalence (8.6%) includes survivors who may have been treated and have full or near-full health function. DALY estimates from prevalence-based YLD may overestimate active disability burden for cancer.</li>
-      <li><strong>Inherent DALY uncertainty:</strong> ±15–20% is the inherent uncertainty at county level due to small numbers, survey methodology, and disability weight precision. The 7,533 DALY estimate should be interpreted as roughly 6,200–9,000 DALYs (±20% uncertainty interval).</li>
+      <li><strong>Inherent DALY uncertainty:</strong> ±15–20% is the inherent uncertainty at county level due to small numbers, survey methodology, and disability weight precision. The v4 estimate of 10,475 DALYs should be interpreted as roughly 8,400–12,600 DALYs (±20% uncertainty interval).</li>
       <li><strong>Disability weight applicability:</strong> IHME GBD 2021 DW values were derived primarily from general population surveys — they may not perfectly capture the severity distribution in a rural, lower-income, agricultural county population with barriers to treatment access.</li>
       <li><strong>Agricultural exposures not quantified:</strong> Occupational exposures (pesticides, grain dust, machinery noise, farm injury) are not explicitly captured in CDC PLACES prevalence estimates. These exposures contribute to cancer, COPD, and injury burden but are not separately quantified in this analysis.</li>
     </ul>

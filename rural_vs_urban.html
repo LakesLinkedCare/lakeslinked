@@ -71,26 +71,29 @@ a{color:var(--blue);}
 <div class="wrap">
 
 <div class="callout">
-<strong>How to read this page.</strong> Two method generations are in play. The <strong>urban</strong> counties (Washtenaw, Wayne) use the v2 <strong>age-standardized</strong> method — the fair way to compare places with different age structures. The <strong>rural</strong> counties use the earlier v1 <strong>crude</strong> method and are shown for context only. <strong>Do not rank a crude rural rate against an age-standardized urban rate.</strong> The clean, apples-to-apples comparison is Ann Arbor vs Detroit, below.
-</div>
+<strong>How to read this page.</strong> All six counties are now on <strong>one method</strong> (v4, November 2026): age-specific YLL summed on the GBD 2019 reference life table, observed CDC WONDER 2020–22 deaths by ten-year age group, and CDC WONDER D191 person-year denominators. Rates are therefore <strong>directly comparable across all six</strong> — the earlier caveat against ranking rural against urban no longer applies. The column to read is <strong>age-standardized YLL per 100,000</strong>: it removes the age-structure difference between a retirement-age rural county, a college town and a large city. Crude rates are shown alongside because they are what a county actually experiences. Mortality for substance use and mental health is suppressed in small counties; those cells are reconstructed from the known three-year totals using a donor age shape, which is stated on each county's methods page.</div>
 <div class="ll-share-block" data-county="Rural vs Urban" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/rural_vs_urban.html" style="margin:0 0 22px;"><span class="ll-share-label">Share this comparison:</span><a class="ll-share-btn ll-share-btn--linkedin" href="https://www.linkedin.com/sharing/share-offshore/?url=https%3A%2F%2Flakeslinked.com%2Frural_vs_urban.html" target="_blank" rel="noopener" style="text-decoration:none"><span class="ll-share-icon">in</span> LinkedIn</a><a class="ll-share-btn ll-share-btn--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flakeslinked.com%2Frural_vs_urban.html" target="_blank" rel="noopener" style="text-decoration:none;background:#1877f2;color:#fff;border-color:#1877f2"><span class="ll-share-icon">f</span> Facebook</a></div>
 
 <!-- Urban: the fair comparison -->
 <div class="card">
-<span class="grouplbl gl-urban">Urban · v2 age-standardized · directly comparable</span>
-<h3>Ann Arbor vs Detroit — the clean comparison</h3>
-<p class="csub">Age-standardized YLL rate (US-2000 standard) removes the age-structure difference between a college town and a large city</p>
-<div style="height:150px;position:relative"><canvas id="asrChart"></canvas></div>
+<span class="grouplbl gl-urban">All six counties · v4 age-standardized · directly comparable</span>
+<h3>Six counties on one basis</h3>
+<p class="csub">Age-standardized YLL rate (US-2000 standard population, &lt;1 folded into 1–4) · ranked highest to lowest</p>
+<div style="height:240px;position:relative"><canvas id="asrChart"></canvas></div>
 <div class="tbl-wrap" style="margin-top:16px;overflow-x:auto;">
 <table>
-<thead><tr><th>County (city)</th><th>Population</th><th>DALYs/yr</th><th class="big-metric">Age-std YLL /100k</th><th>Crude DALY /100k</th><th>Leading causes</th></tr></thead>
+<thead><tr><th>County</th><th>Type</th><th>Population</th><th>DALYs/yr</th><th class="big-metric">Age-std YLL /100k</th><th>Crude DALY /100k</th><th>Leading causes</th></tr></thead>
 <tbody>
-<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>367,730</td><td>63,379</td><td class="big-metric">8,251</td><td>17,235</td><td>Cancer · CVD · Substance use</td></tr>
-<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>1,773,082</td><td>442,251</td><td class="big-metric">14,177</td><td>24,943</td><td>CVD · Cancer · Substance use</td></tr>
+<tr><td><a href="clare.html">Clare</a></td><td>rural</td><td>31,105</td><td>9,783</td><td class="big-metric">14,472</td><td>31,451</td><td>Cancer · CVD · COPD</td></tr>
+<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>urban</td><td>1,773,082</td><td>442,251</td><td class="big-metric">14,177</td><td>24,942</td><td>CVD · Cancer · Substance use</td></tr>
+<tr><td><a href="isabella.html">Isabella</a></td><td>rural</td><td>64,417</td><td>13,313</td><td class="big-metric">12,817</td><td>20,667</td><td>Cancer · CVD · Substance use</td></tr>
+<tr><td><a href="gratiot.html">Gratiot</a></td><td>rural</td><td>41,345</td><td>10,475</td><td class="big-metric">12,457</td><td>25,336</td><td>Cancer · CVD · Mental health / SUD (tied)</td></tr>
+<tr><td><a href="midland.html">Midland</a></td><td>rural</td><td>83,527</td><td>17,907</td><td class="big-metric">9,578</td><td>21,438</td><td>Cancer · CVD · Mental health</td></tr>
+<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>urban</td><td>367,730</td><td>63,379</td><td class="big-metric">8,251</td><td>17,235</td><td>Cancer · CVD · Substance use</td></tr>
 </tbody>
 </table>
 </div>
-<p class="disc">On the age-standardized mortality burden, <strong>Detroit's rate is about 1.7× Ann Arbor's</strong> — the single clearest finding here. Both cities share substance use as the #3 driver, but the lead cause differs: cancer in Ann Arbor, cardiovascular disease in Detroit. Age-standardization matters most for Washtenaw, whose large student population deflates its crude rate.</p>
+<p class="disc">On one basis, the spread across six counties is about <strong>1.75×</strong>, from Clare at 14,472 age-standardized YLL per 100,000 down to Washtenaw at 8,251. The result worth stating carefully is at the top: <strong>Clare, a rural county of 31,000, and Wayne County (Detroit), with 1.77 million, are within 2% of each other</strong> (14,472 vs 14,177). Two percent is well inside the uncertainty on either figure, so the honest reading is that they are <strong>comparable</strong> — not that Clare is worse than Detroit. The ranking is also not a rural-urban split: Clare sits above Detroit, Washtenaw sits below every rural county, and Midland — rural, higher-income, Dow Chemical — lands closer to Ann Arbor than to Clare. What separates these places is cause mix and age structure, not the rural label. Crude rates tell a different story from age-standardized ones for exactly that reason: Clare leads on crude burden (31,451 per 100,000) partly because its population is old, which standardization removes.</p>
 </div>
 
 <div class="card">
@@ -103,36 +106,17 @@ a{color:var(--blue);}
 </div>
 </div>
 
-<!-- Rural: context only -->
-<div class="card">
-<span class="grouplbl gl-rural">Rural · v1 crude method · context only — do not rank against the urban rates above</span>
-<h3>Rural counties (for reference)</h3>
-<p class="csub">Earlier crude-method estimates. Substance-use and mental-health mortality were statistically suppressed and are <em>not</em> included, so these totals are not comparable to the urban counties.</p>
-<div class="tbl-wrap" style="overflow-x:auto;">
-<table>
-<thead><tr><th>County</th><th>Population</th><th>DALYs/yr (crude)</th><th>Method</th></tr></thead>
-<tbody>
-<tr><td><a href="isabella.html">Isabella</a></td><td>64,565</td><td>13,493</td><td>v1 crude</td></tr>
-<tr><td><a href="midland.html">Midland</a></td><td>82,884</td><td>14,335</td><td>v1 crude</td></tr>
-<tr><td><a href="clare.html">Clare</a></td><td>30,013</td><td>8,198</td><td>v1 crude</td></tr>
-<tr><td><a href="gratiot.html">Gratiot</a></td><td>41,368</td><td>7,533</td><td>v1 crude</td></tr>
-</tbody>
-</table>
-</div>
-<p class="disc">A future update can re-run these rural counties on the same age-standardized basis (they would need age-specific population and would still have suppressed substance-use/mental-health cells). Until then, cross-generation ranking is not supported.</p>
-</div>
-
-<p class="disc">Planning-grade estimates — not peer-reviewed research or official GBD county estimates. Urban counties: CDC WONDER 2020–22, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–22, IHME GBD 2021. See each county's methods page. Rural counties use the earlier crude pipeline.</p>
+<p class="disc">Planning-grade estimates — not peer-reviewed research or official GBD county estimates. All six counties: CDC WONDER 2020–22, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–22, IHME GBD 2021. See each county's methods page. Rural counties use the earlier crude pipeline.</p>
 </div>
 <footer>
-<span>Rural vs Urban comparison · Michigan counties · July 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
+<span>Six-county comparison, one basis · Michigan · v4, November 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var ctx=document.getElementById('asrChart'); if(!ctx||!window.Chart)return;
   new Chart(ctx,{type:'bar',
-    data:{labels:['Washtenaw (Ann Arbor)','Wayne (Detroit)'],
-      datasets:[{label:'Age-standardized YLL per 100,000',data:[8251,14177],backgroundColor:['#7c3aed','#dc2626']}]},
+    data:{labels:['Clare (rural)','Wayne / Detroit (urban)','Isabella (rural)','Gratiot (rural)','Midland (rural)','Washtenaw / Ann Arbor (urban)'],
+      datasets:[{label:'Age-standardized YLL per 100,000',data:[14472,14177,12817,12457,9578,8251],backgroundColor:['#d97706','#7c3aed','#d97706','#d97706','#d97706','#7c3aed']}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.x.toLocaleString()+' /100k (age-standardized YLL)';}}}},
       scales:{x:{title:{display:true,text:'Age-standardized YLL rate per 100,000'}}}}
