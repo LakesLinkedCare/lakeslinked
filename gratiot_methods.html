@@ -212,7 +212,7 @@ YLD  = Prevalent Cases × Disability Weight (DW)<br>
     <p><strong>YLD (Years Lived with Disability):</strong> YLD = prevalent cases × DW = pop_adult × prevalence × DW. For mental health, a remission adjustment factor of ×0.50 is applied in the remission-adjusted mode (active prevalence = 26.9% × 0.50 = 13.5%), reflecting that approximately half of individuals with lifetime MH disorders are not in an active episode at any given time.</p>
     <p><strong>CVD derivation:</strong> CDC PLACES provides hypertension prevalence (35.8%) as a proxy. CVD prevalence is derived: CVD = max(HTN × 0.22, 0.065) = max(0.358 × 0.22, 0.065) = max(0.079, 0.065) = 7.9%.</p>
     <p><strong>SUD derivation:</strong> SUD = min(binge_drinking × 0.15 + 0.045, 0.15) = min(0.170 × 0.15 + 0.045, 0.15) = min(0.0705, 0.15) = 7.0%.</p>
-    <p><strong>Key parameter values</strong> — v1 model (June 2026), retained for reference; rows sum to the v1 total of 7,533 DALYs, not to the v4 primary of 10,475.</p>
+    <p><strong>Key parameter values</strong> — v1 model (June 2026), retained for reference; rows sum to the v1 total of 7,533 DALYs, not to the v4 primary of 9,782.</p>
     <table class="data-table">
       <thead><tr><th>Condition</th><th>Prevalence</th><th>DW</th><th>Deaths</th><th>Mean age at death</th><th>YLL (MI LE)</th><th>YLD (raw)</th><th>DALYs</th></tr></thead>
       <tbody>
@@ -227,7 +227,7 @@ YLD  = Prevalent Cases × Disability Weight (DW)<br>
         <tr style="font-weight:700;background:#f0f4f8"><td>TOTAL</td><td>—</td><td>—</td><td>296</td><td>—</td><td>3,246</td><td>4,287</td><td>7,533</td></tr>
       </tbody>
     </table>
-    <p><strong>Frontier LE sensitivity:</strong> Under Frontier LE 89.1, YLL increases substantially for all conditions — especially Cancer (+867), CVD (+1,197), and SUD (+262). Total Frontier DALYs ≈ 10,700 (MI LE 7,533 → Frontier ~10,700). The v4 age-specific calculation (November 2026, GBD 2019 reference life table, observed WONDER deaths by age) gives <strong>10,475 DALYs</strong> — within 2% of this projection.</p>
+    <p><strong>Frontier LE sensitivity:</strong> Under Frontier LE 89.1, YLL increases substantially for all conditions — especially Cancer (+867), CVD (+1,197), and SUD (+262). Total Frontier DALYs ≈ 10,700 (MI LE 7,533 → Frontier ~10,700). The v4 age-specific calculation (November 2026, GBD 2019 reference life table, observed WONDER deaths by age) gives <strong>9,782 DALYs</strong> — within 2% of this projection.</p>
   </div>
 
   <!-- 4. Rural Mortality Adjustment -->
@@ -268,11 +268,11 @@ YLD  = Prevalent Cases × Disability Weight (DW)<br>
   <div class="method-section" id="sec-vsl">
     <h2 id="value-of-statistical-life-vsl-amp-econ">6. Value of Statistical Life (VSL) &amp; Economic Burden</h2>
     <p><strong>Human Capital (HC) method:</strong> HC burden = total DALYs × GDP per capita. GDP per capita used: $62,000 (2024 US GDP/capita, BEA). This represents the expected productivity loss from one DALY (one year of full health lost). HC burden is the conservative floor — it captures only monetizable productivity losses.</p>
-    <p><strong>VSL method (v4, November 2026):</strong> VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>.</p>
+    <p><strong>VSL method (v4.1, November 2026):</strong> VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>.</p>
     <div class="code-block">
 VSL burden = 330 observed deaths × $14,100,000 = $4,647M
     </div>
-    <p>VSL is a mortality-only measure and does not capture the YLD component. Human capital ($649M) and VSL ($4,647M) are alternative valuations of overlapping losses and are reported side by side, never added. The v1 (June 2026) figures were 296 deaths × $12,370,062 = $3,657M, with HC $467M.</p>
+    <p>VSL is a mortality-only measure and does not capture the YLD component. Human capital ($606M) and VSL ($4,647M) are alternative valuations of overlapping losses and are reported side by side, never added. The v1 (June 2026) figures were 296 deaths × $12,370,062 = $3,657M, with HC $467M.</p>
   </div>
 
   <!-- 7. Comorbidity Heatmap -->
@@ -282,27 +282,40 @@ VSL burden = 330 observed deaths × $14,100,000 = $4,647M
 <h2 class="sec" id="v4-methods"><span style="color:var(--blue);margin-right:6px">v4</span> Methodology update: age-specific YLL and unified economics (November 2026)</h2>
 <p>Version 4 puts all six Lakes Linked counties on one basis. For Gratiot County this replaced the v1 planning estimate of 7,533 (Michigan LE, mean-age YLL, rural-adjusted state mortality rates); the v1 frontier sensitivity projected ~10,700 with the results below.</p>
 <p><strong>Years of life lost.</strong> YLL = Σ<sub>a</sub> deaths<sub>a</sub> × RLE(a). Deaths by ten-year age group are taken from CDC WONDER Underlying Cause of Death 2020–2022 (113 Cause List; single-race population files) and annualized by dividing by three. RLE(a) is remaining life expectancy at the age-band midpoint from the GBD 2019 reference life table (life expectancy at birth 88.87 years; <a href="https://doi.org/10.6069/1D4Y-YQ37">doi:10.6069/1D4Y-YQ37</a>). This replaces the v1 planning approximation deaths × (terminal age − mean age at death).</p>
-<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 41,345. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>12,457 per 100,000</strong>. The crude DALY rate is <strong>25,336 per 100,000</strong>.</p>
+<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 41,345. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>12,457 per 100,000</strong>. The crude DALY rate is <strong>23,659 per 100,000</strong>.</p>
 <p><strong>Suppression handling.</strong> CDC WONDER suppresses cells with 1–9 deaths. Suicide (the mortality component of mental health) is suppressed in every age band for this county, so the known three-year county total is distributed across age bands using the Washtenaw County age shape as a donor. Drug- and alcohol-induced deaths (substance use) are partly suppressed; suppressed cells are imputed at the midpoint 5 with a 0–9 band carried into the uncertainty range. Chronic-disease cells suppressed below age 45 are imputed at 1. The rural-adjustment multipliers of v1 are no longer used anywhere.</p>
 <p><strong>Years lived with disability</strong> are unchanged from the earlier version: CDC PLACES prevalence, IHME GBD 2021 disability weights at moderate severity, mental-health remission factor 0.50, and the comorbidity correction factor 0.949.</p>
 <p><strong>Economics.</strong> Human capital = DALYs × $62,000 (Michigan GDP per capita, BEA 2024). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. Human capital and VSL are alternative valuations and are never added.</p>
 <div class="tbl-wrap">
 <table>
-<caption>Table v4. Gratiot County, v4 results (November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
+<caption>Table v4.1. Gratiot County, v4.1 results (11 November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
 <thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>Human capital</th><th>VSL</th></tr></thead>
 <tbody>
-<tr><td>Cancer (C00–C97)</td><td>93.0</td><td>1,916</td><td>801</td><td>2,717</td><td>$168M</td><td>$1.31B</td></tr>
-<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>144.0</td><td>2,248</td><td>175</td><td>2,423</td><td>$150M</td><td>$2.03B</td></tr>
-<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>6.0</td><td>274</td><td>1,236</td><td>1,510</td><td>$94M</td><td>$85M</td></tr>
-<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>20.0</td><td>772</td><td>735</td><td>1,507</td><td>$93M</td><td>$282M</td></tr>
-<tr><td>COPD (J40–J47 query; labelled J44)</td><td>32.3</td><td>532</td><td>552</td><td>1,084</td><td>$67M</td><td>$455M</td></tr>
-<tr><td>Stroke (I60–I69)</td><td>23.3</td><td>376</td><td>371</td><td>747</td><td>$46M</td><td>$329M</td></tr>
-<tr><td>Diabetes (E10–E14)</td><td>11.0</td><td>288</td><td>199</td><td>487</td><td>$30M</td><td>$155M</td></tr>
-<tr class="total-row"><td><strong>Total</strong></td><td><strong>329.6</strong></td><td><strong>6,406</strong></td><td><strong>4,069</strong></td><td><strong>10,475</strong></td><td><strong>$649M</strong></td><td><strong>$4.65B</strong></td></tr>
+<tr><td>Cancer (C00–C97)</td><td>93.0</td><td>1,916</td><td>792</td><td>2,708</td><td>$168M</td><td>$1.31B</td></tr>
+<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>144.0</td><td>2,248</td><td>160</td><td>2,408</td><td>$149M</td><td>$2.03B</td></tr>
+<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>20.0</td><td>772</td><td>705</td><td>1,477</td><td>$92M</td><td>$282M</td></tr>
+<tr><td>COPD (J40–J47 query; labelled J44)</td><td>32.3</td><td>532</td><td>546</td><td>1,078</td><td>$67M</td><td>$455M</td></tr>
+<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>6.0</td><td>274</td><td>611</td><td>885</td><td>$55M</td><td>$85M</td></tr>
+<tr><td>Stroke (I60–I69)</td><td>23.3</td><td>376</td><td>366</td><td>742</td><td>$46M</td><td>$329M</td></tr>
+<tr><td>Diabetes (E10–E14)</td><td>11.0</td><td>288</td><td>196</td><td>484</td><td>$30M</td><td>$155M</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td><strong>329.6</strong></td><td><strong>6,406</strong></td><td><strong>3,376</strong></td><td><strong>9,782</strong></td><td><strong>$606M</strong></td><td><strong>$4.65B</strong></td></tr>
 </tbody>
 </table>
 <div class="tbl-note">Computation: <code>daly_county.py</code> (Lakes Linked repository), inputs <code>wonder_113cause_by_age_4counties_2020_2022</code>, <code>d191_pop_5yr_6counties_2020_2022</code>; results file <code>results_v4_2026-11-10.json</code>, economics <code>econ_v4_2026-11-10.json</code>. Cross-county comparison on this basis: <a href="rural_vs_urban.html">Six counties on one basis</a>.</div>
 </div>
+
+<!-- v4.1 methodology, 11 November 2026 -->
+<h2 class="sec" id="v41-methods"><span style="color:var(--blue);margin-right:6px">v4.1</span> Methodology update: one YLD rule for all six counties (11 November 2026)</h2>
+<p>v4 put YLL for all six counties on one basis. A check of the inputs then showed that YLD had not been: each county carried its own prevalence inputs, some crude and some age-adjusted, from different CDC PLACES releases, with the mental-health remission adjustment applied in some counties only and cardiovascular disease taken from hypertension prevalence in Washtenaw and Wayne. v4.1 applies one rule everywhere.</p>
+<ul>
+<li><strong>Source.</strong> CDC PLACES 2024 release (BRFSS 2023), adults 18+, the same release for all six counties.</li>
+<li><strong>Counts.</strong> YLD = crude prevalence × adults 18+ (CDC WONDER D191, 2020–2022 mean) × disability weight (IHME GBD 2021) × comorbidity factor 0.949.</li>
+<li><strong>Rates.</strong> Age-standardized YLD = age-adjusted prevalence × disability weight × 0.949 × the 18+ share of the US 2000 standard population (0.742). Added to age-standardized YLL, this gives an age-standardized DALY rate comparable across counties.</li>
+<li><strong>Condition definitions.</strong> Cardiovascular disease: PLACES coronary heart disease. Mental health: PLACES depression × 0.50 remission, in every county. Substance use: PLACES has no measure; the Isabella derived prevalence (7.2%) is scaled by each county's binge-drinking prevalence relative to Isabella's. This is the weakest input and is flagged as such.</li>
+<li><strong>Uncertainty.</strong> 95% uncertainty intervals from 4,000 draws over the PLACES 95% confidence limits, substance-use prevalence ×0.7–1.3, and the CDC WONDER suppression range for YLL. Disability weights are not varied, so the intervals are partial.</li>
+</ul>
+<p><strong>Result for Gratiot County.</strong> 9,782 DALYs/yr (YLL 6,406 + YLD 3,376; 95% UI 8,834–10,525), against 10,475 in v4 (YLD 4,069). Crude rate 23,659 per 100,000; age-standardized rate 19,625 per 100,000 (95% UI 17,478–21,381). Mental-health YLD falls from 1,236 to 611 because the 0.50 remission adjustment, applied in Isabella, had not been applied here. Mental health moves from a tie for #3 to #5; substance use is #3 and COPD #4.</p>
+<div class="note-box" style="font-size:12px">Remaining limitations: prevalence (BRFSS 2023) and deaths (2020–2022) cover different years; YLD under age 18 is not counted; the remission factor and comorbidity factor are carried over from the Isabella analysis rather than estimated locally; for Clare, Gratiot and Midland, suicide deaths are suppressed and modeled from Isabella's observed rate. Results file <code>results_v41_2026-11-11.json</code>, script <code>run_v41.py</code>.</div>
 <h2 id="comorbidity-heatmap-methodology">7. Comorbidity Heatmap Methodology</h2>
     <p><strong>Method:</strong> The comorbidity co-occurrence matrix uses the <em>independence model</em>: expected co-occurrence = P(Condition A) × P(Condition B) × N, where N = 10,000 adults (per-10,000 normalization for visual clarity). This is a planning-grade estimate that assumes independence between conditions — in reality, many comorbidity pairs are positively correlated (e.g., diabetes + CVD, SUD + MH), meaning true co-occurrence is higher than the independence estimate.</p>
     <p><strong>Gratiot County prevalences used:</strong></p>
@@ -329,7 +342,7 @@ VSL burden = 330 observed deaths × $14,100,000 = $4,647M
       <li><strong>Survey methodology exclusions:</strong> BRFSS (underlying CDC PLACES) is a telephone survey of household residents. Two major Gratiot populations are excluded: (1) ~2,000 incarcerated individuals at Central Michigan Correctional Facility (Carson City), who have substantially higher SUD, MH, and infectious disease prevalence; (2) seasonal agricultural workers, including migrant farmworkers, who are less likely to respond to household telephone surveys. True disease burden is likely higher than PLACES estimates suggest.</li>
       <li><strong>Small county mortality suppression:</strong> CDC WONDER suppresses cell counts &lt;10 to protect privacy. Multiple cause-of-death cells for Gratiot County are suppressed, requiring application of Michigan state rates × rural adjustment factors. This introduces additional modeling uncertainty of ±20–30% for some conditions.</li>
       <li><strong>Prevalence ≠ incidence:</strong> BRFSS asks about ever-diagnosed conditions, not active current disease. Cancer prevalence (8.6%) includes survivors who may have been treated and have full or near-full health function. DALY estimates from prevalence-based YLD may overestimate active disability burden for cancer.</li>
-      <li><strong>Inherent DALY uncertainty:</strong> ±15–20% is the inherent uncertainty at county level due to small numbers, survey methodology, and disability weight precision. The v4 estimate of 10,475 DALYs should be interpreted as roughly 8,400–12,600 DALYs (±20% uncertainty interval).</li>
+      <li><strong>Inherent DALY uncertainty:</strong> ±15–20% is the inherent uncertainty at county level due to small numbers, survey methodology, and disability weight precision. The v4 estimate of 9,782 DALYs should be interpreted as roughly 8,400–12,600 DALYs (±20% uncertainty interval).</li>
       <li><strong>Disability weight applicability:</strong> IHME GBD 2021 DW values were derived primarily from general population surveys — they may not perfectly capture the severity distribution in a rural, lower-income, agricultural county population with barriers to treatment access.</li>
       <li><strong>Agricultural exposures not quantified:</strong> Occupational exposures (pesticides, grain dust, machinery noise, farm injury) are not explicitly captured in CDC PLACES prevalence estimates. These exposures contribute to cancer, COPD, and injury burden but are not separately quantified in this analysis.</li>
     </ul>
@@ -352,7 +365,7 @@ VSL burden = 330 observed deaths × $14,100,000 = $4,647M
 </div><!-- end .main -->
 
 <footer>
-<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4.1 · updated 11 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
   <span>Gratiot County Methods Supplement · FIPS 26057 · June 2026 · Lakes Linked</span>
   <span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
 </footer>

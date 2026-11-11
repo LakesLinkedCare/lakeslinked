@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Wayne County (Detroit) Health Burden Dashboard | Lakes Linked</title>
-<meta content="Wayne County, Michigan (Detroit) health burden analysis: 442,251 DALYs/year. Cardiovascular disease #1, cancer #2, substance use #3. Age-standardized method. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="Wayne County, Michigan (Detroit) health burden analysis: 421,263 DALYs/year. Cardiovascular disease #1, cancer #2, substance use #3. Age-standardized method. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD." name="description"/>
 <meta content="Wayne County (Detroit) Health Burden Dashboard | Lakes Linked" property="og:title"/>
-<meta content="442,251 DALYs/yr · CVD #1, substance use #3. Large urban county. Age-standardized YLL analysis (crude DALY rate)." property="og:description"/>
+<meta content="421,263 DALYs/yr · CVD #1, substance use #3. Large urban county. Age-standardized YLL analysis (crude DALY rate)." property="og:description"/>
 <meta content="https://lakeslinked.com/wayne.html" property="og:url"/>
 <meta content="website" property="og:type"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -150,20 +150,20 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <!-- Notice -->
 <div class="notice">
 <span>⚠</span>
-<span><strong>Planning model — not a validated county burden estimate.</strong> 442,251 DALYs/yr from CDC WONDER 2020–22 age-specific mortality, CDC PLACES 2024 prevalence and IHME GBD 2021 weights, on a US-2000 age-standardized basis. Method differs from this site's rural counties — see the comparability note. <a href="wayne_methods.html" style="color:#92400e;font-weight:700;">→ Full methods &amp; data quality notes</a></span>
+<span><strong>Planning model — not a validated county burden estimate.</strong> 421,263 DALYs/yr from CDC WONDER 2020–22 age-specific mortality, CDC PLACES 2024 prevalence and IHME GBD 2021 weights, on a US-2000 age-standardized basis. Method differs from this site's rural counties — see the comparability note. <a href="wayne_methods.html" style="color:#92400e;font-weight:700;">→ Full methods &amp; data quality notes</a></span>
 </div>
-<!-- County Compare Bar — two method generations, kept visually separate -->
+<!-- County Compare Bar — nonmetro and metro groups, one method (v4.1) -->
 <div class="county-compare-bar">
 <div class="ccb-inner">
 <span class="ccb-grouplbl">Rural · v1 crude</span>
 <a class="ccb-county" href="isabella.html"><span class="ccb-name" style="color:#1a56db;">Isabella</span><span class="ccb-stat">13,493</span><span class="ccb-pop">DALYs · pop 64,565</span></a>
-<a class="ccb-county" href="clare.html"><span class="ccb-name" style="color:#1e40af;">Clare</span><span class="ccb-stat">9,783</span><span class="ccb-pop">DALYs · pop 30,013</span></a>
-<a class="ccb-county" href="midland.html"><span class="ccb-name" style="color:#3b82f6;">Midland</span><span class="ccb-stat">17,907</span><span class="ccb-pop">DALYs · pop 82,884</span></a>
-<a class="ccb-county" href="gratiot.html"><span class="ccb-name" style="color:#64748b;">Gratiot</span><span class="ccb-stat">10,475</span><span class="ccb-pop">DALYs · pop 41,368</span></a>
-<div class="ccb-sep" title="Two method generations — not directly comparable"></div>
+<a class="ccb-county" href="clare.html"><span class="ccb-name" style="color:#1e40af;">Clare</span><span class="ccb-stat">9,637</span><span class="ccb-pop">DALYs · pop 30,013</span></a>
+<a class="ccb-county" href="midland.html"><span class="ccb-name" style="color:#3b82f6;">Midland</span><span class="ccb-stat">17,217</span><span class="ccb-pop">DALYs · pop 82,884</span></a>
+<a class="ccb-county" href="gratiot.html"><span class="ccb-name" style="color:#64748b;">Gratiot</span><span class="ccb-stat">9,782</span><span class="ccb-pop">DALYs · pop 41,368</span></a>
+<div class="ccb-sep" title="Nonmetro and metro counties, one method (v4.1)"></div>
 <span class="ccb-grouplbl">Urban · v2 age-std</span>
-<a class="ccb-county" href="washtenaw.html"><span class="ccb-name" style="color:#7c3aed;">Washtenaw</span><span class="ccb-stat">63,379</span><span class="ccb-pop">DALYs · pop 367,730</span></a>
-<div class="ccb-county" style="border-bottom:3px solid var(--purple);"><span class="ccb-name" style="color:var(--purple);">Wayne</span><span class="ccb-stat">442,251</span><span class="ccb-pop">DALYs · pop 1,773,082</span></div>
+<a class="ccb-county" href="washtenaw.html"><span class="ccb-name" style="color:#7c3aed;">Washtenaw</span><span class="ccb-stat">58,628</span><span class="ccb-pop">DALYs · pop 367,730</span></a>
+<div class="ccb-county" style="border-bottom:3px solid var(--purple);"><span class="ccb-name" style="color:var(--purple);">Wayne</span><span class="ccb-stat">421,263</span><span class="ccb-pop">DALYs · pop 1,773,082</span></div>
 </div>
 </div>
 <!-- Hero -->
@@ -173,9 +173,9 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <p class="sub">Population 1,773,082 · Large urban county · Age-standardized YLL · crude DALY rate · July 2026</p>
 <div class="hero-stats">
 <div class="hstat">
-<div class="num">442,251</div>
+<div class="num">421,263</div>
 <div class="lbl">DALYs / year</div>
-<div class="cmp neu">YLL 287,315 + YLD 154,936</div>
+<div class="cmp neu">YLL 287,315 + YLD 133,948</div>
 </div>
 <div class="hdiv"></div>
 <div class="hstat">
@@ -187,7 +187,7 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <div class="hstat">
 <div class="num">CVD</div>
 <div class="lbl">#1 burden driver</div>
-<div class="cmp neu">144,104 DALYs · then cancer, substance use</div>
+<div class="cmp neu">117,773 DALYs · then cancer, substance use</div>
 </div>
 <div class="hdiv"></div>
 <div class="hstat">
@@ -220,20 +220,20 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <div class="kpi" style="--accent:var(--red)">
 <div class="kpi-num">5,531</div>
 <div class="kpi-label">Cardiovascular deaths/yr — #1 burden driver</div>
-<div class="kpi-delta up">311.9/100k · 144,104 DALYs</div>
+<div class="kpi-delta up">311.9/100k · 117,773 DALYs</div>
 </div>
 <div class="kpi" style="--accent:var(--amber)">
 <div class="kpi-num">1,107</div>
 <div class="kpi-label">Substance-use deaths/yr (drug + alcohol) — #3 burden</div>
-<div class="kpi-delta up">62.4/100k · 76,762 DALYs · Detroit overdose crisis</div>
+<div class="kpi-delta up">62.4/100k · 70,984 DALYs · Detroit overdose crisis</div>
 </div>
 <div class="kpi" style="--accent:var(--teal)">
 <div class="kpi-num">224</div>
 <div class="kpi-label">Suicide deaths/yr (mental-health mortality proxy)</div>
-<div class="kpi-delta neu">32,944 DALYs incl. depression morbidity</div>
+<div class="kpi-delta neu">32,733 DALYs incl. depression morbidity</div>
 </div>
 <div class="kpi" style="--accent:var(--green)">
-<div class="kpi-num">442,251</div>
+<div class="kpi-num">421,263</div>
 <div class="kpi-label">Total DALYs/year · YLL + YLD</div>
 <div class="kpi-delta neu">CDC WONDER 2020–22 · PLACES 2024</div>
 </div>
@@ -244,7 +244,7 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 </div>
 </div>
 
-<div class="ll-share-block" data-county="Wayne County (Detroit)" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/wayne.html" data-value="442,251" style="margin:20px 0;">
+<div class="ll-share-block" data-county="Wayne County (Detroit)" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/wayne.html" data-value="421,263" style="margin:20px 0;">
 <span class="ll-share-label">Share this dashboard:</span>
 <button class="ll-share-btn ll-share-btn--linkedin" type="button"><span class="ll-share-icon">in</span> LinkedIn</button>
 <button class="ll-share-btn ll-share-btn--x" type="button"><span class="ll-share-icon">𝕏</span> Post</button>
@@ -263,8 +263,8 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <h3>Key findings — why Detroit looks different</h3>
 <p class="sub">Large urban county profile vs Michigan's rural counties and Ann Arbor</p>
 <div class="findings" style="margin:0;">
-<div class="finding" style="--accent:var(--red)"><h4>Cardiovascular-led</h4><p>Heart disease is the dominant burden (144,104 DALYs, 5,531 deaths/yr) — a cardiovascular crisis on a scale distinct from cancer-led Ann Arbor.</p></div>
-<div class="finding" style="--accent:var(--amber)"><h4>Enormous substance-use burden</h4><p>1,107 drug + alcohol deaths/yr (76,762 DALYs) — the #3 cause, reflecting Detroit's overdose crisis. Directly observed, not suppressed.</p></div>
+<div class="finding" style="--accent:var(--red)"><h4>Cardiovascular-led</h4><p>Heart disease is the dominant burden (117,773 DALYs, 5,531 deaths/yr) — a cardiovascular crisis on a scale distinct from cancer-led Ann Arbor.</p></div>
+<div class="finding" style="--accent:var(--amber)"><h4>Enormous substance-use burden</h4><p>1,107 drug + alcohol deaths/yr (70,984 DALYs) — the #3 cause, reflecting Detroit's overdose crisis. Directly observed, not suppressed.</p></div>
 <div class="finding"><h4>Deaths strike younger</h4><p>The age-standardized YLL rate (14,177/100k) is 1.7× Ann Arbor's, driven by deaths occurring further below the survival benchmark.</p></div>
 </div>
 </div>
@@ -290,14 +290,14 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <table>
 <thead><tr><th>Condition</th><th>Deaths/yr</th><th>Mortality source</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>% of total</th></tr></thead>
 <tbody>
-<tr><td>CVD (heart disease)</td><td>5,531</td><td><span class="dc obs">observed</span></td><td>111,087</td><td>33,017</td><td>144,104</td><td>32.6%</td></tr>
-<tr><td>Cancer</td><td>3,502</td><td><span class="dc obs">observed</span></td><td>75,346</td><td>24,296</td><td>99,641</td><td>22.5%</td></tr>
-<tr><td>Substance use (drug+alcohol)</td><td>1,107</td><td><span class="dc obs">observed</span></td><td>46,729</td><td>30,032</td><td>76,762</td><td>17.4%</td></tr>
-<tr><td>COPD</td><td>736</td><td><span class="dc obs">observed</span></td><td>13,460</td><td>20,390</td><td>33,850</td><td>7.7%</td></tr>
-<tr><td>Mental health (suicide + depression)</td><td>224</td><td><span class="dc obs">observed</span></td><td>9,993</td><td>22,951</td><td>32,944</td><td>7.4%</td></tr>
-<tr><td>Stroke</td><td>1,017</td><td><span class="dc obs">observed</span></td><td>16,576</td><td>15,668</td><td>32,244</td><td>7.3%</td></tr>
-<tr><td>Diabetes</td><td>642</td><td><span class="dc obs">observed</span></td><td>14,124</td><td>8,582</td><td>22,706</td><td>5.1%</td></tr>
-<tr class="total"><td>TOTAL</td><td>12,759</td><td>—</td><td>287,315</td><td>154,936</td><td>442,251</td><td>100%</td></tr>
+<tr><td>CVD (heart disease)</td><td>5,531</td><td><span class="dc obs">observed</span></td><td>111,087</td><td>6,686</td><td>117,773</td><td>28.0%</td></tr>
+<tr><td>Cancer</td><td>3,502</td><td><span class="dc obs">observed</span></td><td>75,346</td><td>28,841</td><td>104,187</td><td>24.7%</td></tr>
+<tr><td>Substance use (drug+alcohol)</td><td>1,107</td><td><span class="dc obs">observed</span></td><td>46,729</td><td>24,255</td><td>70,984</td><td>16.9%</td></tr>
+<tr><td>COPD</td><td>736</td><td><span class="dc obs">observed</span></td><td>13,460</td><td>23,512</td><td>36,972</td><td>8.8%</td></tr>
+<tr><td>Stroke</td><td>1,017</td><td><span class="dc obs">observed</span></td><td>16,576</td><td>17,947</td><td>34,523</td><td>8.2%</td></tr>
+<tr><td>Mental health (suicide + depression)</td><td>224</td><td><span class="dc obs">observed</span></td><td>9,993</td><td>22,740</td><td>32,733</td><td>7.8%</td></tr>
+<tr><td>Diabetes</td><td>642</td><td><span class="dc obs">observed</span></td><td>14,124</td><td>9,967</td><td>24,091</td><td>5.7%</td></tr>
+<tr class="total"><td>TOTAL</td><td>12,759</td><td>—</td><td>287,315</td><td>133,948</td><td>421,263</td><td>100%</td></tr>
 </tbody>
 </table>
 </div>
@@ -311,8 +311,8 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <div class="econ-split">
 <div class="econ-m">
 <h4>Human Capital Method</h4>
-<div class="econ-big" style="color:var(--green)">$27.4B</div>
-<div class="econ-rng">442,251 DALYs × $62,000 GDP/capita (Michigan, BEA)</div>
+<div class="econ-big" style="color:var(--green)">$26.1B</div>
+<div class="econ-rng">421,263 DALYs × $62,000 GDP/capita (Michigan, BEA)</div>
 <div class="econ-desc">Annual lost economic productivity from premature death (YLL) and disability (YLD). CVD alone is ~$8.9B in human-capital terms.</div>
 </div>
 <div class="econ-m">
@@ -322,24 +322,24 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <div class="econ-desc">Willingness-to-pay standard for federal cost-benefit analysis (HHS, EPA, DOT). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), uniform across counties; HHS does not adjust VSL for income across places. Mortality only; morbidity adds the human-capital figure.</div>
 </div>
 </div>
-<div class="econ-note"><strong>Note:</strong> Human Capital ($27.4B) is the conservative productivity floor; VSL ($179.9B) reflects societal willingness-to-pay to prevent death. Both derive from observed CDC WONDER mortality and CDC PLACES 2024 prevalence. Figures are planning-grade, not audited fiscal estimates.</div>
+<div class="econ-note"><strong>Note:</strong> Human Capital ($26.1B) is the conservative productivity floor; VSL ($179.9B) reflects societal willingness-to-pay to prevent death. Both derive from observed CDC WONDER mortality and CDC PLACES 2024 prevalence. Figures are planning-grade, not audited fiscal estimates.</div>
 </div>
 
 <div class="card" id="sec-recs" style="margin-bottom:18px">
 <h3 style="margin-bottom:4px">Evidence-Based Recommendations</h3>
 <p class="sub">Illustrative planning priorities from the burden profile · not prescriptive</p>
-<div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>Cardiovascular risk management at scale</h5><p>CVD · 144,104 DALYs · 5,531 deaths/yr · AI-supported hypertension control and statin adherence — the single largest burden pool.</p></div><span class="rec-ev">Strong</span></div>
-<div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>Overdose prevention — naloxone + MOUD</h5><p>Substance use · 76,762 DALYs · 1,107 deaths/yr · naloxone saturation and MOUD expansion; the defining crisis of the county.</p></div><span class="rec-ev">Strong</span></div>
-<div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>Community cancer screening equity</h5><p>Cancer · 99,641 DALYs · navigation + AI-triaged screening reminders in underserved Detroit neighborhoods.</p></div><span class="rec-ev">Strong</span></div>
-<div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>COPD &amp; smoking cessation</h5><p>COPD · 33,850 DALYs · integrated cessation programs and spirometry screening for at-risk residents.</p></div><span class="rec-ev">Moderate–Strong</span></div>
-<div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>Mental-health access in high-need areas</h5><p>Mental health · 32,944 DALYs · community screening and crisis services targeted to highest-need ZIP codes.</p></div><span class="rec-ev">Moderate</span></div>
+<div class="rec"><div class="rec-n">1</div><div class="rec-b"><h5>Cardiovascular risk management at scale</h5><p>CVD · 117,773 DALYs · 5,531 deaths/yr · AI-supported hypertension control and statin adherence — the single largest burden pool.</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">2</div><div class="rec-b"><h5>Overdose prevention — naloxone + MOUD</h5><p>Substance use · 70,984 DALYs · 1,107 deaths/yr · naloxone saturation and MOUD expansion; the defining crisis of the county.</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">3</div><div class="rec-b"><h5>Community cancer screening equity</h5><p>Cancer · 104,187 DALYs · navigation + AI-triaged screening reminders in underserved Detroit neighborhoods.</p></div><span class="rec-ev">Strong</span></div>
+<div class="rec"><div class="rec-n">4</div><div class="rec-b"><h5>COPD &amp; smoking cessation</h5><p>COPD · 36,972 DALYs · integrated cessation programs and spirometry screening for at-risk residents.</p></div><span class="rec-ev">Moderate–Strong</span></div>
+<div class="rec" style="border:none"><div class="rec-n">5</div><div class="rec-b"><h5>Mental-health access in high-need areas</h5><p>Mental health · 32,733 DALYs · community screening and crisis services targeted to highest-need ZIP codes.</p></div><span class="rec-ev">Moderate</span></div>
 </div>
 <!-- Caveats -->
 <div class="caveats">
 <h3>Method &amp; comparability notes (read before comparing counties)</h3>
 <ul>
-<li><strong>One method for all six counties (v4, November 2026).</strong> All six counties now use age-specific YLL on the GBD 2019 reference life table, observed CDC WONDER 2020–22 deaths by age and CDC WONDER person-year denominators, so age-standardized rates can be compared directly. See <a href="rural_vs_urban.html">Six counties on one basis</a>. Rankings are point estimates; uncertainty intervals for all counties are in preparation.</li>
-<li><strong>"Age-standardized" applies to YLL.</strong> Only the mortality (YLL) rate is genuinely age-standardized (14,177/100k). YLD has no age-specific prevalence in CDC PLACES, so it is reported as a crude rate (8,738/100k). We show them separately rather than blend them under one label.</li>
+<li><strong>One method for all six counties (v4.1, November 2026).</strong> All six counties now use age-specific YLL on the GBD 2019 reference life table, observed CDC WONDER 2020–22 deaths by age and CDC WONDER person-year denominators, so age-standardized rates can be compared directly. See <a href="rural_vs_urban.html">Six counties on one basis</a>. Rankings are point estimates; uncertainty intervals for all counties are in preparation.</li>
+<li><strong>"Age-standardized" applies to YLL.</strong> Only the mortality (YLL) rate is genuinely age-standardized (14,177/100k). YLD has no age-specific prevalence in CDC PLACES, so it is reported as a crude rate (7,555/100k). We show them separately rather than blend them under one label.</li>
 <li><strong>Substance-use prevalence for YLD is indicative, not measured.</strong> CDC PLACES has no SUD measure, so the SUD disability component uses a Michigan-derived rate applied uniformly; it likely understates a high-burden county like Wayne. SUD mortality (the YLL part) is directly observed.</li>
 <li><strong>Substance-use and suicide mortality overlap slightly.</strong> Drug-poisoning deaths with suicidal intent (X60–X64) appear in both categories, so the sum of those two causes' YLL is a modest upper bound.</li>
 <li><strong>Detroit ⊆ Wayne County.</strong> Mortality is only available at county resolution; this page describes Wayne County, which contains Detroit (about a third of the county's population).</li>
@@ -348,7 +348,7 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 
 </div>
 <footer>
-<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4.1 · updated 11 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
 <span>Wayne County, Michigan (Detroit) · FIPS 26163 · Pipeline run July 2026 · Data: CDC WONDER 2020–22, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–22, IHME GBD 2021 · Age-standardized method</span>
 <span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
 <div class="ll-footer-trust" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.73rem;color:#64748b;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;">
@@ -364,10 +364,10 @@ document.addEventListener('DOMContentLoaded', function(){
   new Chart(ctx, {
     type:'bar',
     data:{
-      labels:['CVD','Cancer','Substance use','COPD','Mental health','Stroke','Diabetes'],
+      labels:['CVD','Cancer','Substance use','COPD','Stroke','Mental health','Diabetes'],
       datasets:[
-        {label:'YLL', data:[111087,75346,46729,13460,9993,16576,14124], backgroundColor:'#7c3aed'},
-        {label:'YLD', data:[33017,24296,30032,20390,22951,15668,8582], backgroundColor:'#c4b5fd'}
+        {label:'YLL', data:[111087,75346,46729,13460,16576,9993,14124], backgroundColor:'#7c3aed'},
+        {label:'YLD', data:[6686,28841,24255,23512,17947,22740,9967], backgroundColor:'#c4b5fd'}
       ]
     },
     options:{

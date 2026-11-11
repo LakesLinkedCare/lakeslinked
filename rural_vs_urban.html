@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Rural vs Urban — Michigan County Disease Burden | Lakes Linked</title>
-<meta content="Six Michigan counties on one basis: age-standardized YLL and DALYs for nonmetro Clare, Isabella and Gratiot and metro Midland, Washtenaw (Ann Arbor) and Wayne (Detroit), v4 November 2026. Dr. Sergey Soshnikov, MD PhD." name="description"/>
+<meta content="Six Michigan counties on one basis: age-standardized DALYs (2020–2022) for nonmetro Clare, Isabella and Gratiot and metro Midland, Washtenaw (Ann Arbor) and Wayne (Detroit), v4.1 November 2026. Dr. Sergey Soshnikov, MD PhD." name="description"/>
 <meta content="https://lakeslinked.com/rural_vs_urban.html" property="og:url"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -65,35 +65,35 @@ a{color:var(--blue);}
 <div class="hero">
 <div class="hero-inner">
 <h1>Rural vs Urban: Michigan County Disease Burden</h1>
-<p class="sub">Six counties on one basis · three nonmetro, three metro (OMB 2023) · v4, November 2026</p>
+<p class="sub">Six counties on one basis · three nonmetro, three metro (OMB 2023) · v4.1, November 2026</p>
 </div>
 </div>
 <div class="wrap">
 
 <div class="callout">
-<strong>How to read this page.</strong> All six counties are now on <strong>one method</strong> (v4, November 2026): age-specific YLL summed on the GBD 2019 reference life table, observed CDC WONDER 2020–22 deaths by ten-year age group, and CDC WONDER D191 person-year denominators. Rates are therefore <strong>directly comparable across all six</strong> — the earlier caveat against ranking rural against urban no longer applies. Counties are classified by the OMB 2023 delineation: Clare, Isabella and Gratiot are nonmetropolitan; Midland (its own metropolitan statistical area), Washtenaw and Wayne are metropolitan. The column to read is <strong>age-standardized YLL per 100,000</strong>: it removes the age-structure difference between a retirement-age nonmetro county, a college town and a large city. Crude rates are shown alongside because they are what a county actually experiences. Mortality for substance use and mental health is suppressed in small counties; those cells are reconstructed from the known three-year totals using a donor age shape, which is stated on each county's methods page.</div>
+<strong>How to read this page.</strong> All six counties are on <strong>one method</strong> (v4.1, 11 November 2026). YLL: age-specific, summed on the GBD 2019 reference life table, from observed CDC WONDER 2020–22 deaths by ten-year age group. YLD: one rule for every county, from the CDC PLACES 2024 release. Counties are classified by the OMB 2023 delineation: Clare, Isabella and Gratiot are nonmetropolitan; Midland (its own metropolitan statistical area), Washtenaw and Wayne are metropolitan. The column to read is <strong>age-standardized DALYs per 100,000</strong> (US 2000 standard population): it removes the age-structure difference between a retirement-age nonmetro county, a college town and a large city. Crude rates are shown alongside because they are what a county actually experiences. Mortality for substance use and mental health is suppressed in small counties; those cells are reconstructed as stated on each county's methods page.</div>
 <div class="ll-share-block" data-county="Rural vs Urban" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/rural_vs_urban.html" style="margin:0 0 22px;"><span class="ll-share-label">Share this comparison:</span><a class="ll-share-btn ll-share-btn--linkedin" href="https://www.linkedin.com/sharing/share-offshore/?url=https%3A%2F%2Flakeslinked.com%2Frural_vs_urban.html" target="_blank" rel="noopener" style="text-decoration:none"><span class="ll-share-icon">in</span> LinkedIn</a><a class="ll-share-btn ll-share-btn--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flakeslinked.com%2Frural_vs_urban.html" target="_blank" rel="noopener" style="text-decoration:none;background:#1877f2;color:#fff;border-color:#1877f2"><span class="ll-share-icon">f</span> Facebook</a></div>
 
 <!-- Urban: the fair comparison -->
 <div class="card">
-<span class="grouplbl gl-urban">All six counties · v4 age-standardized · directly comparable</span>
+<span class="grouplbl gl-urban">All six counties · v4.1 age-standardized DALYs · directly comparable</span>
 <h3>Six counties on one basis</h3>
-<p class="csub">Age-standardized YLL rate (US-2000 standard population, &lt;1 folded into 1–4) · ranked highest to lowest</p>
+<p class="csub">Age-standardized DALY rate (YLL + YLD, US 2000 standard population), seven condition groups, 2020–2022 · ranked highest to lowest</p>
 <div style="height:240px;position:relative"><canvas id="asrChart"></canvas></div>
 <div class="tbl-wrap" style="margin-top:16px;overflow-x:auto;">
 <table>
-<thead><tr><th>County</th><th>Type</th><th>Population</th><th>DALYs/yr</th><th class="big-metric">Age-std YLL /100k</th><th>Crude DALY /100k</th><th>Leading causes</th></tr></thead>
+<thead><tr><th>County</th><th>Type</th><th>Population</th><th>DALYs/yr</th><th class="big-metric">Age-std DALY /100k</th><th>95% UI</th><th>Age-std YLL /100k</th><th>Crude DALY /100k</th><th>Leading causes</th></tr></thead>
 <tbody>
-<tr><td><a href="clare.html">Clare</a></td><td>nonmetro</td><td>31,105</td><td>9,783</td><td class="big-metric">14,472</td><td>31,451</td><td>Cancer · CVD · COPD</td></tr>
-<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>metro</td><td>1,773,082</td><td>442,251</td><td class="big-metric">14,177</td><td>24,942</td><td>CVD · Cancer · Substance use</td></tr>
-<tr><td><a href="isabella.html">Isabella</a></td><td>nonmetro</td><td>64,417</td><td>13,313</td><td class="big-metric">12,817</td><td>20,667</td><td>Cancer · CVD · Substance use</td></tr>
-<tr><td><a href="gratiot.html">Gratiot</a></td><td>nonmetro</td><td>41,345</td><td>10,475</td><td class="big-metric">12,457</td><td>25,336</td><td>Cancer · CVD · Mental health / SUD (tied)</td></tr>
-<tr><td><a href="midland.html">Midland</a></td><td>metro</td><td>83,527</td><td>17,907</td><td class="big-metric">9,578</td><td>21,438</td><td>Cancer · CVD · Mental health</td></tr>
-<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>metro</td><td>367,730</td><td>63,379</td><td class="big-metric">8,251</td><td>17,235</td><td>Cancer · CVD · Substance use</td></tr>
+<tr><td><a href="clare.html">Clare</a></td><td>nonmetro</td><td>31,105</td><td>9,637</td><td class="big-metric">22,122</td><td>19,818–23,941</td><td>14,472</td><td>30,982</td><td>Cancer · CVD · COPD</td></tr>
+<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>metro</td><td>1,773,082</td><td>421,263</td><td class="big-metric">20,991</td><td>20,474–21,608</td><td>14,177</td><td>23,759</td><td>CVD · Cancer · Substance use</td></tr>
+<tr><td><a href="isabella.html">Isabella</a></td><td>nonmetro</td><td>64,417</td><td>13,089</td><td class="big-metric">20,339</td><td>18,904–21,501</td><td>12,817</td><td>20,319</td><td>Cancer · CVD · Substance use</td></tr>
+<tr><td><a href="gratiot.html">Gratiot</a></td><td>nonmetro</td><td>41,345</td><td>9,782</td><td class="big-metric">19,625</td><td>17,478–21,381</td><td>12,457</td><td>23,659</td><td>Cancer · CVD · Substance use</td></tr>
+<tr><td><a href="midland.html">Midland</a></td><td>metro</td><td>83,527</td><td>17,217</td><td class="big-metric">16,405</td><td>15,358–17,364</td><td>9,578</td><td>20,612</td><td>Cancer · CVD · Substance use</td></tr>
+<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>metro</td><td>367,730</td><td>58,628</td><td class="big-metric">14,708</td><td>14,172–15,676</td><td>8,251</td><td>15,943</td><td>Cancer · Substance use · CVD</td></tr>
 </tbody>
 </table>
 </div>
-<p class="disc">On one basis, the spread across six counties is about <strong>1.75×</strong>, from Clare at 14,472 age-standardized YLL per 100,000 down to Washtenaw at 8,251. The result worth stating carefully is at the top: <strong>Clare, a nonmetro county of 31,000, and Wayne County (Detroit), with 1.77 million, are within 2% of each other</strong> (14,472 vs 14,177). Two percent is well inside the uncertainty on either figure, so the honest reading is that they are <strong>comparable</strong> — not that Clare is worse than Detroit. Below the top two, the pattern does follow the metro line: all three nonmetro counties (Clare, Isabella, Gratiot) sit above the two smaller metro counties, Midland and Washtenaw, both of which are higher-income. Detroit is the exception among metro counties, and Clare matches it. These rankings are point estimates without uncertainty intervals; Isabella and Gratiot (12,817 and 12,457) cannot be separated, and intervals for all six counties are the next step. Crude rates tell a different story from age-standardized ones for exactly that reason: Clare leads on crude burden (31,451 per 100,000) partly because its population is old, which standardization removes.</p>
+<p class="disc">On one basis, the spread across six counties is about <strong>1.50×</strong>, from Clare at 22,122 age-standardized DALYs per 100,000 down to Washtenaw at 14,708. The result worth stating carefully is at the top: <strong>Clare, a nonmetro county of 31,000, and Wayne County (Detroit), with 1.77 million, have overlapping uncertainty intervals</strong> (19,818–23,941 and 20,474–21,608), so the honest reading is that they are <strong>comparable</strong>, not that Clare is worse than Detroit. Isabella and Gratiot also overlap with each other and with Wayne. Below them the metro line holds: Midland and Washtenaw, both higher-income metro counties, have the lowest rates and intervals that do not reach any nonmetro county. Detroit is the exception among metro counties, and Clare matches it. Crude rates tell a different story for a reason: Clare leads on crude burden (30,982 per 100,000) partly because its population is old, which standardization removes. The intervals are partial (disability weights are not varied) and the substance-use prevalence is a modeled input in every county.</p>
 </div>
 
 <div class="card">
@@ -101,26 +101,26 @@ a{color:var(--blue);}
 <p class="csub">What the cause mix says about each place</p>
 <div class="findings">
 <div class="finding"><h4>Ann Arbor — cancer-led, healthiest</h4><p>A young, highly educated, well-insured population where chronic disease (cancer, then CVD) dominates and the overall age-standardized burden is the lowest of the analyzed counties.</p></div>
-<div class="finding" style="--accent:var(--red)"><h4>Detroit — cardiovascular-led, heaviest</h4><p>Heart disease is a third of the burden, with an enormous substance-use component (1,107 deaths/yr). Deaths also strike younger, pushing the age-standardized rate to 1.7× Ann Arbor's.</p></div>
-<div class="finding" style="--accent:var(--amber)"><h4>Substance use, now visible</h4><p>In both cities substance use is the #3 driver and directly observed. In small rural counties these deaths are statistically suppressed and effectively invisible — a key blind spot the urban data exposes.</p></div>
+<div class="finding" style="--accent:var(--red)"><h4>Detroit — cardiovascular-led, heaviest</h4><p>Heart disease is a third of the burden, with an enormous substance-use component (1,107 deaths/yr). Deaths also strike younger, pushing the age-standardized DALY rate to 1.4× Ann Arbor's.</p></div>
+<div class="finding" style="--accent:var(--amber)"><h4>Substance use, now visible</h4><p>Substance use is directly observed in both cities: the #2 driver in Washtenaw and #3 in Wayne. In small rural counties these deaths are statistically suppressed and effectively invisible — a key blind spot the urban data exposes.</p></div>
 </div>
 </div>
 
-<p class="disc">Planning-grade estimates — not peer-reviewed research or official GBD county estimates. All six counties: CDC WONDER 2020–22, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–22, IHME GBD 2021. See each county's methods page. Rural counties use the earlier crude pipeline.</p>
+<p class="disc">Planning-grade estimates — not peer-reviewed research or official GBD county estimates. All six counties: CDC WONDER 2020–22, CDC PLACES 2024 release (BRFSS 2023), CDC Single-Race Population Estimates 2020–22, IHME GBD 2021. See each county's methods page; the v4.1 method is described in the methods supplement.</p>
 </div>
 <footer>
-<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
-<span>Six-county comparison, one basis · Michigan · v4, November 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4.1 · updated 11 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span>Six-county comparison, one basis · Michigan · v4.1, November 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var ctx=document.getElementById('asrChart'); if(!ctx||!window.Chart)return;
   new Chart(ctx,{type:'bar',
     data:{labels:['Clare (nonmetro)','Wayne / Detroit (metro)','Isabella (nonmetro)','Gratiot (nonmetro)','Midland (metro)','Washtenaw / Ann Arbor (metro)'],
-      datasets:[{label:'Age-standardized YLL per 100,000',data:[14472,14177,12817,12457,9578,8251],backgroundColor:['#d97706','#7c3aed','#d97706','#d97706','#7c3aed','#7c3aed']}]},
+      datasets:[{label:'Age-standardized DALYs per 100,000',data:[22122,20991,20339,19625,16405,14708],backgroundColor:['#d97706','#7c3aed','#d97706','#d97706','#7c3aed','#7c3aed']}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.x.toLocaleString()+' /100k (age-standardized YLL)';}}}},
-      scales:{x:{title:{display:true,text:'Age-standardized YLL rate per 100,000'}}}}
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.x.toLocaleString()+' /100k (age-standardized DALYs)';}}}},
+      scales:{x:{title:{display:true,text:'Age-standardized DALYs per 100,000'}}}}
   });
 });
 </script>

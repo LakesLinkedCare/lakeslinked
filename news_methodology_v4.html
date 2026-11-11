@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lakes Linked v4: one method for six Michigan counties | Lakes Linked</title>
+<title>Lakes Linked v4.1: one method for six Michigan counties | Lakes Linked</title>
 <meta content="Lakes Linked has moved six Michigan counties onto one method: observed deaths by age, standard GBD years of life lost, shared denominators and one national value per statistical life. Here is what changed, what it shows, and what is still uncertain." name="description"/>
 <meta content="https://lakeslinked.com/news_methodology_v4.html" property="og:url"/>
-<meta content="Lakes Linked v4: one method for six Michigan counties" property="og:title"/>
+<meta content="Lakes Linked v4.1: one method for six Michigan counties" property="og:title"/>
 <meta content="Lakes Linked has moved six Michigan counties onto one method: observed deaths by age, standard GBD years of life lost, shared denominators and one national value per statistical life. Here is what changed, what it shows, and what is still uncertain." property="og:description"/>
 <meta content="article" property="og:type"/>
 <meta content="https://lakeslinked.com/logo.png" property="og:image"/>
@@ -87,20 +87,20 @@ a{color:var(--blue);}
 </nav>
 <div class="hero">
 <div class="hero-inner">
-<h1>Lakes Linked v4: one method for six Michigan counties</h1>
+<h1>Lakes Linked v4.1: one method for six Michigan counties</h1>
 <p class="sub">News · Methods update · Sergey Soshnikov, MD PhD · 11 November 2026</p>
 </div>
 </div>
 <div class="wrap"><div class="art">
 
-<p class="lede">Lakes Linked now estimates disease burden for six Michigan counties with a single method. Clare, Gratiot, Isabella, Midland, Washtenaw and Wayne counties are all calculated from observed deaths by age, the standard GBD formula for years of life lost, the same population denominators and the same value per statistical life. For the first time, the six counties can be compared directly.</p>
+<p class="lede">Lakes Linked now estimates disease burden for six Michigan counties with a single method. Clare, Gratiot, Isabella, Midland, Washtenaw and Wayne counties are all calculated from observed deaths by age, the standard GBD formula for years of life lost, one rule for years lived with disability, the same population denominators and the same value per statistical life. For the first time, the six counties can be compared directly.</p>
 
 <p>The update changes some headline numbers and one county's priority ranking. It also makes every estimate on the site easier to check. Below is a short account of what we changed, what the new figures show, how we tested them, and where the limits are.</p>
 
 <div class="kp">
 <div><b>6</b><span>counties on one method</span></div>
-<div><b>1.3%</b><span>difference from the published Isabella estimate</span></div>
-<div><b>2%</b><span>gap between rural Clare and Detroit</span></div>
+<div><b>3.0%</b><span>difference from the published Isabella estimate</span></div>
+<div><b>5%</b><span>gap between rural Clare and Detroit, within uncertainty</span></div>
 <div><b>$14.1M</b><span>one national value per statistical life</span></div>
 </div>
 
@@ -110,25 +110,27 @@ a{color:var(--blue);}
 <li><strong>Standard years of life lost.</strong> Each death is weighted by the remaining life expectancy at that age, using the GBD 2019 reference life table. This replaces a shortcut that assumed all deaths in a cause group happened at the group's average age.</li>
 <li><strong>Comparable rates.</strong> Every county now has an age-standardized rate, so a retirement-age county, a college town and a large city can be compared fairly.</li>
 <li><strong>One value per statistical life.</strong> All counties use $14.1M, the current federal (HHS) central value. Earlier pages used five different values. We no longer lower the value for lower-income counties.</li>
+<li><strong>One rule for disability.</strong> Years lived with disability now come from the same CDC PLACES release for every county, with the same condition definitions and the same mental-health remission adjustment. Before this, the counties had inherited different inputs, which moved some conditions by a factor of two to four (update of 11 November 2026, v4.1).</li>
+<li><strong>Uncertainty ranges.</strong> Every county now has a 95% range for its total and its age-standardized rate.</li>
 <li><strong>Tables that add up.</strong> Every row and column on the site now sums to its stated total, and every county page carries a version mark.</li>
 </ul>
 
 <h2>What the new figures show</h2>
-<p><strong>Rural Clare and Detroit have about the same mortality burden.</strong> After adjusting for age, Clare County loses 14,472 years of life per 100,000 residents each year and Wayne County (Detroit) loses 14,177. The difference is 2%, too small to say either is worse.</p>
+<p><strong>Rural Clare and Detroit carry about the same burden.</strong> After adjusting for age, Clare County loses 22,122 healthy years per 100,000 residents each year (95% range 19,818 to 23,941) and Wayne County (Detroit) loses 20,991 (20,474 to 21,608). The ranges overlap, so neither can be called worse. Mortality alone gives the same picture: 14,472 and 14,177 years of life lost per 100,000.</p>
 <p><strong>Smaller metro counties do better.</strong> All three nonmetropolitan counties (Clare, Isabella, Gratiot) have higher age-standardized burden than Midland and Washtenaw, the two smaller and higher-income metropolitan counties. Detroit is the exception among metro counties.</p>
 <p><strong>Clare's ranking changed.</strong> With observed deaths, cancer, heart disease and COPD carry more total burden in Clare than substance use, which moves from first to fourth. Opioid deaths still happen at younger ages than any other cause, so substance use remains the most urgent target for immediate intervention.</p>
-<p><strong>The Isabella estimate holds.</strong> The new method puts Isabella County at 13,313 DALYs a year, 1.3% below the 13,493 published in <em>Health Research and Education Innovation</em> in 2026 and well within that study's uncertainty range. The site continues to show the published figure as the headline.</p>
+<p><strong>The Isabella estimate holds.</strong> The new method puts Isabella County at 13,089 DALYs a year (95% range 12,268 to 13,787), 3.0% below the 13,493 published in <em>Health Research and Education Innovation</em> in 2026 and well within that study's uncertainty range. The site continues to show the published figure as the headline.</p>
 
 <h2>How the numbers moved</h2>
 <div class="tbl"><table>
-<thead><tr><th>County</th><th>Type (OMB 2023)</th><th>Before</th><th>Now (v4)</th><th>Age-standardized YLL per 100,000</th><th>Main reason for the change</th></tr></thead>
+<thead><tr><th>County</th><th>Type (OMB 2023)</th><th>Before</th><th>Now (v4.1)</th><th>Age-standardized DALYs per 100,000 (95% range)</th><th>Main reason for the change</th></tr></thead>
 <tbody>
-<tr><td><a href="clare.html">Clare</a></td><td>nonmetro</td><td>8,198</td><td><strong>9,783</strong></td><td>14,472</td><td>Observed deaths (332 a year) higher than the earlier estimate (about 214)</td></tr>
-<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>metro</td><td>442,251</td><td><strong>442,251</strong></td><td>14,177</td><td>No change; already on this method</td></tr>
-<tr><td><a href="isabella.html">Isabella</a></td><td>nonmetro</td><td>13,493 (published)</td><td><strong>13,313</strong></td><td>12,817</td><td>New YLL method</td></tr>
-<tr><td><a href="gratiot.html">Gratiot</a></td><td>nonmetro</td><td>7,533*</td><td><strong>10,475</strong></td><td>12,457</td><td>Mainly the switch to the same life-expectancy standard as other counties</td></tr>
-<tr><td><a href="midland.html">Midland</a></td><td>metro</td><td>14,335*</td><td><strong>17,907</strong></td><td>9,578</td><td>Mainly the switch to the same life-expectancy standard as other counties</td></tr>
-<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>metro</td><td>63,379</td><td><strong>63,379</strong></td><td>8,251</td><td>No change; already on this method</td></tr>
+<tr><td><a href="clare.html">Clare</a></td><td>nonmetro</td><td>8,198</td><td><strong>9,637</strong></td><td>22,122 (19,818–23,941)</td><td>Observed deaths (332 a year) higher than the earlier estimate (about 214)</td></tr>
+<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>metro</td><td>442,251</td><td><strong>421,263</strong></td><td>20,991 (20,474–21,608)</td><td>Heart disease now counted from coronary heart disease, not hypertension</td></tr>
+<tr><td><a href="isabella.html">Isabella</a></td><td>nonmetro</td><td>13,493 (published)</td><td><strong>13,089</strong></td><td>20,339 (18,904–21,501)</td><td>New YLL method; disability from the shared 2024 PLACES inputs</td></tr>
+<tr><td><a href="gratiot.html">Gratiot</a></td><td>nonmetro</td><td>7,533*</td><td><strong>9,782</strong></td><td>19,625 (17,478–21,381)</td><td>Same life-expectancy standard as other counties; mental-health remission now applied</td></tr>
+<tr><td><a href="midland.html">Midland</a></td><td>metro</td><td>14,335*</td><td><strong>17,217</strong></td><td>16,405 (15,358–17,364)</td><td>Same life-expectancy standard as other counties; mental-health remission now applied</td></tr>
+<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>metro</td><td>63,379</td><td><strong>58,628</strong></td><td>14,708 (14,172–15,676)</td><td>Heart disease now counted from coronary heart disease, not hypertension</td></tr>
 </tbody></table></div>
 <p class="note">Disability-adjusted life years (DALYs) per year. *Gratiot and Midland were previously calculated against Michigan's observed life expectancy (78.6 years). All counties now use the higher frontier standard, so most of their increase reflects that change rather than new data.</p>
 
@@ -141,7 +143,8 @@ a{color:var(--blue);}
 <h2>What to keep in mind</h2>
 <ul>
 <li><strong>Pandemic years.</strong> The death data cover 2020 to 2022, when deaths from heart disease, diabetes and other causes rose during COVID-19. COVID-19 itself is not one of the seven conditions.</li>
-<li><strong>No uncertainty ranges yet for the six-county comparison.</strong> Close results, such as Isabella and Gratiot, cannot be ranked.</li>
+<li><strong>Partial uncertainty ranges.</strong> The ranges cover survey prevalence, withheld death counts and substance-use prevalence, but not disability weights. Overlapping results, such as Clare, Wayne, Isabella and Gratiot, cannot be ranked against each other.</li>
+<li><strong>Substance use.</strong> CDC PLACES does not measure substance use disorders, so their prevalence is modeled from one county's estimate and local binge drinking. This is the weakest input.</li>
 <li><strong>Small numbers.</strong> In small counties, some death counts are withheld for privacy. We fill these gaps with stated rules, including a suicide age pattern borrowed from Washtenaw County, and these choices add uncertainty.</li>
 <li><strong>Definitions.</strong> The COPD group includes all chronic lower respiratory deaths (ICD-10 J40 to J47). Disability estimates rely on modelled adult prevalence and on two adjustment factors first estimated for Isabella County.</li>
 <li>These are planning estimates built from public data. They are not official GBD county estimates.</li>
@@ -149,7 +152,7 @@ a{color:var(--blue);}
 
 <h2>What comes next</h2>
 <ul>
-<li>Uncertainty ranges for all six counties</li>
+<li>Disability-weight uncertainty in the ranges, and a direct county-level source for substance use</li>
 <li>Calibration against IHME county mortality estimates</li>
 <li>A check that excludes the 2020 and 2021 pandemic years once newer county data are available</li>
 <li>Mecosta County, the next county in the series</li>
@@ -158,10 +161,10 @@ a{color:var(--blue);}
 <h2>Read more</h2>
 <p>The full comparison is on <a href="rural_vs_urban.html">Six counties on one basis</a>. Formulas and complete tables are on each county's methods page. The <a href="methods_supplement.html#versions">version history</a> and the alternative, income-adjusted economic estimates are in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>.</p>
 
-<p class="disc">Lakes Linked v4 · 11 November 2026 · Sources: CDC WONDER 2020 to 2022 (deaths; single-race population estimates), CDC PLACES 2024, IHME GBD 2021 disability weights, GBD 2019 reference life table, IHME US county mortality estimates, HHS ASPE Standard Values 2026, ACS 2020 to 2024, OMB metropolitan delineation 2023. Planning estimates; not peer-reviewed research or official GBD county estimates.</p>
+<p class="disc">Lakes Linked v4.1 · 11 November 2026 · Sources: CDC WONDER 2020 to 2022 (deaths; single-race population estimates), CDC PLACES 2024 release (BRFSS 2023), IHME GBD 2021 disability weights, GBD 2019 reference life table, IHME US county mortality estimates, HHS ASPE Standard Values 2026, ACS 2020 to 2024, OMB metropolitan delineation 2023. Planning estimates; not peer-reviewed research or official GBD county estimates.</p>
 </div></div>
 <footer>
-<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4.1 · updated 11 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
 <span>Methods update · Lakes Linked · Sergey Soshnikov, MD PhD</span>
 </footer>
 <script src="ll-features.js"></script></body>

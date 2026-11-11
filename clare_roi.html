@@ -209,7 +209,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
   <!-- Methodology note -->
   <div class="meth-box">
     <strong>Methodology (Clare County · v1.0 · June 2026).</strong> ROI ratios use the same Cochrane and peer-reviewed meta-analyses as the Isabella County ROI analysis. Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Intervention reach numbers are scaled proportionally to Clare County's population (30,013 = ~46.5% of Isabella's 64,565). Priority ordering differs from Isabella — MAT Telehealth for OUD is #1 given Clare's severe opioid crisis (~47/100k overdose mortality). COPD remote monitoring added as a sixth intervention not present in the Isabella analysis (12.7% prevalence, standout condition). DALY baseline: 5,943 (Michigan LE 78.6 yrs planning standard). All figures ±30–50% uncertainty — directional planning estimates only.
-    <br><strong>Population base:</strong> 30,013 total / ~24,310 adults · Burden: 9,783 DALYs (v4, Nov 2026, primary) / 8,198 DALYs (v1 frontier) · <a href="clare_methods.html">Full methods →</a>
+    <br><strong>Population base:</strong> 30,013 total / ~24,310 adults · Burden: 9,637 DALYs (v4.1, Nov 2026, primary) / 8,198 DALYs (v1 frontier) · <a href="clare_methods.html">Full methods →</a>
   </div>
 
   <!-- Charts -->
@@ -265,7 +265,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
 </div><!-- end .page -->
 
 <footer>
-<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4.1 · updated 11 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
   <span>ROI Analysis · Clare County · June 2026 · Data: CDC PLACES 2024 · Michigan rates × rural adj.</span>
   <span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked · <a href="clare.html" style="color:inherit">← Back to Clare Dashboard</a></span>
 </footer>
@@ -562,7 +562,7 @@ function updateGrant() {
   const t = totalCalc();
   const horizon = parseInt(document.getElementById('horizon')?.value||5);
   document.getElementById('grant-significance').innerHTML =
-    `Clare County, Michigan faces an estimated 9,783 DALYs/year (v4, November 2026; age-specific YLL on the GBD 2019 reference life table; earlier v1 estimate 8,198 DALYs). The county is a designated Medically Underserved Area (MUA) with opioid overdose mortality ~47/100,000 — among Michigan's highest. MAT telehealth is the highest-priority intervention given the severity of the OUD crisis. COPD burden (12.7% prevalence, highest in the mid-Michigan comparison set) is the standout condition unique to Clare. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in societal savings — a ${t.roi.toFixed(1)}:1 ROI and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Applicable funders: SAMHSA MAT expansion grants, HRSA Rural Health care programs, MDHHS opioid settlement funds, CMS MUA-designated care model incentives.`;
+    `Clare County, Michigan faces an estimated 9,637 DALYs/year (v4.1, November 2026; age-specific YLL on the GBD 2019 reference life table; earlier v1 estimate 8,198 DALYs). The county is a designated Medically Underserved Area (MUA) with opioid overdose mortality ~47/100,000 — among Michigan's highest. MAT telehealth is the highest-priority intervention given the severity of the OUD crisis. COPD burden (12.7% prevalence, highest in the mid-Michigan comparison set) is the standout condition unique to Clare. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in societal savings — a ${t.roi.toFixed(1)}:1 ROI and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Applicable funders: SAMHSA MAT expansion grants, HRSA Rural Health care programs, MDHHS opioid settlement funds, CMS MUA-designated care model incentives.`;
   document.getElementById('grant-board').innerHTML =
     `For every dollar invested in this six-program package, Clare County would see an estimated <strong>${t.roi.toFixed(1)} dollars in return</strong> — led by tobacco cessation (11:1) and diabetes telehealth (7.7:1), with MAT telehealth prioritized for patient impact despite its lower modeled ROI (1.3:1) given Clare's ~47/100k opioid overdose death rate. The total annual investment of ${fmtM(t.inv)} is approximately half that of a comparable Isabella County portfolio, reflecting Clare's smaller population. Remote COPD monitoring is a Clare-specific intervention not present in the Isabella ROI analysis, targeting the county's standout 12.7% COPD prevalence.`;
 }

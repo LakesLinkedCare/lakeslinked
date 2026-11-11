@@ -97,7 +97,7 @@ a{color:var(--blue);}
 <h2>4. Limitations &amp; comparability</h2>
 <div class="callout blue"><strong>Comparability with this site's rural counties.</strong> Wayne and Washtenaw use the v2 age-standardized method; Isabella, Clare, Midland and Gratiot use the earlier v1 crude method (fixed reference life expectancy; substance-use and mental-health mortality suppressed and excluded). <strong>Rates across the two groups are not directly comparable and must not be ranked against one another.</strong> Compare within a method group only, or see the dedicated <a href="rural_vs_urban.html">Rural vs Urban</a> page, which discusses the seam explicitly.</div>
 <ul>
-<li><strong>"Age-standardized" applies to YLL only.</strong> Because PLACES gives no age-specific prevalence, YLD is reported as a crude rate (8,738/100k) and shown separately rather than blended into a single "age-standardized DALY rate."</li>
+<li><strong>"Age-standardized" applies to YLL only.</strong> Because PLACES gives no age-specific prevalence, YLD is reported as a crude rate (7,555/100k) and shown separately rather than blended into a single "age-standardized DALY rate."</li>
 <li><strong>Substance-use YLD prevalence is indicative.</strong> With no PLACES SUD measure, the SUD disability component uses a Michigan-derived rate applied uniformly; it likely <em>understates</em> a high-burden county like Wayne. SUD mortality (YLL) is directly observed.</li>
 <li><strong>SUD/suicide overlap.</strong> Drug-poisoning suicides (X60–X64) fall in both the substance-use and suicide categories, so the sum of those two causes' YLL is a modest upper bound.</li>
 <li><strong>Prevalence basis.</strong> An age-adjusted prevalence is multiplied by an actual adult count — a standard but internally mixed convention.</li>
@@ -108,49 +108,62 @@ a{color:var(--blue);}
 <table>
 <thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th></tr></thead>
 <tbody>
-<tr><td>CVD (heart disease)</td><td>5,531</td><td>111,087</td><td>33,017</td><td>144,104</td></tr>
-<tr><td>Cancer</td><td>3,502</td><td>75,346</td><td>24,296</td><td>99,641</td></tr>
-<tr><td>Substance use</td><td>1,107</td><td>46,729</td><td>30,032</td><td>76,762</td></tr>
-<tr><td>COPD</td><td>736</td><td>13,460</td><td>20,390</td><td>33,850</td></tr>
-<tr><td>Mental health</td><td>224</td><td>9,993</td><td>22,951</td><td>32,944</td></tr>
-<tr><td>Stroke</td><td>1,017</td><td>16,576</td><td>15,668</td><td>32,244</td></tr>
-<tr><td>Diabetes</td><td>642</td><td>14,124</td><td>8,582</td><td>22,706</td></tr>
-<tr><td><strong>Total</strong></td><td><strong>12,759</strong></td><td><strong>287,315</strong></td><td><strong>154,936</strong></td><td><strong>442,251</strong></td></tr>
+<tr><td>CVD (heart disease)</td><td>5,531</td><td>111,087</td><td>6,686</td><td>117,773</td></tr>
+<tr><td>Cancer</td><td>3,502</td><td>75,346</td><td>28,841</td><td>104,187</td></tr>
+<tr><td>Substance use</td><td>1,107</td><td>46,729</td><td>24,255</td><td>70,984</td></tr>
+<tr><td>COPD</td><td>736</td><td>13,460</td><td>23,512</td><td>36,972</td></tr>
+<tr><td>Stroke</td><td>1,017</td><td>16,576</td><td>17,947</td><td>34,523</td></tr>
+<tr><td>Mental health</td><td>224</td><td>9,993</td><td>22,740</td><td>32,733</td></tr>
+<tr><td>Diabetes</td><td>642</td><td>14,124</td><td>9,967</td><td>24,091</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>12,759</strong></td><td><strong>287,315</strong></td><td><strong>133,948</strong></td><td><strong>421,263</strong></td></tr>
 </tbody>
 </table>
-<p class="src">Age-standardized YLL rate 14,177/100k · crude YLD rate 8,738/100k · crude DALY rate 24,943/100k · population 1,773,082 (2020–22 average). Rows use unrounded estimates, so YLL + YLD may differ from the DALY column by ±1.</p>
+<p class="src">Age-standardized YLL rate 14,177/100k · crude YLD rate 7,555/100k · crude DALY rate 24,943/100k · population 1,773,082 (2020–22 average). Rows use unrounded estimates, so YLL + YLD may differ from the DALY column by ±1.</p>
 
 
 <!-- v4 methodology, November 2026 -->
 <h2 class="sec" id="v4-methods"><span style="color:var(--blue);margin-right:6px">v4</span> Methodology update: age-specific YLL and unified economics (November 2026)</h2>
 <p>Version 4 puts all six Lakes Linked counties on one basis. Wayne County was already computed with age-specific YLL (v2, July 2026); the burden totals are unchanged in v4. What changed is the economic layer: a single VSL formula is now applied to every county, replacing the $10.5M placeholder carried over from the Isabella analysis.</p>
 <p><strong>Years of life lost.</strong> YLL = Σ<sub>a</sub> deaths<sub>a</sub> × RLE(a). Deaths by ten-year age group are taken from CDC WONDER Underlying Cause of Death 2020–2022 (113 Cause List; single-race population files) and annualized by dividing by three. RLE(a) is remaining life expectancy at the age-band midpoint from the GBD 2019 reference life table (life expectancy at birth 88.87 years; <a href="https://doi.org/10.6069/1D4Y-YQ37">doi:10.6069/1D4Y-YQ37</a>). This replaces the v1 planning approximation deaths × (terminal age − mean age at death).</p>
-<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 1,773,082. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>14,177 per 100,000</strong>. The crude DALY rate is <strong>24,942 per 100,000</strong>.</p>
+<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 1,773,082. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>14,177 per 100,000</strong>. The crude DALY rate is <strong>23,759 per 100,000</strong>.</p>
 
 <p><strong>Years lived with disability</strong> are unchanged from the earlier version: CDC PLACES prevalence, IHME GBD 2021 disability weights at moderate severity, mental-health remission factor 0.50, and the comorbidity correction factor 0.949.</p>
 <p><strong>Economics.</strong> Human capital = DALYs × $62,000 (Michigan GDP per capita, BEA 2024). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. Human capital and VSL are alternative valuations and are never added.</p>
 <div class="tbl-wrap">
 <table>
-<caption>Table v4. Wayne County, v4 results (November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
+<caption>Table v4.1. Wayne County, v4.1 results (11 November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
 <thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>Human capital</th><th>VSL</th></tr></thead>
 <tbody>
-<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>5,530.7</td><td>111,087</td><td>33,017</td><td>144,104</td><td>$8.93B</td><td>$77.98B</td></tr>
-<tr><td>Cancer (C00–C97)</td><td>3,502.3</td><td>75,346</td><td>24,296</td><td>99,641</td><td>$6.18B</td><td>$49.38B</td></tr>
-<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>1,107.3</td><td>46,729</td><td>30,032</td><td>76,762</td><td>$4.76B</td><td>$15.61B</td></tr>
-<tr><td>COPD (J40–J47 query; labelled J44)</td><td>736.0</td><td>13,460</td><td>20,390</td><td>33,850</td><td>$2.10B</td><td>$10.38B</td></tr>
-<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>224.3</td><td>9,993</td><td>22,951</td><td>32,944</td><td>$2.04B</td><td>$3.16B</td></tr>
-<tr><td>Stroke (I60–I69)</td><td>1,016.7</td><td>16,576</td><td>15,668</td><td>32,244</td><td>$2.00B</td><td>$14.34B</td></tr>
-<tr><td>Diabetes (E10–E14)</td><td>641.7</td><td>14,124</td><td>8,582</td><td>22,706</td><td>$1.41B</td><td>$9.05B</td></tr>
-<tr class="total-row"><td><strong>Total</strong></td><td><strong>12,759.0</strong></td><td><strong>287,315</strong></td><td><strong>154,936</strong></td><td><strong>442,251</strong></td><td><strong>$27.42B</strong></td><td><strong>$179.90B</strong></td></tr>
+<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>5,530.7</td><td>111,087</td><td>6,686</td><td>117,773</td><td>$7.30B</td><td>$77.98B</td></tr>
+<tr><td>Cancer (C00–C97)</td><td>3,502.3</td><td>75,346</td><td>28,841</td><td>104,187</td><td>$6.46B</td><td>$49.38B</td></tr>
+<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>1,107.3</td><td>46,729</td><td>24,255</td><td>70,984</td><td>$4.40B</td><td>$15.61B</td></tr>
+<tr><td>COPD (J40–J47 query; labelled J44)</td><td>736.0</td><td>13,460</td><td>23,512</td><td>36,972</td><td>$2.29B</td><td>$10.38B</td></tr>
+<tr><td>Stroke (I60–I69)</td><td>1,016.7</td><td>16,576</td><td>17,947</td><td>34,523</td><td>$2.14B</td><td>$14.34B</td></tr>
+<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>224.3</td><td>9,993</td><td>22,740</td><td>32,733</td><td>$2.03B</td><td>$3.16B</td></tr>
+<tr><td>Diabetes (E10–E14)</td><td>641.7</td><td>14,124</td><td>9,967</td><td>24,091</td><td>$1.49B</td><td>$9.05B</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td><strong>12,759.0</strong></td><td><strong>287,315</strong></td><td><strong>133,948</strong></td><td><strong>421,263</strong></td><td><strong>$26.12B</strong></td><td><strong>$179.90B</strong></td></tr>
 </tbody>
 </table>
 <div class="tbl-note">Computation: <code>daly_county.py</code> (Lakes Linked repository), inputs <code>wonder_113cause_by_age_4counties_2020_2022</code>, <code>d191_pop_5yr_6counties_2020_2022</code>; results file <code>results_v4_2026-11-10.json</code>, economics <code>econ_v4_2026-11-10.json</code>. Cross-county comparison on this basis: <a href="rural_vs_urban.html">Six counties on one basis</a>.</div>
 </div>
+
+<!-- v4.1 methodology, 11 November 2026 -->
+<h2 class="sec" id="v41-methods"><span style="color:var(--blue);margin-right:6px">v4.1</span> Methodology update: one YLD rule for all six counties (11 November 2026)</h2>
+<p>v4 put YLL for all six counties on one basis. A check of the inputs then showed that YLD had not been: each county carried its own prevalence inputs, some crude and some age-adjusted, from different CDC PLACES releases, with the mental-health remission adjustment applied in some counties only and cardiovascular disease taken from hypertension prevalence in Washtenaw and Wayne. v4.1 applies one rule everywhere.</p>
+<ul>
+<li><strong>Source.</strong> CDC PLACES 2024 release (BRFSS 2023), adults 18+, the same release for all six counties.</li>
+<li><strong>Counts.</strong> YLD = crude prevalence × adults 18+ (CDC WONDER D191, 2020–2022 mean) × disability weight (IHME GBD 2021) × comorbidity factor 0.949.</li>
+<li><strong>Rates.</strong> Age-standardized YLD = age-adjusted prevalence × disability weight × 0.949 × the 18+ share of the US 2000 standard population (0.742). Added to age-standardized YLL, this gives an age-standardized DALY rate comparable across counties.</li>
+<li><strong>Condition definitions.</strong> Cardiovascular disease: PLACES coronary heart disease. Mental health: PLACES depression × 0.50 remission, in every county. Substance use: PLACES has no measure; the Isabella derived prevalence (7.2%) is scaled by each county's binge-drinking prevalence relative to Isabella's. This is the weakest input and is flagged as such.</li>
+<li><strong>Uncertainty.</strong> 95% uncertainty intervals from 4,000 draws over the PLACES 95% confidence limits, substance-use prevalence ×0.7–1.3, and the CDC WONDER suppression range for YLL. Disability weights are not varied, so the intervals are partial.</li>
+</ul>
+<p><strong>Result for Wayne County.</strong> 421,263 DALYs/yr (YLL 287,315 + YLD 133,948; 95% UI 411,819–432,250), against 442,251 in v4 (YLD 154,936). Crude rate 23,759 per 100,000; age-standardized rate 20,991 per 100,000 (95% UI 20,474–21,608). Cardiovascular YLD falls from 33,017 to 6,686 because the earlier input was hypertension prevalence (37.1%), a risk factor rather than a disease, where the other counties used heart disease. v4.1 uses PLACES coronary heart disease for all six. Counts now use crude rather than age-adjusted prevalence, which raises cancer YLD from 24,296 to 28,841. Cardiovascular disease stays #1; stroke and mental health exchange #5 and #6.</p>
+<div class="note-box" style="font-size:12px">Remaining limitations: prevalence (BRFSS 2023) and deaths (2020–2022) cover different years; YLD under age 18 is not counted; the remission factor and comorbidity factor are carried over from the Isabella analysis rather than estimated locally; for Clare, Gratiot and Midland, suicide deaths are suppressed and modeled from Isabella's observed rate. Results file <code>results_v41_2026-11-11.json</code>, script <code>run_v41.py</code>.</div>
 <h2>6. Reproducibility &amp; verification</h2>
 <p>The pipeline (Python) parses the raw CDC WONDER exports, applies the formulas above, and writes a machine-readable results file. An independent agent re-parsed the raw death files and re-implemented the engine from scratch, reproducing all 56 cause × county × metric cells and every total to the integer. Two suppression-sensitivity runs (0 and 9) bracket the central estimate. Data vintages: CDC WONDER 2020–2022, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–2022, IHME GBD 2021.</p>
 </div>
 <footer>
-<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4.1 · updated 11 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
 <span>Wayne County, Michigan (Detroit) · FIPS 26163 · Methods v2 age-standardized · July 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
 </footer>
 <script src="ll-features.js"></script></body>

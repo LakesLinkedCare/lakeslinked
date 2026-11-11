@@ -149,7 +149,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
   <div class="hd">Abstract</div>
   <p><strong>Background.</strong> County-level DALY disease burden estimates are rarely available for rural U.S. counties outside large academic centers. This analysis applies the DALY framework as a planning-grade educational model for seven major condition groups in Isabella County, Michigan — a rural county of 64,565 residents with a designated Medical Underserved Area status and multiple Health Professional Shortage Area (HPSA) designations. The DALY metric and disability weights are drawn from the IHME Global Burden of Disease Study — a body of work we deeply respect. This project does not replicate or claim to replicate a formal GBD estimate; it applies GBD's openly published disability weights and WHO reference standards for educational and local planning purposes only.</p>
   <p><strong>Methods.</strong> We constructed disability-adjusted life year (DALY) estimates from secondary data: CDC WONDER 2020–2022 (county mortality with rural adjustment factors), CDC PLACES 2024 (prevalence), IHME GBD 2021 (disability weights), and U.S. Census ACS 2022 (population denominators). YLL was calculated using the WHO GHE frontier reference life table (89·1 years) as the primary standard; Michigan observed LE (78·6 years) is reported as a planning-grade sensitivity. For mental health, a remission factor of 0·50 was applied to CDC PLACES lifetime-diagnosis prevalence to approximate active burden. Uncertainty was quantified via Monte Carlo simulation (n = 10,000 iterations). Economic burden was quantified by human capital (DALYs × Michigan GDP per capita) and value of statistical life (HHS 2024, income-adjusted).</p>
-  <p><strong>Results.</strong> Primary burden (frontier LE, remission-adjusted MH): <strong>13,493 DALYs</strong> (95% UI 12,266–14,803) · 8,268 YLL + 5,225 YLD. Cancer #1 (3,641), CVD #2 (2,793), SUD #3 (2,434), MH #4 (1,502). Planning-grade sensitivity (Michigan LE 78.6 yrs, remission-adjusted MH): 9,388 DALYs; Cancer remains #1 (2,444), MH #3 (1,397). Stroke mortality remains 49% above Michigan average. Total deaths: ~391/year. Economic burden: ~$836M/year (human capital, frontier) to ~$5.51B/year (VSL at $14.1M per death, HHS 2026, uniform across counties; the published article prints $4.38B at $11.2M). <strong>v4 (November 2026):</strong> recomputing YLL by age-specific summation on the GBD 2019 reference life table gives <strong>13,313 DALYs</strong> (8,086 YLL + 5,227 YLD) — see §5.2a.</p>
+  <p><strong>Results.</strong> Primary burden (frontier LE, remission-adjusted MH): <strong>13,493 DALYs</strong> (95% UI 12,266–14,803) · 8,268 YLL + 5,225 YLD. Cancer #1 (3,641), CVD #2 (2,793), SUD #3 (2,434), MH #4 (1,502). Planning-grade sensitivity (Michigan LE 78.6 yrs, remission-adjusted MH): 9,388 DALYs; Cancer remains #1 (2,444), MH #3 (1,397). Stroke mortality remains 49% above Michigan average. Total deaths: ~391/year. Economic burden: ~$836M/year (human capital, frontier) to ~$5.51B/year (VSL at $14.1M per death, HHS 2026, uniform across counties; the published article prints $4.38B at $11.2M). <strong>v4 (November 2026):</strong> recomputing YLL by age-specific summation on the GBD 2019 reference life table gives <strong>13,313 DALYs</strong> (8,086 YLL + 5,227 YLD) — see §5.2a. v4.1 (11 November 2026) applies one YLD rule to all six counties and gives <strong>13,089 DALYs</strong> (8,086 YLL + 5,003 YLD; 95% UI 12,268–13,787) — see §5.2b.</p>
   <p><strong>Limitations.</strong> Mixed-source modeled planning scenario - not a validated county burden estimate. Prevalence inputs are modeled by CDC PLACES (MLRP methodology). YLL uses simplified mean-age approach with an added age-banded sensitivity analysis; rural adjustment factors (×1.2–1.40) are applied to state-level mortality rates for suppressed county cells. Factors are derived from published rural/urban mortality differentials [8–12] and represent central estimates within reported ranges - county-specific validation data are not available. Results are directional planning approximations only; publication-grade extension requires age-sex-specific deaths, formal uncertainty propagation, and validation against claims or hospital discharge data.</p>
   <p><strong>Conclusion.</strong> Isabella County's burden is led by mental health access deficits (29.8% prevalence, 176,938:1 psychiatrist ratio), cancer, and substance use. Findings support telepsychiatry/collaborative care, AI-assisted cancer screening, MAT telehealth, and hypertension control as priorities. See <a href="isabella_roi.html" style="color:var(--blue)">ROI analysis →</a> for investment return estimates.</p>
 </div>
@@ -385,6 +385,38 @@ Per-condition effects are larger than the total suggests and run in both directi
 understates remaining life expectancy, against stroke −9%. The condition ranking is unchanged except that
 COPD and mental health exchange #4 and #5, separated by 11 DALYs — a difference too small to interpret.
 This resolves analytic question AQ1 recorded in the v33 changelog.</p>
+<h3 class="sub" id="v41-harmonized-yld">5.2b Methodology update: one YLD rule for six counties (v4.1, 11 November 2026)</h3>
+<p>Extending the method to six counties exposed a second inconsistency, this time in YLD. Each county page had
+inherited its own prevalence inputs: some crude, some age-adjusted, from different CDC PLACES releases, with the
+mental-health remission adjustment applied in some counties and not others, and with cardiovascular disease taken
+from hypertension prevalence in the two urban counties. v4.1 applies one rule to every county. Prevalence comes from
+the CDC PLACES 2024 release (BRFSS 2023) for all six. Counts use crude prevalence × adults 18+ (CDC WONDER D191,
+2020–2022 mean) × disability weight × CF 0.949. Cardiovascular disease uses PLACES coronary heart disease (CHD), mental
+health uses PLACES depression × 0.50 remission everywhere, and substance use, which PLACES does not measure, uses the
+Isabella derived prevalence of 7.2% scaled by each county's binge-drinking prevalence relative to Isabella's. YLL is
+unchanged from §5.2a.</p>
+<div class="tbl-wrap">
+<table>
+<caption>Table 2b. v4.1 results, Isabella County: harmonized YLD.</caption>
+<thead><tr><th>Condition</th><th>PLACES measure</th><th>Prevalence (crude, adults)</th><th>YLL</th><th>YLD (v4)</th><th>YLD (v4.1)</th><th>DALYs (v4.1)</th><th>DALYs (published)</th></tr></thead>
+<tbody>
+<tr><td>Cancer</td><td>CANCER</td><td>7.1%</td><td>2,452</td><td>1,122</td><td>1,014</td><td>3,466</td><td>3,641</td></tr>
+<tr><td>CVD — diseases of heart</td><td>CHD</td><td>6.2%</td><td>2,433</td><td>245</td><td>211</td><td>2,644</td><td>2,793</td></tr>
+<tr><td>Substance use disorders</td><td>Isabella anchor 7.2% × binge ratio</td><td>7.2%</td><td>1,149</td><td>1,171</td><td>1,150</td><td>2,299</td><td>2,434</td></tr>
+<tr><td>Mental health</td><td>DEPRESSION × 0.50</td><td>15.2%</td><td>440</td><td>1,071</td><td>1,074</td><td>1,514</td><td>1,502</td></tr>
+<tr><td>COPD</td><td>COPD</td><td>8.2%</td><td>716</td><td>806</td><td>788</td><td>1,504</td><td>1,382</td></tr>
+<tr><td>Stroke</td><td>STROKE</td><td>3.2%</td><td>478</td><td>501</td><td>491</td><td>969</td><td>1,029</td></tr>
+<tr><td>Diabetes</td><td>DIABETES</td><td>10.5%</td><td>418</td><td>311</td><td>275</td><td>693</td><td>714</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td></td><td></td><td><strong>8,086</strong></td><td><strong>5,227</strong></td><td><strong>5,003</strong></td><td><strong>13,089</strong></td><td><strong>13,493</strong></td></tr>
+</tbody>
+</table>
+<div class="tbl-note">Every row satisfies DALY = YLL + YLD. 95% uncertainty interval for the v4.1 total: 12,268–13,787 DALYs (4,000 draws over PLACES 95% confidence limits, substance-use prevalence ×0.7–1.3 and the suppression range for YLL; disability weights not varied). Crude DALY rate: 20,319 per 100,000. Age-standardized DALY rate (US 2000 standard; YLD from PLACES age-adjusted prevalence × the 18+ share of the standard, 0.742): 20,339 per 100,000 (95% UI 18,904–21,501).</div>
+</div>
+<p><strong>What this changes for Isabella.</strong> Little. The total moves from 13,313 (v4) to 13,089, 3.0% below the
+published 13,493 and inside its 95% interval. Cancer YLD falls because the published model used a prevalence of 7.7%
+where PLACES reports 7.1% crude; the published ranking is restored, with mental health #4 and COPD #5 within 1% of
+each other. The larger effect of v4.1 is on the other five counties, where the inconsistent inputs had moved
+mental-health and cardiovascular YLD by factors of two to four. The published value remains the citable headline.</p>
 <h3 class="sub">5.3 Mortality rate comparison</h3>
 <div class="tbl-wrap">
   <table>
@@ -483,7 +515,7 @@ This resolves analytic question AQ1 recorded in the v33 changelog.</p>
 </ol>
 
 <div class="doc-footer">
-  <strong>Document status:</strong> Version 4 of the site, 10 November 2026: headline figures follow the published HREI article (13,493 DALYs), with the age-specific v4 recalculation (13,313) in §5.2a. Earlier internal version 5.0 introduced three methodological upgrades: (1) WHO GHE frontier LE as primary standard; (2) mental health remission adjustment; (3) Monte Carlo uncertainty propagation. Supplementary methods for planning purposes. Not peer-reviewed.<br>
+  <strong>Document status:</strong> Version 4.1 of the site, 11 November 2026: headline figures follow the published HREI article (13,493 DALYs), with the age-specific v4 recalculation (13,313) in §5.2a and the v4.1 harmonized-YLD estimate (13,089, 11 November 2026) in §5.2b. Earlier internal version 5.0 introduced three methodological upgrades: (1) WHO GHE frontier LE as primary standard; (2) mental health remission adjustment; (3) Monte Carlo uncertainty propagation. Supplementary methods for planning purposes. Not peer-reviewed.<br>
   <strong>Author:</strong> Sergey Soshnikov, MD PhD · Public Health Researcher<br>
   <strong>Related pages:</strong> <a href="isabella.html" style="color:var(--blue)">Interactive Dashboard</a> · <a href="isabella_interventions.html" style="color:var(--blue)">Interventions</a> · <a href="isabella_roi.html" style="color:var(--blue)">ROI Analysis</a><br>
   © 2026 Soshnikov
