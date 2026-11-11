@@ -7,7 +7,7 @@
 <title>Washtenaw County (Ann Arbor) Health Burden Dashboard | Lakes Linked</title>
 <meta content="Washtenaw County, Michigan (Ann Arbor) health burden analysis: 58,628 DALYs/year. Cancer #1, substance use #2, CVD #3. Age-standardized method. Planning-grade DALY estimates. Dr. Sergey Soshnikov, MD PhD." name="description"/>
 <meta content="Washtenaw County (Ann Arbor) Health Burden Dashboard | Lakes Linked" property="og:title"/>
-<meta content="58,628 DALYs/yr · Cancer #1, substance use #3. Urban college county. Age-standardized YLL analysis (crude DALY rate)." property="og:description"/>
+<meta content="58,628 DALYs/yr · Cancer #1, substance use #2, CVD #3. Age-standardized 14,708 per 100,000, lowest of six counties. Seven condition groups, Lakes Linked v4.1." property="og:description"/>
 <meta content="https://lakeslinked.com/washtenaw.html" property="og:url"/>
 <meta content="website" property="og:type"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -125,7 +125,7 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 .rec-b p{font-size:12px;color:var(--muted);line-height:1.5;}
 .rec-ev{font-size:11px;font-weight:700;color:var(--teal);background:#f0fdfa;border-radius:6px;padding:3px 8px;white-space:nowrap;align-self:start;}
 </style>
-<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><meta content="Sergey Soshnikov, MD PhD — Lakes Linked" name="author"/><link href="https://lakeslinked.com/washtenaw.html" rel="canonical"/><meta content="https://lakeslinked.com/og-ai-public-health.png" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://lakeslinked.com/og-ai-public-health.png" name="twitter:image"/></head>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><meta content="Sergey Soshnikov, MD PhD — Lakes Linked" name="author"/><link href="https://lakeslinked.com/washtenaw.html" rel="canonical"/><meta content="https://lakeslinked.com/og-washtenaw.png" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://lakeslinked.com/og-washtenaw.png" name="twitter:image"/></head>
 <body>
 <!-- Navigation -->
 <nav class="sitenav">
@@ -180,9 +180,9 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 </div>
 <div class="hdiv"></div>
 <div class="hstat">
-<div class="num">8,251</div>
-<div class="lbl">Age-std YLL / 100k</div>
-<div class="cmp good">Lowest of the analyzed urban counties</div>
+<div class="num">14,708</div>
+<div class="lbl">Age-std DALYs / 100k</div>
+<div class="cmp good">Lowest of the six analyzed counties</div>
 </div>
 <div class="hdiv"></div>
 <div class="hstat">
@@ -214,9 +214,9 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <!-- KPI STRIP -->
 <div class="kpi-strip" id="sec-kpi">
 <div class="kpi" style="--accent:var(--purple)">
-<div class="kpi-num">8,251<span style="font-size:13px;font-weight:600;color:var(--muted)">/100k</span></div>
-<div class="kpi-label">Age-standardized YLL rate — the cross-county comparison metric</div>
-<div class="kpi-delta good">Ann Arbor is the healthiest analyzed urban county (Wayne 14,177)</div>
+<div class="kpi-num">14,708<span style="font-size:13px;font-weight:600;color:var(--muted)">/100k</span></div>
+<div class="kpi-label">Age-standardized DALY rate (95% range 14,172–15,676), the cross-county comparison metric</div>
+<div class="kpi-delta good">Lowest of six analyzed counties (Wayne 20,991; Clare 22,122)</div>
 </div>
 <div class="kpi" style="--accent:var(--red)">
 <div class="kpi-num">548</div>
@@ -245,7 +245,7 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 </div>
 </div>
 
-<div class="ll-share-block" data-county="Washtenaw County (Ann Arbor)" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/washtenaw.html" data-value="58,628" style="margin:20px 0;">
+<div class="ll-share-block" data-share-text="Washtenaw County (Ann Arbor), Michigan: 58,628 DALYs a year. Age-standardized, 14,708 per 100,000, the lowest of six counties analyzed. Leading causes: cancer, substance use, heart disease. Seven condition groups (cancer, heart disease, stroke, COPD, diabetes, mental health, substance use), 2020 to 2022; YLL all ages, YLD adults 18+. Planning estimates from CDC WONDER, CDC PLACES 2024 and IHME GBD weights. Lakes Linked v4.1." data-county="Washtenaw County (Ann Arbor)" data-metric="disease burden" data-unit="DALYs/yr" data-url="https://lakeslinked.com/washtenaw.html" data-value="58,628" style="margin:20px 0;">
 <span class="ll-share-label">Share this dashboard:</span>
 <button class="ll-share-btn ll-share-btn--linkedin" type="button"><span class="ll-share-icon">in</span> LinkedIn</button>
 <button class="ll-share-btn ll-share-btn--x" type="button"><span class="ll-share-icon">𝕏</span> Post</button>
@@ -340,7 +340,7 @@ a.ccb-county:hover{border-bottom-color:var(--purple);}
 <h3>Method &amp; comparability notes (read before comparing counties)</h3>
 <ul>
 <li><strong>One method for all six counties (v4.1, November 2026).</strong> All six counties now use age-specific YLL on the GBD 2019 reference life table, observed CDC WONDER 2020–22 deaths by age and CDC WONDER person-year denominators, so age-standardized rates can be compared directly. See <a href="rural_vs_urban.html">Six counties on one basis</a>. Rankings are point estimates; uncertainty intervals for all counties are in preparation.</li>
-<li><strong>"Age-standardized" applies to YLL.</strong> Only the mortality (YLL) rate is genuinely age-standardized (8,251/100k). YLD has no age-specific prevalence in CDC PLACES, so it is reported as a crude rate (7,059/100k). We show them separately rather than blend them under one label.</li>
+<li><strong>Age standardization covers YLL and YLD (v4.1).</strong> YLL is standardized directly by age group (8,251/100k). YLD is standardized with CDC PLACES age-adjusted prevalence for adults (6,456/100k); together they give 14,708 age-standardized DALYs per 100,000. YLD covers adults 18+ only.</li>
 <li><strong>Substance-use prevalence for YLD is indicative, not measured.</strong> CDC PLACES has no SUD measure, so the SUD disability component uses a Michigan-derived rate applied uniformly; it does not reflect local variation. SUD mortality (the YLL part) is directly observed.</li>
 <li><strong>Substance-use and suicide mortality overlap slightly.</strong> Drug-poisoning deaths with suicidal intent (X60–X64) appear in both categories, so the sum of those two causes' YLL is a modest upper bound.</li>
 <li><strong>Ann Arbor ⊆ Washtenaw County.</strong> Mortality is only available at county resolution; this page describes Washtenaw County, which contains Ann Arbor.</li>

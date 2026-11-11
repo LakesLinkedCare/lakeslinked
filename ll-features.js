@@ -19,17 +19,16 @@
    *
    * EDIT: Customize the template strings for your counties.
    */
-  function buildShareText(countyName, metric, value, unit, pageUrl) {
+  function buildShareText(countyName, metric, value, unit, pageUrl, custom) {
     // UTM-tagged URL for tracking
     var utmUrl = pageUrl + '?utm_source=linkedin&utm_medium=social&utm_campaign=county_insight';
-
-    return (
-      'In ' + countyName + ', ' + metric + ' is estimated to contribute approximately ' +
-      value + ' ' + unit + ' of disease burden annually — ' +
-      'a planning-grade estimate based on CDC PLACES, CDC WONDER, and IHME GBD 2021 disability weights. ' +
-      'Lakes Linked translates public health data into county burden dashboards for CHNA, grant writing, and rural health planning. ' +
-      'Explore the dashboard: ' + utmUrl
-    );
+    // Preferred: page-specific text kept in data-share-text (updated with every site version)
+    if (custom) return custom + ' Explore the dashboard: ' + utmUrl;
+    // Fallback: generic text that stays correct without a number
+    var lead = value ? (countyName + ': ' + value + ' ' + unit + ', seven condition groups, 2020 to 2022. ')
+                     : (countyName + ': county disease burden for seven condition groups, 2020 to 2022. ');
+    return lead + 'Planning-grade estimates from CDC WONDER, CDC PLACES and IHME GBD disability weights; YLL all ages, YLD adults 18+. ' +
+      'Lakes Linked builds county burden dashboards for CHNA, grant writing and rural health planning. Explore the dashboard: ' + utmUrl;
   }
 
   /**
@@ -76,7 +75,7 @@
         var unit   = ctx.dataset.unit   || 'DALYs/yr';
         var pageUrl= ctx.dataset.url    || window.location.href.split('?')[0];
 
-        var text  = buildShareText(county, metric, value, unit, pageUrl);
+        var text  = buildShareText(county, metric, value, unit, pageUrl, ctx.dataset.shareText || '');
         var utmUrl= pageUrl + '?utm_source=social&utm_medium=share&utm_campaign=county_insight';
 
         /* ── LinkedIn ── */
@@ -90,7 +89,7 @@
         /* ── X / Twitter ── */
         else if (btn.classList.contains('ll-share-btn--x')) {
           var tweetUrl = 'https://x.com/intent/tweet?text=' +
-                         encodeURIComponent(text.slice(0, 280));
+                         encodeURIComponent(text.length <= 280 ? text : (text.split('. ')[0] + '. ' + pageUrl));
           window.open(tweetUrl, '_blank', 'noopener,width=600,height=400');
         }
 
