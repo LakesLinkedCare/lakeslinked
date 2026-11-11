@@ -415,12 +415,12 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
 </div>
 <div class="econ-m">
 <h4>Value of Statistical Life (HHS 2024)</h4>
-<div class="econ-big" style="color:var(--purple)">~$3.78B</div>
-<div class="econ-rng">Range: $3.02B – $4.53B (±20%) · ~391 deaths × $9.66M</div>
-<div class="econ-desc">Social willingness to pay to prevent deaths. HHS 2024 VSL $13.1M income-adjusted for Isabella County: $13.1M × (46,000/80,000)^0.55 = $9.66M. The published article (July 2026) states $11.2M and $4.38B; the site corrects the arithmetic as of November 2026. <strong>Method used by EPA, DOT, HHS for policy analysis.</strong></div>
+<div class="econ-big" style="color:var(--purple)">~$5.51B</div>
+<div class="econ-rng">Range: $4.41B – $6.62B (±20%) · ~391 deaths × $14.1M</div>
+<div class="econ-desc">Social willingness to pay to prevent deaths. VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. The published article (July 2026) used an income-adjusted $11.2M and reports $4.38B. <strong>Method used by EPA, DOT, HHS for policy analysis.</strong></div>
 </div>
 </div>
-<div class="econ-note">VSL does not change when you toggle the LE reference - it is based on deaths, not DALYs. Human Capital estimate updates live. Source: HHS ASPE Standard Values 2026; Michigan LE: MDHHS <a href="https://www.mdch.state.mi.us/osr/deaths/lifeUSMI.asp" target="_blank">lifeUSMI.asp</a></div>
+<div class="econ-note">VSL does not change when you toggle the LE reference - it is based on deaths, not DALYs. Human Capital estimate updates live. Source: HHS ASPE Standard Values 2026; Michigan LE: MDHHS <a href="https://vitalstats.michigan.gov/osr/deaths/lifeUSMI.asp" target="_blank">lifeUSMI.asp</a></div>
 </div>
 <!-- DALY Table -->
 <div class="card" id="sec-table" style="margin-bottom:18px">
@@ -533,7 +533,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
 </div>
 <div class="finding" style="--accent:var(--red)">
 <h4>🚨 Stroke Mortality 49% Above State</h4>
-<p>59.4 vs Michigan 39.9/100k - largest relative gap. Associated with hypertension, poverty-related access barriers, limited neurology. Each prevented death: ~$9.66M societal cost (VSL). <a href="isabella_interventions.html#cvd" style="color:var(--red)">→ interventions</a></p>
+<p>59.4 vs Michigan 39.9/100k - largest relative gap. Associated with hypertension, poverty-related access barriers, limited neurology. Each prevented death: ~$14.1M societal cost (VSL). <a href="isabella_interventions.html#cvd" style="color:var(--red)">→ interventions</a></p>
 </div>
 <div class="finding" style="--accent:var(--amber)">
 <h4>⚠ Poverty as Root Driver</h4>
@@ -615,6 +615,7 @@ a.ccb-county:hover{border-bottom-color:var(--blue);}
 <p style="font-size:11px;color:var(--muted);margin-bottom:24px;">Source: CDC PLACES 2020, 2022, 2023, 2025 releases (data years 2017–2023). BRFSS-based model estimates, FIPS 26073. <a href="isabella_trends.html" style="color:var(--blue);">View all 16 indicators →</a></p>
 </div><!-- end .page -->
 <footer>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
 <span>Isabella County Health Burden Dashboard · June 2026 · Data: CDC PLACES 2024, CDC WONDER 2020–22</span>
 <span>Sergey Soshnikov, MD PhD · Public Health Researcher</span>
 <div class="ll-footer-trust" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:.73rem;color:#64748b;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;">
@@ -648,7 +649,7 @@ const MORT = {
   us:      [723.6,163.6,149.1,39.7,37.1,21.4],
 };
 const GDP_PC = 62000;
-const VSL = 9660000;    // HHS 2024 $13.1M base x (46,000/80,000)^0.55 = $9.66M; published v31 printed $11.2M (corrected Nov 2026)
+const VSL = 14100000;   // HHS ASPE 2026 central VSL, 2025 dollars, uniform across counties (site v4, 11 Nov 2026); published article used $11.2M
 const DEATHS_TOTAL = 461;
 
 // ═══════════════════════════════════════════
@@ -745,7 +746,7 @@ function updateAll() {
   // KPIs
   animVal('kpi-econ', fmtMoney(ev));
   document.getElementById('kpi-econ-note').textContent = `(${econLabel})`;
-  document.getElementById('kpi-econ-delta').textContent = state.econ==='hc' ? 'Indirect productivity losses only' : '~391 deaths × $9.66M (income-adjusted)';
+  document.getElementById('kpi-econ-delta').textContent = state.econ==='hc' ? 'Indirect productivity losses only' : '~391 deaths × $14.1M (HHS 2026)';
 
   // Chart subtitles
   document.getElementById('chart1-sub').textContent = `${leLabel} · sorted by burden`;

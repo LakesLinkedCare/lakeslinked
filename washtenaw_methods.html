@@ -71,7 +71,7 @@ a{color:var(--blue);}
 <h3>2.4 Population denominators — Census PEP via CDC WONDER</h3>
 <p>Population by county × age group is drawn from the <strong>CDC WONDER Single-Race Population Estimates 2020–2022</strong> (the Census Bureau's Population Estimates Program — the same denominators CDC uses for official age-adjusted death rates). We sum 2020, 2021 and 2022 to obtain person-years matching the 3-year pooled deaths, then annualize. Five-year population bands are collapsed to the ten-year mortality bands.</p>
 <h3>2.5 Economic parameters</h3>
-<p>Michigan GDP per capita $62,000 (BEA) for the human-capital method; income-adjusted HHS value of a statistical life $10.5M for the VSL method. Comorbidity correction factor 0.949 (Gaussian-copula net-YLD correction), reused from the Isabella pipeline.</p>
+<p>Michigan GDP per capita $62,000 (BEA) for the human-capital method; a value of a statistical life of $14.1M for the VSL method (HHS ASPE 2026 central value, 2025 dollars, applied uniformly to all six counties). Through October 2026 this page used $10.5M, the earlier Isabella value. Comorbidity correction factor 0.949 (Gaussian-copula net-YLD correction), reused from the Isabella pipeline.</p>
 
 <h2>3. Methods</h2>
 <h3>3.1 DALY framework</h3>
@@ -92,7 +92,7 @@ a{color:var(--blue);}
 <h3>3.6 Suppression handling</h3>
 <p>CDC WONDER suppresses cell counts of 1–9. Suppressed chronic-disease cells at young ages (&lt;45), where the true count is near zero, are imputed at 1; suppressed substance-use/suicide cells are imputed at the midpoint 5. A 0-to-9 sensitivity band brackets the choice; the swing on the county total is under ±2%.</p>
 <h3>3.7 Economic burden</h3>
-<p>Human-capital: DALYs × $62,000. VSL: annual deaths × $10.5M (mortality only). Both are planning-grade, not audited fiscal figures.</p>
+<p>Human-capital: DALYs × $62,000. VSL: annual deaths × $14.1M (mortality only). Both are planning-grade, not audited fiscal figures.</p>
 
 <h2>4. Limitations &amp; comparability</h2>
 <div class="callout blue"><strong>Comparability with this site's rural counties.</strong> Washtenaw and Wayne use the v2 age-standardized method; Isabella, Clare, Midland and Gratiot use the earlier v1 crude method (fixed reference life expectancy; substance-use and mental-health mortality suppressed and excluded). <strong>Rates across the two groups are not directly comparable and must not be ranked against one another.</strong> Compare within a method group only, or see the dedicated <a href="rural_vs_urban.html">Rural vs Urban</a> page, which discusses the seam explicitly.</div>
@@ -120,10 +120,37 @@ a{color:var(--blue);}
 </table>
 <p class="src">Age-standardized YLL rate 8,251/100k · crude YLD rate 8,351/100k · crude DALY rate 17,235/100k · population 367,730 (2020–22 average).</p>
 
+
+<!-- v4 methodology, November 2026 -->
+<h2 class="sec" id="v4-methods"><span style="color:var(--blue);margin-right:6px">v4</span> Methodology update: age-specific YLL and unified economics (November 2026)</h2>
+<p>Version 4 puts all six Lakes Linked counties on one basis. Washtenaw County was already computed with age-specific YLL (v2, July 2026); the burden totals are unchanged in v4. What changed is the economic layer: a single VSL formula is now applied to every county, replacing the $10.5M placeholder carried over from the Isabella analysis.</p>
+<p><strong>Years of life lost.</strong> YLL = Σ<sub>a</sub> deaths<sub>a</sub> × RLE(a). Deaths by ten-year age group are taken from CDC WONDER Underlying Cause of Death 2020–2022 (113 Cause List; single-race population files) and annualized by dividing by three. RLE(a) is remaining life expectancy at the age-band midpoint from the GBD 2019 reference life table (life expectancy at birth 88.87 years; <a href="https://doi.org/10.6069/1D4Y-YQ37">doi:10.6069/1D4Y-YQ37</a>). This replaces the v1 planning approximation deaths × (terminal age − mean age at death).</p>
+<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 367,730. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>8,251 per 100,000</strong>. The crude DALY rate is <strong>17,235 per 100,000</strong>.</p>
+
+<p><strong>Years lived with disability</strong> are unchanged from the earlier version: CDC PLACES prevalence, IHME GBD 2021 disability weights at moderate severity, mental-health remission factor 0.50, and the comorbidity correction factor 0.949.</p>
+<p><strong>Economics.</strong> Human capital = DALYs × $62,000 (Michigan GDP per capita, BEA 2024). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. Human capital and VSL are alternative valuations and are never added.</p>
+<div class="tbl-wrap">
+<table>
+<caption>Table v4. Washtenaw County, v4 results (November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
+<thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>Human capital</th><th>VSL</th></tr></thead>
+<tbody>
+<tr><td>Cancer (C00–C97)</td><td>548.3</td><td>11,113</td><td>6,192</td><td>17,305</td><td>$1.07B</td><td>$7.73B</td></tr>
+<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>616.3</td><td>9,648</td><td>5,638</td><td>15,286</td><td>$948M</td><td>$8.69B</td></tr>
+<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>133.0</td><td>5,417</td><td>6,723</td><td>12,140</td><td>$753M</td><td>$1.88B</td></tr>
+<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>47.0</td><td>2,137</td><td>5,509</td><td>7,647</td><td>$474M</td><td>$663M</td></tr>
+<tr><td>COPD (J40–J47 query; labelled J44)</td><td>94.3</td><td>1,558</td><td>2,987</td><td>4,544</td><td>$282M</td><td>$1.33B</td></tr>
+<tr><td>Stroke (I60–I69)</td><td>156.7</td><td>1,992</td><td>2,338</td><td>4,331</td><td>$269M</td><td>$2.21B</td></tr>
+<tr><td>Diabetes (E10–E14)</td><td>40.0</td><td>805</td><td>1,322</td><td>2,126</td><td>$132M</td><td>$564M</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td><strong>1,635.6</strong></td><td><strong>32,670</strong></td><td><strong>30,709</strong></td><td><strong>63,379</strong></td><td><strong>$3.93B</strong></td><td><strong>$23.06B</strong></td></tr>
+</tbody>
+</table>
+<div class="tbl-note">Computation: <code>daly_county.py</code> (Lakes Linked repository), inputs <code>wonder_113cause_by_age_4counties_2020_2022</code>, <code>d191_pop_5yr_6counties_2020_2022</code>; results file <code>results_v4_2026-11-10.json</code>, economics <code>econ_v4_2026-11-10.json</code>. Cross-county comparison on this basis: <a href="rural_vs_urban.html">Six counties on one basis</a>.</div>
+</div>
 <h2>6. Reproducibility &amp; verification</h2>
 <p>The pipeline (Python) parses the raw CDC WONDER exports, applies the formulas above, and writes a machine-readable results file. An independent agent re-parsed the raw death files and re-implemented the engine from scratch, reproducing all 56 cause × county × metric cells and every total to the integer. Two suppression-sensitivity runs (0 and 9) bracket the central estimate. Data vintages: CDC WONDER 2020–2022, CDC PLACES 2024, CDC Single-Race Population Estimates 2020–2022, IHME GBD 2021.</p>
 </div>
 <footer>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
 <span>Washtenaw County, Michigan (Ann Arbor) · FIPS 26161 · Methods v2 age-standardized · July 2026 · Sergey Soshnikov, MD PhD · Lakes Linked</span>
 </footer>
 <script src="ll-features.js"></script></body>

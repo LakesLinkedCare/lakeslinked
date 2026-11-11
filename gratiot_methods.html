@@ -268,19 +268,42 @@ YLD  = Prevalent Cases × Disability Weight (DW)<br>
   <div class="method-section" id="sec-vsl">
     <h2 id="value-of-statistical-life-vsl-amp-econ">6. Value of Statistical Life (VSL) &amp; Economic Burden</h2>
     <p><strong>Human Capital (HC) method:</strong> HC burden = total DALYs × GDP per capita. GDP per capita used: $62,000 (2024 US GDP/capita, BEA). This represents the expected productivity loss from one DALY (one year of full health lost). HC burden is the conservative floor — it captures only monetizable productivity losses.</p>
-    <p><strong>VSL method:</strong> The HHS base VSL (2026) is $13,400,000 (2020 USD). This is income-adjusted for Gratiot County using the ASPE elasticity framework:</p>
+    <p><strong>VSL method (v4, November 2026):</strong> VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>.</p>
     <div class="code-block">
-VSL_Gratiot = VSL_national × (Median_Income_Gratiot / Median_Income_US)^0.5<br>
-            = $13,400,000 × (63,556 / 72,875)^0.5<br>
-            = $13,400,000 × 0.9236<br>
-            = $12,370,062
+VSL burden = 330 observed deaths × $14,100,000 = $4,647M
     </div>
-    <p>VSL is a mortality-only measure. VSL burden = 296 estimated deaths × $12,370,062 = $3,657M. VSL does not capture morbidity burden (YLD component). Total economic burden combining HC + VSL is presented as a range: $467M (HC, conservative) to $4.1B (HC + VSL mortality).</p>
+    <p>VSL is a mortality-only measure and does not capture the YLD component. Human capital ($649M) and VSL ($4,647M) are alternative valuations of overlapping losses and are reported side by side, never added. The v1 (June 2026) figures were 296 deaths × $12,370,062 = $3,657M, with HC $467M.</p>
   </div>
 
   <!-- 7. Comorbidity Heatmap -->
   <div class="method-section" id="sec-comorbidity">
-    <h2 id="comorbidity-heatmap-methodology">7. Comorbidity Heatmap Methodology</h2>
+    
+<!-- v4 methodology, November 2026 -->
+<h2 class="sec" id="v4-methods"><span style="color:var(--blue);margin-right:6px">v4</span> Methodology update: age-specific YLL and unified economics (November 2026)</h2>
+<p>Version 4 puts all six Lakes Linked counties on one basis. For Gratiot County this replaced the v1 planning estimate of 7,533 (Michigan LE, mean-age YLL, rural-adjusted state mortality rates); the v1 frontier sensitivity projected ~10,700 with the results below.</p>
+<p><strong>Years of life lost.</strong> YLL = Σ<sub>a</sub> deaths<sub>a</sub> × RLE(a). Deaths by ten-year age group are taken from CDC WONDER Underlying Cause of Death 2020–2022 (113 Cause List; single-race population files) and annualized by dividing by three. RLE(a) is remaining life expectancy at the age-band midpoint from the GBD 2019 reference life table (life expectancy at birth 88.87 years; <a href="https://doi.org/10.6069/1D4Y-YQ37">doi:10.6069/1D4Y-YQ37</a>). This replaces the v1 planning approximation deaths × (terminal age − mean age at death).</p>
+<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 41,345. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>12,457 per 100,000</strong>. The crude DALY rate is <strong>25,336 per 100,000</strong>.</p>
+<p><strong>Suppression handling.</strong> CDC WONDER suppresses cells with 1–9 deaths. Suicide (the mortality component of mental health) is suppressed in every age band for this county, so the known three-year county total is distributed across age bands using the Washtenaw County age shape as a donor. Drug- and alcohol-induced deaths (substance use) are partly suppressed; suppressed cells are imputed at the midpoint 5 with a 0–9 band carried into the uncertainty range. Chronic-disease cells suppressed below age 45 are imputed at 1. The rural-adjustment multipliers of v1 are no longer used anywhere.</p>
+<p><strong>Years lived with disability</strong> are unchanged from the earlier version: CDC PLACES prevalence, IHME GBD 2021 disability weights at moderate severity, mental-health remission factor 0.50, and the comorbidity correction factor 0.949.</p>
+<p><strong>Economics.</strong> Human capital = DALYs × $62,000 (Michigan GDP per capita, BEA 2024). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. Human capital and VSL are alternative valuations and are never added.</p>
+<div class="tbl-wrap">
+<table>
+<caption>Table v4. Gratiot County, v4 results (November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
+<thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>Human capital</th><th>VSL</th></tr></thead>
+<tbody>
+<tr><td>Cancer (C00–C97)</td><td>93.0</td><td>1,916</td><td>801</td><td>2,717</td><td>$168M</td><td>$1.31B</td></tr>
+<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>144.0</td><td>2,248</td><td>175</td><td>2,423</td><td>$150M</td><td>$2.03B</td></tr>
+<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>6.0</td><td>274</td><td>1,236</td><td>1,510</td><td>$94M</td><td>$85M</td></tr>
+<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>20.0</td><td>772</td><td>735</td><td>1,507</td><td>$93M</td><td>$282M</td></tr>
+<tr><td>COPD (J40–J47 query; labelled J44)</td><td>32.3</td><td>532</td><td>552</td><td>1,084</td><td>$67M</td><td>$455M</td></tr>
+<tr><td>Stroke (I60–I69)</td><td>23.3</td><td>376</td><td>371</td><td>747</td><td>$46M</td><td>$329M</td></tr>
+<tr><td>Diabetes (E10–E14)</td><td>11.0</td><td>288</td><td>199</td><td>487</td><td>$30M</td><td>$155M</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td><strong>329.6</strong></td><td><strong>6,406</strong></td><td><strong>4,069</strong></td><td><strong>10,475</strong></td><td><strong>$649M</strong></td><td><strong>$4.65B</strong></td></tr>
+</tbody>
+</table>
+<div class="tbl-note">Computation: <code>daly_county.py</code> (Lakes Linked repository), inputs <code>wonder_113cause_by_age_4counties_2020_2022</code>, <code>d191_pop_5yr_6counties_2020_2022</code>; results file <code>results_v4_2026-11-10.json</code>, economics <code>econ_v4_2026-11-10.json</code>. Cross-county comparison on this basis: <a href="rural_vs_urban.html">Six counties on one basis</a>.</div>
+</div>
+<h2 id="comorbidity-heatmap-methodology">7. Comorbidity Heatmap Methodology</h2>
     <p><strong>Method:</strong> The comorbidity co-occurrence matrix uses the <em>independence model</em>: expected co-occurrence = P(Condition A) × P(Condition B) × N, where N = 10,000 adults (per-10,000 normalization for visual clarity). This is a planning-grade estimate that assumes independence between conditions — in reality, many comorbidity pairs are positively correlated (e.g., diabetes + CVD, SUD + MH), meaning true co-occurrence is higher than the independence estimate.</p>
     <p><strong>Gratiot County prevalences used:</strong></p>
     <ul>
@@ -329,6 +352,7 @@ VSL_Gratiot = VSL_national × (Median_Income_Gratiot / Median_Income_US)^0.5<br>
 </div><!-- end .main -->
 
 <footer>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
   <span>Gratiot County Methods Supplement · FIPS 26057 · June 2026 · Lakes Linked</span>
   <span>Sergey Soshnikov, MD PhD · Assistant Professor, Public Health · Lakes Linked</span>
 </footer>

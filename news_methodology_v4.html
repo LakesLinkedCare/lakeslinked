@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How we rebuilt the Lakes Linked methodology (v4, November 2026) | Lakes Linked</title>
+<meta content="Lakes Linked v4: age-specific years of life lost on the GBD 2019 reference life table, observed CDC WONDER deaths by age, one denominator and one national VSL for six Michigan counties. What changed, how the numbers moved, what we checked, and what remains uncertain." name="description"/>
+<meta content="https://lakeslinked.com/news_methodology_v4.html" property="og:url"/>
+<meta content="How we rebuilt the Lakes Linked methodology (v4, November 2026)" property="og:title"/>
+<meta content="Lakes Linked v4: age-specific years of life lost on the GBD 2019 reference life table, observed CDC WONDER deaths by age, one denominator and one national VSL for six Michigan counties. What changed, how the numbers moved, what we checked, and what remains uncertain." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://lakeslinked.com/logo.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="ll-features.css" rel="stylesheet"/><meta content="index, follow" name="robots"/><link href="https://lakeslinked.com/news_methodology_v4.html" rel="canonical"/>
+<style>
+:root{--navy:#0f1f3d;--blue:#1a56db;--teal:#0d9488;--red:#dc2626;--amber:#d97706;--purple:#7c3aed;--green:#059669;--slate:#64748b;--bg:#f8fafc;--surface:#fff;--border:#e2e8f0;--muted:#64748b;--radius:10px;--shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#0f172a;line-height:1.6;}
+.sitenav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px;position:sticky;top:0;z-index:100;}
+.sitenav .brand{color:#fff;font-size:13px;font-weight:700;text-decoration:none;opacity:.9;letter-spacing:.02em;display:flex;align-items:center;gap:10px;}
+.sitenav a.navlink{color:rgba(255,255,255,.7);font-size:12.5px;padding:6px 12px;border-radius:6px;text-decoration:none;}
+.sitenav a.navlink:hover,.sitenav a.navlink.active{background:rgba(255,255,255,.12);color:#fff;}
+.nico{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;margin-right:5px;}
+.county-group{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:3px;}
+.county-group .navlink{border-radius:5px;}
+.hero{background:linear-gradient(130deg,#0f2d1f 0%,#1e293b 50%,#312e81 100%);padding:36px 28px 30px;}
+.hero-inner{max-width:1100px;margin:auto;}
+.hero h1{font-size:27px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:5px;}
+.hero .sub{color:rgba(255,255,255,.6);font-size:13px;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px 60px;}
+.callout{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid var(--amber);border-radius:8px;padding:14px 16px;margin:0 0 22px;font-size:12.5px;color:#78350f;line-height:1.6;}
+.card{background:var(--surface);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);margin-bottom:18px;}
+.card h3{font-size:15px;font-weight:700;margin-bottom:3px;}
+.card .csub{font-size:12px;color:var(--muted);margin-bottom:14px;}
+.grouplbl{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:20px;margin-bottom:8px;}
+.gl-urban{background:rgba(124,58,237,.12);color:var(--purple);}
+.gl-rural{background:rgba(26,86,219,.1);color:var(--blue);}
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+thead th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-size:11px;}
+tbody td{padding:8px 10px;border-bottom:1px solid var(--border);}
+tbody tr:nth-child(even){background:#f8fafc;}
+.big-metric{font-weight:800;}
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:6px;}
+.finding{background:var(--bg);border-radius:8px;padding:15px;border-left:3px solid var(--accent,var(--purple));}
+.finding h4{font-size:13px;font-weight:700;margin-bottom:4px;}
+.finding p{font-size:12px;color:#475569;line-height:1.55;}
+.disc{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.6;}
+footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;color:var(--muted);}
+a{color:var(--blue);}
+</style>
+<style>
+.art{max-width:820px;margin:0 auto;}
+.art p{font-size:15px;line-height:1.75;color:#1e293b;margin:0 0 14px;}
+.art h2{font-size:20px;font-weight:800;letter-spacing:-.01em;margin:30px 0 10px;color:var(--navy);}
+.art h3{font-size:15px;font-weight:700;margin:18px 0 6px;}
+.art ul{margin:0 0 14px 20px;font-size:15px;line-height:1.7;color:#1e293b;}
+.art .lede{font-size:17px;line-height:1.7;color:#0f172a;}
+.art .meta{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+.tbl{overflow-x:auto;margin:6px 0 8px;}
+.tbl table{font-size:12.5px;}
+.tbl td{vertical-align:top;}
+.note{font-size:11.5px;color:var(--muted);line-height:1.55;margin:4px 0 18px;}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:8px 0 18px;}
+.kp div{background:var(--surface);border-radius:10px;box-shadow:var(--shadow);padding:14px;}
+.kp b{display:block;font-size:22px;color:var(--navy);}
+.kp span{font-size:12px;color:var(--muted);}
+</style>
+</head>
+<body>
+<nav class="sitenav">
+<a class="brand" href="index.html"><img alt="Lakes Linked" src="logos/lakeslinked_dark_bg_trimmed.png" style="height:34px;width:auto;"/></a>
+<div class="links" style="display:flex;gap:4px;align-items:center;">
+<span style="font-size:10px;color:rgba(255,255,255,.35);padding:0 4px;">Counties:</span>
+<div class="county-group">
+<a class="navlink" href="isabella.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Isabella</a>
+<a class="navlink" href="clare.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Clare</a>
+<a class="navlink" href="midland.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Midland</a>
+<a class="navlink" href="gratiot.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Gratiot</a>
+<a class="navlink" href="washtenaw.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Washtenaw</a>
+<a class="navlink" href="wayne.html"><svg class="nico" viewbox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path><circle cx="12" cy="11" r="2"></circle></svg>Wayne</a>
+</div>
+<span style="color:rgba(255,255,255,.2);padding:0 4px;">|</span>
+<a class="navlink" href="index.html"><svg class="nico" viewbox="0 0 24 24"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="3"></rect><rect height="7" rx="1.5" width="7" x="3" y="14"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect></svg>Portal</a>
+<a class="navlink" href="rural_vs_urban.html"><svg class="nico" viewbox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg>Rural vs Urban</a>
+<a class="navlink active" href="news.html"><svg class="nico" viewbox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>News</a>
+</div>
+</nav>
+<div class="hero">
+<div class="hero-inner">
+<h1>How we rebuilt the Lakes Linked methodology (v4, November 2026)</h1>
+<p class="sub">News · Methods · Sergey Soshnikov, MD PhD · 11 November 2026</p>
+</div>
+</div>
+<div class="wrap"><div class="art">
+
+<p class="lede">Lakes Linked started as a planning tool: a fast, transparent way to put disease burden for a Michigan county on one page, using only public data. In November 2026 we rebuilt the engine underneath it. All six counties on the site now run on one method, one set of denominators and one value for the economic burden of a death. This note explains what changed, how the numbers moved, what we checked, and what is still uncertain.</p>
+
+<div class="kp">
+<div><b>6</b><span>counties on one basis</span></div>
+<div><b>1</b><span>YLL method and one denominator source</span></div>
+<div><b>$14.1M</b><span>one national value per statistical life</span></div>
+<div><b>1.3%</b><span>gap between v4 and the published Isabella estimate</span></div>
+</div>
+
+<h2>What changed</h2>
+<div class="tbl"><table>
+<thead><tr><th>Component</th><th>Before (v1, June 2026)</th><th>Now (v4, November 2026)</th><th>Why it is better</th></tr></thead>
+<tbody>
+<tr><td><strong>Years of life lost</strong></td><td>Deaths × (terminal age − mean age at death), a planning approximation</td><td>Sum over ten-year age groups of deaths × remaining life expectancy at the band midpoint, from the GBD 2019 reference life table</td><td>This is the standard GBD calculation. It no longer treats every death in a cause group as if it happened at the group's average age.</td></tr>
+<tr><td><strong>Mortality source</strong></td><td>Michigan state rates multiplied by rural adjustment factors</td><td>Observed county deaths by age group from CDC WONDER Underlying Cause of Death, 2020–2022</td><td>Counts come from death certificates in the county, not from an assumption about how a county differs from the state.</td></tr>
+<tr><td><strong>Suppressed cells</strong></td><td>Handled differently in each county; some causes dropped</td><td>One rule everywhere: chronic-disease cells under age 45 set to 1; substance-use cells set to 5 with a 0–9 range; suicide distributed from the known three-year county total using an age shape borrowed from Washtenaw County</td><td>Suppression is handled the same way in every county and its assumptions are stated.</td></tr>
+<tr><td><strong>Denominators</strong></td><td>Single-year census or ACS counts, varying by page</td><td>CDC WONDER single-race population estimates 2020–2022, as person-years per year</td><td>Numerator and denominator come from the same system and the same years.</td></tr>
+<tr><td><strong>Rates</strong></td><td>Crude only for some counties, age-standardized only for others</td><td>Both for every county: crude DALYs per 100,000 and age-standardized YLL per 100,000 (US 2000 standard population)</td><td>Counties with very different age structures, from a college town to a retirement-age county, can be compared.</td></tr>
+<tr><td><strong>County comparison</strong></td><td>Published with a warning not to rank rural against urban counties</td><td>One table, one basis, six counties, classified by the OMB 2023 metro / nonmetro delineation</td><td>The comparison is now methodologically fair, and county types follow the federal definition.</td></tr>
+<tr><td><strong>Value of a statistical life</strong></td><td>Five different values across the site ($9.2M to $12.4M), from different base years and income adjustments</td><td>One national value for every county: $14.1M per statistical life (HHS ASPE 2026, 2025 dollars). Income-adjusted values appear only as a sensitivity analysis</td><td>HHS adjusts this value for income over time, not across places. A lower value for lower-income counties would count their deaths as worth less.</td></tr>
+<tr><td><strong>Combining valuations</strong></td><td>One table added human capital and VSL into a single total</td><td>Human capital and VSL reported side by side, never added</td><td>Both value the same deaths; adding them double counts.</td></tr>
+<tr><td><strong>Table integrity</strong></td><td>Several tables whose rows did not add up to the printed total</td><td>Every row satisfies DALY = YLL + YLD; every column sums to its total</td><td>A reader can check any table with a calculator.</td></tr>
+<tr><td><strong>Versioning</strong></td><td>No version marks on most pages</td><td>A v4 stamp on every county page, a version history, and earlier v1 tables kept and labelled</td><td>It is always clear which numbers are current and what they replaced.</td></tr>
+</tbody></table></div>
+<p class="note">Years lived with disability are computed as before: CDC PLACES prevalence, IHME GBD 2021 disability weights, a mental-health remission factor of 0.50 and a comorbidity correction factor of 0.949. Both factors were derived for Isabella County and are applied to the other five counties as an assumption.</p>
+
+<h2>How the numbers moved</h2>
+<div class="tbl"><table>
+<thead><tr><th>County</th><th>OMB type</th><th>Before (basis)</th><th>Now (v4)</th><th>Age-std YLL /100k</th><th>What drove the change</th></tr></thead>
+<tbody>
+<tr><td><a href="clare.html">Clare</a></td><td>nonmetro</td><td>8,198 (frontier LE)</td><td><strong>9,783</strong></td><td>14,472</td><td>Method: observed deaths are 332 a year, against about 214 implied by state rates</td></tr>
+<tr><td><a href="wayne.html">Wayne (Detroit)</a></td><td>metro</td><td>442,251 (frontier LE)</td><td><strong>442,251</strong></td><td>14,177</td><td>Already on this method</td></tr>
+<tr><td><a href="isabella.html">Isabella</a></td><td>nonmetro</td><td>13,493 (frontier LE, published)</td><td><strong>13,313</strong></td><td>12,817</td><td>Method: age-specific YLL; inside the published uncertainty interval</td></tr>
+<tr><td><a href="gratiot.html">Gratiot</a></td><td>nonmetro</td><td>7,533 (Michigan LE)</td><td><strong>10,475</strong></td><td>12,457</td><td>Mostly the switch to the frontier standard; v1's own frontier projection was about 10,700</td></tr>
+<tr><td><a href="midland.html">Midland</a></td><td>metro</td><td>14,335 (Michigan LE)</td><td><strong>17,907</strong></td><td>9,578</td><td>Mostly the switch to the frontier standard used for every other county</td></tr>
+<tr><td><a href="washtenaw.html">Washtenaw (Ann Arbor)</a></td><td>metro</td><td>63,379 (frontier LE)</td><td><strong>63,379</strong></td><td>8,251</td><td>Already on this method</td></tr>
+</tbody></table></div>
+<p class="note">DALYs per year. "Before" values were not all on the same life-expectancy standard: Gratiot and Midland used Michigan observed life expectancy (78.6 years), the others the higher frontier standard. Their increases therefore reflect a change of standard more than a change of method. The Isabella headline on the site remains the published 13,493 (95% UI 12,266–14,803; Soshnikov 2026, <em>Health Research and Education Innovation</em>), with the v4 value shown alongside.</p>
+
+<h2>What we checked</h2>
+<h3>Against an external source</h3>
+<p>The clearest external check comes from IHME's modelled county estimates. IHME puts Clare County's all-cause mortality at 1,014 per 100,000, about 30% above the Michigan average of 783. The v1 model had assigned Clare the state average. The higher observed death count in v4 moves Clare in the direction IHME independently indicates.</p>
+<h3>Against the published result</h3>
+<p>For Isabella, holding death totals fixed and changing only the YLL method moves total years of life lost by 38 years (0.5%). The full v4 estimate, which also uses observed deaths by age, is 1.3% below the published figure and well inside its uncertainty interval. A method change that moved the headline a lot would have been a warning sign; this one did not.</p>
+<h3>For internal consistency</h3>
+<ul>
+<li>The population files pulled for this update reproduced the earlier Washtenaw and Wayne denominators exactly, cell for cell. This confirms the data pull, not the estimates.</li>
+<li>For Isabella, the old state-rate proxy for substance-use deaths (about 28 a year) and the v4 count (26.7 a year) agree within 5%. The v4 count includes suppressed cells we imputed, so this comparison is not fully independent.</li>
+<li>Gratiot's v1 analysis projected about 10,700 DALYs on the frontier standard; v4 gives 10,475. Both come from our own pipeline.</li>
+</ul>
+<h3>Condition by condition</h3>
+<p>In Isabella, the old shortcut understated years of life lost from COPD (by about 21%) and diabetes (about 24%) and overstated stroke (about 9%), because deaths in these groups are spread across ages in ways a single average cannot capture. We have not yet run the same comparison for the other counties.</p>
+
+<h2>What we learned</h2>
+<p><strong>Nonmetro Clare and metro Detroit carry comparable age-standardized mortality burden</strong>: 14,472 against 14,177 years of life lost per 100,000. The 2% gap is too small to rank them.</p>
+<p><strong>Below the top two, the metro line holds.</strong> All three nonmetro counties (Clare, Isabella, Gratiot) sit above the two smaller, higher-income metro counties, Midland and Washtenaw. Detroit is the exception among metro counties. Isabella and Gratiot (12,817 and 12,457) cannot be told apart without uncertainty intervals.</p>
+<p><strong>Clare's priorities look different on observed data.</strong> Substance use moves from first to fourth by DALYs: cancer, cardiovascular disease and COPD carry more total burden. Opioid deaths still occur at the youngest ages of any condition, so substance use remains the leading target for acute intervention.</p>
+<p><strong>The economic burden of mortality, valued the same way everywhere</strong>, ranges from $4.7B a year in Clare to $180B in Wayne County, in proportion to deaths alone.</p>
+
+<h2>Limits we want readers to keep in mind</h2>
+<ul>
+<li><strong>Pandemic years.</strong> Deaths are from 2020–2022. Excess mortality from cardiovascular disease, diabetes and other causes during COVID-19 is included in these counts, while COVID-19 itself is outside the seven condition groups. Rates may be higher than in a typical period.</li>
+<li><strong>No uncertainty intervals yet for v4.</strong> All six-county comparisons are point estimates. Only Isabella has published intervals.</li>
+<li><strong>Imputation is not neutral.</strong> Setting suppressed chronic-disease cells under 45 to 1 adds a small amount of YLL. The suicide age shape is borrowed from Washtenaw, an urban college county, and may not match rural age patterns.</li>
+<li><strong>Cause definition.</strong> The COPD group is labelled J44 but the mortality query covered chronic lower respiratory diseases (J40–J47), which includes asthma and bronchiectasis.</li>
+<li><strong>Disability burden</strong> relies on modelled adult prevalence from CDC PLACES, and the remission and comorbidity factors were estimated for one county.</li>
+<li>These are planning-grade estimates from public data, not official GBD county estimates.</li>
+</ul>
+
+<h2>What is next</h2>
+<ul>
+<li>uncertainty intervals for every county on the v4 basis;</li>
+<li>calibration of the age pattern against IHME county mortality estimates, with CDC WONDER kept as the observed backbone;</li>
+<li>a sensitivity run excluding 2020–2021, once 2023–2024 county data can be pooled;</li>
+<li>Mecosta County, the next county in the pipeline.</li>
+</ul>
+<p>Formulas and full tables are on each county's methods page; the income-adjusted VSL comparison and the <a href="methods_supplement.html#versions">version history</a> are in the methods supplement. The six-county comparison is on the <a href="rural_vs_urban.html">Six counties on one basis</a> page.</p>
+
+<p class="disc">Lakes Linked v4 · published 11 November 2026 · Data: CDC WONDER 2020–2022 (Underlying Cause of Death; single-race population estimates), CDC PLACES 2024, IHME GBD 2021 disability weights, GBD 2019 reference life table, IHME US county mortality estimates, HHS ASPE Standard Values 2026, ACS 2020–2024, OMB metropolitan delineation 2023. Planning-grade estimates; not peer-reviewed research or official GBD county estimates.</p>
+</div></div>
+<footer>
+<span class="ver" style="display:block;font-size:11px;opacity:.75;margin-top:4px;">Site version v4 · published 10 November 2026 · <a href="methods_supplement.html#versions" style="color:inherit">version history</a></span>
+<span>Methodology update · Lakes Linked · Sergey Soshnikov, MD PhD</span>
+</footer>
+<script src="ll-features.js"></script></body>
+</html>

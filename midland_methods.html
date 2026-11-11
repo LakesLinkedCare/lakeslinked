@@ -350,6 +350,32 @@ html{scroll-behavior:smooth}
 </div>
 
 <!-- 5. Update path -->
+
+<!-- v4 methodology, November 2026 -->
+<h2 class="sec" id="v4-methods"><span style="color:var(--blue);margin-right:6px">v4</span> Methodology update: age-specific YLL and unified economics (November 2026)</h2>
+<p>Version 4 puts all six Lakes Linked counties on one basis. For Midland County this replaced the v1 planning estimate of 14,335 (Michigan LE, mean-age YLL) with the results below.</p>
+<p><strong>Years of life lost.</strong> YLL = Σ<sub>a</sub> deaths<sub>a</sub> × RLE(a). Deaths by ten-year age group are taken from CDC WONDER Underlying Cause of Death 2020–2022 (113 Cause List; single-race population files) and annualized by dividing by three. RLE(a) is remaining life expectancy at the age-band midpoint from the GBD 2019 reference life table (life expectancy at birth 88.87 years; <a href="https://doi.org/10.6069/1D4Y-YQ37">doi:10.6069/1D4Y-YQ37</a>). This replaces the v1 planning approximation deaths × (terminal age − mean age at death).</p>
+<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 83,527. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>9,578 per 100,000</strong>. The crude DALY rate is <strong>21,438 per 100,000</strong>.</p>
+<p><strong>Suppression handling.</strong> CDC WONDER suppresses cells with 1–9 deaths. Suicide (the mortality component of mental health) is suppressed in every age band for this county, so the known three-year county total is distributed across age bands using the Washtenaw County age shape as a donor. Drug- and alcohol-induced deaths (substance use) are partly suppressed; suppressed cells are imputed at the midpoint 5 with a 0–9 band carried into the uncertainty range. Chronic-disease cells suppressed below age 45 are imputed at 1. The rural-adjustment multipliers of v1 are no longer used anywhere.</p>
+<p><strong>Years lived with disability</strong> are unchanged from the earlier version: CDC PLACES prevalence, IHME GBD 2021 disability weights at moderate severity, mental-health remission factor 0.50, and the comorbidity correction factor 0.949.</p>
+<p><strong>Economics.</strong> Human capital = DALYs × $62,000 (Michigan GDP per capita, BEA 2024). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. Human capital and VSL are alternative valuations and are never added.</p>
+<div class="tbl-wrap">
+<table>
+<caption>Table v4. Midland County, v4 results (November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
+<thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>Human capital</th><th>VSL</th></tr></thead>
+<tbody>
+<tr><td>Cancer (C00–C97)</td><td>190.7</td><td>3,755</td><td>1,442</td><td>5,197</td><td>$322M</td><td>$2.69B</td></tr>
+<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>198.0</td><td>2,798</td><td>297</td><td>3,095</td><td>$192M</td><td>$2.79B</td></tr>
+<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>12.2</td><td>555</td><td>2,513</td><td>3,068</td><td>$190M</td><td>$172M</td></tr>
+<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>33.0</td><td>1,306</td><td>1,540</td><td>2,846</td><td>$176M</td><td>$465M</td></tr>
+<tr><td>COPD (J40–J47 query; labelled J44)</td><td>48.7</td><td>832</td><td>795</td><td>1,627</td><td>$101M</td><td>$624M</td></tr>
+<tr><td>Stroke (I60–I69)</td><td>50.3</td><td>676</td><td>544</td><td>1,220</td><td>$76M</td><td>$646M</td></tr>
+<tr><td>Diabetes (E10–E14)</td><td>27.0</td><td>555</td><td>299</td><td>854</td><td>$53M</td><td>$381M</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td><strong>559.9</strong></td><td><strong>10,477</strong></td><td><strong>7,430</strong></td><td><strong>17,907</strong></td><td><strong>$1.11B</strong></td><td><strong>$7.89B</strong></td></tr>
+</tbody>
+</table>
+<div class="tbl-note">Computation: <code>daly_county.py</code> (Lakes Linked repository), inputs <code>wonder_113cause_by_age_4counties_2020_2022</code>, <code>d191_pop_5yr_6counties_2020_2022</code>; results file <code>results_v4_2026-11-10.json</code>, economics <code>econ_v4_2026-11-10.json</code>. Cross-county comparison on this basis: <a href="rural_vs_urban.html">Six counties on one basis</a>.</div>
+</div>
 <h2 id="path-to-full-analysis" class="sec">5. Path to Full Analysis</h2>
 <p>Upgrading this analysis from planning-grade to CHNA-ready requires the following steps:</p>
 

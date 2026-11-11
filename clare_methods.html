@@ -208,7 +208,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 <p>Total population 30,013; adult population ~24,310 (≥18 yrs, estimated at 80.9% of total using ACS age distribution for rural Michigan counties of similar age profile). For conditions where CDC PLACES reports adult-only prevalence (COPD, stroke, mental health, CVD, SUD), adult population 24,310 was used. For population-wide conditions (diabetes, cancer), total population 30,013 was used.</p>
 
 <h3 class="sub">2.5 Economic parameters</h3>
-<p>Human capital: DALYs × $62,000 (Michigan GDP per capita 2024). VSL: HHS ASPE 2026 income-adjusted for Clare County: $13.4M × (38,000/80,000)^0.4 ≈ <strong>$9.2M</strong> per statistical life (county median income ~$38,000 per ACS 2022 — lower than Isabella's $46,000, reflecting absence of university employment anchor).</p>
+<p>Human capital: DALYs × $62,000 (Michigan GDP per capita 2024). VSL (v4, November 2026): $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. The v1 (June 2026) value was $9.2M, from $13.4M × (38,000/80,000)^0.4.</p>
 
 <!-- 3. Methods -->
 <h2 class="sec"><span style="color:var(--red);margin-right:6px">3.</span> Analytic Methods</h2>
@@ -356,13 +356,39 @@ tbody td{padding:7px 10px;vertical-align:top;}
     <thead><tr><th>Method</th><th>Formula (v4, Nov 2026)</th><th>Central (v4)</th><th>Formula (v1, MI LE)</th><th>Central (v1, MI planning)</th><th>Measures</th></tr></thead>
     <tbody>
       <tr><td>Human Capital</td><td>9,783 × $62,000</td><td><strong>~$607M/yr</strong></td><td>5,943 × $62,000</td><td><strong>~$368M/yr</strong></td><td>Indirect productivity losses</td></tr>
-      <tr><td>VSL (HHS 2026)</td><td>332 deaths × $9.2M</td><td><strong>~$3.05B/yr</strong></td><td>215 deaths × $9.2M</td><td><strong>~$1.98B/yr</strong></td><td>Societal willingness to pay</td></tr>
+      <tr><td>VSL (HHS 2026)</td><td>332 deaths × $14.1M</td><td><strong>~$4.68B/yr</strong></td><td>215 deaths × $9.2M</td><td><strong>~$1.98B/yr</strong></td><td>Societal willingness to pay</td></tr>
     </tbody>
   </table>
-  <div class="tbl-note">VSL: $13.4M × (38,000/80,000)^0.4 ≈ $9.2M income-adjusted (Clare County median income ~$38,000 ACS 2022; income elasticity 0.4, Viscusi &amp; Aldy 2003 [7]).</div>
+  <div class="tbl-note">VSL (v4 column): $14.1M per death (HHS ASPE 2026 central value, 2025 dollars), uniform across counties. The v1 column retains the June 2026 value of $9.2M ($13.4M × (38,000/80,000)^0.4).</div>
 </div>
 
 <!-- 6. Discussion -->
+
+<!-- v4 methodology, November 2026 -->
+<h2 class="sec" id="v4-methods"><span style="color:var(--blue);margin-right:6px">v4</span> Methodology update: age-specific YLL and unified economics (November 2026)</h2>
+<p>Version 4 puts all six Lakes Linked counties on one basis. For Clare County this replaced the v1 planning estimate of 8,198 (frontier LE, mean-age YLL, rural-adjusted state mortality rates) with the results below.</p>
+<p><strong>Years of life lost.</strong> YLL = Σ<sub>a</sub> deaths<sub>a</sub> × RLE(a). Deaths by ten-year age group are taken from CDC WONDER Underlying Cause of Death 2020–2022 (113 Cause List; single-race population files) and annualized by dividing by three. RLE(a) is remaining life expectancy at the age-band midpoint from the GBD 2019 reference life table (life expectancy at birth 88.87 years; <a href="https://doi.org/10.6069/1D4Y-YQ37">doi:10.6069/1D4Y-YQ37</a>). This replaces the v1 planning approximation deaths × (terminal age − mean age at death).</p>
+<p><strong>Denominators and rates.</strong> Population is CDC WONDER Single-Race Population Estimates 2020–2022 (dataset D191) expressed as person-years per year: 31,105. The age-standardized YLL rate uses the US 2000 standard population with the under-1 band folded into 1–4: <strong>14,472 per 100,000</strong>. The crude DALY rate is <strong>31,451 per 100,000</strong>.</p>
+<p><strong>Suppression handling.</strong> CDC WONDER suppresses cells with 1–9 deaths. Suicide (the mortality component of mental health) is suppressed in every age band for this county, so the known three-year county total is distributed across age bands using the Washtenaw County age shape as a donor. Drug- and alcohol-induced deaths (substance use) are partly suppressed; suppressed cells are imputed at the midpoint 5 with a 0–9 band carried into the uncertainty range. Chronic-disease cells suppressed below age 45 are imputed at 1. The rural-adjustment multipliers of v1 are no longer used anywhere.</p>
+<p><strong>Years lived with disability</strong> are unchanged from the earlier version: CDC PLACES prevalence, IHME GBD 2021 disability weights at moderate severity, mental-health remission factor 0.50, and the comorbidity correction factor 0.949.</p>
+<p><strong>Economics.</strong> Human capital = DALYs × $62,000 (Michigan GDP per capita, BEA 2024). VSL: $14.1M per statistical life (HHS ASPE 2026 central value, 2025 dollars), applied uniformly to every county. HHS adjusts VSL for income over time but not across places, so no county-level income adjustment is used; an income-adjusted variant is reported as a sensitivity analysis in the <a href="methods_supplement.html#vsl-sensitivity">methods supplement</a>. Human capital and VSL are alternative valuations and are never added.</p>
+<div class="tbl-wrap">
+<table>
+<caption>Table v4. Clare County, v4 results (November 2026). Every row satisfies DALY = YLL + YLD and every column sums to its total.</caption>
+<thead><tr><th>Condition</th><th>Deaths/yr</th><th>YLL</th><th>YLD</th><th>DALYs</th><th>Human capital</th><th>VSL</th></tr></thead>
+<tbody>
+<tr><td>Cancer (C00–C97)</td><td>100.7</td><td>2,055</td><td>516</td><td>2,571</td><td>$159M</td><td>$1.42B</td></tr>
+<tr><td>CVD — diseases of heart (I00–I09, I11, I13, I20–I51)</td><td>124.3</td><td>2,145</td><td>107</td><td>2,252</td><td>$140M</td><td>$1.75B</td></tr>
+<tr><td>COPD (J40–J47 query; labelled J44)</td><td>36.3</td><td>735</td><td>581</td><td>1,316</td><td>$82M</td><td>$512M</td></tr>
+<tr><td>Substance use disorders (F10–F19, drug- and alcohol-induced)</td><td>18.3</td><td>664</td><td>501</td><td>1,165</td><td>$72M</td><td>$258M</td></tr>
+<tr><td>Mental health (F30–F48; mortality = suicide X60–X84)</td><td>4.5</td><td>207</td><td>941</td><td>1,148</td><td>$71M</td><td>$63M</td></tr>
+<tr><td>Stroke (I60–I69)</td><td>33.7</td><td>448</td><td>372</td><td>820</td><td>$51M</td><td>$475M</td></tr>
+<tr><td>Diabetes (E10–E14)</td><td>14.3</td><td>319</td><td>192</td><td>511</td><td>$32M</td><td>$202M</td></tr>
+<tr class="total-row"><td><strong>Total</strong></td><td><strong>332.1</strong></td><td><strong>6,573</strong></td><td><strong>3,210</strong></td><td><strong>9,783</strong></td><td><strong>$607M</strong></td><td><strong>$4.68B</strong></td></tr>
+</tbody>
+</table>
+<div class="tbl-note">Computation: <code>daly_county.py</code> (Lakes Linked repository), inputs <code>wonder_113cause_by_age_4counties_2020_2022</code>, <code>d191_pop_5yr_6counties_2020_2022</code>; results file <code>results_v4_2026-11-10.json</code>, economics <code>econ_v4_2026-11-10.json</code>. Cross-county comparison on this basis: <a href="rural_vs_urban.html">Six counties on one basis</a>.</div>
+</div>
 <h2 class="sec"><span style="color:var(--red);margin-right:6px">6.</span> Discussion</h2>
 
 <p>Clare County's disease burden is concentrated in five conditions that together constitute a rural health emergency: opioid/SUD crisis (#2 burden, ~47/100k overdose mortality), cancer (#1), COPD (#3 — the standout condition at 12.7% vs. statewide ~7%), CVD (#5), and mental health access deficits under whole-county MUA designation. Unlike Isabella County, where the burden ranking is dominated by cancer and CVD under the frontier LE standard, Clare's burden is more evenly distributed across SUD, cancer, and COPD, with COPD emerging as the county's unique epidemiological signature.</p>
@@ -403,7 +429,7 @@ tbody td{padding:7px 10px;vertical-align:top;}
 </ol>
 
 <div class="doc-footer">
-  <strong>Document status:</strong> Version 1.0 — Clare County planning model. Same methodology as Isabella County v5.0 but all mortality inputs use state rates × rural adjustment factors (no direct WONDER counts available). Not peer-reviewed.<br>
+  <strong>Document status:</strong> Version 4, 10 November 2026. Primary estimates use observed CDC WONDER deaths by age group and age-specific YLL (see the v4 methodology section); the v1 planning model of June 2026, which used state rates × rural adjustment factors, is retained in the tables labelled v1. Not peer-reviewed.<br>
   <strong>Author:</strong> Sergey Soshnikov, MD PhD · Public Health Researcher<br>
   <strong>Related pages:</strong> <a href="clare.html" style="color:var(--blue)">Clare Dashboard</a> · <a href="clare_ai_solutions.html" style="color:var(--blue)">Interventions</a> · <a href="clare_roi.html" style="color:var(--blue)">ROI Analysis</a> · <a href="isabella_methods.html" style="color:var(--blue)">Isabella Methods (v5.0)</a><br>
   © 2026 Soshnikov
