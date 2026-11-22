@@ -170,12 +170,12 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
   <h1>Advanced Digital Health Technologies for Community Disease Burden Reduction in Clare County, Michigan</h1>
   <div class="subtitle">A problem-solution framework aligned with local burden estimates, 2026 — Opioid crisis priority edition</div>
   <div class="authors">Sergey Soshnikov</div>
-  <div class="meta-line">Companion document to: Disease Burden Analysis, Clare County, Michigan (v1.0) · June 2026 · Data: CDC PLACES 2024 · Michigan CDC WONDER rates × rural adj. · MUA designation · Pop. 30,013</div>
+  <div class="meta-line">Companion document to: Disease Burden Analysis, Clare County, Michigan (v4.1, November 2026) · June 2026 · Data: CDC PLACES 2024 · CDC WONDER county deaths 2020–22 · MUA designation · Pop. 31,105</div>
 </div>
 
 <div class="abstract">
   <h2>Summary — Clare County Priority Frame</h2>
-  <p>This supplement maps the disease burden priorities identified in the Clare County health analysis (9,637 primary DALYs/year, v4 November 2026; earlier v1 estimate 8,198 DALYs) to AI and digital health interventions supported by current evidence. Clare County differs fundamentally from Isabella County in its priority profile: the opioid/SUD crisis is the highest-priority acute intervention target (~47/100k overdose mortality, among Michigan's highest), followed by COPD remote monitoring (12.7% prevalence — the standout Clare condition), cancer screening navigation, and combined diabetes/hypertension telehealth. Mental health burden is compounded by whole-county MUA designation and absence of any university psychiatry pipeline. The county's older population (median 46.8 yrs), absence of an institutional health anchor, and rural isolation create distinct implementation barriers that digital health must work within — not around. All estimates are planning-grade; not peer-reviewed.</p>
+  <p>This supplement maps the disease burden priorities identified in the Clare County health analysis (9,637 primary DALYs/year, v4.1 November 2026; earlier v1 estimate 8,198 DALYs) to AI and digital health interventions supported by current evidence. Clare County differs fundamentally from Isabella County in its priority profile: the opioid/SUD crisis is the highest-priority acute intervention target (~47/100k overdose mortality, among Michigan's highest), followed by COPD remote monitoring (12.7% prevalence — the standout Clare condition), cancer screening navigation, and combined diabetes/hypertension telehealth. Mental health burden is compounded by whole-county MUA designation and absence of any university psychiatry pipeline. The county's older population (median 46.8 yrs), absence of an institutional health anchor, and rural isolation create distinct implementation barriers that digital health must work within — not around. All estimates are planning-grade; not peer-reviewed.</p>
 </div>
 
 <!-- Spotlight -->
@@ -189,7 +189,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
   <ul style="margin-top:6px;margin-left:18px;line-height:2;">
     <li><strong>No university-equivalent anchor:</strong> All programs must route through FQHC networks, county health department, or regional hospital systems (McLaren Central Michigan, MidMichigan Health). No university health services delivery channel.</li>
     <li><strong>Older population digital literacy:</strong> Median age 46.8 years. A substantial proportion of the highest-need patients (COPD, CVD, diabetes) are in the 60–75 age group with lower smartphone literacy. Technology adoption pathways must include phone-based (non-smartphone) interfaces, in-person training through senior centers, and family caregiver support.</li>
-    <li><strong>Smaller patient base:</strong> 30,013 total residents — approximately half Isabella's population. Per-program economies of scale are lower; vendor contracts and platform fees have higher per-patient cost at smaller volume. Shared-service models with adjacent counties (Osceola, Isabella) should be explored.</li>
+    <li><strong>Smaller patient base:</strong> 31,105 total residents — approximately half Isabella's population. Per-program economies of scale are lower; vendor contracts and platform fees have higher per-patient cost at smaller volume. Shared-service models with adjacent counties (Osceola, Isabella) should be explored.</li>
     <li><strong>MUA whole-county designation:</strong> Medicaid reimbursement incentives and HRSA rural health program eligibility are strong — Clare qualifies for a broader set of federal programs than Isabella, including the whole-county MUA track for community health center expansion and telehealth reimbursement waivers.</li>
     <li><strong>Internet access gaps:</strong> Rural broadband coverage in Clare County is below state average. Any telehealth solution must include cellular (LTE) fallback options and offline-capable apps for patients in low-connectivity areas.</li>
   </ul>
@@ -197,141 +197,20 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 
 <!-- Section 1 -->
 <h2 class="sec">1. AI Applications by Condition Priority — Clare County</h2>
-<p>The following cards are ordered by Clare County's intervention priority — which differs from the DALY rank order because some conditions have stronger acute crisis signals and more immediately actionable digital health solutions. For each condition, interventions are rated: <span class="ev strong">Strong</span> = RCT/meta-analysis evidence; <span class="ev mod">Moderate</span> = mixed, indirect, or implementation evidence; <span class="ev emrg">Emerging</span> = promising early-stage. Clare population base: 30,013 total / ~24,310 adults.</p>
+<p>The following cards are ordered by the v4.1 burden each addresses, largest first. Fast, low-cost options such as telehealth MAT still come early in the roadmap below because they need no new infrastructure. For each condition, interventions are rated: <span class="ev strong">Strong</span> = RCT/meta-analysis evidence; <span class="ev mod">Moderate</span> = mixed, indirect, or implementation evidence; <span class="ev emrg">Emerging</span> = promising early-stage. Clare population base (v4.1): 31,105 total / 25,129 adults.</p>
 
 <div class="ps-grid">
 
-  <!-- SUD / OPIOIDS — PRIORITY #1 -->
-  <div class="ps-card sud">
-    <div class="ps-head">
-      <span class="ps-icon">💊</span>
-      <div class="ps-title">
-        <span class="priority-badge">Priority #1 — Opioid Crisis</span>
-        <h4>Substance Use Disorders / Opioid Use Disorder (F10–F19)</h4>
-        <p>#2 DALY burden (1,247 DALYs) · ~17 deaths/yr at age 44 · ~47/100k overdose mortality · Highest-priority acute intervention</p>
-      </div>
-      <div class="ps-burden"><div class="daly">1,247</div><div class="lbl">DALYs/yr · #2</div></div>
-    </div>
-    <div class="ps-body">
-      <div class="ai-items">
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#dc2626">MAT Telehealth</div>
-          <h5>Buprenorphine prescribing via telehealth (Priority #1)</h5>
-          <p>Platforms like Bicycle Health, Workit Health, and CHESS Health provide AI-supported buprenorphine initiation and maintenance via telehealth. Perry 2025 (Cochrane CD013672) confirmed primary care OAT is equivalent to specialty care for retention and abstinence outcomes — validating the telehealth delivery model. SAMHSA data show telehealth MAT doubled rural patient access 2020–2022. Clare has no dedicated MAT specialist; telehealth is not an alternative — it is the only scalable option.</p>
-          <span class="ev strong">Strong evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#dc2626">PDMP Integration</div>
-          <h5>AI-enhanced Prescription Drug Monitoring Program alerts</h5>
-          <p>Michigan's MAPS (Michigan Automated Prescription System) now supports API integration. AI models that process PDMP data alongside EHR records can identify polypharmacy opioid risk patterns, flag concurrent benzodiazepine + opioid prescriptions, and stratify patients for proactive outreach. Particularly relevant in Clare where opioid mortality signals are among the state's highest — early identification before overdose is the highest-value use case.</p>
-          <span class="ev mod">Moderate evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#dc2626">Recovery Support</div>
-          <h5>AI-augmented peer recovery coach networks</h5>
-          <p>Digital platforms (e.g., KIOS, WEconnect Health) enable peer recovery coaches to manage larger caseloads, automate check-in prompts, detect risk signals in self-reported data, and coordinate with clinical teams. Clare County's peer recovery network is the primary community resource for OUD — AI augmentation multiplies the capacity of each trained coach without requiring additional clinical hires.</p>
-          <span class="ev mod">Moderate evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#dc2626">Maternal SUD</div>
-          <h5>Prenatal OUD screening and SBIRT automation</h5>
-          <p>Automated SBIRT (Screening, Brief Intervention, Referral to Treatment) integrated into prenatal visits targets maternal SUD, which drives Neonatal Abstinence Syndrome (NAS) rates. Clare's opioid profile suggests elevated NAS risk. SBIRT automation via tablet-based validated tools (AUDIT-C, DAST-10) can be deployed in OB offices and FQHC prenatal visits at near-zero marginal cost after initial setup.</p>
-          <span class="ev strong">Strong evidence</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- COPD — PRIORITY #2 (Clare-specific) -->
-  <div class="ps-card copd">
-    <div class="ps-head">
-      <span class="ps-icon">🫁</span>
-      <div class="ps-title">
-        <span class="priority-badge" style="background:var(--amber)">Priority #2 — Clare-Specific Standout</span>
-        <h4>COPD &amp; Respiratory Disease (J44)</h4>
-        <p>#3 DALY burden (868 DALYs) · 12.7% adult prevalence — highest in mid-Michigan · Driven by tobacco + aging · Standout Clare condition</p>
-      </div>
-      <div class="ps-burden"><div class="daly" style="color:var(--amber)">868</div><div class="lbl">DALYs/yr · #3</div></div>
-    </div>
-    <div class="ps-body">
-      <div class="ai-items">
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#d97706">Remote Monitoring</div>
-          <h5>Remote pulse oximetry + early exacerbation warning</h5>
-          <p>Connected pulse oximeters transmit daily SpO2 readings to an AI platform that flags early-warning exacerbation signals before the patient deteriorates to ER-level severity. Cochrane evidence (Walker 2018) demonstrates 30–40% reduction in COPD hospitalization rates with structured telehealth monitoring for moderate-to-severe patients. Clare's 12.7% COPD rate (vs. ~7% statewide) means this intervention addresses the county's single largest avoidable-cost driver on a per-hospitalization basis (~$15–20K per acute COPD admission).</p>
-          <span class="ev strong">Strong evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#d97706">Tobacco Cessation</div>
-          <h5>AI-guided quitline + NRT for COPD patients</h5>
-          <p>Tobacco is the primary modifiable COPD driver. Whittaker 2019 (Cochrane CD006611) confirms automated SMS cessation RR 1.54 (95% CI 1.19–2.00) vs minimal support. For Clare, tobacco cessation programs have triple impact: reduce COPD progression, reduce cardiovascular events, and reduce cancer incidence. SmokefreeMI (MDHHS partnership) is deployable at near-zero cost with state-level support. NRT provision through FQHC adds marginally to cost but substantially to quit rates (Cochrane RR ~1.8 vs placebo).</p>
-          <span class="ev strong">Strong evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#d97706">Telehealth Follow-up</div>
-          <h5>Pulmonology telehealth visits via regional system partnership</h5>
-          <p>Clare County residents currently travel to McLaren Central Michigan or MidMichigan Health Midland for pulmonology consultation. Telehealth pulmonology follow-up — particularly for post-exacerbation medication adjustment and spirometry-guided titration — reduces access barriers. AI clinical decision support tools can assist primary care providers in Clare in managing moderate COPD without requiring every patient to travel 30–45 miles to a specialist.</p>
-          <span class="ev mod">Moderate evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#d97706">Spirometry Screening</div>
-          <h5>AI-assisted portable spirometry in primary care</h5>
-          <p>Approximately 50% of COPD in rural populations remains undiagnosed. Portable spirometers (e.g., ERT SpiroSmart, MIR Spiro) enable COPD screening in primary care offices without sending patients to pulmonology. AI interpretation of spirometry patterns identifies obstruction severity with high accuracy. In a county with 12.7% CDC PLACES prevalence, earlier diagnosis enables earlier inhaler optimization and pulmonary rehabilitation referral.</p>
-          <span class="ev mod">Moderate evidence</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CANCER — PRIORITY #3 -->
-  <div class="ps-card cancer">
-    <div class="ps-head">
-      <span class="ps-icon">🔬</span>
-      <div class="ps-title">
-        <h4>Cancer — All Sites (C00–C97)</h4>
-        <p>#1 DALY burden (1,372 DALYs) · ~60 deaths/yr at age 67 · 7.6% prevalence · Rural access gap for screening and navigation</p>
-      </div>
-      <div class="ps-burden"><div class="daly" style="color:var(--purple)">1,372</div><div class="lbl">DALYs/yr · #1</div></div>
-    </div>
-    <div class="ps-body">
-      <div class="ai-items">
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#7c3aed">Navigation</div>
-          <h5>AI care navigation for rural cancer patients</h5>
-          <p>Clare County patients typically travel 40–60 miles for oncology appointments. Automated navigation tools coordinate transport, appointment reminders, telehealth symptom check-ins between infusion visits, and coordination between the county FQHC and regional cancer centers. Treatment abandonment and delayed diagnosis are the primary avoidable harms in rural cancer — navigation technology directly addresses both without requiring a clinical hire.</p>
-          <span class="ev mod">Moderate evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#7c3aed">AI Screening</div>
-          <h5>AI-assisted radiology for lung and breast cancer</h5>
-          <p>FDA-cleared image analysis tools (Seno.ai, Veye Chest) flag suspicious nodules in CT/mammography, increasing radiologist throughput 2–3×. Most useful in the closest Clare-area facilities (McLaren Clare Hospital, MidMichigan Health Clare). Lung cancer screening with low-dose CT is particularly important given Clare's smoking prevalence (~18–22% adults) and COPD comorbidity, which substantially elevates lung cancer risk.</p>
-          <span class="ev strong">Strong evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#7c3aed">Risk Stratification</div>
-          <h5>Population-level cancer risk scoring in primary care EHR</h5>
-          <p>ML models using EHR data (smoking history, BMI, age, comorbidities) identify high-risk patients for proactive screening outreach. Deployable within the EMR systems used by Clare County's FQHC and primary care practices. Priority: lung cancer (USPSTF LDCT criteria for 50+ yr with ≥20 pack-year history — a large fraction of Clare's aging tobacco-using population qualifies).</p>
-          <span class="ev mod">Moderate evidence</span>
-        </div>
-        <div class="ai-item">
-          <div class="ai-tag" style="color:#7c3aed">Tobacco + Cancer</div>
-          <h5>Cessation outreach within cancer screening workflow</h5>
-          <p>Integrating tobacco cessation counseling directly into the lung CT screening workflow (LDCT + cessation = "teachable moment" model validated in NLST and implementation studies) amplifies impact of both interventions simultaneously. Clare's high smoking rate means a large fraction of cancer screening-eligible patients are active smokers, making this the highest-yield integration point.</p>
-          <span class="ev strong">Strong evidence</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CVD + DIABETES — PRIORITY #4 -->
+  <!-- CVD + DIABETES — PRIORITY #1 -->
   <div class="ps-card cvd">
     <div class="ps-head">
       <span class="ps-icon">❤️</span>
       <div class="ps-title">
+        <span class="priority-badge" style="background:var(--blue)">Priority #1 — Largest combined burden</span>
         <h4>Cardiovascular Disease, Stroke, and Diabetes T2 (I20–I69; E11)</h4>
-        <p>CVD #5 (710 DALYs) · Stroke #6 (571 DALYs) · Diabetes #7 (351 DALYs) · Diabetes 15.4% — 33% above Isabella · Combined 1,632 DALYs</p>
+        <p>CVD #2 (2,315 DALYs) · Stroke #5 (832 DALYs) · Diabetes #7 (517 DALYs) · Diabetes 15.4% vs. 10.5% in Isabella · Combined 3,664 DALYs</p>
       </div>
-      <div class="ps-burden"><div class="daly" style="color:var(--blue)">1,632</div><div class="lbl">Combined DALYs/yr · CVD+DM+Stroke</div></div>
+      <div class="ps-burden"><div class="daly" style="color:var(--blue)">3,664</div><div class="lbl">Combined DALYs/yr · CVD+DM+Stroke</div></div>
     </div>
     <div class="ps-body">
       <div class="ai-items">
@@ -363,15 +242,139 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
     </div>
   </div>
 
+  <!-- CANCER — PRIORITY #2 -->
+  <div class="ps-card cancer">
+    <div class="ps-head">
+      <span class="ps-icon">🔬</span>
+      <div class="ps-title">
+        <span class="priority-badge" style="background:var(--purple)">Priority #2</span>
+        <h4>Cancer — All Sites (C00–C97)</h4>
+        <p>#1 DALY burden (2,833 DALYs) · ~101 deaths/yr · 11.1% adult prevalence · Rural access gap for screening and navigation</p>
+      </div>
+      <div class="ps-burden"><div class="daly" style="color:var(--purple)">2,833</div><div class="lbl">DALYs/yr · #1</div></div>
+    </div>
+    <div class="ps-body">
+      <div class="ai-items">
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#7c3aed">Navigation</div>
+          <h5>AI care navigation for rural cancer patients</h5>
+          <p>Clare County patients typically travel 40–60 miles for oncology appointments. Automated navigation tools coordinate transport, appointment reminders, telehealth symptom check-ins between infusion visits, and coordination between the county FQHC and regional cancer centers. Treatment abandonment and delayed diagnosis are the primary avoidable harms in rural cancer — navigation technology directly addresses both without requiring a clinical hire.</p>
+          <span class="ev mod">Moderate evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#7c3aed">AI Screening</div>
+          <h5>AI-assisted radiology for lung and breast cancer</h5>
+          <p>FDA-cleared image analysis tools (Seno.ai, Veye Chest) flag suspicious nodules in CT/mammography, increasing radiologist throughput 2–3×. Most useful in the closest Clare-area facilities (McLaren Clare Hospital, MidMichigan Health Clare). Lung cancer screening with low-dose CT is particularly important given Clare's smoking prevalence (~18–22% adults) and COPD comorbidity, which substantially elevates lung cancer risk.</p>
+          <span class="ev strong">Strong evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#7c3aed">Risk Stratification</div>
+          <h5>Population-level cancer risk scoring in primary care EHR</h5>
+          <p>ML models using EHR data (smoking history, BMI, age, comorbidities) identify high-risk patients for proactive screening outreach. Deployable within the EMR systems used by Clare County's FQHC and primary care practices. Priority: lung cancer (USPSTF LDCT criteria for 50+ yr with ≥20 pack-year history — a large fraction of Clare's aging tobacco-using population qualifies).</p>
+          <span class="ev mod">Moderate evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#7c3aed">Tobacco + Cancer</div>
+          <h5>Cessation outreach within cancer screening workflow</h5>
+          <p>Integrating tobacco cessation counseling directly into the lung CT screening workflow (LDCT + cessation = "teachable moment" model validated in NLST and implementation studies) amplifies impact of both interventions simultaneously. Clare's high smoking rate means a large fraction of cancer screening-eligible patients are active smokers, making this the highest-yield integration point.</p>
+          <span class="ev strong">Strong evidence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COPD — PRIORITY #3 (Clare-specific) -->
+  <div class="ps-card copd">
+    <div class="ps-head">
+      <span class="ps-icon">🫁</span>
+      <div class="ps-title">
+        <span class="priority-badge" style="background:var(--amber)">Priority #3 — Clare-Specific Standout</span>
+        <h4>COPD &amp; Respiratory Disease (J44)</h4>
+        <p>#3 DALY burden (1,335 DALYs) · 12.7% adult prevalence — highest in mid-Michigan · Driven by tobacco + aging · Standout Clare condition</p>
+      </div>
+      <div class="ps-burden"><div class="daly" style="color:var(--amber)">1,335</div><div class="lbl">DALYs/yr · #3</div></div>
+    </div>
+    <div class="ps-body">
+      <div class="ai-items">
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#d97706">Remote Monitoring</div>
+          <h5>Remote pulse oximetry + early exacerbation warning</h5>
+          <p>Connected pulse oximeters transmit daily SpO2 readings to an AI platform that flags early-warning exacerbation signals before the patient deteriorates to ER-level severity. Cochrane evidence (Walker 2018) demonstrates 30–40% reduction in COPD hospitalization rates with structured telehealth monitoring for moderate-to-severe patients. Clare's 12.7% COPD rate (vs. ~7% statewide) means this intervention addresses the county's single largest avoidable-cost driver on a per-hospitalization basis (~$15–20K per acute COPD admission).</p>
+          <span class="ev strong">Strong evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#d97706">Tobacco Cessation</div>
+          <h5>AI-guided quitline + NRT for COPD patients</h5>
+          <p>Tobacco is the primary modifiable COPD driver. Whittaker 2019 (Cochrane CD006611) confirms automated SMS cessation RR 1.54 (95% CI 1.19–2.00) vs minimal support. For Clare, tobacco cessation programs have triple impact: reduce COPD progression, reduce cardiovascular events, and reduce cancer incidence. SmokefreeMI (MDHHS partnership) is deployable at near-zero cost with state-level support. NRT provision through FQHC adds marginally to cost but substantially to quit rates (Cochrane RR ~1.8 vs placebo).</p>
+          <span class="ev strong">Strong evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#d97706">Telehealth Follow-up</div>
+          <h5>Pulmonology telehealth visits via regional system partnership</h5>
+          <p>Clare County residents currently travel to McLaren Central Michigan or MidMichigan Health Midland for pulmonology consultation. Telehealth pulmonology follow-up — particularly for post-exacerbation medication adjustment and spirometry-guided titration — reduces access barriers. AI clinical decision support tools can assist primary care providers in Clare in managing moderate COPD without requiring every patient to travel 30–45 miles to a specialist.</p>
+          <span class="ev mod">Moderate evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#d97706">Spirometry Screening</div>
+          <h5>AI-assisted portable spirometry in primary care</h5>
+          <p>Approximately 50% of COPD in rural populations remains undiagnosed. Portable spirometers (e.g., ERT SpiroSmart, MIR Spiro) enable COPD screening in primary care offices without sending patients to pulmonology. AI interpretation of spirometry patterns identifies obstruction severity with high accuracy. In a county with 12.7% CDC PLACES prevalence, earlier diagnosis enables earlier inhaler optimization and pulmonary rehabilitation referral.</p>
+          <span class="ev mod">Moderate evidence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUD / OPIOIDS — PRIORITY #4 -->
+  <div class="ps-card sud">
+    <div class="ps-head">
+      <span class="ps-icon">💊</span>
+      <div class="ps-title">
+                <span class="priority-badge">Priority #4</span>
+        <h4>Substance Use Disorders / Opioid Use Disorder (F10–F19)</h4>
+        <p>#4 DALY burden (1,112 DALYs) · ~18 deaths/yr · ~47/100k overdose mortality · Fast, low-cost acute intervention</p>
+      </div>
+      <div class="ps-burden"><div class="daly">1,112</div><div class="lbl">DALYs/yr · #4</div></div>
+    </div>
+    <div class="ps-body">
+      <div class="ai-items">
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#dc2626">MAT Telehealth</div>
+          <h5>Buprenorphine prescribing via telehealth</h5>
+          <p>Platforms like Bicycle Health, Workit Health, and CHESS Health provide AI-supported buprenorphine initiation and maintenance via telehealth. Perry 2025 (Cochrane CD013672) confirmed primary care OAT is equivalent to specialty care for retention and abstinence outcomes — validating the telehealth delivery model. SAMHSA data show telehealth MAT doubled rural patient access 2020–2022. Clare has no dedicated MAT specialist; telehealth is not an alternative — it is the only scalable option.</p>
+          <span class="ev strong">Strong evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#dc2626">PDMP Integration</div>
+          <h5>AI-enhanced Prescription Drug Monitoring Program alerts</h5>
+          <p>Michigan's MAPS (Michigan Automated Prescription System) now supports API integration. AI models that process PDMP data alongside EHR records can identify polypharmacy opioid risk patterns, flag concurrent benzodiazepine + opioid prescriptions, and stratify patients for proactive outreach. Particularly relevant in Clare where opioid mortality signals are among the state's highest — early identification before overdose is the highest-value use case.</p>
+          <span class="ev mod">Moderate evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#dc2626">Recovery Support</div>
+          <h5>AI-augmented peer recovery coach networks</h5>
+          <p>Digital platforms (e.g., KIOS, WEconnect Health) enable peer recovery coaches to manage larger caseloads, automate check-in prompts, detect risk signals in self-reported data, and coordinate with clinical teams. Clare County's peer recovery network is the primary community resource for OUD — AI augmentation multiplies the capacity of each trained coach without requiring additional clinical hires.</p>
+          <span class="ev mod">Moderate evidence</span>
+        </div>
+        <div class="ai-item">
+          <div class="ai-tag" style="color:#dc2626">Maternal SUD</div>
+          <h5>Prenatal OUD screening and SBIRT automation</h5>
+          <p>Automated SBIRT (Screening, Brief Intervention, Referral to Treatment) integrated into prenatal visits targets maternal SUD, which drives Neonatal Abstinence Syndrome (NAS) rates. Clare's opioid profile suggests elevated NAS risk. SBIRT automation via tablet-based validated tools (AUDIT-C, DAST-10) can be deployed in OB offices and FQHC prenatal visits at near-zero marginal cost after initial setup.</p>
+          <span class="ev strong">Strong evidence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- MENTAL HEALTH — PRIORITY #5 -->
   <div class="ps-card mental">
     <div class="ps-head">
       <span class="ps-icon">🧠</span>
       <div class="ps-title">
+        <span class="priority-badge" style="background:var(--teal)">Priority #5</span>
         <h4>Mental Health Disorders (F30–F48)</h4>
-        <p>#4 burden (823 DALYs, remission-adj; 1,433 under MI LE/raw prevalence) · 14.1% adult prevalence (CDC PLACES) · Whole-county MUA = even less psychiatric access than Isabella</p>
+        <p>#6 burden (693 DALYs, remission-adj) · 28.1% depression prevalence (CDC PLACES 2024, ×0.50 remission) · Whole-county MUA = even less psychiatric access than Isabella</p>
       </div>
-      <div class="ps-burden"><div class="daly" style="color:var(--teal)">823</div><div class="lbl">DALYs/yr · #4 (remission-adj)</div></div>
+      <div class="ps-burden"><div class="daly" style="color:var(--teal)">693</div><div class="lbl">DALYs/yr · #6 (remission-adj)</div></div>
     </div>
     <div class="ps-body">
       <div class="ai-items">
@@ -457,7 +460,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
     <tr>
       <td><span class="phase now">Now (0–3 mo)</span></td>
       <td>Telehealth MAT (buprenorphine via Bicycle Health or Workit Health) — insurance reimbursed, zero infrastructure cost</td>
-      <td>SUD/OUD (#2, 1,247 DALYs)</td>
+      <td>SUD/OUD (#4, 1,112 DALYs)</td>
       <td>Clare County FQHC / Gratiot Clare Isabella CMH</td>
       <td>$0 (Medicaid reimbursed)</td>
       <td>High — highest per-DALY acute impact</td>
@@ -465,7 +468,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
     <tr>
       <td><span class="phase now">Now (0–3 mo)</span></td>
       <td>AI-assisted tobacco cessation via SMS quitline (SmokefreeMI + NRT provision through FQHC)</td>
-      <td>COPD (#3, 868 DALYs) + Cancer, CVD</td>
+      <td>COPD (#3, 1,335 DALYs) + Cancer, CVD</td>
       <td>County Health Dept / MDHHS SmokefreeMI</td>
       <td>&lt;$10K/yr</td>
       <td>High — triple impact across COPD/cancer/CVD</td>
@@ -481,7 +484,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
     <tr>
       <td><span class="phase yr1">Year 1</span></td>
       <td>Remote COPD monitoring — connected pulse oximetry + AI exacerbation alert (Clare-specific program)</td>
-      <td>COPD (#3, 868 DALYs)</td>
+      <td>COPD (#3, 1,335 DALYs)</td>
       <td>McLaren Clare / MidMichigan Health Clare / County CHW</td>
       <td>~$60K (devices + platform)</td>
       <td>High — reduces costly COPD hospitalizations</td>
@@ -505,7 +508,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
     <tr>
       <td><span class="phase yr2">Year 2</span></td>
       <td>AI-assisted cancer navigation + lung CT screening risk stratification</td>
-      <td>Cancer (#1, 1,372 DALYs)</td>
+      <td>Cancer (#1, 2,833 DALYs)</td>
       <td>McLaren Clare / MidMichigan / the university MPH collaborative</td>
       <td>~$20K integration</td>
       <td>Moderate</td>
@@ -534,7 +537,7 @@ footer-doc { display: block; margin-top: 40px; padding-top: 14px; border-top: 1p
 <p>Clare County's dual advantage for federal grant applications is its MUA whole-county designation combined with documented opioid crisis severity. SAMHSA's State Opioid Response (SOR) grants, HRSA's Telehealth Resource Center programs, and HHS rural community opioid response programs all have explicit MUA preference tracks. The Clare County disease burden analysis (this document series) provides the quantitative justification needed for the Significance and Innovation sections. A joint application with Gratiot or Isabella counties for a multi-county rural MAT telehealth program would likely score higher than a single-county application, given shared infrastructure.</p>
 
 <h3 class="sub">3.2 Regional consortium model</h3>
-<p>Clare's smaller population (30,013) creates economies-of-scale challenges for vendor contracts, platform fees, and clinical oversight. The most cost-effective implementation model is a multi-county consortium: Clare + Gratiot + Osceola counties sharing a single COPD monitoring platform, CHW training program, and telehealth MAT vendor contract. This lowers per-patient cost toward the viability threshold for technology vendors while maintaining county-specific care navigation.</p>
+<p>Clare's smaller population (31,105) creates economies-of-scale challenges for vendor contracts, platform fees, and clinical oversight. The most cost-effective implementation model is a multi-county consortium: Clare + Gratiot + Osceola counties sharing a single COPD monitoring platform, CHW training program, and telehealth MAT vendor contract. This lowers per-patient cost toward the viability threshold for technology vendors while maintaining county-specific care navigation.</p>
 
 <div class="note">
   <strong>Next step for Clare County:</strong> The most immediate actionable opportunity is contacting <a href="https://www.mphi.org/" style="color:inherit">Michigan Public Health Institute (MPHI)</a> and the <a href="https://www.michigan.gov/mdhhs" style="color:inherit">MDHHS Opioid Response Unit</a> to discuss this analysis as preliminary data for a SAMHSA SOR grant application targeting telehealth MAT expansion in Clare County. The Clare opioid burden data (~47/100k overdose mortality, 1,247 DALYs/yr estimated, MUA designation) meets the threshold for Tier 1 priority funding consideration. The ROI analysis (<a href="clare_roi.html" style="color:inherit">clare_roi.html</a>) provides the budget justification framework.

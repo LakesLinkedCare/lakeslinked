@@ -138,7 +138,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
 <!-- Crisis banner -->
 <div class="crisis-banner">
   <span>🚨</span>
-  <span><strong>High-Priority County.</strong> Clare County is a Medically Underserved Area (MUA). Opioid overdose mortality ~47/100,000 — ROI analysis leads with MAT Telehealth as the highest-priority intervention. All estimates ±30–50%; planning grade only.</span>
+  <span><strong>High-Priority County.</strong> Clare County is a Medically Underserved Area (MUA). Programs are ordered by the v4.1 burden they address: cardiovascular disease and stroke (3,147 DALYs) and cancer (2,833) lead; substance use ranks #4 (1,112) but opioid overdose mortality (~47/100,000) keeps MAT telehealth in the package. All estimates ±30–50%; planning grade only.</span>
 </div>
 
 <!-- Hero -->
@@ -208,7 +208,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
 
   <!-- Methodology note -->
   <div class="meth-box">
-    <strong>Methodology (Clare County · ROI model June 2026, updated to v4.1 on 21 November 2026).</strong> ROI ratios use the same Cochrane and peer-reviewed meta-analyses as the Isabella County ROI analysis. Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Target populations use v4.1 inputs: 25,129 adults 18+ (CDC WONDER 2020–22) × CDC PLACES 2024 crude prevalence. Priority ordering differs from Isabella — MAT Telehealth for OUD is #1 given Clare's severe opioid crisis (~47/100k overdose mortality). COPD remote monitoring added as a sixth intervention not present in the Isabella analysis (12.7% prevalence, standout condition). Burden basis: 9,637 DALYs (v4.1, November 2026). All figures ±30–50% uncertainty — directional planning estimates only.
+    <strong>Methodology (Clare County · ROI model June 2026, updated to v4.1 on 21 November 2026).</strong> ROI ratios use the same Cochrane and peer-reviewed meta-analyses as the Isabella County ROI analysis. Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Target populations use v4.1 inputs: 25,129 adults 18+ (CDC WONDER 2020–22) × CDC PLACES 2024 crude prevalence. Programs are ordered by the v4.1 burden they address: BP control (CVD + stroke, 3,147 DALYs), cancer screening (2,833), COPD monitoring (1,335), tobacco cessation (cross-cutting), MAT telehealth (SUD, 1,112; ~47/100k overdose mortality), diabetes (517). COPD remote monitoring added as a sixth intervention not present in the Isabella analysis (12.7% prevalence, standout condition). Burden basis: 9,637 DALYs (v4.1, November 2026). All figures ±30–50% uncertainty — directional planning estimates only.
     <br><strong>Population base:</strong> 31,105 total / 25,129 adults (CDC WONDER 2020–22) · Burden: 9,637 DALYs (v4.1, Nov 2026; 95% UI 8,952–10,172) · Earlier v1 estimate (June 2026): 8,198 DALYs · <a href="clare_methods.html">Full methods →</a>
   </div>
 
@@ -276,7 +276,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
 // CLARE COUNTY ROI DATA
 // Population (v4.1): 31,105 total / 25,129 adults 18+
 // Burden: 9,637 DALYs (v4.1, 11 Nov 2026)
-// Priority order differs from Isabella: MAT Telehealth is #1 (opioid crisis)
+// Priority order follows v4.1 burden addressed (21 Nov 2026)
 // COPD monitoring added as 6th intervention (not in Isabella analysis)
 // ═══════════════════════════════════════════════════════
 const INTERVENTIONS = {
@@ -286,8 +286,8 @@ const INTERVENTIONS = {
     icon: '💊',
     color: '#dc2626',
     accentBg: '#fef2f2',
-    priority: 1,
-    condition: 'SUD/Opioids (#4 burden, 1,112 DALYs · ~18 deaths/yr · ~47/100k overdose rate — Clare\'s defining crisis)',
+    priority: 5,
+    condition: 'SUD/Opioids (#4 burden, 1,112 DALYs · ~18 deaths/yr · ~47/100k overdose rate)',
     mechanism: 'Buprenorphine/OAT via telehealth primary care; delivery equivalence validated by Perry 2025 (Cochrane)',
     targetPop: 1435,
     targetLabel: '~1,435 SUD patients (5.7% × 25,129 adults)',
@@ -307,7 +307,7 @@ const INTERVENTIONS = {
     icon: '❤️',
     color: '#1a56db',
     accentBg: '#eff6ff',
-    priority: 2,
+    priority: 1,
     condition: 'CVD + Stroke (#2 and #5 burden, 3,147 DALYs combined · hypertension prevalence ~32%+ in Clare adults)',
     mechanism: 'CHW-led remote BP monitoring + AI-assisted clinical decision support + targeted patient communication (Agarwal 2025)',
     targetPop: 10052,
@@ -328,7 +328,7 @@ const INTERVENTIONS = {
     icon: '🚭',
     color: '#059669',
     accentBg: '#f0fdf4',
-    priority: 3,
+    priority: 4,
     condition: 'COPD, Cancer, CVD (smoking ~18–22% adult prevalence; primary COPD driver in aging Clare population)',
     mechanism: 'Automated SMS quitline + NRT provision (Whittaker 2019: RR 1.54 vs minimal support); state SmokefreeMI partnership',
     targetPop: 5026,
@@ -349,7 +349,7 @@ const INTERVENTIONS = {
     icon: '🔬',
     color: '#7c3aed',
     accentBg: '#faf5ff',
-    priority: 4,
+    priority: 2,
     condition: 'Cancer (#1 burden, 2,833 DALYs · ~101 deaths/yr · 11.1% adult prevalence)',
     mechanism: 'AI-assisted care navigation for cancer screening; automated follow-up reminders; rural patient navigation support (addresses long travel distances to oncology)',
     targetPop: 2789,
@@ -370,7 +370,7 @@ const INTERVENTIONS = {
     icon: '📱',
     color: '#0d9488',
     accentBg: '#f0fdfa',
-    priority: 5,
+    priority: 6,
     condition: 'Diabetes T2 (#7 burden, 517 DALYs · 15.4% prevalence vs. 10.5% in Isabella; aging population amplifies complications)',
     mechanism: 'Remote glucose monitoring + AI coaching; telehealth follow-up for medication adjustment; HbA1c reduction per Jiang 2026 (−0.38%)',
     targetPop: 3870,
@@ -391,7 +391,7 @@ const INTERVENTIONS = {
     icon: '🫁',
     color: '#d97706',
     accentBg: '#fff7ed',
-    priority: 6,
+    priority: 3,
     condition: 'COPD/Respiratory (#3 burden, 1,335 DALYs · 12.7% prevalence — standout Clare condition vs. 8.2% Isabella, ~7% MI avg)',
     mechanism: 'Remote pulse oximetry + spirometry monitoring; AI-assisted exacerbation early warning; telehealth follow-up reducing ER visits',
     targetPop: 3191,
@@ -445,7 +445,7 @@ function fmtM(v) {
 function buildCards() {
   const grid = document.getElementById('int-grid');
   grid.innerHTML = '';
-  Object.entries(INTERVENTIONS).forEach(([k,d])=>{
+  Object.entries(INTERVENTIONS).sort((a,b)=>a[1].priority-b[1].priority).forEach(([k,d])=>{
     const c = calc(k);
     const div = document.createElement('div');
     div.className = 'int-card';
@@ -454,7 +454,7 @@ function buildCards() {
       <div class="int-head" style="background:${d.accentBg}">
         <span class="int-icon">${d.icon}</span>
         <div class="int-title">
-          ${d.priority===1 ? '<span class="priority-badge">Priority #1 · Opioid Crisis</span><br>' : ''}
+          ${d.priority===1 ? '<span class="priority-badge">Priority #1 · Largest burden</span><br>' : ''}
           <h4>${d.name}</h4>
           <p>${d.condition} · ${d.mechanism}</p>
         </div>
@@ -537,7 +537,7 @@ function updateTable() {
   const maxSav = Math.max(...Object.keys(INTERVENTIONS).map(k=>calc(k).savings));
   const t = totalCalc();
   let rows = '';
-  Object.entries(INTERVENTIONS).forEach(([k,d])=>{
+  Object.entries(INTERVENTIONS).sort((a,b)=>a[1].priority-b[1].priority).forEach(([k,d])=>{
     const c = calc(k);
     const pct = maxSav>0 ? (c.savings/maxSav)*100 : 0;
     rows += `<tr>
@@ -566,9 +566,9 @@ function updateGrant() {
   const t = totalCalc();
   const horizon = parseInt(document.getElementById('horizon')?.value||5);
   document.getElementById('grant-significance').innerHTML =
-    `Clare County, Michigan faces an estimated 9,637 DALYs/year (v4.1, November 2026; age-specific YLL on the GBD 2019 reference life table; earlier v1 estimate 8,198 DALYs). The county is a designated Medically Underserved Area (MUA) with opioid overdose mortality ~47/100,000 — among Michigan's highest. MAT telehealth is the highest-priority intervention given the severity of the OUD crisis. COPD burden (12.7% prevalence, highest in the mid-Michigan comparison set) is the standout condition unique to Clare. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in societal savings — a ${t.roi.toFixed(1)}:1 ROI and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Applicable funders: SAMHSA MAT expansion grants, HRSA Rural Health care programs, MDHHS opioid settlement funds, CMS MUA-designated care model incentives.`;
+    `Clare County, Michigan faces an estimated 9,637 DALYs/year (v4.1, November 2026; age-specific YLL on the GBD 2019 reference life table; earlier v1 estimate 8,198 DALYs). The county is a designated Medically Underserved Area (MUA) with opioid overdose mortality ~47/100,000 — among Michigan's highest. Blood-pressure control and cancer screening address the two largest burdens (cardiovascular disease and stroke, 3,147 DALYs; cancer, 2,833); MAT telehealth remains in the package because of the overdose rate, although substance use ranks #4 (1,112 DALYs). COPD burden (12.7% prevalence, highest in the mid-Michigan comparison set) is the standout condition unique to Clare. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in societal savings — a ${t.roi.toFixed(1)}:1 ROI and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Applicable funders: SAMHSA MAT expansion grants, HRSA Rural Health care programs, MDHHS opioid settlement funds, CMS MUA-designated care model incentives.`;
   document.getElementById('grant-board').innerHTML =
-    `For every dollar invested in this six-program package, Clare County would see an estimated <strong>${t.roi.toFixed(1)} dollars in return</strong> — led by tobacco cessation (11:1) and diabetes telehealth (7.7:1), with MAT telehealth prioritized for patient impact despite its lower modeled ROI (1.3:1) given Clare's ~47/100k opioid overdose death rate. The total annual investment of ${fmtM(t.inv)} is approximately half that of a comparable Isabella County portfolio, reflecting Clare's smaller population. Remote COPD monitoring is a Clare-specific intervention not present in the Isabella ROI analysis, targeting the county's standout 12.7% COPD prevalence.`;
+    `For every dollar invested in this six-program package, Clare County would see an estimated <strong>${t.roi.toFixed(1)} dollars in return</strong> — led by tobacco cessation (11:1) and diabetes telehealth (7.7:1), while blood-pressure control and cancer screening target the county's two largest burdens; MAT telehealth (1.3:1) is kept for its effect on overdose deaths (~47/100k). The total annual investment of ${fmtM(t.inv)} is approximately half that of a comparable Isabella County portfolio, reflecting Clare's smaller population. Remote COPD monitoring is a Clare-specific intervention not present in the Isabella ROI analysis, targeting the county's standout 12.7% COPD prevalence.`;
 }
 
 // Charts
