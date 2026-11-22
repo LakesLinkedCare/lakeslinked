@@ -129,13 +129,13 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
     <h1>Return on Investment - AI & Digital Health Interventions</h1>
     <p class="sub">Evidence-based ROI estimates for Isabella County, Michigan · Based on peer-reviewed meta-analyses · Soshnikov · 2026</p>
     <div class="hero-stats">
-      <div class="hs"><div class="num" id="h-roi">2.58</div><div class="lbl">Portfolio ROI ($ per $1)</div><div class="cmp" id="h-net">Net benefit ~$9.6M/year</div></div>
+      <div class="hs"><div class="num" id="h-roi">3.03</div><div class="lbl">Portfolio ROI ($ per $1)</div><div class="cmp" id="h-net">Net benefit ~$9.5M/year</div></div>
       <div class="hdiv"></div>
-      <div class="hs"><div class="num" id="h-inv">$6.1M</div><div class="lbl">Total investment/year</div><div class="cmp">All 6 interventions at default reach</div></div>
+      <div class="hs"><div class="num" id="h-inv">$4.7M</div><div class="lbl">Total investment/year</div><div class="cmp">All 6 interventions at default reach</div></div>
       <div class="hdiv"></div>
-      <div class="hs"><div class="num" id="h-sav">$15.7M</div><div class="lbl">Total estimated savings/year</div><div class="cmp">Human-capital value of DALYs averted</div></div>
+      <div class="hs"><div class="num" id="h-sav">$14.2M</div><div class="lbl">Total estimated savings/year</div><div class="cmp">Human-capital value of DALYs averted</div></div>
       <div class="hdiv"></div>
-      <div class="hs"><div class="num">13,493</div><div class="lbl">DALYs/year current burden</div><div class="cmp">→ <a href="isabella.html" style="color:#34d399">See full burden dashboard</a></div></div>
+      <div class="hs"><div class="num">13,089</div><div class="lbl">DALYs/year (v4.1, Nov 2026; published 13,493)</div><div class="cmp">→ <a href="isabella.html" style="color:#34d399">See full burden dashboard</a></div></div>
     </div>
   </div>
 </div>
@@ -167,31 +167,31 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
   <!-- Summary strip -->
   <div class="summary-strip">
     <div class="scard" style="--accent:var(--green)">
-      <div class="num" id="s-roi">$2.58</div>
+      <div class="num" id="s-roi">$3.03</div>
       <div class="lbl">Return per $1 invested (portfolio)</div>
       <div class="delta">▲ Net benefit per year</div>
     </div>
     <div class="scard" style="--accent:var(--blue)">
-      <div class="num" id="s-inv">$6.1M</div>
+      <div class="num" id="s-inv">$4.7M</div>
       <div class="lbl">Total annual investment required</div>
       <div class="delta">All 6 programs combined</div>
     </div>
     <div class="scard" style="--accent:var(--teal)">
-      <div class="num" id="s-sav">$15.7M</div>
+      <div class="num" id="s-sav">$14.2M</div>
       <div class="lbl">Estimated annual savings</div>
-      <div class="delta">5-yr net benefit: <span id="s-5yr">$48M</span></div>
+      <div class="delta">5-yr net benefit: <span id="s-5yr">$47.6M</span></div>
     </div>
     <div class="scard" style="--accent:var(--purple)">
-      <div class="num" id="s-daly">~254</div>
+      <div class="num" id="s-daly">~229</div>
       <div class="lbl">Estimated DALYs averted/year</div>
-      <div class="delta">~1.7% of primary 13,493 burden</div>
+      <div class="delta" id="s-daly-pct">~1.7% of v4.1 burden (13,089)</div>
     </div>
   </div>
 
   <!-- Methodology note -->
   <div class="meth-box">
-    <strong>Methodology (ROI model, June 2026).</strong> Based on the published estimate of 13,493 DALYs (HREI 2026); the ROI has not yet been recalculated for the v4.1 method (13,089 DALYs, November 2026). ROI ratios are recalculated from Cochrane and peer-reviewed meta-analyses (Reilly 2024 for MH; Perry 2025 for MAT; Whittaker 2019 for tobacco; Agarwal 2025 for BP; Freeman 2021 for cancer screening; Jiang 2026 for diabetes). Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Estimates apply to Isabella County population subgroups derived from CDC PLACES 2024; SUD and CVD prevalence are derived, and several mortality inputs are rural-adjusted proxies. MH and cancer screening ROI are below 2:1, reflecting limitations of cited evidence. All figures ±30–50% uncertainty - directional planning estimates only, not audited projections. Use sliders to model different reach scenarios.
-    <br><strong>Population base:</strong> 64,565 total / ~52,297 adults · Primary burden: 13,493 DALYs (frontier LE + MH remission-adj; 95% UI 12,266–14,803) · Planning sensitivity (MI LE 78.6 yrs): 9,388 DALYs · Monte Carlo n=10,000 · <a href="isabella_methods.html">Full methods →</a>
+    <strong>Methodology (ROI model June 2026, updated to v4.1 on 21 November 2026).</strong> Burden basis: v4.1 estimate of 13,089 DALYs (November 2026); the published HREI 2026 estimate is 13,493. Target populations use v4.1 inputs: 51,164 adults 18+ (CDC WONDER 2020–22) and CDC PLACES 2024 crude prevalence (depression 30.5% × 0.50 remission, diabetes 10.5%, SUD 7.2%); hypertension 32.1% and smoking 18.6% are unchanged. ROI ratios are recalculated from Cochrane and peer-reviewed meta-analyses (Reilly 2024 for MH; Perry 2025 for MAT; Whittaker 2019 for tobacco; Agarwal 2025 for BP; Freeman 2021 for cancer screening; Jiang 2026 for diabetes). Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Estimates apply to Isabella County population subgroups derived from CDC PLACES 2024; SUD prevalence is derived (no PLACES measure). MH and cancer screening ROI are below 2:1, reflecting limitations of cited evidence. All figures ±30–50% uncertainty - directional planning estimates only, not audited projections. Use sliders to model different reach scenarios.
+    <br><strong>Population base:</strong> 64,417 total / 51,164 adults (CDC WONDER 2020–22) · v4.1 burden: 13,089 DALYs (95% UI 12,268–13,787) · Published (HREI 2026): 13,493 DALYs (95% UI 12,266–14,803) · <a href="isabella_methods.html">Full methods →</a>
   </div>
 
   <!-- Charts -->
@@ -266,10 +266,10 @@ const INTERVENTIONS = {
     icon: '🧠',
     color: '#7c3aed',
     accentBg: '#faf5ff',
-    condition: 'Mental health disorders (29.8% lifetime prev.; #4 burden, 1,502 DALYs remission-adj)',
+    condition: 'Mental health disorders (30.5% depression prev.; #4 burden, 1,514 DALYs remission-adj)',
     mechanism: 'Telepsychiatry + collaborative care in primary care (SMI population - schizophrenia, bipolar)',
-    targetPop: 7792,
-    targetLabel: '~7,780 active MH patients (CDC PLACES × 0.50 remission)',
+    targetPop: 7802,
+    targetLabel: '~7,800 active MH patients (30.5% × 0.50 remission × 51,164)',
     defaultReach: 20,
     costPerPt: 800,
     roiRatio: 0.6,
@@ -286,10 +286,10 @@ const INTERVENTIONS = {
     icon: '💊',
     color: '#d97706',
     accentBg: '#fff7ed',
-    condition: 'Substance use disorders (#3 burden, 2,434 DALYs · ~28 deaths/yr at age 44)',
+    condition: 'Substance use disorders (#3 burden, 2,299 DALYs · ~27 deaths/yr)',
     mechanism: 'OAT (buprenorphine) via telehealth primary care; delivery equivalence validated by Perry 2025',
-    targetPop: 3755,
-    targetLabel: '~3,755 SUD patients (CDC PLACES 2024)',
+    targetPop: 3684,
+    targetLabel: '~3,684 SUD patients (7.2% × 51,164)',
     defaultReach: 15,
     costPerPt: 3000,
     roiRatio: 1.3,
@@ -308,8 +308,8 @@ const INTERVENTIONS = {
     accentBg: '#f0fdf4',
     condition: 'COPD, cardiovascular disease, cancer (18.6% adult smoking rate)',
     mechanism: 'Automated SMS-based cessation support (Whittaker 2019: RR 1·54 vs minimal support)',
-    targetPop: 9727,
-    targetLabel: '~9,727 adult smokers (18.6% × 52,297)',
+    targetPop: 9517,
+    targetLabel: '~9,517 adult smokers (18.6% × 51,164)',
     defaultReach: 10,
     costPerPt: 183,
     roiRatio: 11.0,
@@ -326,10 +326,10 @@ const INTERVENTIONS = {
     icon: '❤️',
     color: '#1a56db',
     accentBg: '#eff6ff',
-    condition: 'Ischemic heart disease, stroke (32.1% hypertension · CVD+Stroke 4,336 DALYs)',
+    condition: 'Ischemic heart disease, stroke (32.1% hypertension · CVD+Stroke 3,613 DALYs)',
     mechanism: 'Digital BP tracking + clinical decision support + targeted client communication (Agarwal 2025)',
-    targetPop: 16768,
-    targetLabel: '~16,768 hypertensive adults (32.1% × 52,297)',
+    targetPop: 16424,
+    targetLabel: '~16,424 hypertensive adults (32.1% × 51,164)',
     defaultReach: 10,
     costPerPt: 500,
     roiRatio: 6.4,
@@ -346,7 +346,7 @@ const INTERVENTIONS = {
     icon: '🔬',
     color: '#dc2626',
     accentBg: '#fef2f2',
-    condition: 'Cancer, all sites (#1 burden, 3,641 DALYs · ~114 deaths/yr at age 67)',
+    condition: 'Cancer, all sites (#1 burden, 3,466 DALYs · ~113 deaths/yr)',
     mechanism: 'AI triage for mammography/lung CT screening - workload reduction, not incremental detection',
     targetPop: 5000,
     targetLabel: '5,000 high-risk patients',
@@ -366,10 +366,10 @@ const INTERVENTIONS = {
     icon: '📱',
     color: '#0d9488',
     accentBg: '#f0fdfa',
-    condition: 'Diabetes (11.6% adult prevalence · 607 DALYs/year)',
+    condition: 'Diabetes (10.5% adult prevalence · 693 DALYs/year)',
     mechanism: 'Remote glucose monitoring + AI coaching; HbA1c reduction per Jiang 2026 (−0·38%)',
-    targetPop: 6066,
-    targetLabel: '~6,066 diabetic adults (11.6% × 52,297)',
+    targetPop: 5372,
+    targetLabel: '~5,372 diabetic adults (10.5% × 51,164)',
     defaultReach: 10,
     costPerPt: 922,
     roiRatio: 7.7,
@@ -494,6 +494,9 @@ function updateSummary() {
   const t = totalCalc();
   const horizon = parseInt(document.getElementById('horizon')?.value||5);
   document.getElementById('s-roi').textContent = '$'+t.roi.toFixed(2);
+  const dAv = Math.round(t.sav/62000);
+  document.getElementById('s-daly').textContent = '~'+dAv.toLocaleString('en-US');
+  document.getElementById('s-daly-pct').textContent = '~'+(dAv/13089*100).toFixed(1)+'% of v4.1 burden (13,089)';
   document.getElementById('s-inv').textContent = fmtM(t.inv);
   document.getElementById('s-sav').textContent = fmtM(t.sav);
   document.getElementById('s-5yr').textContent = fmtM(t.net * horizon);
@@ -539,7 +542,7 @@ function updateGrant() {
   const t = totalCalc();
   const horizon = parseInt(document.getElementById('horizon')?.value||5);
   document.getElementById('grant-significance').innerHTML =
-    `Isabella County, Michigan faces a primary burden of 13,493 estimated DALYs annually (95% UI 12,266–14,803; frontier LE + MH remission-adj; CDC PLACES 2024, CDC WONDER 2020–22, Monte Carlo n=10,000). Cancer is the leading burden (#1, 3,641 DALYs), followed by CVD (#2, 2,793), SUD (#3, 2,434), and mental health (#4, 1,502 DALYs remission-adj). Mental health access (176,938:1 psychiatrist ratio) remains the dominant structural gap despite the remission adjustment. Evidence strength varies by intervention; current meta-analysis-based ROI ratios range from ${Math.min(...Object.values(INTERVENTIONS).map(d=>d.roiRatio)).toFixed(1)}:1 to ${Math.max(...Object.values(INTERVENTIONS).map(d=>d.roiRatio)).toFixed(0)}:1. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in savings - a ${t.roi.toFixed(1)}:1 return and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Several inputs rely on modeled prevalence or rural-adjusted mortality proxies and should be treated as planning estimates.`;
+    `Isabella County, Michigan faces an estimated 13,089 DALYs annually (Lakes Linked v4.1, November 2026; 95% UI 12,268–13,787; CDC WONDER 2020–22, CDC PLACES 2024; published HREI 2026 estimate 13,493). Cancer is the leading burden (#1, 3,466 DALYs), followed by CVD (#2, 2,644), SUD (#3, 2,299), and mental health (#4, 1,514 DALYs remission-adj). Mental health access (176,938:1 psychiatrist ratio) remains the dominant structural gap despite the remission adjustment. Evidence strength varies by intervention; current meta-analysis-based ROI ratios range from ${Math.min(...Object.values(INTERVENTIONS).map(d=>d.roiRatio)).toFixed(1)}:1 to ${Math.max(...Object.values(INTERVENTIONS).map(d=>d.roiRatio)).toFixed(0)}:1. A portfolio of six targeted programs is estimated to require ${fmtM(t.inv)} annually and return ${fmtM(t.sav)} in savings - a ${t.roi.toFixed(1)}:1 return and ${fmtM(t.net*horizon)} net benefit over ${horizon} years. Several inputs rely on modeled prevalence and should be treated as planning estimates.`;
   document.getElementById('grant-board').innerHTML =
     `For every dollar invested in this package of six AI-enhanced health programs, Isabella County would see an estimated <strong>${t.roi.toFixed(1)} dollars in return</strong> under conservative meta-analysis-based assumptions - mainly through tobacco cessation, blood-pressure control, diabetes monitoring, and selected access improvements. The total annual investment of ${fmtM(t.inv)} would generate ${fmtM(t.net)} in annual net benefit and ${fmtM(t.net*horizon)} over ${horizon} years. Mental-health collaborative care and AI cancer screening are retained as access/workflow strategies, but their ROI should be interpreted cautiously because the cited evidence does not support strong incremental-effect claims.`;
 }

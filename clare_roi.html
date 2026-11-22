@@ -145,15 +145,15 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
 <div class="hero">
   <div class="hero-inner">
     <h1>Return on Investment — AI &amp; Digital Health · Clare County</h1>
-    <p class="sub">Evidence-based ROI estimates for Clare County, Michigan (pop. 30,013) · Based on peer-reviewed meta-analyses · Soshnikov · 2026</p>
+    <p class="sub">Evidence-based ROI estimates for Clare County, Michigan (pop. 31,105) · Based on peer-reviewed meta-analyses · Soshnikov · 2026</p>
     <div class="hero-stats">
-      <div class="hs"><div class="num" id="h-roi">3.68</div><div class="lbl">Portfolio ROI ($ per $1)</div><div class="cmp" id="h-net">Net benefit ~$5.9M/year</div></div>
+      <div class="hs"><div class="num" id="h-roi">4.30</div><div class="lbl">Portfolio ROI ($ per $1)</div><div class="cmp" id="h-net">Net benefit ~$7.9M/year</div></div>
       <div class="hdiv"></div>
-      <div class="hs"><div class="num" id="h-inv">$2.6M</div><div class="lbl">Total investment/year</div><div class="cmp">All 6 programs at default reach</div></div>
+      <div class="hs"><div class="num" id="h-inv">$2.4M</div><div class="lbl">Total investment/year</div><div class="cmp">All 6 programs at default reach</div></div>
       <div class="hdiv"></div>
-      <div class="hs"><div class="num" id="h-sav">$9.5M</div><div class="lbl">Total estimated savings/year</div><div class="cmp">Human-capital value of DALYs averted</div></div>
+      <div class="hs"><div class="num" id="h-sav">$10.3M</div><div class="lbl">Total estimated savings/year</div><div class="cmp">Human-capital value of DALYs averted</div></div>
       <div class="hdiv"></div>
-      <div class="hs"><div class="num">5,943</div><div class="lbl">DALYs/year (MI LE baseline)</div><div class="cmp">→ <a href="clare.html" style="color:#34d399">See full burden dashboard</a></div></div>
+      <div class="hs"><div class="num">9,637</div><div class="lbl">DALYs/year (v4.1, Nov 2026)</div><div class="cmp">→ <a href="clare.html" style="color:#34d399">See full burden dashboard</a></div></div>
     </div>
   </div>
 </div>
@@ -177,7 +177,7 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
       <option value="20">20 years</option>
     </select>
   </div>
-  <p class="ctrl-note" id="ctrl-note">Societal perspective includes healthcare costs, lost productivity, and criminal justice savings. Clare County baseline: 5,943 DALYs/yr (MI LE 78.6 yrs). Adjust reach sliders below.</p>
+  <p class="ctrl-note" id="ctrl-note">Societal perspective includes healthcare costs, lost productivity, and criminal justice savings. Clare County burden: 9,637 DALYs/yr (v4.1, Nov 2026). Adjust reach sliders below.</p>
 </div>
 
 <div class="page">
@@ -185,31 +185,31 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
   <!-- Summary strip -->
   <div class="summary-strip">
     <div class="scard" style="--accent:var(--green)">
-      <div class="num" id="s-roi">$3.68</div>
+      <div class="num" id="s-roi">$4.30</div>
       <div class="lbl">Return per $1 invested (portfolio)</div>
       <div class="delta">▲ Net benefit per year</div>
     </div>
     <div class="scard" style="--accent:var(--blue)">
-      <div class="num" id="s-inv">$2.6M</div>
+      <div class="num" id="s-inv">$2.4M</div>
       <div class="lbl">Total annual investment required</div>
       <div class="delta">All 6 programs combined</div>
     </div>
     <div class="scard" style="--accent:var(--teal)">
-      <div class="num" id="s-sav">$9.5M</div>
+      <div class="num" id="s-sav">$10.3M</div>
       <div class="lbl">Estimated annual savings</div>
-      <div class="delta">5-yr net benefit: <span id="s-5yr">$29.5M</span></div>
+      <div class="delta">5-yr net benefit: <span id="s-5yr">$39.6M</span></div>
     </div>
     <div class="scard" style="--accent:var(--red)">
-      <div class="num" id="s-daly">~117</div>
+      <div class="num" id="s-daly">~166</div>
       <div class="lbl">Estimated DALYs averted/year</div>
-      <div class="delta">~2.0% of 5,943 MI LE baseline</div>
+      <div class="delta" id="s-daly-pct">~1.7% of v4.1 burden (9,637)</div>
     </div>
   </div>
 
   <!-- Methodology note -->
   <div class="meth-box">
-    <strong>Methodology (Clare County · v1.0 · June 2026).</strong> ROI ratios use the same Cochrane and peer-reviewed meta-analyses as the Isabella County ROI analysis. Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Intervention reach numbers are scaled proportionally to Clare County's population (30,013 = ~46.5% of Isabella's 64,565). Priority ordering differs from Isabella — MAT Telehealth for OUD is #1 given Clare's severe opioid crisis (~47/100k overdose mortality). COPD remote monitoring added as a sixth intervention not present in the Isabella analysis (12.7% prevalence, standout condition). DALY baseline: 5,943 (Michigan LE 78.6 yrs planning standard). All figures ±30–50% uncertainty — directional planning estimates only.
-    <br><strong>Population base:</strong> 30,013 total / ~24,310 adults · Burden: 9,637 DALYs (v4.1, Nov 2026, primary) / 8,198 DALYs (v1 frontier) · <a href="clare_methods.html">Full methods →</a>
+    <strong>Methodology (Clare County · ROI model June 2026, updated to v4.1 on 21 November 2026).</strong> ROI ratios use the same Cochrane and peer-reviewed meta-analyses as the Isabella County ROI analysis. Formula: DALYs averted = target DALYs × programme reach × meta-analysis effect fraction; savings = DALYs averted × $62,000 (Michigan human capital rate, GDP per capita 2024). ROI = savings ÷ annualised investment. Target populations use v4.1 inputs: 25,129 adults 18+ (CDC WONDER 2020–22) × CDC PLACES 2024 crude prevalence. Priority ordering differs from Isabella — MAT Telehealth for OUD is #1 given Clare's severe opioid crisis (~47/100k overdose mortality). COPD remote monitoring added as a sixth intervention not present in the Isabella analysis (12.7% prevalence, standout condition). Burden basis: 9,637 DALYs (v4.1, November 2026). All figures ±30–50% uncertainty — directional planning estimates only.
+    <br><strong>Population base:</strong> 31,105 total / 25,129 adults (CDC WONDER 2020–22) · Burden: 9,637 DALYs (v4.1, Nov 2026; 95% UI 8,952–10,172) · Earlier v1 estimate (June 2026): 8,198 DALYs · <a href="clare_methods.html">Full methods →</a>
   </div>
 
   <!-- Charts -->
@@ -274,8 +274,8 @@ footer{border-top:1px solid var(--border);padding:18px 28px;font-size:11.5px;col
 <script>
 // ═══════════════════════════════════════════════════════
 // CLARE COUNTY ROI DATA
-// Population: 30,013 total / ~24,310 adults (~46.5% of Isabella's 64,565)
-// Baseline: 5,943 DALYs (MI LE 78.6 yrs planning standard)
+// Population (v4.1): 31,105 total / 25,129 adults 18+
+// Burden: 9,637 DALYs (v4.1, 11 Nov 2026)
 // Priority order differs from Isabella: MAT Telehealth is #1 (opioid crisis)
 // COPD monitoring added as 6th intervention (not in Isabella analysis)
 // ═══════════════════════════════════════════════════════
@@ -287,10 +287,10 @@ const INTERVENTIONS = {
     color: '#dc2626',
     accentBg: '#fef2f2',
     priority: 1,
-    condition: 'SUD/Opioids (#2 burden, 1,247 DALYs · ~17 deaths/yr · ~47/100k overdose rate — Clare\'s defining crisis)',
+    condition: 'SUD/Opioids (#4 burden, 1,112 DALYs · ~18 deaths/yr · ~47/100k overdose rate — Clare\'s defining crisis)',
     mechanism: 'Buprenorphine/OAT via telehealth primary care; delivery equivalence validated by Perry 2025 (Cochrane)',
-    targetPop: 1604,
-    targetLabel: '~1,604 SUD patients (6.6% × 24,310 adults)',
+    targetPop: 1435,
+    targetLabel: '~1,435 SUD patients (5.7% × 25,129 adults)',
     defaultReach: 20,
     costPerPt: 3000,
     roiRatio: 1.3,
@@ -308,10 +308,10 @@ const INTERVENTIONS = {
     color: '#1a56db',
     accentBg: '#eff6ff',
     priority: 2,
-    condition: 'CVD + Stroke (#5–6 burden, ~1,281 DALYs combined · hypertension prevalence ~32%+ in Clare adults)',
+    condition: 'CVD + Stroke (#2 and #5 burden, 3,147 DALYs combined · hypertension prevalence ~32%+ in Clare adults)',
     mechanism: 'CHW-led remote BP monitoring + AI-assisted clinical decision support + targeted patient communication (Agarwal 2025)',
-    targetPop: 9720,
-    targetLabel: '~9,720 hypertensive adults (~40% × 24,310)',
+    targetPop: 10052,
+    targetLabel: '~10,052 hypertensive adults (~40% × 25,129)',
     defaultReach: 10,
     costPerPt: 500,
     roiRatio: 6.4,
@@ -331,8 +331,8 @@ const INTERVENTIONS = {
     priority: 3,
     condition: 'COPD, Cancer, CVD (smoking ~18–22% adult prevalence; primary COPD driver in aging Clare population)',
     mechanism: 'Automated SMS quitline + NRT provision (Whittaker 2019: RR 1.54 vs minimal support); state SmokefreeMI partnership',
-    targetPop: 4862,
-    targetLabel: '~4,862 adult smokers (~20% × 24,310)',
+    targetPop: 5026,
+    targetLabel: '~5,026 adult smokers (~20% × 25,129)',
     defaultReach: 12,
     costPerPt: 183,
     roiRatio: 11.0,
@@ -350,10 +350,10 @@ const INTERVENTIONS = {
     color: '#7c3aed',
     accentBg: '#faf5ff',
     priority: 4,
-    condition: 'Cancer (#1 burden, 1,372 DALYs · ~60 deaths/yr at age 67 · 7.6% county prevalence)',
+    condition: 'Cancer (#1 burden, 2,833 DALYs · ~101 deaths/yr · 11.1% adult prevalence)',
     mechanism: 'AI-assisted care navigation for cancer screening; automated follow-up reminders; rural patient navigation support (addresses long travel distances to oncology)',
-    targetPop: 2282,
-    targetLabel: '~2,282 high-risk patients (7.6% × 30,013)',
+    targetPop: 2789,
+    targetLabel: '~2,789 high-risk patients (11.1% × 25,129 adults)',
     defaultReach: 20,
     costPerPt: 200,
     roiRatio: 1.1,
@@ -371,10 +371,10 @@ const INTERVENTIONS = {
     color: '#0d9488',
     accentBg: '#f0fdfa',
     priority: 5,
-    condition: 'Diabetes T2 (#7 burden, 351 DALYs · 15.4% prevalence — 33% above Isabella; aging population amplifies complications)',
+    condition: 'Diabetes T2 (#7 burden, 517 DALYs · 15.4% prevalence vs. 10.5% in Isabella; aging population amplifies complications)',
     mechanism: 'Remote glucose monitoring + AI coaching; telehealth follow-up for medication adjustment; HbA1c reduction per Jiang 2026 (−0.38%)',
-    targetPop: 4628,
-    targetLabel: '~4,628 diabetic adults (15.4% × 30,013)',
+    targetPop: 3870,
+    targetLabel: '~3,870 diabetic adults (15.4% × 25,129 adults)',
     defaultReach: 12,
     costPerPt: 922,
     roiRatio: 7.7,
@@ -392,10 +392,10 @@ const INTERVENTIONS = {
     color: '#d97706',
     accentBg: '#fff7ed',
     priority: 6,
-    condition: 'COPD/Respiratory (#3 burden, 868 DALYs · 12.7% prevalence — standout Clare condition vs. 8.8% Isabella, ~7% MI avg)',
+    condition: 'COPD/Respiratory (#3 burden, 1,335 DALYs · 12.7% prevalence — standout Clare condition vs. 8.2% Isabella, ~7% MI avg)',
     mechanism: 'Remote pulse oximetry + spirometry monitoring; AI-assisted exacerbation early warning; telehealth follow-up reducing ER visits',
-    targetPop: 3087,
-    targetLabel: '~3,087 COPD patients (12.7% × 24,310 adults)',
+    targetPop: 3191,
+    targetLabel: '~3,191 COPD patients (12.7% × 25,129 adults)',
     defaultReach: 15,
     costPerPt: 800,
     roiRatio: 3.5,
@@ -518,6 +518,9 @@ function updateSummary() {
   const t = totalCalc();
   const horizon = parseInt(document.getElementById('horizon')?.value||5);
   document.getElementById('s-roi').textContent = '$'+t.roi.toFixed(2);
+  const dAv = Math.round(t.sav/62000);
+  document.getElementById('s-daly').textContent = '~'+dAv.toLocaleString('en-US');
+  document.getElementById('s-daly-pct').textContent = '~'+(dAv/9637*100).toFixed(1)+'% of v4.1 burden (9,637)';
   document.getElementById('s-inv').textContent = fmtM(t.inv);
   document.getElementById('s-sav').textContent = fmtM(t.sav);
   document.getElementById('s-5yr').textContent = fmtM(t.net * horizon);
@@ -601,7 +604,7 @@ function updateCharts() {
 
 function updateAll() {
   const persp = document.getElementById('perspective')?.value||'societal';
-  document.getElementById('ctrl-note').textContent = PERSPECTIVE_LABELS[persp] + '. Clare County (pop. 30,013) · Baseline 5,943 DALYs (MI LE).';
+  document.getElementById('ctrl-note').textContent = PERSPECTIVE_LABELS[persp] + '. Clare County (pop. 31,105) · 9,637 DALYs/yr (v4.1).';
   Object.keys(INTERVENTIONS).forEach(k=>updateMetrics(k));
   updateSummary(); updateCharts(); updateTable(); updateGrant();
 }
